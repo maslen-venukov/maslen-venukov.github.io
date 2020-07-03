@@ -3,4 +3,4 @@
 
 [Binary](https://maslen-venukov.github.io/binary/ "Первый адаптивный лендинг")
 
-[Binary](https://maslen-venukov.github.io/mycompany/ "Второй адаптивный лендинг")
+[MyCompany](https://maslen-venukov.github.io/mycompany/ "Второй адаптивный лендинг")
