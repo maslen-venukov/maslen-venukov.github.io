@@ -13,6 +13,12 @@ body {
     }
 }
 
+input,
+textarea,
+button {
+    font-family: inherit;
+}
+
 *,
 *:after,
 *:before {
@@ -158,6 +164,11 @@ a {
 }
 
 .nav_main {
+
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 20;
     padding: 20px 0;
     border-bottom: 1px solid #f2f2f2;
     margin-bottom: 130px;
