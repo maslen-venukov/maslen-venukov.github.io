@@ -1,3 +1,5 @@
+// Tabs
+
 let tab = function() {
 
 	let tabSwitches = document.querySelectorAll('.tabs-inner-switches-item'),
@@ -24,3 +26,28 @@ let tab = function() {
 	};
 
 };
+
+tab();
+
+// Carousel
+
+$(document).ready(function() {
+
+	$('.owl-carousel').owlCarousel({
+		// loop:true,
+		responsive:{
+			0:{
+				items:1,
+				dots: true,
+				nav: true,
+				loop: true,
+				startPosition: 1,
+				autoHeight: true
+			},
+			1170:{
+				items:3
+			}
+		}
+	});
+
+});

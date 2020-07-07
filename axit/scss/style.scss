@@ -95,6 +95,7 @@ body {
 		font-family: 'Raleway', sans-serif;
 		position: relative;
 		font-size: 36px;
+		font-weight: 400;
 		color: #212121;
 		text-align: center;
 		text-transform: uppercase;
@@ -464,7 +465,7 @@ body {
 		&-row {
 			display: flex;
 			justify-content: space-between;
-			min-height: 0;
+			min-width: 0;
 			transform: translateY(33px);
 			&-item {
 				text-align: center;
@@ -650,4 +651,14 @@ body {
 			font-size: 12px;
 		}
 	}
+}
+
+@media screen and (max-width: 1170px) {
+	.pricing-inner-row-item {
+		margin: 0 auto;
+	}
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+	// background: #333;
 }
