@@ -33,21 +33,29 @@ tab();
 
 $(document).ready(function() {
 
-	$('.owl-carousel').owlCarousel({
-		// loop:true,
-		responsive:{
-			0:{
-				items:1,
-				dots: true,
-				nav: true,
-				loop: true,
-				startPosition: 1,
-				autoHeight: true
-			},
-			1170:{
-				items:3
-			}
+	function checkWidth() {
+		var windowWidth = $('body').innerWidth(),
+			slider = $(".pricing-inner-row");
+		if(windowWidth < 1170){
+			slider.addClass('owl-carousel owl-theme owl-loaded');
+		} else {
+			slider.removeClass('owl-carousel owl-theme owl-loaded');
 		}
+	}
+
+	checkWidth(); // проверит при загрузке страницы
+
+	$(window).resize(function(){
+		checkWidth(); // проверит при изменении размера окна клиента
+	});
+
+	$('.owl-carousel').owlCarousel({
+		items:1,
+		dots: true,
+		nav: true,
+		loop: true,
+		startPosition: 1,
+		autoHeight: true
 	});
 
 });

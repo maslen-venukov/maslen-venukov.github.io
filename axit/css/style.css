@@ -627,3 +627,31 @@ body {
     margin: 0 auto;
   }
 }
+.owl-theme .owl-dots .owl-dot.active span {
+  background: #333;
+}
+.owl-theme .owl-dots .owl-dot span {
+  background: #ccc;
+}
+.owl-theme .owl-nav .owl-prev,
+.owl-theme .owl-nav .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff8b38;
+}
+.owl-theme .owl-nav .owl-prev span,
+.owl-theme .owl-nav .owl-next span {
+  font-size: 40px;
+  color: #333;
+}
+.owl-theme .owl-nav .owl-prev {
+  left: 15%;
+}
+.owl-theme .owl-nav .owl-next {
+  right: 15%;
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+  background: transparent;
+  color: #333;
+}

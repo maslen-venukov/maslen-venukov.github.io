@@ -5,6 +5,7 @@ $hl-clr: #ff8b38; // Highlighting color
 html,
 body {
 	font-family: 'Open Sans', sans-serif;
+	// overflow-x: hidden;
 }
 
 // Container
@@ -653,12 +654,44 @@ body {
 	}
 }
 
+// Carousel
+
 @media screen and (max-width: 1170px) {
 	.pricing-inner-row-item {
 		margin: 0 auto;
 	}
 }
 
-.owl-theme .owl-dots .owl-dot.active span {
-	// background: #333;
+.owl-theme {
+	.owl-dots {
+		.owl-dot.active span {
+			background: #333;
+		}
+		.owl-dot span {
+			background: #ccc;
+		}
+	}
+	.owl-nav {
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $hl-clr;
+			span {
+				font-size: 40px;
+				color: #333;
+			}
+		}
+		.owl-prev {
+			left: 15%;
+		}
+		.owl-next {
+			right: 15%;
+		}
+		[class*=owl-]:hover {
+			background: transparent;
+			color: #333;
+		}
+	}
 }
