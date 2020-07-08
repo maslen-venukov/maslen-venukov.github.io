@@ -35,11 +35,17 @@ $(document).ready(function() {
 
 	function checkWidth() {
 		var windowWidth = $('body').innerWidth(),
-			slider = $(".pricing-inner-row");
-		if(windowWidth < 1170){
-			slider.addClass('owl-carousel owl-theme owl-loaded');
+			pricingSlider = $(".pricing-inner-row");
+			socialSlider = $(".social-inner-list");
+		if(windowWidth < 1171){
+			pricingSlider.addClass('owl-carousel owl-theme owl-loaded');
 		} else {
-			slider.removeClass('owl-carousel owl-theme owl-loaded');
+			pricingSlider.removeClass('owl-carousel owl-theme owl-loaded');
+		}
+		if(windowWidth < 1025){
+			socialSlider.addClass('owl-carousel owl-theme owl-loaded');
+		} else {
+			socialSlider.removeClass('owl-carousel owl-theme owl-loaded');
 		}
 	}
 
@@ -50,12 +56,13 @@ $(document).ready(function() {
 	});
 
 	$('.owl-carousel').owlCarousel({
-		items:1,
+		items: 1,
 		dots: true,
 		nav: true,
 		loop: true,
 		startPosition: 1,
-		autoHeight: true
+		autoHeight: true,
+		smartSpeed: 500
 	});
 
 });

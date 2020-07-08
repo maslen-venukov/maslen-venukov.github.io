@@ -188,32 +188,63 @@ body {
 		padding-top: 12vh;
 		display: flex;
 		justify-content: space-between;
+		@media screen and (max-width: 900px) {
+			flex-direction: column;
+			padding-top: 2vh;
+		}
 		&-content {
 			flex-basis: 50%;
+			@media screen and (max-width: 900px) {
+				margin-bottom: 4vh;
+			}
 			&__logo {
 				margin-bottom: 4vh;
+				@media screen and (max-width: 900px) {
+					display: flex;
+					justify-content: center;
+				}
 			}
 			&__title {
 				margin-bottom: 5vh;
 				text-align: left;
+				@media screen and (max-width: 900px) {
+					text-align: center;
+				}
 			}
 			.section__title {
 				&:after {
 					left: 0;
 					transform: translateX(0);
+					@media screen and (max-width: 900px) {
+						left: 50%;
+						transform: translateX(-50%);
+					}
 				}
 			}
 			&__subtitle {
 				margin-bottom: 5vh;
 				text-align: left;
+				@media screen and (max-width: 900px) {
+					text-align: center;
+				}
 			}
-			&__button {}
+			&__button {
+				@media screen and (max-width: 900px) {
+					margin: 0 auto;
+				}
+			}
 		}
 		&-form {
 			width: 360px;
 			height: 360px;
 			background: #fff;
 			border-radius: 4px;
+			@media screen and (max-width: 900px) {
+				margin: 0 auto;
+			}
+			@media screen and (max-width: 425px) {
+				width: 90%;
+			}
 			&__header {
 				font-size: 20px;
 				font-weight: 700;
@@ -224,6 +255,9 @@ body {
 				margin-bottom: 16px;
 				span {
 					color: $hl-clr;
+				}
+				@media screen and (max-width: 425px) {
+					font-size: 18px;
 				}
 			}
 			&__input,
@@ -269,8 +303,17 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@media screen and (max-width: 1024px) {
+			flex-direction: column;
+		}
 		&-content {
 			flex-basis: 35%;
+			margin-right: 65px;
+			@media screen and (max-width: 1024px) {
+				margin-right: 0;
+				margin-bottom: 30px;
+				text-align: center;
+			}
 			&__title {
 				font-size: 20px;
 				font-weight: 700;
@@ -523,13 +566,20 @@ body {
 
 // Reviws
 
-.review {
+.reviews {
 	&-inner {
 		&-row {
 			display: flex;
 			justify-content: space-between;
+			@media screen and (max-width: 1024px) {
+				flex-direction: column;
+			}
 			&-item {
 				flex-basis: 25%;
+				@media screen and (max-width: 1024px) {
+					margin: 0 auto 60px;
+					width: 75%;
+				}
 				&__comment {
 					position: relative;
 					color: #86878b;
@@ -662,7 +712,15 @@ body {
 	}
 }
 
-.owl-theme {
+@media screen and (max-width: 1024px) {
+	.social-inner-list__item {
+		margin: 0 auto;
+	}
+}
+
+
+
+.owl-carousel.owl-theme {
 	.owl-dots {
 		.owl-dot.active span {
 			background: #333;
@@ -695,3 +753,18 @@ body {
 		}
 	}
 }
+
+.social-inner-list.owl-carousel.owl-theme .owl-nav {
+	.owl-prev,
+	.owl-next {
+		top: 0;
+		transform: translateY(0);
+	}
+	.owl-prev {
+		left: 5%;
+	}
+	.owl-next {
+		right: 5%;
+	}
+}
+
