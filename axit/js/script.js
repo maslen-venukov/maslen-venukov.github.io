@@ -2,9 +2,9 @@
 
 let tab = function() {
 
-	let tabSwitches = document.querySelectorAll('.tabs-inner-switches-item'),
-	tabItem = document.querySelectorAll('.tabs-inner-content-item'),
-	tabName;
+	const tabSwitches = document.querySelectorAll('.tabs-inner-switches-item'),
+	tabItem = document.querySelectorAll('.tabs-inner-content-item');
+	let tabName;
 
 	tabSwitches.forEach(item => {
 		item.addEventListener('click', selectTabSwitches)
@@ -34,9 +34,9 @@ tab();
 $(document).ready(function() {
 
 	function checkWidth() {
-		var windowWidth = $('body').innerWidth(),
-			pricingSlider = $(".pricing-inner-row");
-			socialSlider = $(".social-inner-list");
+		const windowWidth = $('body').innerWidth(),
+		pricingSlider = $(".pricing-inner-row");
+		// socialSlider = $(".social-inner-list");
 		if(windowWidth < 1171){
 			pricingSlider.addClass('owl-carousel owl-theme owl-loaded');
 		} else {
@@ -63,6 +63,13 @@ $(document).ready(function() {
 		startPosition: 1,
 		autoHeight: true,
 		smartSpeed: 500
+	});
+
+// Burger
+
+	$('.nav__burger').on('click', function() {
+		$('.nav__burger').toggleClass('nav__burger_active');
+		$('.header-inner').toggleClass('header-inner_active');
 	});
 
 });
