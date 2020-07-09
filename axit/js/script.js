@@ -42,11 +42,11 @@ $(document).ready(function() {
 		} else {
 			pricingSlider.removeClass('owl-carousel owl-theme owl-loaded');
 		}
-		if(windowWidth < 1025){
-			socialSlider.addClass('owl-carousel owl-theme owl-loaded');
-		} else {
-			socialSlider.removeClass('owl-carousel owl-theme owl-loaded');
-		}
+		// if(windowWidth < 1025){
+		// 	socialSlider.addClass('owl-carousel owl-theme owl-loaded');
+		// } else {
+		// 	socialSlider.removeClass('owl-carousel owl-theme owl-loaded');
+		// }
 	}
 
 	checkWidth(); // проверит при загрузке страницы
