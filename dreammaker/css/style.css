@@ -532,7 +532,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .faq .faq__inner .faq__column .faq__circle {
-  top: -10%;
+  top: 0;
   right: -80%;
 }
 
@@ -864,37 +864,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .features .features__circle-1 {
-  bottom: 30%;
-  left: -10%;
+  bottom: 5%;
+  left: -20%;
 }
 
 .features .features__circle-2 {
-  bottom: 27%;
+  bottom: -15%;
   left: 30%;
 }
 
 .features .features__circle-3 {
-  bottom: 20%;
+  bottom: -7%;
   left: 30%;
 }
 
 .features .features__circle-4 {
-  bottom: 32%;
-  left: 34%;
+  bottom: 15%;
+  left: 37%;
 }
 
 .features .features__circle-5 {
-  bottom: 15%;
-  left: 36%;
+  bottom: -50%;
+  left: 37%;
 }
 
 .features .features__circle-6 {
-  bottom: 37%;
-  left: 42%;
+  bottom: -5%;
+  left: 47%;
 }
 
 .features .features__circle-7 {
-  bottom: 10%;
+  bottom: -5%;
   left: 45%;
 }
 
