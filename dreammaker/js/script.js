@@ -25,4 +25,27 @@ $(document).ready(function () {
         $('.accordion__item-header').not(this).removeClass('in').next().slideUp();
     });
 
+    // Header
+    let mainHeight = $('.main').innerHeight();
+    const header = $('.header');
+    $(window).scroll(function () { 
+        if ($(window).scrollTop() >= mainHeight) {
+            header.addClass('header_purple');
+        } else {
+            header.removeClass('header_purple');
+        };
+    });
+
+    // Slider
+    $('.slider').slick({
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    adaptiveHeight: true
+                }
+            }
+        ]
+    });
+
 });
