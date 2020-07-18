@@ -99,6 +99,13 @@ h1, h2, h3, h4, h5, h6 {
           transform: translateX(-30%);
 }
 
+@media screen and (max-width: 666px) {
+  .content_active {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
