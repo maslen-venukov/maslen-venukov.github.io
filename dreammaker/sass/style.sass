@@ -19,6 +19,15 @@ h1, h2, h3, h4, h5, h6
   padding: 0 15px
   margin: 0 auto
 
+.wrapper
+  position: relative
+  overflow-x: hidden
+
+.content
+  transition: .4s
+  &_active
+    transform: translateX(-30%)
+
 // Header
 
 .header
@@ -41,18 +50,74 @@ h1, h2, h3, h4, h5, h6
       font-family: sans-serif
       font-size: 22px
       height: 8vh
+      @media screen and (max-width: 480px)
+        font-size: 0
       img
         height: 100%
         margin-right: 20px
     .nav
+      @media screen and (max-width: 1024px)
+        position: fixed
+        top: 0
+        right: 0
+        width: 30%
+        min-width: 200px
+        height: 100vh
+        transform: translateX(100%)
+        transition: .4s
+        &_active
+          transform: translateX(0)
+      .nav__button
+        display: none
+        @media screen and (max-width: 1024px)
+          display: block
+          span
+            display: block
+            position: absolute
+            top: 33px
+            right: 106%
+            width: 30px
+            height: 2px
+            background: #fff
+            &:before
+              content: ''
+              position: absolute
+              top: -8px
+              right: 0
+              width: 20px
+              height: 2px
+              transition: .2s linear
+              background: #fff
+            &:after
+              content: ''
+              position: absolute
+              top: 8px
+              width: 20px
+              height: 2px
+              background: #fff
+              transition: .2s linear
+          &_active
+            span
+              &::before
+                width: 30px
+              &::after
+                width: 30px
       .nav__inner
         display: flex
         justify-content: space-between
         align-items: center
+        @media screen and (max-width: 1024px)
+          height: 100%
+          justify-content: center
+          flex-direction: column
         .nav__item
           padding: 0 30px
           transition: .2s linear
-          &:hover
+          @media screen and (max-width: 1024px)
+            font-weight: 700
+            text-transform: uppercase
+            margin-bottom: 30px
+          &:hover, &:focus
             padding: 15px 60px
             background: $btn-clr
             border-radius: 10px
@@ -63,6 +128,8 @@ h1, h2, h3, h4, h5, h6
     color: #fff
     .header__inner
       .nav
+        @media screen and (max-width: 1024px)
+          background: $btn-clr
         .nav__inner
           .nav__item
             &:hover
@@ -114,13 +181,13 @@ h1, h2, h3, h4, h5, h6
   color: #fff
   font-weight: 600
   transition: background .2s linear
-  &:hover
+  &:hover, &:focus
     background: lighten($btn-clr, 7%)
   &_red
     background: #f01f35
-    &:hover
+    &:hover, &:focus
       background: lighten(#f01f35, 17%)
-  &:hover
+  &:hover, &:focus
     color: #fff
 
 // Main
@@ -192,6 +259,8 @@ h1, h2, h3, h4, h5, h6
 // People
 
 .people
+  @media screen and (max-width: 1100px)
+    display: none
   .people__inner
     display: flex
     .people__text
@@ -282,33 +351,52 @@ h1, h2, h3, h4, h5, h6
   .faq__inner
     display: flex
     justify-content: space-between
+    @media screen and (max-width: 768px)
+      flex-direction: column
     .faq__column
       position: relative
       flex-basis: 50%
       margin-bottom: 130px
-      @media screen and ( max-width: 1440px)
+      @media screen and (max-width: 1440px)
         margin-bottom: 100px
-      @media screen and ( max-width: 1024px)
+      @media screen and  (max-width: 1024px)
         margin-bottom: 80px
+      @media screen and (max-width: 768px)
+        margin-bottom: 0
+        &:last-child
+          margin-bottom: 40px
       .faq__title
         margin-bottom: 40px
       .faq__img
+        @media screen and (max-width: 768px)
+          display: none
       .faq__circle
         top: 0
         right: -80%
+        @media screen and (max-width: 768px)
+          display: none
   .faq__button
     color: #fff
     text-transform: uppercase
+    display: flex
+    justify-content: center
+    align-items: center
     padding: 30px 220px
+    width: 90%
     max-width: 550px
-    display: block
     margin: 0 auto
+    @media screen and (max-width: 660px)
+      padding: 20px
+    @media screen and (max-width: 510px)
+      padding: 15px
 
 // Accordion
 
 .accordion
   color: #402b2b
   width: 90%
+  @media screen and (max-width: 768px)
+    margin: 0 auto
   &_second
     .accordion__item
       &:first-child
@@ -476,6 +564,12 @@ h1, h2, h3, h4, h5, h6
                   height: 12px
               span
                 font-size: 12px
+  .features__circle
+    @media screen and (max-width: 1024px)
+      &:not(.features__circle-1)
+        display: none
+    @media screen and (max-width: 768px)
+      display: none
   .features__circle-1
     bottom: 5%
     left: -20%
@@ -539,7 +633,12 @@ h1, h2, h3, h4, h5, h6
         text-transform: uppercase
         letter-spacing: .05em
         margin-bottom: 30px
+        @media screen and ( max-width: 768px)
+          display: block
+          margin: 0 auto 30px
       .form__text
+        @media screen and ( max-width: 768px)
+          text-align: center
         .form__link
           font-weight: 500
           color: #f01f35
@@ -591,7 +690,7 @@ h1, h2, h3, h4, h5, h6
           transition: .2s linear
           @media screen and ( max-width: 768px)
             color: lighten($btn-clr, 7%)
-          &:hover
+          &:hover, &:focus
             font-size: 20px
             font-weight: 500
             color: #fff
@@ -630,7 +729,7 @@ h1, h2, h3, h4, h5, h6
           transition: transform .2s linear
           &:last-child
             margin-right: 0
-          &:hover
+          &:hover, &:focus
             transform: scale(1.15)
           i
             font-size: 20px
@@ -667,6 +766,9 @@ h1, h2, h3, h4, h5, h6
   height: 56px
   background: #eee
   border-radius: 50%
+  transition: background .2s linear
+  &:hover, &:focus
+    background: darken(#eee, 10%)
   @media screen and ( max-width: 768px)
     width: 36px
     height: 36px
@@ -679,9 +781,13 @@ h1, h2, h3, h4, h5, h6
     height: 10px
     border-top: 2px solid #b7b7b7
     border-right: 2px solid #b7b7b7
+    transition: border .2s linear
     @media screen and ( max-width: 768px)
       width: 8px
       height: 8px
+  &:hover::after
+    border-top: 2px solid darken(#b7b7b7, 10%)
+    border-right: 2px solid darken(#b7b7b7, 10%)
 .slick-arrow.slick-prev
   left: 10px
   &::after

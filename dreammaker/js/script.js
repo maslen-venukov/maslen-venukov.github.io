@@ -48,4 +48,12 @@ $(document).ready(function () {
         ]
     });
 
+    // Nav
+    $('.nav__button').click(function (e) { 
+        e.preventDefault();
+        $('.nav__button').toggleClass('nav__button_active');
+        $('.nav').toggleClass('nav_active');
+        $('.content').toggleClass('content_active');
+    });
+
 });
