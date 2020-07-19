@@ -36,18 +36,12 @@ $(document).ready(function() {
 	function checkWidth() {
 		const windowWidth = $('body').innerWidth(),
 		pricingSlider = $(".pricing-inner-row");
-		// socialSlider = $(".social-inner-list");
 		if(windowWidth < 1171){
 			pricingSlider.addClass('owl-carousel owl-theme owl-loaded');
 		} else {
 			pricingSlider.removeClass('owl-carousel owl-theme owl-loaded');
-		}
-		// if(windowWidth < 1025){
-		// 	socialSlider.addClass('owl-carousel owl-theme owl-loaded');
-		// } else {
-		// 	socialSlider.removeClass('owl-carousel owl-theme owl-loaded');
-		// }
-	}
+		};
+	};
 
 	checkWidth(); // проверит при загрузке страницы
 

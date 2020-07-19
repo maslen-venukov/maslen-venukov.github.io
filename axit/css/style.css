@@ -256,7 +256,7 @@ body {
   position: relative;
   font-size: 36px;
   font-weight: 400;
-  color: #212121;
+  color: #333;
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 30px;
@@ -274,7 +274,7 @@ body {
 .section__title_mini {
   position: relative;
   font-size: 20px;
-  color: #212121;
+  color: #333;
   font-weight: 700;
   padding-bottom: 25px;
   margin-bottom: 25px;
@@ -413,6 +413,7 @@ body {
   }
 }
 .intro-inner-form {
+  position: relative;
   width: 360px;
   height: 360px;
   background: #fff;
@@ -457,6 +458,7 @@ body {
   width: 100%;
   border-radius: 0 0 4px 4px;
   padding: 25px 0;
+  position: absolute;
 }
 
 .form__input, .form__textarea {
@@ -951,7 +953,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .contact-inner-form-inner-message__textarea {
-    height: 100px;
+    height: 39px;
   }
 }
 .contact-inner-form__button {

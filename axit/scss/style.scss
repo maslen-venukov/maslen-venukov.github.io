@@ -1,6 +1,7 @@
 @import 'normalize.scss';
 
 $hl-clr: #ff8b38; // Highlighting color
+$titles-clr: #333;
 
 html,
 body {
@@ -44,7 +45,7 @@ body {
 			background: #000;
 			border-radius: 12px;
 			padding: 50px 0 20px 0;
-			transform: translateY(-48%); // -48 / 32
+			transform: translateY(-48%);
 		}
 		&_active {
 			transform: translateY(32%);
@@ -121,7 +122,6 @@ body {
 				height: 3px;
 				background: #fff;
 				transition: .4s;
-				// transform-origin: center center;
 			}
 			&:before {
 				margin-top: -8px;
@@ -189,7 +189,7 @@ body {
 		position: relative;
 		font-size: 36px;
 		font-weight: 400;
-		color: #212121;
+		color: $titles-clr;
 		text-align: center;
 		text-transform: uppercase;
 		padding-bottom: 30px;
@@ -207,7 +207,7 @@ body {
 	&__title_mini {
 		position: relative;
 		font-size: 20px;
-		color: #212121;
+		color: $titles-clr;
 		font-weight: 700;
 		padding-bottom: 25px;
 		margin-bottom: 25px;
@@ -335,6 +335,7 @@ body {
 			}
 		}
 		&-form {
+			position: relative;
 			width: 360px;
 			height: 360px;
 			background: #fff;
@@ -373,6 +374,7 @@ body {
 				width: 100%;
 				border-radius: 0 0 4px 4px;
 				padding: 25px 0;
+				position: absolute;
 			}
 		}
 	}
@@ -417,7 +419,7 @@ body {
 			&__title {
 				font-size: 20px;
 				font-weight: 700;
-				color: #333;
+				color: $titles-clr;
 			}
 			&__text {
 				color: #86878b;
@@ -660,7 +662,7 @@ body {
 					}
 				}
 				&__title {
-					color: #333;
+					color: $titles-clr;
 					text-align: center;
 				}
 				&__text {}
@@ -800,7 +802,7 @@ body {
 						&__name {
 							font-size: 20px;
 							font-weight: 700;
-							color: #333;
+							color: $titles-clr;
 						}
 						&__profession {
 							color: #86878b;
@@ -867,7 +869,7 @@ body {
 						width: 100%;
 						height: 100%;
 						@media screen and (max-width: 600px) {
-							height: 100px;
+							height: 39px;
 						}
 					}
 				}
@@ -918,12 +920,6 @@ body {
 	}
 }
 
-// @media screen and (max-width: 1024px) {
-// 	.social-inner-list__item {
-// 		// margin: 0 auto;
-// 	}
-// }
-
 .owl-carousel.owl-theme {
 	.owl-dots {
 		.owl-dot.active span {
@@ -942,7 +938,7 @@ body {
 			color: $hl-clr;
 			span {
 				font-size: 40px;
-				color: #333;
+				color: $titles-clr;
 			}
 		}
 		.owl-prev {
@@ -977,21 +973,7 @@ body {
 		}
 		[class*=owl-]:hover {
 			background: transparent;
-			color: #333;
+			color: $titles-clr;
 		}
 	}
 }
-
-// .social-inner-list.owl-carousel.owl-theme .owl-nav {
-// 	.owl-prev,
-// 	.owl-next {
-// 		top: 0;
-// 		transform: translateY(0);
-// 	}
-// 	.owl-prev {
-// 		left: 5%;
-// 	}
-// 	.owl-next {
-// 		right: 5%;
-// 	}
-// }
