@@ -1,0 +1,533 @@
+@import '_normalize'
+
+// Fonts
+
+@font-face
+  font-family: 'Proxima Nova'
+  src: url('../fonts/ProximaNova-Regular.eot')
+  src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ProximaNova-Regular.woff') format('woff'),
+  url('../fonts/ProximaNova-Regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Proxima Nova'
+  src: url('../fonts/ProximaNova-Bold.eot')
+  src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ProximaNova-Bold.woff') format('woff'),
+  url('../fonts/ProximaNova-Bold.ttf') format('truetype')
+  font-weight: 700
+  font-style: normal
+
+@font-face
+  font-family: 'Proxima Nova'
+  src: url('../fonts/ProximaNova-Black.eot')
+  src: url('../fonts/ProximaNova-Black.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ProximaNova-Black.woff') format('woff'),
+  url('../fonts/ProximaNova-Black.ttf') format('truetype')
+  font-weight: 900
+  font-style: normal
+
+// Vars
+
+$btn-clr: #0f33ff
+
+// General
+
+html,
+body
+  font-family: 'Proxima Nova', sans-serif
+  color: #fff
+  background: #0b0b0c
+  overflow: hidden
+  perspective: 4000px
+
+.wrapper
+  position: relative
+  z-index: 100
+  transition: transform .2s linear, border .2s linear
+  &_active
+    transform: rotateX(0deg) rotateY(20deg) rotateZ(0deg) scale(.5) translateX(-40%) translateY(-20%)
+    border: 20px solid $btn-clr
+    cursor: pointer
+.title
+  font-size: 18px
+  font-weight: 700
+  line-height: 1
+  text-transform: uppercase
+
+.text
+  font-size: 16px
+
+// Container
+
+.container
+  width: 100%
+  max-width: 930px
+  padding: 0 15px
+  margin: 0 auto
+
+// Main Slider
+
+.main-slider
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 13%
+    z-index: 1
+    transform: translateX(1px)
+    width: 2px
+    height: 80%
+    background: #1f1f1f
+  .slick-dots
+    position: absolute
+    top: 42%
+    transform: translateY(-50%)
+    left: 13%
+    z-index: 2
+  .slick-dots li
+    position: relative
+    width: 4px
+    height: 4px
+    background: #fff
+    border-radius: 50%
+    margin-bottom: 100px
+    button
+      position: absolute
+      top: -8px
+      left: 16px
+      font-size: 18px
+      background: transparent
+      transition: left .2s linear, color .2s linear
+  .slick-dots li.slick-active
+    background: $btn-clr
+    button
+      left: -20px
+      color: $btn-clr
+  .slick-dots li button
+
+// Figure
+
+.figure
+  position: absolute
+  z-index: -1
+  background: $btn-clr
+  &_square
+    width: 12px
+    height: 12px
+  &_circle
+    width: 30px
+    height: 30px
+    border-radius: 50%
+  &_rhombus
+    width: 12px
+    height: 12px
+    transform: rotate(45deg)
+  &_triangle
+    width: 0
+    height: 0
+    background: transparent
+    border: 7px solid transparent
+    border-bottom: 14px solid $btn-clr
+
+// Header
+
+.header
+  position: relative
+  z-index: 1000
+  .header__inner
+    width: 100%
+    max-width: 1200px
+    padding: 0 15px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 0
+    .header__logo
+      flex-basis: 33%
+      display: flex
+      font-size: 16px
+      font-weight: 700
+      text-transform: uppercase
+      letter-spacing: 1px
+      img
+        margin-right: 10px
+    .header__button
+      flex-basis: 33%
+    .nav
+      flex-basis: 33%
+      .nav__button
+        margin-left: auto
+        width: 50px
+        height: 50px
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+        span
+          position: relative
+          display: block
+          width: 18px
+          height: 2px
+          background: #fff
+          transition: width .2s linear
+          &::before, &::after
+            content: ''
+            position: absolute
+            display: block
+            left: 50%
+            transform: translateX(-50%)
+            width: 24px
+            height: 2px
+            background: #fff
+          &::before
+            top: -7px
+          &::after
+            top: 7px
+        &:hover
+          span
+            width: 24px
+      .nav__inner
+        display: flex
+        align-items: center
+        flex-direction: column
+        position: absolute
+        height: 100vh
+        top: 200%
+        right: 20%
+        transform: translateX(400%)
+        transition: .2s linear
+        .nav__item
+          position: relative
+          font-size: 55px
+          font-weight: 900
+          margin-bottom: 30px
+          &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -25%)
+            display: block
+            width: 120%
+            height: 15px
+            background: $btn-clr
+            opacity: 0
+            transition: opacity .2s linear
+          &:hover::before, &:focus::before
+            opacity: 1
+          &:last-child
+            margin-bottom: 0
+        &_active
+          transform: translateX(0)
+
+
+// Section
+
+.section
+  min-height: 100vh
+  &__title
+    font-weight: 900
+    line-height: 1
+    &_lg
+      font-size: 82px
+    &_sm
+      text-align: center
+      font-size: 30px
+
+// Button
+
+.button
+  padding: 10px 15px
+  max-width: 90px
+  max-height: 30px
+  background: $btn-clr
+  font-weight: 700
+  text-transform: uppercase
+  display: flex
+  justify-content: center
+  align-items: center
+
+.home
+  .home__inner
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    .home__col
+      position: relative
+      flex-basis: 50%
+      .home__title
+        max-width: 480px
+        margin: 8vh 0
+      .home__button
+        position: relative
+        background: transparent
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          right: -30px
+          z-index: -1
+          width: 90px
+          height: 30px
+          background: $btn-clr
+          transition: width .2s linear
+        &::after
+          content: ''
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          right: -15px
+          width: 18px
+          height: 14px
+          background: url(../img/home/arrow.png)
+        &:hover::before
+          width: 120px
+      .home__img
+        position: absolute
+        bottom: -100px
+        right: 0
+    .home__row
+      width: 100%
+      display: flex
+      justify-content: space-between
+      border-top: 2px solid #151515
+      margin-top: 98px
+      .row-home__item
+        position: relative
+        flex-basis: 33%
+        opacity: .1
+        cursor: pointer
+        transition: opacity .2s linear
+        margin-right: 50px
+        &:last-child
+          margin-right: 0
+        &::before
+          content: ''
+          position: absolute
+          top: -2px
+          left: 0
+          width: 30px
+          height: 6px
+          background: $btn-clr
+          opacity: 0
+          transition: .2s linear
+        &:hover::before
+          opacity: 1
+        &:hover
+          opacity: 1
+        .row-home__title
+          margin: 4vh 0 2vh
+        .row-home__text
+
+// Works
+
+.works
+  .works__inner
+    .works__title
+      margin: 8vh 0
+    .works__slider
+      display: flex
+      justify-content: space-between
+      .slider-works__item
+        text-align: center
+        .slider-works__img
+          height: 330px
+          width: 330px
+          margin: 0 auto 3vh
+          img
+            width: 100%
+            height: 100%
+            border-radius: 50%
+            object-fit: cover
+        .slider-works__title
+          margin-bottom: 3vh
+        .slider-works__text
+
+.works-slider
+  position: relative
+  .slick-arrow
+    font-size: 0
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 1000
+    width: 55px
+    height: 55px
+    background: url(../img/works/arrow.png) center no-repeat
+    background-size: cover
+  .slick-arrow.slick-prev
+    transform: translateY(-50%) rotate(-180deg)
+    left: 0
+  .slick-arrow.slick-next
+    right: 0
+
+// About
+
+.about
+  .about__inner
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    .about__col
+      position: relative
+      flex-basis: 50%
+      .about_triangle
+        top: 5%
+        left: 45%
+        transform: rotate(45deg)
+      .about_rhombus
+        top: 20%
+        right: 10%
+      .about_circle
+        top: 38%
+        left: 40%
+      .about_square
+        bottom: 28%
+        left: 60%
+      .about__title
+        margin: 8vh 0
+      .about__button
+        position: relative
+        margin-bottom: 6vh
+        background: transparent
+        &::after
+          content: ''
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          right: -15px
+          width: 18px
+          height: 14px
+          background: url(../img/home/arrow.png)
+          transition: right .2s linear
+        &:hover::after
+          right: -20px
+      .about__img
+        position: absolute
+        right: 0
+        bottom: -100px
+    .about__row
+      width: 100%
+      display: flex
+      .row-about__item
+        margin-right: 30px
+        cursor: pointer
+        &:hover
+          .row-about__title
+            transform: translate(20px, -16px)
+        &:last-child
+          margin-right: 0
+        .row-about__img
+          width: 180px
+          height: 100px
+          border: 10px solid $btn-clr
+          img
+            width: 100%
+            height: 100%
+            object-fit: cover
+        .row-about__title
+          transform: translate(20px, -6px)
+          transition: transform .2s linear
+
+
+// Contact
+
+.contact
+  background: url(../img/contact/map.png) center no-repeat
+  background-size: cover
+  .contact__inner
+    display: flex
+    justify-content: flex-end
+    .contact__card
+      display: flex
+      align-items: center
+      flex-direction: column
+      text-align: center
+      font-weight: 700
+      min-width: 300px
+      min-height: 350px
+      background: #0b0b0b
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, .75)
+      padding: 40px 50px
+      margin-top: 140px
+      .contact__item
+        margin-bottom: 2vh
+      .contact__link
+        font-weight: 700
+        text-transform: uppercase
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 130px
+        height: 40px
+        &:nth-last-child(odd)
+          background: $btn-clr
+        &:nth-last-child(even)
+          background: #ea4c89
+          
+
+// Hire
+
+.hire
+  .hire__inner
+    .hire__title
+      margin: 8vh 0
+    .hire__form
+      font-size: 16px
+      font-weight: 700
+      .hire__row
+        display: flex
+        justify-content: center
+        &:nth-last-child(2)
+          margin-bottom: 6vh
+        .hire__item
+          position: relative
+          padding: 10px 50px
+          border: 2px solid #fff
+          margin: 0 4% 4% 0
+          cursor: pointer
+          transition: background .2s linear, border-color .2s linear
+          &::before
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 10%
+            width: 19px
+            height: 14px
+            background: url(../img/hire/mark.png)
+            opacity: 0
+            transition: opacity .2s linear
+          &:last-child
+            margin-right: 0
+        .hire__checkbox
+          display: none
+          &:checked+.hire__item
+            background: $btn-clr
+            border-color: $btn-clr
+            &::before
+              opacity: 1
+        .hire__input
+          width: 315px
+          font-size: 30px
+          background: transparent
+          padding: 10px 0
+          border-bottom: 1px solid #fff
+          margin-right: 65px
+          &:last-child
+            margin-right: 0
+          &::placeholder
+            color: inherit
+        .hire__button
+          display: block
+          max-width: 400px
+          width: 100%
+          max-height: 100px
+          font-size: 16px
+          font-weight: 700
+          line-height: 30px
