@@ -1,0 +1,367 @@
+@import '_normalize'
+
+html, body
+  font-family: 'Open Sans', sans-serif
+  font-size: 18px
+  color: #4b4f51
+
+.container
+  width: 100%
+  max-width: 1470px
+  padding: 0 15px
+  margin: 0 auto
+
+@mixin RedHatDisplay
+  font-family: 'Red Hat Display', sans-serif
+  font-weight: 700
+
+$main-clr: #fa5652
+$title-clr: #035755
+$btn-clr: #fb4c47
+
+// Section
+
+.section
+  margin: 100px 0
+  &__suptitle
+    @include RedHatDisplay
+    font-size: 29px
+    line-height: 1.24
+    color: $main-clr
+    margin-bottom: 1vh
+  &__title
+    @include RedHatDisplay
+    font-size: 50px
+    line-height: 1.19
+    color: $title-clr
+    margin-bottom: 2vh
+  &__text
+    margin-bottom: 10vh
+
+// Button
+
+.button
+  display: inline-block
+  color: #fff
+  font-weight: 700
+  border-radius: 65px
+  background: $btn-clr
+  padding: 20px 60px
+
+// Header
+
+.header
+  position: fixed
+  top: 0
+  width: 100%
+  height: 10vh
+  padding: 15px 0
+  .header__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .header__logo
+    .header__nav
+      .nav__inner
+        .nav__item
+          &:last-child
+            font-weight: 600
+            color: $btn-clr
+            border-radius: 45px
+            border: 2px solid $btn-clr
+            padding: 15px 45px
+            margin-right: 0
+            &:hover::after
+              display: none
+
+
+// Logo
+
+.logo
+  display: flex
+  align-items: center
+  @include RedHatDisplay
+  img
+    margin-right: 15px
+
+// Nav
+
+.nav
+  .nav__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .nav__item
+      position: relative
+      color: $title-clr
+      margin-right: 45px
+      transition: color .2s linear
+      &:hover
+        color: $main-clr
+      &::after
+        content: ''
+        position: absolute
+        bottom: 0px
+        left: 50%
+        transform: translateX(-50%)
+        width: 6px
+        height: 6px
+        background: $main-clr
+        border-radius: 50%
+        opacity: 0
+        transition: opacity .2s linear, bottom .2s linear
+      &:hover::after
+        opacity: 1
+        bottom: -10px
+
+
+// Intro
+
+.intro
+  min-height: 100vh
+  padding-top: 14vh
+  margin-top: 0
+  .intro__inner
+    display: flex
+    .intro__content
+      margin-top: 14vh
+      max-width: 50%
+      .intro__suptitle
+        font-size: 32px
+        margin-bottom: 2vh
+      .intro__title
+        font-size: 52px
+      .intro__text
+        font-size: 24px
+        margin-bottom: 4vh
+      .intro__button
+        box-shadow: 0px 8px 87px rgba(0, 0, 0, .1)
+    .intro__img
+
+// About
+
+.about
+  .about__inner
+    display: flex
+    .about__img
+      flex-basis: 50%
+      margin-right: 8vw
+    .about__content
+      flex-basis: 50%
+      .about__suptitle
+      .about__title
+      .about__text
+        font-size: 20px
+        margin-bottom: 4vh
+      .about__button
+        color: $main-clr
+        background: rgba(250, 86, 82, .15)
+
+// Contagion
+
+.contagion
+  .contagion__inner
+    text-align: center
+    .contagion__suptitle
+    .contagion__title
+    .contagion__text
+    .contagion__cards
+      display: flex
+      justify-content: space-between
+      .contagion__card
+        flex-basis: 33%
+        max-width: 460px
+        display: flex
+        flex-direction: column
+        align-items: center
+        background: #fff
+        box-shadow: 0px 35px 87px rgba(0, 0, 0, .11)
+        border-radius: 10px
+        padding: 65px 50px
+        transition: border .2s linear
+        &:hover
+          border-bottom: 6px solid $main-clr
+        .card-contagion__thumb
+          width: 270px
+          height: 250px
+          margin-bottom: 50px
+        .card-contagion__title
+          font-size: 36px
+          line-height: 1.47
+          margin-bottom: 15px
+        .card-contagion__text
+
+// Symptoms
+
+.symptoms
+  .symptoms__inner
+    text-align: center
+    .symptoms__suptitle
+    .symptoms__title
+    .symptoms__text
+    .symptoms__img
+      img
+        margin: 0 auto
+
+// Prevention
+
+.prevention
+  .prevention__inner
+    text-align: center
+    .prevention__suptitle
+    .prevention__title
+    .prevention__text
+    .prevention__item
+      text-align: left
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 50px
+      &:nth-child(odd)
+        flex-direction: row-reverse
+      .item-prevention__content
+        position: relative
+        flex-basis: 50%
+        max-width: 530px
+        margin: 0 auto
+        .item-prevention__num
+          position: absolute
+          top: 0
+          left: -115px
+          @include RedHatDisplay
+          font-size: 44px
+          color: $main-clr
+          display: flex
+          justify-content: center
+          align-items: center
+          line-height: 1
+          width: 75px
+          height: 75px
+          background: rgba(250, 86, 82, .15)
+          border-radius: 50%
+          padding: 12px
+        .item-prevention__title
+          font-size: 47px
+          line-height: 1.1
+          color: $title-clr
+          margin-bottom: 2vh
+        .item-prevention__text
+      .item-prevention__img
+        flex-basis: 50%
+        max-width: 550px
+        max-height: 500px
+
+// Gradient
+
+.gradient
+  background: linear-gradient(360deg, rgba(255, 241, 241, 0.5) 0%, rgba(255, 241, 241, 0) 108.69%)
+
+// Map
+
+.map
+  .map__inner
+    display: flex
+    justify-content: space-between
+    iframe
+      width: 60%
+      height: 600px
+    .map__card
+      color: $title-clr
+      line-height: 1
+      width: 35%
+      box-shadow: 0px 7px 95px rgba(0, 0, 0, .07)
+      border-radius: 10px
+      padding: 50px 70px 50px 50px
+      .card-map__title
+        font-size: 47px
+        margin-bottom: 50px
+      .card-map__item
+        display: flex
+        align-items: center
+        font-weight: 700
+        margin-bottom: 30px
+        &:last-child
+          margin-bottom: 0
+        .item-card-map__flag
+          flex-basis: 25%
+          img
+            width: 50px
+            height: 35px
+            border-radius: 3px
+            object-fit: cover
+        .item-card-map__country
+          flex-basis: 35%
+          font-size: 30px
+        .item-card-map__num
+          position: relative
+          flex-basis: 40%
+          text-align: right
+          font-size: 24px
+          &::after
+            content: ''
+            position: absolute
+            right: -30px
+            border: 8px solid transparent
+            border-bottom: 10px solid $main-clr
+            border-radius: 4px
+
+
+// Contact
+
+.contact
+  .contact__inner
+    text-align: center
+    .contact__title
+      max-width: 660px
+      margin: 0 auto 60px
+    .contact__form
+      position: relative
+      .form-contact__input
+        background: #fff
+        font-size: 22px
+        padding: 45px 270px 45px 45px
+        width: 50%
+        box-shadow: 0px 8px 80px rgba(0, 0, 0, .06)
+        border-radius: 57px
+      .form-contact__button
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 22px
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 27%
+
+// Footer
+
+.footer
+  .footer__inner
+    font-size: 22px
+    .footer__row
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 50px
+      &:last-child
+        margin-bottom: 0
+      .footer__logo
+        width: 33%
+      .footer__nav
+      .footer__social
+        width: 33%
+        text-align: right
+        .social-footer__item
+          padding: 5px
+          margin-right: 30px
+          &:last-child
+            margin-right: 0
+          i
+            color: $title-clr
+            transition: color .2s linear
+            &:hover
+              color: $main-clr
+      .footer__copyright
+        text-align: center
+        width: 100%
+        margin-bottom: 30px
