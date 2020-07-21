@@ -116,9 +116,17 @@ html, body {
 .header {
   position: fixed;
   top: 0;
+  z-index: 1000;
   width: 100%;
-  height: 10vh;
+  height: 95px;
   padding: 15px 0;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: border .2s linear;
+  transition: border .2s linear;
+}
+
+.header_bordered {
+  border-bottom: 2px solid #fa5652;
 }
 
 .header .header__inner {
@@ -568,12 +576,16 @@ html, body {
 
 .footer .footer__inner .footer__row .footer__social .social-footer__item i {
   color: #035755;
-  -webkit-transition: color .2s linear;
-  transition: color .2s linear;
+  -webkit-transition: color .2s linear, -webkit-transform .2s linear;
+  transition: color .2s linear, -webkit-transform .2s linear;
+  transition: color .2s linear, transform .2s linear;
+  transition: color .2s linear, transform .2s linear, -webkit-transform .2s linear;
 }
 
 .footer .footer__inner .footer__row .footer__social .social-footer__item i:hover {
   color: #fa5652;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .footer .footer__inner .footer__row .footer__copyright {
