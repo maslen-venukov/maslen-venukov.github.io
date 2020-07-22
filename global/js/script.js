@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    // Main Slider
+
     const mainSlider = $('.main-slider');
 
     mainSlider.slick({
@@ -10,7 +12,15 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        dots: true
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    dots: false,
+                }
+            }
+        ]
     });
 
     mainSlider.on('wheel', (function(e) {
@@ -22,9 +32,13 @@ $(document).ready(function () {
         }
     }));
 
+    // Works Slider
+
     $('.works-slider').slick({
         arrows: true,
     });
+
+    // Parallax
     
     $(window).mousemove(function (e) {
         let offsetX = 0.5 - e.pageX / $(window).width();
@@ -47,6 +61,8 @@ $(document).ready(function () {
         });
     });
 
+    // Nav button
+
     $('.nav__button').click(function (e) { 
         e.preventDefault();
         $('.wrapper').toggleClass('wrapper_active');
@@ -61,11 +77,30 @@ $(document).ready(function () {
         };
     });
 
-// opacity: 1; height: 100%; transform: translate3d(0px, -1576px, 0px);
-// transform: translate3d(0px, -788px, 0px);
-// transform: translate3d(0px, -1576px, 0px);
+    // Navigation
 
-// class="home section slick-current slick-active" aria-hidden="false" tab-index="0"
-// class="works section" aria-hidden="true" tab-index="-1"
+    $('.nav__inner .nav__item').click(function (e) { 
+        e.preventDefault();
+        const index = $(this).index();
+        console.log(index);
+        const slideStr = '#slick-slide-control0' + index;
+        const slide = $(slideStr);
+        console.log(slide);
+        slide.click();
+    });
+
+    // Hire Us
+
+    const hireUsSection = $('#slick-slide-control04');
+
+    $('.header__button').click(function (e) { 
+        e.preventDefault();
+        hireUsSection.click();
+    });
+
+    $('.home__button').click(function (e) { 
+        e.preventDefault();
+        hireUsSection.click();
+    });
 
 });

@@ -1,33 +1,5 @@
-@import '_normalize'
-
-// Fonts
-
-@font-face
-  font-family: 'Proxima Nova'
-  src: url('../fonts/ProximaNova-Regular.eot')
-  src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/ProximaNova-Regular.woff') format('woff'),
-  url('../fonts/ProximaNova-Regular.ttf') format('truetype')
-  font-weight: normal
-  font-style: normal
-
-@font-face
-  font-family: 'Proxima Nova'
-  src: url('../fonts/ProximaNova-Bold.eot')
-  src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/ProximaNova-Bold.woff') format('woff'),
-  url('../fonts/ProximaNova-Bold.ttf') format('truetype')
-  font-weight: 700
-  font-style: normal
-
-@font-face
-  font-family: 'Proxima Nova'
-  src: url('../fonts/ProximaNova-Black.eot')
-  src: url('../fonts/ProximaNova-Black.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/ProximaNova-Black.woff') format('woff'),
-  url('../fonts/ProximaNova-Black.ttf') format('truetype')
-  font-weight: 900
-  font-style: normal
+@import 'normalize'
+@import 'fonts'
 
 // Vars
 
@@ -73,21 +45,43 @@ body
 .main-slider
   position: relative
   &::after
-    content: ''
-    position: absolute
-    top: 0
-    left: 13%
-    z-index: 1
-    transform: translateX(1px)
-    width: 2px
-    height: 80%
-    background: #1f1f1f
+    // content: ''
+    // position: absolute
+    // top: 0
+    // left: 13%
+    // z-index: 1
+    // transform: translateX(1px)
+    // width: 2px
+    // height: 80%
+    // background: #1f1f1f
   .slick-dots
     position: absolute
     top: 42%
     transform: translateY(-50%)
     left: 13%
     z-index: 2
+    @media screen and ( max-width: 1450px )
+      left: 12%
+    @media screen and ( max-width: 1400px )
+      left: 10%
+    @media screen and ( max-width: 1330px )
+      left: 8%
+    @media screen and ( max-width: 1280px )
+      left: 6%
+    @media screen and ( max-width: 1130px )
+      left: 4%
+    @media screen and ( max-width: 1060px )
+      left: 3%
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      z-index: -1
+      transform: translate(1px, -8%)
+      width: 2px
+      height: 100%
+      min-height: 500px
+      background: #1f1f1f
   .slick-dots li
     position: relative
     width: 4px
@@ -102,10 +96,12 @@ body
       font-size: 18px
       background: transparent
       transition: left .2s linear, color .2s linear
+      @media screen and ( max-width: 1130px )
+        left: 10px
   .slick-dots li.slick-active
     background: $btn-clr
     button
-      left: -20px
+      left: -14px
       color: $btn-clr
   .slick-dots li button
 
@@ -141,12 +137,11 @@ body
   .header__inner
     width: 100%
     max-width: 1200px
-    padding: 0 15px
+    padding: 20px 15px
     margin: 0 auto
     display: flex
     justify-content: space-between
     align-items: center
-    padding: 20px 0
     .header__logo
       flex-basis: 33%
       display: flex
@@ -194,13 +189,15 @@ body
       .nav__inner
         display: flex
         align-items: center
+        justify-content: center
         flex-direction: column
         position: absolute
         height: 100vh
-        top: 200%
-        right: 20%
-        transform: translateX(400%)
-        transition: .2s linear
+        top: 0
+        right: -100%
+        z-index: -1
+        // transform: translateX(400%)
+        transition: right .4s linear
         .nav__item
           position: relative
           font-size: 55px
@@ -223,7 +220,8 @@ body
           &:last-child
             margin-bottom: 0
         &_active
-          transform: translateX(0)
+          // transform: translateX(0)
+          right: 20%
 
 
 // Section
