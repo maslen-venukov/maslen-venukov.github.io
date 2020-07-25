@@ -69,6 +69,13 @@ html, body {
   color: #333;
 }
 
+@media print {
+  html, body {
+    font-size: 6px;
+    font-weight: 400;
+  }
+}
+
 .wrapper {
   width: 100%;
   max-width: 1260px;
@@ -80,6 +87,12 @@ html, body {
   margin-bottom: 40px;
 }
 
+@media print {
+  .section {
+    margin-bottom: 16px;
+  }
+}
+
 .title {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
@@ -87,9 +100,23 @@ html, body {
   margin-bottom: 12px;
 }
 
+@media print {
+  .title {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+}
+
 .bg-gray {
   background: #f8f8f8;
   padding: 20px;
+}
+
+@media print {
+  .bg-gray {
+    padding: 0;
+  }
 }
 
 .header {
@@ -100,23 +127,58 @@ html, body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 60px 0 40px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media print {
+  .header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 16px;
+  }
+}
+
+.header .header__row {
+  display: none;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+@media print {
+  .header .header__row {
+    display: block;
+  }
 }
 
 .header .header__photo {
   width: 144px;
-  height: 144px;
+  height: auto;
   margin-right: 40px;
+}
+
+@media print {
+  .header .header__photo {
+    margin-right: 16px;
+    width: 60px;
+  }
 }
 
 .header .header__photo img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .header .header__info {
   max-width: 620px;
+}
+
+@media print {
+  .header .header__info {
+    max-width: 260px;
+  }
 }
 
 .header .header__info .header__name {
@@ -127,10 +189,25 @@ html, body {
   margin-bottom: 12px;
 }
 
+@media print {
+  .header .header__info .header__name {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+}
+
 .header .header__info .header__age {
   position: relative;
   padding-right: 10px;
   margin-right: 10px;
+}
+
+@media print {
+  .header .header__info .header__age {
+    padding-right: 4px;
+    margin-right: 4px;
+  }
 }
 
 .header .header__info .header__age::after {
@@ -145,10 +222,42 @@ html, body {
   background: #333;
 }
 
+@media print {
+  .header .header__info .header__age::after {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    border-top: 1px solid #333;
+  }
+}
+
 .header .header__contacts {
   -ms-flex-preferred-size: 28%;
       flex-basis: 28%;
   padding: 20px;
+}
+
+@media print {
+  .header .header__contacts {
+    display: none;
+  }
+}
+
+.header .header__contacts_print {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .header__contacts_print .header__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 16px;
+}
+
+.header .header__contacts_print .header__contact img {
+  margin-right: 4px;
 }
 
 .header .header__contacts .header__contact {
@@ -189,6 +298,12 @@ html, body {
   margin-bottom: 32px;
 }
 
+@media print {
+  .experience .experience__item {
+    margin-bottom: 12px;
+  }
+}
+
 .experience .experience__item .experience-item__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,9 +314,22 @@ html, body {
   margin-bottom: 20px;
 }
 
+@media print {
+  .experience .experience__item .experience-item__header {
+    margin-bottom: 8px;
+  }
+}
+
 .experience .experience__item .experience-item__header .experience-item__title {
   font-size: 17px;
   font-weight: 400;
+}
+
+@media print {
+  .experience .experience__item .experience-item__header .experience-item__title {
+    font-size: 8px;
+    font-weight: 500;
+  }
 }
 
 .experience .experience__item .experience-item__header .experience-item__subtitle {
@@ -209,8 +337,21 @@ html, body {
   color: #666;
 }
 
+@media print {
+  .experience .experience__item .experience-item__header .experience-item__subtitle {
+    font-size: 6px;
+    color: #333;
+  }
+}
+
 .experience .experience__item .experience-item__info {
   margin-bottom: 20px;
+}
+
+@media print {
+  .experience .experience__item .experience-item__info {
+    margin-bottom: 8px;
+  }
 }
 
 .experience .experience__item .experience__list {
@@ -222,7 +363,14 @@ html, body {
   padding-left: 12px;
 }
 
-.experience .experience__item .experience__list .experience-list__item::after {
+@media print {
+  .experience .experience__item .experience__list .experience-list__item {
+    padding-left: 8px;
+    margin-left: 8px;
+  }
+}
+
+.experience .experience__item .experience__list .experience-list__item::before {
   content: '';
   position: absolute;
   top: .65em;
@@ -232,9 +380,25 @@ html, body {
   background: #333;
 }
 
+@media print {
+  .experience .experience__item .experience__list .experience-list__item::before {
+    top: 3px;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    border: 1px solid #333;
+  }
+}
+
 .accordion .accordion__item {
   position: relative;
   margin-bottom: 20px;
+}
+
+@media print {
+  .accordion .accordion__item {
+    margin-bottom: 8px;
+  }
 }
 
 .accordion .accordion__item .accordion__header {
@@ -266,6 +430,21 @@ html, body {
   font-weight: 400;
 }
 
+@media print {
+  .accordion .accordion__item .accordion__title {
+    padding-left: 8px;
+    font-weight: 500;
+  }
+  .accordion .accordion__item .accordion__title::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 4px;
+    border-top: 1px solid #333;
+  }
+}
+
 .accordion .accordion__item .accordion__title::after {
   content: '';
   position: absolute;
@@ -279,13 +458,37 @@ html, body {
   border-top: 2px solid #999;
 }
 
+@media print {
+  .accordion .accordion__item .accordion__title::after {
+    display: none;
+  }
+}
+
 .accordion .accordion__item .accordion__subtitle {
   font-size: 13px;
   color: #666;
 }
 
+@media print {
+  .accordion .accordion__item .accordion__subtitle {
+    font-size: 6px;
+    color: #333;
+    padding-left: 8px;
+    margin-bottom: 4px;
+  }
+}
+
 .accordion .accordion__item .accordion__body {
   display: none;
+}
+
+@media print {
+  .accordion .accordion__item .accordion__body {
+    display: block;
+  }
+  .accordion .accordion__item .accordion__body p {
+    margin-left: 8px;
+  }
 }
 
 .accordion .accordion__item .accordion__body .experience__list {
@@ -309,6 +512,7 @@ html, body {
 }
 
 .skills .skills__list .skills-list__item {
+  position: relative;
   font-size: 13px;
   display: inline-block;
   padding: 4px 12px;
@@ -317,8 +521,29 @@ html, body {
   margin: 0 4px 8px 0;
 }
 
+@media print {
+  .skills .skills__list .skills-list__item {
+    font-size: 6px;
+    background: transparent;
+    padding: 0;
+    margin: 0 3px 0 0;
+  }
+  .skills .skills__list .skills-list__item::after {
+    content: ',';
+    position: absolute;
+    bottom: 0;
+    right: -1.5px;
+  }
+}
+
 .education .education__university {
   margin-bottom: 12px;
+}
+
+@media print {
+  .education .education__university {
+    margin-bottom: 4px;
+  }
 }
 
 .education .education__speciality {
@@ -326,17 +551,43 @@ html, body {
   margin-bottom: 4px;
 }
 
+@media print {
+  .education .education__speciality {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+}
+
 .education .education__year {
   font-size: 13px;
   color: #666;
+}
+
+@media print {
+  .education .education__year {
+    font-size: 6px;
+    color: #333;
+  }
 }
 
 .certificates .certificates__item {
   margin-bottom: 20px;
 }
 
+@media print {
+  .certificates .certificates__item {
+    margin-bottom: 8px;
+  }
+}
+
 .certificates .certificates__item .certificates__name {
   margin-bottom: 8px;
+}
+
+@media print {
+  .certificates .certificates__item .certificates__name {
+    margin-bottom: 2px;
+  }
 }
 
 .certificates .certificates__item .certificates__year {
@@ -346,8 +597,21 @@ html, body {
   color: #666;
 }
 
+@media print {
+  .certificates .certificates__item .certificates__year {
+    font-size: 6px;
+    color: #333;
+  }
+}
+
 .links .links__item {
   margin-bottom: 20px;
+}
+
+@media print {
+  .links .links__item {
+    margin-bottom: 8px;
+  }
 }
 
 .links .links__item .links__link {
@@ -356,7 +620,20 @@ html, body {
   margin-bottom: 8px;
 }
 
+@media print {
+  .links .links__item .links__link {
+    margin-bottom: 2px;
+  }
+}
+
 .links .links__item .links__name {
   font-size: 13px;
   color: #666;
+}
+
+@media print {
+  .links .links__item .links__name {
+    font-size: 6px;
+    color: #333;
+  }
 }
