@@ -1,0 +1,254 @@
+@import 'normalize'
+
+$hl-clr: #f8f8f8 // Highlighting Color
+$main-clr: #333
+$secondary-clr: #666
+
+html, body
+  font-family: 'Roboto', sans-serif
+  font-size: 15px
+  font-weight: 300
+  color: $main-clr
+
+.wrapper
+  width: 100%
+  max-width: 1260px
+  padding: 0 15px
+  margin: 0 auto
+
+.section
+  margin-bottom: 40px
+
+.title
+  font-family: 'Raleway', sans-serif
+  font-weight: 500
+  font-size: 28px
+  margin-bottom: 12px
+
+.bg-gray
+  background: $hl-clr
+  padding: 20px
+
+// Header
+
+.header
+  display: flex
+  justify-content: space-between
+  margin: 60px 0 40px
+  .header__photo
+    width: 144px
+    height: 144px
+    margin-right: 40px
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .header__info
+    max-width: 620px
+    .header__name
+      font-family: 'Raleway', sans-serif
+      font-weight: 600
+      font-size: 36px
+      line-height: 1.2
+      margin-bottom: 12px
+    .header__age
+      position: relative
+      padding-right: 10px
+      margin-right: 10px
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translate(50%, -50%)
+        width: 2px
+        height: 2px
+        background: $main-clr
+    .header__place
+  .header__contacts
+    flex-basis: 28%
+    padding: 20px
+    .header__contact
+      display: flex
+      margin-bottom: 14px
+      &:last-child
+        margin-bottom: 0
+      img
+        width: 20px
+        margin-right: 12px
+
+// Page
+
+.page
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+// Main
+
+.main
+  width: 65%
+
+// Aside
+
+.sidebar
+  width: 28%
+
+// About
+
+.about
+  .about__title
+  .about__text
+
+// Experience
+
+.experience
+  .experience__title
+  .experience__item
+    margin-bottom: 32px
+    .experience-item__header
+      display: flex
+      justify-content: space-between
+      margin-bottom: 20px
+      .experience-item__position
+      .experience-item__place
+      .experience-item__title
+        font-size: 17px
+        font-weight: 400
+      .experience-item__subtitle
+        font-size: 13px
+        color: $secondary-clr
+    .experience-item__info
+      margin-bottom: 20px
+    .experience__list
+      margin-bottom: 20px
+      .experience-list__item
+        position: relative
+        padding-left: 12px
+        &::after
+          content: ''
+          position: absolute
+          top: .65em
+          left: 0
+          width: 2px
+          height: 2px
+          background: $main-clr
+
+// Accordion
+
+.accordion
+  .accordion__item
+    position: relative
+    margin-bottom: 20px
+    .accordion__header
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
+      &:checked ~ .accordion__body
+        display: block
+      &:checked ~ label .accordion__subtitle
+        margin-bottom: 12px
+      &:checked ~ label .accordion__title
+        &::after
+          transform: rotate(-45deg)
+    label
+      cursor: pointer
+    .accordion__title
+      position: relative
+      font-weight: 400
+      &::after
+        content: ''
+        position: absolute
+        top: .3em
+        right: 0
+        transform: rotate(135deg)
+        width: 10px
+        height: 10px
+        border-right: 2px solid #999
+        border-top: 2px solid #999
+    .accordion__subtitle
+      font-size: 13px
+      color: $secondary-clr
+    .accordion__body
+      display: none
+      .experience__list
+        margin-bottom: 0
+
+// Recommendation
+
+.recommendation
+  .recommendation__title
+  .recommendation__item
+    margin-bottom: 20px
+    .recommendation-item__title
+      font-weight: 500
+    .recommendation-item__text
+
+// Skills
+
+.skills
+  .skills__title
+  .skills__list
+    display: flex
+    flex-wrap: wrap
+    .skills-list__item
+      font-size: 13px
+      display: inline-block
+      padding: 4px 12px
+      background: $hl-clr
+      border-radius: 16px
+      margin: 0 4px 8px 0
+
+// Education
+
+.education
+  .education__title
+  .education__university
+    margin-bottom: 12px
+  .education__speciality
+    font-weight: 400
+    margin-bottom: 4px
+  .education__year
+    font-size: 13px
+    color: $secondary-clr
+
+// Certificates
+
+.certificates
+  .certificates__title
+  .certificates__item
+    margin-bottom: 20px
+    .certificates__name
+      margin-bottom: 8px
+    .certificates__year
+      font-size: 13px
+      font-weight: 400
+      line-height: 1.2
+      color: $secondary-clr
+
+// Links
+
+.links
+  .links__title
+  .links__item
+    margin-bottom: 20px
+    .links__link
+      display: block
+      color: #1771e6
+      margin-bottom: 8px
+    .links__name
+      font-size: 13px
+      color: $secondary-clr
+
+// Hobby
+
+.hobby
+  .hobby__title
+  .hobby__text
+
+// languages
+
+.languages
+  .languages__title
+  .languages__text

@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+a,
+a:hover,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #333;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.bg-gray {
+  background: #f8f8f8;
+  padding: 20px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 60px 0 40px;
+}
+
+.header .header__photo {
+  width: 144px;
+  height: 144px;
+  margin-right: 40px;
+}
+
+.header .header__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header .header__info {
+  max-width: 620px;
+}
+
+.header .header__info .header__name {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.header .header__info .header__age {
+  position: relative;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.header .header__info .header__age::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  width: 2px;
+  height: 2px;
+  background: #333;
+}
+
+.header .header__contacts {
+  -ms-flex-preferred-size: 28%;
+      flex-basis: 28%;
+  padding: 20px;
+}
+
+.header .header__contacts .header__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.header .header__contacts .header__contact:last-child {
+  margin-bottom: 0;
+}
+
+.header .header__contacts .header__contact img {
+  width: 20px;
+  margin-right: 12px;
+}
+
+.page {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main {
+  width: 65%;
+}
+
+.sidebar {
+  width: 28%;
+}
+
+.experience .experience__item {
+  margin-bottom: 32px;
+}
+
+.experience .experience__item .experience-item__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.experience .experience__item .experience-item__header .experience-item__title {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.experience .experience__item .experience-item__header .experience-item__subtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+.experience .experience__item .experience-item__info {
+  margin-bottom: 20px;
+}
+
+.experience .experience__item .experience__list {
+  margin-bottom: 20px;
+}
+
+.experience .experience__item .experience__list .experience-list__item {
+  position: relative;
+  padding-left: 12px;
+}
+
+.experience .experience__item .experience__list .experience-list__item::after {
+  content: '';
+  position: absolute;
+  top: .65em;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: #333;
+}
+
+.accordion .accordion__item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.accordion .accordion__item .accordion__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.accordion .accordion__item .accordion__header:checked ~ .accordion__body {
+  display: block;
+}
+
+.accordion .accordion__item .accordion__header:checked ~ label .accordion__subtitle {
+  margin-bottom: 12px;
+}
+
+.accordion .accordion__item .accordion__header:checked ~ label .accordion__title::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.accordion .accordion__item label {
+  cursor: pointer;
+}
+
+.accordion .accordion__item .accordion__title {
+  position: relative;
+  font-weight: 400;
+}
+
+.accordion .accordion__item .accordion__title::after {
+  content: '';
+  position: absolute;
+  top: .3em;
+  right: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #999;
+  border-top: 2px solid #999;
+}
+
+.accordion .accordion__item .accordion__subtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+.accordion .accordion__item .accordion__body {
+  display: none;
+}
+
+.accordion .accordion__item .accordion__body .experience__list {
+  margin-bottom: 0;
+}
+
+.recommendation .recommendation__item {
+  margin-bottom: 20px;
+}
+
+.recommendation .recommendation__item .recommendation-item__title {
+  font-weight: 500;
+}
+
+.skills .skills__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.skills .skills__list .skills-list__item {
+  font-size: 13px;
+  display: inline-block;
+  padding: 4px 12px;
+  background: #f8f8f8;
+  border-radius: 16px;
+  margin: 0 4px 8px 0;
+}
+
+.education .education__university {
+  margin-bottom: 12px;
+}
+
+.education .education__speciality {
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.education .education__year {
+  font-size: 13px;
+  color: #666;
+}
+
+.certificates .certificates__item {
+  margin-bottom: 20px;
+}
+
+.certificates .certificates__item .certificates__name {
+  margin-bottom: 8px;
+}
+
+.certificates .certificates__item .certificates__year {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #666;
+}
+
+.links .links__item {
+  margin-bottom: 20px;
+}
+
+.links .links__item .links__link {
+  display: block;
+  color: #1771e6;
+  margin-bottom: 8px;
+}
+
+.links .links__item .links__name {
+  font-size: 13px;
+  color: #666;
+}
