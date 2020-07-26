@@ -158,6 +158,7 @@ html, body {
   background-position: center;
   background-size: cover;
   width: 144px;
+  min-width: 12%;
   height: 144px;
   margin-right: 40px;
 }
@@ -232,9 +233,11 @@ html, body {
 }
 
 .header .header__contacts {
+  min-width: 28%;
   -ms-flex-preferred-size: 28%;
       flex-basis: 28%;
   padding: 20px;
+  height: 144px;
 }
 
 @media print {
