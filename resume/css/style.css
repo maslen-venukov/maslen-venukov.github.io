@@ -127,8 +127,6 @@ html, body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 60px 0 40px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 @media print {
@@ -136,6 +134,8 @@ html, body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin: 24px 0 16px;
   }
 }
