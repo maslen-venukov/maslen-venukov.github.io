@@ -71,7 +71,7 @@ html, body {
 
 @media print {
   html, body {
-    font-size: 6px;
+    font-size: 10px;
     font-weight: 400;
   }
 }
@@ -102,7 +102,7 @@ html, body {
 
 @media print {
   .title {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
   }
@@ -136,7 +136,7 @@ html, body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    margin-bottom: 16px;
+    margin: 24px 0 16px;
   }
 }
 
@@ -153,22 +153,22 @@ html, body {
 }
 
 .header .header__photo {
+  background-image: url(../img/photo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 144px;
-  height: auto;
+  height: 144px;
   margin-right: 40px;
 }
 
 @media print {
   .header .header__photo {
+    -webkit-print-color-adjust: exact;
     margin-right: 16px;
     width: 60px;
+    height: 60px;
   }
-}
-
-.header .header__photo img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .header .header__info {
@@ -177,7 +177,7 @@ html, body {
 
 @media print {
   .header .header__info {
-    max-width: 260px;
+    max-width: 300px;
   }
 }
 
@@ -191,7 +191,7 @@ html, body {
 
 @media print {
   .header .header__info .header__name {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 4px;
   }
@@ -327,7 +327,7 @@ html, body {
 
 @media print {
   .experience .experience__item .experience-item__header .experience-item__title {
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 500;
   }
 }
@@ -339,7 +339,7 @@ html, body {
 
 @media print {
   .experience .experience__item .experience-item__header .experience-item__subtitle {
-    font-size: 6px;
+    font-size: 10px;
     color: #333;
   }
 }
@@ -382,7 +382,6 @@ html, body {
 
 @media print {
   .experience .experience__item .experience__list .experience-list__item::before {
-    top: 3px;
     width: 0px;
     height: 0px;
     border-radius: 50%;
@@ -398,6 +397,7 @@ html, body {
 @media print {
   .accordion .accordion__item {
     margin-bottom: 8px;
+    page-break-inside: avoid;
   }
 }
 
@@ -438,7 +438,7 @@ html, body {
   .accordion .accordion__item .accordion__title::before {
     content: '';
     position: absolute;
-    top: 3px;
+    top: .65em;
     left: 0;
     width: 4px;
     border-top: 1px solid #333;
@@ -483,9 +483,6 @@ html, body {
 }
 
 @media print {
-  .accordion .accordion__item .accordion__body {
-    display: block;
-  }
   .accordion .accordion__item .accordion__body p {
     margin-left: 8px;
   }
@@ -523,7 +520,7 @@ html, body {
 
 @media print {
   .skills .skills__list .skills-list__item {
-    font-size: 6px;
+    font-size: 10px;
     background: transparent;
     padding: 0;
     margin: 0 3px 0 0;
@@ -533,6 +530,9 @@ html, body {
     position: absolute;
     bottom: 0;
     right: -1.5px;
+  }
+  .skills .skills__list .skills-list__item:last-child::after {
+    display: none;
   }
 }
 
@@ -565,7 +565,7 @@ html, body {
 
 @media print {
   .education .education__year {
-    font-size: 6px;
+    font-size: 10px;
     color: #333;
   }
 }
@@ -599,7 +599,7 @@ html, body {
 
 @media print {
   .certificates .certificates__item .certificates__year {
-    font-size: 6px;
+    font-size: 10px;
     color: #333;
   }
 }
@@ -633,7 +633,7 @@ html, body {
 
 @media print {
   .links .links__item .links__name {
-    font-size: 6px;
+    font-size: 10px;
     color: #333;
   }
 }

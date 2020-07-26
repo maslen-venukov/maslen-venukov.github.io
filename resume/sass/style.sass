@@ -3,6 +3,7 @@
 $hl-clr: #f8f8f8 // Highlighting Color
 $main-clr: #333
 $secondary-clr: #666
+$print-size: 10px
 
 html, body
   font-family: 'Roboto', sans-serif
@@ -10,7 +11,7 @@ html, body
   font-weight: 300
   color: $main-clr
   @media print
-    font-size: 6px
+    font-size: $print-size
     font-weight: 400
 
 .wrapper
@@ -30,7 +31,7 @@ html, body
   font-size: 28px
   margin-bottom: 12px
   @media print
-    font-size: 12px
+    font-size: 16px
     font-weight: 600
     margin-bottom: 8px
 
@@ -49,7 +50,7 @@ html, body
   flex-wrap: wrap
   @media print
     justify-content: flex-start
-    margin-bottom: 16px
+    margin: 24px 0 16px
   .header__row
     display: none
     width: 100%
@@ -57,20 +58,22 @@ html, body
     @media print
       display: block
   .header__photo
+    background-image: url(../img/photo.jpg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
     width: 144px
-    height: auto
+    height: 144px
     margin-right: 40px
     @media print
+      -webkit-print-color-adjust: exact
       margin-right: 16px
       width: 60px
-    img
-      width: 100%
-      // height: 100%
-      object-fit: cover
+      height: 60px
   .header__info
     max-width: 620px
     @media print
-      max-width: 260px
+      max-width: 300px
     .header__name
       font-family: 'Raleway', sans-serif
       font-weight: 600
@@ -78,7 +81,7 @@ html, body
       line-height: 1.2
       margin-bottom: 12px
       @media print
-        font-size: 15px
+        font-size: 18px
         font-weight: 700
         margin-bottom: 4px
     .header__age
@@ -167,13 +170,13 @@ html, body
         font-size: 17px
         font-weight: 400
         @media print
-          font-size: 8px
+          font-size: 12px
           font-weight: 500
       .experience-item__subtitle
         font-size: 13px
         color: $secondary-clr
         @media print
-          font-size: 6px
+          font-size: $print-size
           color: $main-clr
     .experience-item__info
       margin-bottom: 20px
@@ -196,7 +199,6 @@ html, body
           height: 2px
           background: $main-clr
           @media print
-            top: 3px
             width: 0px
             height: 0px
             border-radius: 50%
@@ -210,6 +212,7 @@ html, body
     margin-bottom: 20px
     @media print
       margin-bottom: 8px
+      page-break-inside: avoid
     .accordion__header
       position: absolute
       top: 0
@@ -233,7 +236,7 @@ html, body
         &::before
           content: ''
           position: absolute
-          top: 3px
+          top: .65em
           left: 0
           width: 4px
           border-top: 1px solid $main-clr
@@ -260,7 +263,6 @@ html, body
     .accordion__body
       display: none
       @media print
-        display: block
         p
           margin-left: 8px
       .experience__list
@@ -292,7 +294,7 @@ html, body
       border-radius: 16px
       margin: 0 4px 8px 0
       @media print
-        font-size: 6px
+        font-size: $print-size
         background: transparent
         padding: 0
         margin: 0 3px 0 0
@@ -301,6 +303,8 @@ html, body
           position: absolute
           bottom: 0
           right: -1.5px
+        &:last-child::after
+          display: none
 
 // Education
 
@@ -320,7 +324,7 @@ html, body
     font-size: 13px
     color: $secondary-clr
     @media print
-      font-size: 6px
+      font-size: $print-size
       color: $main-clr
 
 // Certificates
@@ -341,7 +345,7 @@ html, body
       line-height: 1.2
       color: $secondary-clr
       @media print
-        font-size: 6px
+        font-size: $print-size
         color: $main-clr
 
 // Links
@@ -362,7 +366,7 @@ html, body
       font-size: 13px
       color: $secondary-clr
       @media print
-        font-size: 6px
+        font-size: $print-size
         color: $main-clr
 
 // Hobby
