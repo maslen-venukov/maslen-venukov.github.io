@@ -7,26 +7,40 @@ html, body
   font-size: 20px
   background: url(../img/page-bg.jpg) center no-repeat
   background-size: cover
+  overflow-x: hidden
 
 .container
   width: 100%
-  max-width: 1170px
-  padding: 0 15px
+  max-width: 1160px
+  padding: 0 10px
   margin: 0 auto
 
 .main-title
   font-size: 60px
   font-weight: 800
-  line-height: 1.4
+  line-height: 1.2
   text-transform: uppercase
   &_white
     color: #fff
     text-shadow: -4px 4px 2px rgba(#000, .4)
+  @media screen and ( max-width: 425px )
+    font-size: 50px
 
 .main-subtitle
   font-size: 42px
   font-weight: 600
-  line-height: 1.4
+  line-height: 1.2
+  @media screen and ( max-width: 425px )
+    font-size: 30px
+
+.main-phone
+  font-weight: 800
+  font-size: 30px
+  color: #fff
+  text-shadow: -2px 2px 4px rgba(#000, .25)
+  display: none
+  @media screen and ( max-width: 425px )
+    display: block
 
 .title
   font-size: 50px
@@ -36,6 +50,11 @@ html, body
   text-transform: uppercase
   span
     color: #000
+  @media screen and ( max-width: 768px )
+    font-size: 44px
+  @media screen and ( max-width: 425px )
+    font-size: 38px
+    text-align: center
 
 .button
   display: inline-block
@@ -50,6 +69,14 @@ html, body
 .logo
   width: 15vw
   max-width: 250px
+  @media screen and ( max-width: 1024px )
+    width: 30vw
+  @media screen and ( max-width: 768px )
+    width: 40vw
+  @media screen and ( max-width: 600px )
+    width: 50vw
+  @media screen and ( max-width: 425px )
+    width: 60vw
   img
     width: 100%
 
@@ -61,9 +88,25 @@ html, body
   background-size: cover
   .main__inner
     margin-top: 20vh
+    @media screen and ( max-width: 425px )
+      margin-top: 15vh
+      display: flex
+      flex-direction: column
+      align-items: center
     .main__title
+      @media screen and ( max-width: 425px )
+        text-align: center
     .main__subtitle
       margin-bottom: 1vh
+      @media screen and ( max-width: 425px )
+        text-align: center
+    .main__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 15vh
+      @media screen and ( max-height: 615px )
+        margin-top: 10vh
+    .main__phone
 
 // Header
 
@@ -78,6 +121,7 @@ html, body
       font-size: 15px
       display: flex
       justify-content: space-between
+      display: none
       .header-nav__item
         position: relative
         color: #000
@@ -102,6 +146,7 @@ html, body
       display: flex
       justify-content: space-between
       align-items: center
+      display: none
       .fas
         color: $main-clr
         margin-right: 8px
@@ -130,14 +175,42 @@ html, body
       display: flex
       justify-content: space-between
       align-items: center
+      flex-wrap: wrap
       margin-bottom: 12px
+      @media screen and ( max-width: 1040px )
+        align-items: start
+      @media screen and ( max-width: 630px )
+        flex-direction: column
+        align-items: center
       .footer__logo
+        @media screen and ( max-width: 880px )
+          flex-basis: 50%
+        @media screen and ( max-width: 630px )
+          margin-bottom: 20px
+          &.logo
+            width: 100vw
       .footer__nav
         display: flex
+        @media screen and ( max-width: 1040px )
+          flex-direction: column
+        @media screen and ( max-width: 880px )
+          flex-basis: 50%
+          flex-direction: row
+          margin-bottom: 12px
+        @media screen and ( max-width: 630px )
+          flex-direction: column
+          text-align: center
+          margin-bottom: 0
         .footer-nav__col
           display: flex
           flex-direction: column
           margin-right: 40px
+          @media screen and ( max-width: 1040px )
+            margin: 0 0 10px
+          @media screen and ( max-width: 880px )
+            flex-basis: 50%
+          @media screen and ( max-width: 630px )
+            margin-bottom: 30px
           &:last-child
             margin-right: 0
           .footer-nav__item
@@ -145,17 +218,25 @@ html, body
             color: #fff
             transition: color .2s linear
             margin-bottom: 10px
+            @media screen and ( max-width: 630px )
+              margin-bottom: 30px
             &:hover
               color: $main-clr
             &:last-child
               margin-bottom: 0
       .footer__contacts
+        @media screen and ( max-width: 880px )
+          flex-basis: 35%
+        @media screen and ( max-width: 630px )
+          margin-bottom: 20px
         .footer-contacts__phone
           display: flex
           align-items: center
           .fas
             font-size: 24px
             margin-right: 14px
+            @media screen and ( max-width: 425px )
+              display: none
         .footer-phone__inner
           margin-bottom: 7px
           .footer-phone__tel
@@ -168,16 +249,24 @@ html, body
         .fas
           margin-right: 10px
           font-size: 24px
+          @media screen and ( max-width: 425px )
+            display: none
       .footer__callback
         font-weight: 600
         text-transform: uppercase
         text-align: center
+        @media screen and ( max-width: 880px )
+          flex-basis: 65%
+        @media screen and ( max-width: 630px )
+          margin-bottom: 20px
         .footer-callback__title
           margin-bottom: 15px
         .footer-callback__form
           display: flex
           justify-content: space-between
           align-items: center
+          max-width: 385px
+          margin: 0 auto
           background: $main-clr
           box-shadow: 0 0 10px rgba(#000, .3)
           border-radius: 35px
@@ -185,7 +274,11 @@ html, body
             box-shadow: 2px 2px 5px rgba(#000, .2)
             border-radius: 35px
             padding: 7px 120px 7px 20px
+            width: 300px
             margin: 15px
+            @media screen and ( max-width: 470px )
+              width: 100%
+              padding-right: 20px
           .footer-form__button
             border-radius: 50%
             margin-right: 15px
@@ -196,6 +289,11 @@ html, body
       max-width: 270px
       font-size: 10px
       line-height: 12px
+      @media screen and ( max-width: 630px )
+        font-size: 12px
+        text-align: center
+        margin: 0 auto
+        max-width: 350px
 
 // ABOUT
 
@@ -205,9 +303,28 @@ html, body
   height: 100vh
   .about__inner
     margin-top: 20vh
+    @media screen and ( max-width: 425px )
+      display: flex
+      flex-direction: column
+      align-items: center
     .about__title
       margin-bottom: 3vh
+      @media screen and ( max-width: 768px )
+        font-size: 50px
+      @media screen and ( max-width: 620px )
+        font-size: 40px
+      @media screen and ( max-width: 500px )
+        font-size: 30px
+      @media screen and ( max-width: 425px )
+        text-align: center
+      @media screen and ( max-width: 350px )
+        font-size: 26px
+      @media screen and ( max-width: 305px )
+        font-size: 24px
     .about__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 15vh
 
 // Why we
 
@@ -218,18 +335,28 @@ html, body
     z-index: 2
     max-width: 900px
     .why-we__title
-      margin-bottom: 10px
+      margin: 10px 0
+      @media screen and ( max-width: 425px )
+        margin: 20px 0
     .why-we__text
       position: relative
       max-width: 550px
       color: #454545
       margin-bottom: 30px
+      @media screen and ( max-width: 425px )
+        text-align: center
       img
         position: absolute
-        bottom: 0
+        top: -25%
         right: 0
+        @media screen and ( max-width: 425px )
+          top: 0
+          right: 50%
+          transform: translateX(50%)
       &:last-child
         margin-bottom: 0
+        @media screen and ( max-width: 1440px )
+          padding-bottom: 200px
   .why-we__man
     position: absolute
     bottom: -150px
@@ -250,6 +377,10 @@ html, body
     .advantages__row
       display: flex
       justify-content: space-between
+      @media screen and ( max-width: 768px )
+        flex-direction: column
+        &:last-child
+          margin-bottom: 20px
       .advantages__col
         position: relative
         flex-basis: 50%
@@ -258,6 +389,9 @@ html, body
         .advantages__img
           width: 50vw
           object-fit: cover
+          @media screen and ( max-width: 768px )
+            width: 100vw
+            min-height: 300px
         .advantages__num
           position: absolute
           top: 50%
@@ -266,6 +400,11 @@ html, body
         .advantages__content
           margin-left: 100px
           padding: 10px 0
+          @media screen and ( max-width: 425px )
+            margin-left: 50px
+            padding: 20px 0
+          @media screen and ( max-width: 290px )
+            margin-left: 30px
           .advantages__title
             max-width: 270px
             position: relative
@@ -275,6 +414,10 @@ html, body
             line-height: 1.2
             padding-bottom: 10px
             margin-bottom: 15px
+            @media screen and ( max-width: 375px )
+              font-size: 26px
+            @media screen and ( max-width: 320px )
+              font-size: 22px
             &::after
               content: ''
               position: absolute
@@ -285,8 +428,12 @@ html, body
               border-radius: 5px
               background: $main-clr
           .advantages__text
+            @media screen and ( max-width: 320px )
+              font-size: 18px
       &:nth-child(2n+2)
         flex-direction: row-reverse
+        @media screen and ( max-width: 768px )
+          flex-direction: column
         .advantages__num
           left: 30px
 
@@ -298,15 +445,34 @@ html, body
   height: 100vh
   .services__inner
     margin-top: 20vh
+    @media screen and ( max-width: 425px )
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-top: 10vh
     .services__title
       max-width: 650px
       margin-bottom: 3vh
-    .services__text
+      @media screen and ( max-width: 425px )
+        text-align: center
+      @media screen and ( max-width: 375px )
+        font-size: 44px
+      @media screen and ( max-width: 310px )
+        font-size: 38px
+    .services__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 10vh
+      @media screen and ( max-height: 615px )
+        margin-top: 6vh
+    .services__phone
 
 // Kinds
 
 .kinds
   margin-top: 40px
+  @media screen and ( max-width: 425px )
+    margin-top: 20px
   .kinds__inner
     .kinds__title
       margin-bottom: 20px
@@ -316,14 +482,22 @@ html, body
       font-weight: 700
       color: #454545
       margin-bottom: 20px
+      @media screen and ( max-width: 425px )
+        font-size: 22px
+        text-align: center
     .kinds__list
       display: flex
       justify-content: space-between
+      @media screen and ( max-width: 768px )
+        flex-direction: column
+        align-items: center
       .kinds-list__item
         flex-basis: 33.333%
         text-align: center
         line-height: 1.5
         margin-right: 30px
+        @media screen and ( max-width: 768px )
+          margin: 0 0 20px
         &:last-child
           margin-right: 0
         .kinds-list__img
@@ -331,6 +505,8 @@ html, body
           border-radius: 25px
           margin-bottom: 20px
           object-fit: cover
+          @media screen and ( max-width: 768px )
+            margin: 0 auto 20px
         .kinds-list__title
           font-size: 23px
           font-weight: 800
@@ -350,6 +526,9 @@ html, body
     .stages__title
       text-align: center
       margin-bottom: 30px
+      @media screen and ( max-width: 425px )
+        text-align: left
+        margin-bottom: 15px
       span
         color: #fff
     .stages__subtitle
@@ -372,6 +551,10 @@ html, body
     max-width: 650px
     padding: 50px 0 30vw
     margin-left: auto
+    @media screen and ( max-width: 768px )
+      padding-bottom: 80vw
+    @media screen and ( max-width: 425px )
+      padding-top: 20px
     .technology__title
       position: relative
       font-weight: 600
@@ -406,63 +589,110 @@ html, body
   height: 100vh
   .prices__inner
     padding-top: 20vh
+    @media screen and ( max-width: 425px )
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding-top: 15vh
     .prices__title
       max-width: 650px
       margin-bottom: 3vh
+      @media screen and ( max-width: 425px )
+        text-align: center
+      @media screen and ( max-width: 320px )
+        font-size: 42px
     .prices__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 10vh
 
 .cost
+  margin-top: 40px
+  @media screen and ( max-width: 425px )
+    margin-top: 20px
   .cost__inner
     text-align: center
     .cost__title
       max-width: 950px
-      margin: 0 auto 10px
+      margin: 0 auto 20px
     .cost__subtitle
       margin-bottom: 30px
+      @media screen and ( max-width: 425px )
+        margin-bottom: 20px
     .cost__table
       background: rgba(#fff, .3)
       border: 1px solid #c4c4c4
       box-shadow: 0 0 15px rgba(0, 0, 0, .25)
       border-radius: 0 0 25px 25px
       margin-bottom: 30px
+      @media screen and ( max-width: 768px )
+        font-size: 14px
       .cost-table__header
         display: flex
         justify-content: space-between
+        align-items: center
         background: rgba(#000, .6)
         box-shadow: 0 0 15px rgba(0, 0, 0, .25)
         color: #fff
         padding: 10px 50px
         margin-bottom: 20px
+        @media screen and ( max-width: 768px )
+          padding: 10px
         .cost-table-header__name
           flex-basis: 60%
           text-align: left
+          @media screen and ( max-width: 520px )
+            flex-basis: 50%
         .cost-table-header__measure
           flex-basis: 25%
+          @media screen and ( max-width: 620px )
+            flex-basis: 15%
+          @media screen and ( max-width: 520px )
+            flex-basis: 25%
+          @media screen and ( max-width: 425px )
+            text-align: left
         .cost-table-header__price
           flex-basis: 15%
           font-weight: 800
           text-align: right
+          @media screen and ( max-width: 768px )
+            text-align: center
+          @media screen and ( max-width: 620px )
+            flex-basis: 25%
       .cost-table__item
         display: flex
         justify-content: space-between
+        align-items: center
         font-weight: 600
         background: #cecece
         padding: 25px
         border-radius: 25px
         margin: 0 20px 20px
+        @media screen and ( max-width: 768px )
+          padding: 10px
+          margin: 0 10px 20px
+          min-height: 80px
         &:nth-child(2n+2)
           color: #fff
           background: $main-clr
         .cost-table-item__name
           flex-basis: 60%
           text-align: left
+          @media screen and ( max-width: 520px )
+            flex-basis: 50%
         .cost-table-item__measure
           flex-basis: 25%
+          @media screen and ( max-width: 620px )
+            flex-basis: 15%
+          @media screen and ( max-width: 520px )
+            flex-basis: 25%
           text-align: center
         .cost-table-item__price
           flex-basis: 15%
           font-weight: 800
           text-align: right
+          @media screen and ( max-width: 620px )
+            flex-basis: 25%
     .cost__text
       margin-bottom: 40px
 
@@ -474,10 +704,26 @@ html, body
   height: 100vh
   .works__inner
     padding-top: 20vh
+    @media screen and ( max-width: 425px )
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding-top: 15vh
     .works__title
+      @media screen and ( max-width: 425px )
+        text-align: center
+      @media screen and ( max-width: 300px )
+        font-size: 46px
     .works__subtitle
       margin-bottom: 1vh
+      @media screen and ( max-width: 425px )
+        text-align: center
     .works__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 15vh
+      @media screen and ( max-height: 615px )
+        margin-top: 10vh
 
 // Gallery
 
@@ -487,12 +733,20 @@ html, body
     .gallery__title
       text-align: center
       margin: 40px 0 20px
+      @media screen and ( max-width: 425px )
+        margin-top: 20px
+      @media screen and ( max-width: 310px )
+        font-size: 34px
     .gallery__row
       display: flex
       justify-content: space-between
       margin-bottom: 30px
+      @media screen and ( max-width: 768px )
+        flex-direction: column
       .gallery__video
         flex-basis: 67%
+        @media screen and ( max-width: 768px )
+          margin-bottom: 20px
         video
           width: 100%
           height: 100%
@@ -506,6 +760,11 @@ html, body
           z-index: 1
           cursor: pointer
           margin-bottom: 16px
+          @media screen and ( max-width: 768px )
+            margin-bottom: 25px
+            font-size: 16px
+          @media screen and ( max-width: 550px )
+            font-size: 12px
           img
             width: 100%
           .gallery__info
@@ -516,15 +775,23 @@ html, body
             max-width: 320px
             padding-bottom: 10px
             margin-bottom: 10px
+            @media screen and ( max-width: 768px )
+              max-width: 95%
+              margin-bottom: 20px
+            @media screen and ( max-width: 550px )
+              max-width: 90%
+              margin-bottom: 10px
             &::after
               content: ''
               position: absolute
               bottom: 0
               left: 0
-              width: 100%
+              width: 95%
               height: 3px
               border-radius: 5px
               background: $main-clr
+              @media screen and ( max-width: 768px )
+                width: 100%
           .gallery__date
             position: absolute
             bottom: 15px
@@ -549,6 +816,12 @@ html, body
             height: 40px
             background: url(../img/works/loupe.svg) center no-repeat
             background-size: cover
+            @media screen and ( max-width: 768px )
+              width: 80px
+              height: 80px
+            @media screen and ( max-width: 550px )
+              width: 40px
+              height: 40px
           &:last-child
             margin-bottom: 0
     .gallery__slider
@@ -559,13 +832,19 @@ html, body
         display: flex
         justify-content: space-between
         flex-wrap: wrap
+        @media screen and ( max-width: 768px )
+          flex-direction: column
+          margin: 0 5px
         .slider-card__img
           flex-basis: 49%
           position: relative
           font-size: 16px
           color: #fff
           cursor: pointer
+          overflow: hidden
           margin-bottom: 25px
+          @media screen and ( max-width: 550px )
+            font-size: 12px
           img
             width: 100%
             height: 100%
@@ -577,15 +856,22 @@ html, body
             max-width: 520px
             padding-bottom: 10px
             margin-bottom: 10px
+            @media screen and ( max-width: 768px )
+              max-width: 95%
+            @media screen and ( max-width: 550px )
+              max-width: 90%
+              margin-bottom: 0
             &::after
               content: ''
               position: absolute
               bottom: 0
               left: 0
-              width: 100%
+              width: 95%
               height: 3px
               border-radius: 5px
               background: $main-clr
+              @media screen and ( max-width: 768px )
+                width: 100%
           .slider-card__date
             position: absolute
             bottom: 15px
@@ -610,6 +896,9 @@ html, body
             height: 80px
             background: url(../img/works/loupe.svg) center no-repeat
             background-size: cover
+            @media screen and ( max-width: 550px )
+              width: 40px
+              height: 40px
     .slick-arrow
       position: absolute
       font-size: 0
@@ -620,9 +909,21 @@ html, body
       background-size: cover
     .slick-arrow.slick-prev
       left: 42%
+      @media screen and ( max-width: 768px )
+        left: 36%
+      @media screen and ( max-width: 520px )
+        left: 30%
+      @media screen and ( max-width: 320px )
+        left: 20%
     .slick-arrow.slick-next
       right: 42%
       transform: rotate(180deg)
+      @media screen and ( max-width: 768px )
+        right: 36%
+      @media screen and ( max-width: 520px )
+        right: 30%
+      @media screen and ( max-width: 320px )
+        right: 20%
     .slick-dots
       display: flex
       position: absolute
@@ -652,9 +953,26 @@ html, body
   height: 100vh
   .gyms__inner
     padding-top: 20vh
+    @media screen and ( max-width: 425px )
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding-top: 15vh
     .gyms__title
-      margin-bottom: 3vh
+      @media screen and ( max-width: 425px )
+        text-align: center
+      @media screen and ( max-width: 300px )
+        font-size: 46px
+    .gyms__subtitle
+      margin-bottom: 1vh
+      @media screen and ( max-width: 425px )
+        text-align: center
     .gyms__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 20vh
+      @media screen and ( max-height: 615px )
+        margin-top: 10vh
 
 // FAQ
 
@@ -664,9 +982,21 @@ html, body
   height: 100vh
   .faq__inner
     padding-top: 20vh
+    @media screen and ( max-width: 425px )
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding-top: 15vh
     .faq__title
       margin-bottom: 3vh
+      @media screen and ( max-width: 425px )
+        text-align: center
     .faq__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 20vh
+      @media screen and ( max-height: 615px )
+        margin-top: 10vh
 
 // Answers
 
@@ -675,29 +1005,48 @@ html, body
     .answers__title
       text-align: center
       margin: 40px 0
+      @media screen and ( max-width: 425px )
+        margin: 20px 0
     .answers__list
+      font-weight: 600
+      @media screen and ( max-width: 768px )
+        font-size: 17px
+      @media screen and ( max-width: 425px )
+        font-size: 14px
       .answers-list__item
         .answers-list__row
           display: flex
           align-items: center
           margin-bottom: 15px
+          @media screen and ( max-width: 425px )
+            margin-bottom: 20px
           &:first-child
             img
               margin-right: 45px
+              @media screen and ( max-width: 768px )
+                margin-right: 26px
+              @media screen and ( max-width: 425px )
+                margin-right: 7px
           &:last-child
             img
               margin-left: 45px
+              @media screen and ( max-width: 768px )
+                margin-left: 26px
+              @media screen and ( max-width: 425px )
+                margin-left: 7px
           .answers-list__question
             position: relative
             max-width: 82%
             background: #cecece
             border-radius: 40px
             padding: 10px 30px
+            @media screen and ( max-width: 425px )
+              padding: 10px 20px
             &::after
               content: ''
               position: absolute
-              bottom: -18px
-              left: -8px
+              bottom: -14px
+              left: -6px
               border: 10px solid transparent
               border-top: 20px solid #cecece
               transform: rotate(45deg)
@@ -709,6 +1058,8 @@ html, body
             border-radius: 40px
             padding: 10px 30px
             margin-left: auto
+            @media screen and ( max-width: 425px )
+              padding: 10px 20px
             &::after
               content: ''
               position: absolute
@@ -729,23 +1080,53 @@ html, body
     flex-direction: column
     align-items: center
     padding-top: 20vh
+    @media screen and ( max-width: 425px )
+      padding-top: 12vh
     .contacts__title
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        font-size: 45px
+        text-align: center
+      @media screen and ( max-width: 360px )
+        font-size: 40px
+      @media screen and ( max-width: 320px )
+        font-size: 35px
     .contacts__subtitle
-      margin-bottom: 1vh
+      margin-bottom: 3vh
+      @media screen and ( max-width: 425px )
+        text-align: center
     .contacts__button
+      margin-bottom: 2vh
+      @media screen and ( max-width: 425px )
+        margin-top: 10vh
+      @media screen and ( max-height: 615px )
+        margin-top: 5vh
 
 // Contact
 
 .contact
   margin-bottom: 70px
+  @media screen and ( max-width: 1024px )
+    margin-bottom: 30px
+  @media screen and ( max-width: 425px )
+    margin-bottom: 20px
   .contact__inner
     .contact__title
       margin: 40px 0
+      @media screen and ( max-width: 1024px )
+        margin: 20px 0
+        text-align: center
     .contact__row
       display: flex
       justify-content: space-between
+      flex-wrap: wrap
       .contact__map
         flex-basis: 57%
+        @media screen and ( max-width: 1024px )
+          flex-basis: 100%
+          margin-bottom: 20px
+        @media screen and ( max-width: 425px )
+          margin-bottom: 10px
         .contact__item
           display: flex
           align-items: center
@@ -773,6 +1154,11 @@ html, body
         box-shadow: 0 0 10px rgba(169, 38, 108, .12)
         border-radius: 10px
         padding: 40px
+        @media screen and ( max-width: 1024px )
+          flex-basis: 100%
+          width: 100%
+          max-width: 400px
+          margin: 0 auto
         .contact-form__title
           position: relative
           font-size: 30px
@@ -805,6 +1191,7 @@ html, body
           height: 50px
         .contact-form__textarea
           height: 150px
+          margin-bottom: 40px
         .contact-form__button
           text-transform: uppercase
           border-radius: 35px
