@@ -68,7 +68,7 @@
 
     </main>
 
-    <div class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__row">
@@ -105,10 +105,16 @@
                     <div class="footer__callback">
                         <div class="footer-callback__title">Заказать обратный звонок</div>
                         <form class="footer-callback__form" action="" method="post">
+
+                            <input type="hidden" name="project_name" value="Шлиф-проект">
+                            <input type="hidden" name="admin_email" value="mail@mail.ru">
+                            <input type="hidden" name="form_subject" value="Телефон из формы в подвале сайта">
+
                             <input class="footer-form__input" type="tel" name="tel" placeholder="Ваш номер телефона">
                             <button class="footer-form__button" type="submit">
                                 <i class="fas fa-phone-alt"></i>
                             </button>
+                            
                         </form>
                     </div>
                 </div>
@@ -117,7 +123,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/45a4d3c64f.js" crossorigin="anonymous"></script>

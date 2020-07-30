@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Шлиф-проект</title>
+    <title>Шлиф-проект — Цены</title>
 </head>
 <body>
 
@@ -130,7 +130,7 @@
     </div>
 
 
-    <div class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__row">
@@ -140,14 +140,14 @@
                     <nav class="footer__nav">
                         <div class="footer-nav__col">
                             <a href="about.html" class="footer-nav__item">О компании</a>
-                            <a href="#!" class="footer-nav__item">Услуги</a>
-                            <a href="#!" class="footer-nav__item">Цены</a>
-                            <a href="#!" class="footer-nav__item">Наши работы</a>
+                            <a href="services.html" class="footer-nav__item">Услуги</a>
+                            <a href="prices.html" class="footer-nav__item">Цены</a>
+                            <a href="works.html" class="footer-nav__item">Наши работы</a>
                         </div>
                         <div class="footer-nav__col">
-                            <a href="#!" class="footer-nav__item">Спортзалы</a>
-                            <a href="#!" class="footer-nav__item">Вопросы и ответы</a>
-                            <a href="#!" class="footer-nav__item">Контакты</a>
+                            <a href="gyms.html" class="footer-nav__item">Спортзалы</a>
+                            <a href="faq.html" class="footer-nav__item">Вопросы и ответы</a>
+                            <a href="contacts.html" class="footer-nav__item">Контакты</a>
                         </div>
                     </nav>
                     <div class="footer__contacts">
@@ -167,10 +167,16 @@
                     <div class="footer__callback">
                         <div class="footer-callback__title">Заказать обратный звонок</div>
                         <form class="footer-callback__form" action="" method="post">
+
+                            <input type="hidden" name="project_name" value="Шлиф-проект">
+                            <input type="hidden" name="admin_email" value="mail@mail.ru">
+                            <input type="hidden" name="form_subject" value="Телефон из формы в подвале сайта">
+
                             <input class="footer-form__input" type="tel" name="tel" placeholder="Ваш номер телефона">
                             <button class="footer-form__button" type="submit">
                                 <i class="fas fa-phone-alt"></i>
                             </button>
+                            
                         </form>
                     </div>
                 </div>
@@ -179,7 +185,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/45a4d3c64f.js" crossorigin="anonymous"></script>
