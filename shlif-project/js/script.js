@@ -39,6 +39,35 @@ $(document).ready(function () {
         return false;
     });
 
+    // Модальное окно
+    function closeModal() {
+        $('.modal').removeClass('modal_active');
+    }
+
+    $('.gallery__img').click(function () {
+        let img = $(this).children('img');
+        let src = img.attr('src');
+        $('.modal').addClass('modal_active');
+        $('.modal__img img').attr('src', src);
+    });
+
+    $('.slider-card__img').click(function () {
+        let img = $(this).children('img');
+        let src = img.attr('src');
+        $('.modal').addClass('modal_active');
+        $('.modal__img img').attr('src', src);
+    });
+
+    $('.modal__close').click(function (e) {
+        closeModal();
+    });
+
+    $(window).keydown(function (e) { 
+        if(e.keyCode === 27) {
+            closeModal();
+        };
+    });
+
     // Слайдер на страницах Наши работы и Спортзалы
     $('.gallery__slider').slick({
         dots: true
