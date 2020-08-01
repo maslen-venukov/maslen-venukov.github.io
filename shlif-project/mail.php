@@ -8,7 +8,7 @@ if ( $method === 'POST' ) {
 
 	$project_name = trim($_POST["project_name"]);
 	$admin_email  = trim($_POST["admin_email"]);
-	$admin_email  = trim($_POST["admin_email_2"]);
+	$admin_email_2  = trim($_POST["admin_email_2"]);
 	$form_subject = trim($_POST["form_subject"]);
 
 	foreach ( $_POST as $key => $value ) {
