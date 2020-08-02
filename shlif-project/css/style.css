@@ -1691,7 +1691,7 @@ html, body {
   z-index: 1000;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1708,7 +1708,6 @@ html, body {
 }
 
 .modal .modal__body {
-  position: relative;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -1720,6 +1719,10 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transform: translateY(-200%);
           transform: translateY(-200%);
   -webkit-transition: -webkit-transform .2s linear;
@@ -1728,22 +1731,23 @@ html, body {
   transition: transform .2s linear, -webkit-transform .2s linear;
 }
 
-.modal .modal__body .modal__close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.modal .modal__body .modal__close .far {
-  font-size: 44px;
-  color: #db553f;
-  cursor: pointer;
-}
-
 .modal .modal__body .modal__img {
+  position: relative;
   width: 50%;
   height: auto;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .modal .modal__body .modal__img {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .modal .modal__body .modal__img {
+    width: 95%;
+  }
 }
 
 .modal .modal__body .modal__img img {
@@ -1751,6 +1755,37 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.modal .modal__body .modal__img .modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal .modal__body .modal__img .modal__close .far {
+  font-size: 44px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal .modal__body .modal__info {
+  width: 50%;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .modal .modal__body .modal__info {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .modal .modal__body .modal__info {
+    width: 95%;
+  }
 }
 
 .modal_active {
@@ -1832,7 +1867,6 @@ html, body {
   z-index: 1;
   overflow: hidden;
   cursor: pointer;
-  max-height: 280px;
   margin-bottom: 16px;
 }
 

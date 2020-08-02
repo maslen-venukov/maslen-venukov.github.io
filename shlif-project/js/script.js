@@ -47,18 +47,28 @@ $(document).ready(function () {
     $('.gallery__img').click(function () {
         let img = $(this).children('img');
         let src = img.attr('src');
-        $('.modal').addClass('modal_active');
         $('.modal__img img').attr('src', src);
+        let info = $(this).children('.gallery__info');
+        let text = info.text();
+        $('.modal__info').text(text);
+        $('.modal').addClass('modal_active');
     });
 
     $('.slider-card__img').click(function () {
         let img = $(this).children('img');
         let src = img.attr('src');
-        $('.modal').addClass('modal_active');
         $('.modal__img img').attr('src', src);
+        let info = $(this).children('.slider-card__info');
+        let text = info.text();
+        $('.modal__info').text(text);
+        $('.modal').addClass('modal_active');
     });
 
-    $('.modal__close').click(function (e) {
+    $('.modal__close').click(function () {
+        closeModal();
+    });
+
+    $('.modal__body').click(function () { 
         closeModal();
     });
 
