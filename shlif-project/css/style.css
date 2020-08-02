@@ -831,7 +831,7 @@ html, body {
 
 @media screen and (max-height: 425px) {
   .about .about__inner {
-    margin-top: 0;
+    margin-top: 5vh;
   }
 }
 
@@ -2294,12 +2294,6 @@ html, body {
   }
 }
 
-@media screen and (max-height: 375px) {
-  .gyms .gyms__inner {
-    margin-top: 0;
-  }
-}
-
 .gyms .gyms__inner .gyms__title {
   margin-bottom: 3vh;
 }
@@ -2371,18 +2365,6 @@ html, body {
 @media screen and (max-height: 425px) {
   .faq .faq__inner {
     margin-top: 10vh;
-  }
-}
-
-@media screen and (max-height: 375px) {
-  .faq .faq__inner {
-    margin-top: 5vh;
-  }
-}
-
-@media screen and (max-height: 340px) {
-  .faq .faq__inner {
-    margin-top: 0;
   }
 }
 
@@ -2641,6 +2623,12 @@ html, body {
 @media screen and (max-width: 425px) and (max-height: 615px) {
   .contacts .contacts__inner .contacts__button {
     margin-top: 5vh;
+  }
+}
+
+@media screen and (max-height: 425px) {
+  .contacts .contacts__inner .contacts__button {
+    margin-right: auto;
   }
 }
 
