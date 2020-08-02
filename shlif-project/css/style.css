@@ -379,6 +379,7 @@ html, body {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
+    overflow: auto;
     padding: 20px 0;
     -webkit-transition: .2s linear;
     transition: .2s linear;
@@ -871,6 +872,12 @@ html, body {
 @media screen and (max-width: 305px) {
   .about .about__inner .about__title {
     font-size: 24px;
+  }
+}
+
+@media screen and (max-height: 360px) {
+  .about .about__inner .about__title {
+    font-size: 42px;
   }
 }
 
@@ -1706,6 +1713,12 @@ html, body {
   }
 }
 
+@media screen and (max-height: 375px) {
+  .works .works__inner .works__title {
+    font-size: 50px;
+  }
+}
+
 .works .works__inner .works__subtitle {
   margin-bottom: 3vh;
 }
@@ -2281,6 +2294,12 @@ html, body {
   }
 }
 
+@media screen and (max-height: 375px) {
+  .gyms .gyms__inner {
+    margin-top: 0;
+  }
+}
+
 .gyms .gyms__inner .gyms__title {
   margin-bottom: 3vh;
 }
@@ -2352,6 +2371,18 @@ html, body {
 @media screen and (max-height: 425px) {
   .faq .faq__inner {
     margin-top: 10vh;
+  }
+}
+
+@media screen and (max-height: 375px) {
+  .faq .faq__inner {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-height: 340px) {
+  .faq .faq__inner {
+    margin-top: 0;
   }
 }
 
@@ -2540,6 +2571,12 @@ html, body {
   }
 }
 
+@media screen and (max-height: 375px) {
+  .contacts .contacts__inner {
+    margin-top: 5vh;
+  }
+}
+
 .contacts .contacts__inner .contacts__title {
   margin-bottom: 2vh;
 }
@@ -2569,12 +2606,6 @@ html, body {
   }
 }
 
-@media screen and (max-height: 320px) {
-  .contacts .contacts__inner .contacts__title {
-    font-size: 35px;
-  }
-}
-
 .contacts .contacts__inner .contacts__subtitle {
   margin-bottom: 3vh;
 }
@@ -2591,9 +2622,9 @@ html, body {
   }
 }
 
-@media screen and (max-height: 320px) {
+@media screen and (max-height: 375px) {
   .contacts .contacts__inner .contacts__subtitle {
-    font-size: 24px;
+    display: none;
   }
 }
 

@@ -182,6 +182,7 @@ html, body
           transform: translateX(100%)
           flex-direction: column
           text-align: center
+          overflow: auto
           padding: 20px 0
           transition: .2s linear
           &_active
@@ -406,6 +407,8 @@ html, body
         font-size: 26px
       @media screen and ( max-width: 305px )
         font-size: 24px
+      @media screen and ( max-height: 360px )
+        font-size: 42px
     .about__button
       margin-bottom: 2vh
       @media screen and ( max-width: 425px )
@@ -823,6 +826,8 @@ html, body
         text-align: center
       @media screen and ( max-width: 300px )
         font-size: 46px
+      @media screen and ( max-height: 375px )
+        font-size: 50px
     .works__subtitle
       margin-bottom: 3vh
       @media screen and ( max-width: 425px )
@@ -1136,6 +1141,8 @@ html, body
       margin-top: 15vh
     @media screen and ( max-height: 425px )
       margin-top: 10vh
+    @media screen and ( max-height: 375px )
+      margin-top: 0
     .gyms__title
       margin-bottom: 3vh
       @media screen and ( max-width: 425px )
@@ -1168,6 +1175,10 @@ html, body
       margin-top: 15vh
     @media screen and ( max-height: 425px )
       margin-top: 10vh
+    @media screen and ( max-height: 375px )
+      margin-top: 5vh
+    @media screen and ( max-height: 340px )
+      margin-top: 0
     .faq__title
       margin-bottom: 3vh
       @media screen and ( max-width: 425px )
@@ -1265,6 +1276,8 @@ html, body
       margin-top: 12vh
     @media screen and ( max-height: 425px )
       margin-top: 0
+    @media screen and ( max-height: 375px )
+      margin-top: 5vh
     .contacts__title
       margin-bottom: 2vh
       @media screen and ( max-width: 425px )
@@ -1276,16 +1289,14 @@ html, body
         font-size: 35px
       @media screen and ( max-height: 425px )
         font-size: 50px
-      @media screen and ( max-height: 320px )
-        font-size: 35px
     .contacts__subtitle
       margin-bottom: 3vh
       @media screen and ( max-width: 425px )
         text-align: center
       @media screen and ( max-height: 425px )
         font-size: 28px
-      @media screen and ( max-height: 320px )
-        font-size: 24px
+      @media screen and ( max-height: 375px )
+        display: none
     .contacts__button
       margin-bottom: 2vh
       @media screen and ( max-width: 425px )
