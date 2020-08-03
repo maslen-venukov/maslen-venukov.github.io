@@ -1,0 +1,243 @@
+.main-section .nav-main-wr {
+  position: relative;
+}
+.main-section .nav-main-wr .nav-main .dropdown {
+  position: absolute;
+  top: 6.8rem;
+  left: 0;
+  z-index: 1000;
+  width: 215px;
+  height: 0;
+}
+.main-section .nav-main-wr .nav-main .dropdown a {
+  background: #fff;
+  color: #000;
+  display: none;
+  padding: 0.5rem 2rem;
+}
+.main-section .nav-main-wr .nav-main .dropdown a:hover {
+  color: #DB0000;
+  text-decoration: underline;
+}
+.main-section .nav-main-wr .nav-main .dropdown.active {
+  height: 100%;
+}
+.main-section .nav-main-wr .nav-main .dropdown.active a {
+  display: block;
+}
+.main-section .nav-main-wr .nav-main a {
+  white-space: normal;
+}
+.main-section .nav-main-wr .nav-main a .models {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+.main-section .nav-main-wr .nav-main a span {
+  position: relative;
+}
+.main-section .nav-main-wr .nav-main a span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  z-index: 10;
+  transform: rotate(-45deg);
+  transform-origin: center center;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transition: transform .2s linear;
+}
+.main-section .nav-main-wr .nav-main a:hover span::after {
+  transform: translateY(-50%) rotate(-225deg);
+}
+@media (max-width: 992px) {
+  .main-section .nav-main-wr .nav-main .dropdown {
+    top: 39px;
+  }
+}
+@media (max-width: 768px) {
+  .action-block {
+    z-index: 0;
+  }
+  .form-action::before {
+    z-index: -1;
+  }
+}
+.section-kia {
+  padding: 5rem 0;
+}
+.section-kia h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+.section-kia .kia-table {
+  font-size: 1.6rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 4.5rem;
+}
+.section-kia .kia-table .kia-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+}
+.section-kia .kia-table .kia-row .kia-col {
+  flex-basis: 25%;
+  text-align: center;
+}
+.section-kia .kia-table .kia-row:nth-child(2n+1) {
+  background: #F5F5F5;
+}
+.section-kia .kia-table .kia-row:first-child {
+  background: #292732;
+  color: #fff;
+  font-weight: 600;
+}
+.section-kia .kia-btn {
+  text-align: center;
+}
+.section-kia .kia-btn a {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+@media (max-width: 375px) {
+  .section-kia .kia-table {
+    font-size: 1.3rem;
+  }
+}
+.section-marks {
+  background: #F5F5F5;
+  padding: 5rem 0 1rem;
+}
+.section-marks .owl-marks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.section-marks .owl-marks .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 16rem;
+  margin-bottom: 4rem;
+}
+.section-marks .owl-marks .item .img img {
+  margin-bottom: 1.5rem;
+}
+.section-marks .owl-marks .item .name {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #757575;
+}
+.section-marks .owl-marks .owl-nav {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.section-marks .owl-marks .owl-nav button {
+  height: auto;
+  width: auto;
+  background: none !important;
+  display: block;
+  z-index: 2;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+.section-marks .owl-marks .owl-nav button:hover {
+  background: rgba(41, 39, 50, 0.85);
+}
+.section-marks .owl-marks .owl-nav svg {
+  display: block;
+  width: 1.4rem;
+  height: 3.1rem;
+  fill: #292732;
+}
+.section-marks .owl-marks .owl-dots {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.section-marks .owl-marks .owl-dots button {
+  padding: 0;
+  background: none;
+  border: none;
+  margin: 0 0.6rem;
+  position: relative;
+  z-index: 6;
+}
+.section-marks .owl-marks .owl-dots button.active span {
+  background: #292732;
+}
+.section-marks .owl-marks .owl-dots button span {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0.2rem solid #292732;
+  border-radius: 50%;
+  display: block;
+}
+.section-models {
+  padding: 5rem 0;
+}
+.section-models .models-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+.section-models .models-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-models .models-list-item .img img {
+  color: #B9B9B9;
+  margin-bottom: 1.5rem;
+}
+.section-models .models-list-item .name {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.section-models .models-text {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+.section-models .models-btn {
+  text-align: center;
+}
+.section-models .models-btn a {
+  padding-right: 5rem;
+  padding-left: 5rem;
+}
+@media (max-width: 768px) {
+  .models-list {
+    margin-bottom: 2.5rem;
+  }
+  .models-list-item {
+    flex-basis: 33.333%;
+    margin-bottom: 2.5rem;
+  }
+}
+@media (max-width: 425px) {
+  .models-list-item {
+    flex-basis: 50%;
+  }
+}
