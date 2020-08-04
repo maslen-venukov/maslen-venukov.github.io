@@ -111,6 +111,15 @@
   flex-basis: 16rem;
   margin-bottom: 4rem;
 }
+.section-marks .owl-marks .item:hover .name {
+  color: #DB0000;
+}
+.section-marks .owl-marks .item .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 8rem;
+}
 .section-marks .owl-marks .item .img img {
   margin-bottom: 1.5rem;
 }
@@ -118,6 +127,7 @@
   text-align: center;
   font-size: 1.6rem;
   color: #757575;
+  transition: color .2s linear;
 }
 .section-marks .owl-marks .owl-nav {
   width: 70%;
@@ -177,22 +187,22 @@
 .section-models {
   padding: 5rem 0;
 }
-.section-models .models-list {
+.section-models .models-row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 5rem;
 }
-.section-models .models-list-item {
+.section-models .models-row .item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.section-models .models-list-item .img img {
+.section-models .models-row .item .img img {
   color: #B9B9B9;
   margin-bottom: 1.5rem;
 }
-.section-models .models-list-item .name {
+.section-models .models-row .item .name {
   text-align: center;
   font-size: 1.6rem;
   font-weight: 600;

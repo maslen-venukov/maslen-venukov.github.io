@@ -117,7 +117,16 @@
             align-items: center;
             flex-basis: 16rem;
             margin-bottom: 4rem;
+            &:hover {
+                .name {
+                    color: #DB0000;
+                }
+            }
             .img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 8rem;
                 img {
                     margin-bottom: 1.5rem;
                 }
@@ -126,6 +135,7 @@
                 text-align: center;
                 font-size: 1.6rem;
                 color: #757575;
+                transition: color .2s linear;
             }
         }
         .owl-nav{
@@ -190,12 +200,12 @@
 
 .section-models {
     padding: 5rem 0;
-    .models-list {
+    .models-row {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         margin-bottom: 5rem;
-        &-item {
+        .item {
             display: flex;
             flex-direction: column;
             align-items: center;
