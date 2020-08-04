@@ -106,7 +106,7 @@ jQuery(document).ready(function($) {
 	auncor.fun();
 
 
-	const dropdown = $('.nav-main .dropdown');
+	const dropdown = $('.nav-main .dropdown, .mobile-models .dropdown');
 	
 	$('.models').parent().hover(function () {
 		dropdown.addClass('active');
