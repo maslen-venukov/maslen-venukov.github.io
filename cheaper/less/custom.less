@@ -334,9 +334,9 @@
     .form-action::before {
         z-index: -1;
     }
-    .models-list {
+    .models-row {
         margin-bottom: 2.5rem;
-        &-item {
+        .item {
             flex-basis: 33.333%;
             margin-bottom: 2.5rem;
         }
@@ -349,8 +349,10 @@
             font-size: 1.3rem;
         }
     }
-    .models-list-item {
-        flex-basis: 50%;
+    .models-row {
+        .item {
+            flex-basis: 50%;
+        }
     }
     header .contacts .item b {
         font-size: 1.5rem;

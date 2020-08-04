@@ -314,10 +314,10 @@
   .form-action::before {
     z-index: -1;
   }
-  .models-list {
+  .models-row {
     margin-bottom: 2.5rem;
   }
-  .models-list-item {
+  .models-row .item {
     flex-basis: 33.333%;
     margin-bottom: 2.5rem;
   }
@@ -326,7 +326,7 @@
   .section-kia .kia-table {
     font-size: 1.3rem;
   }
-  .models-list-item {
+  .models-row .item {
     flex-basis: 50%;
   }
   header .contacts .item b {
