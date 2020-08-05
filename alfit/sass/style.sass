@@ -533,4 +533,52 @@ html, body
     .services__row
       &::before
         display: none
-      .services__card
+
+// Stats
+
+.stats
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    top: -150px
+    right: -300px
+    z-index: -1
+    width: 1000px
+    height: 1000px
+    background: url(../img/stats/leaves.png) center no-repeat
+    background-size: cover
+  .stats__inner
+    .stats__title
+      margin-bottom: 100px
+    .stats__row
+      display: flex
+      margin-bottom: 130px
+      .stats__item
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        max-width: 515px
+        padding-left: 120px
+        margin-right: 80px
+        &::before
+          content: ''
+          position: absolute
+          top: 50%
+          left: -70px
+          transform: translateY(-50%)
+          width: 285px
+          height: 285px
+          background: url(../img/stats/circle.png) center no-repeat
+          background-size: cover
+        &:last-child
+          margin-right: 0
+        .stats-item__text
+        .stats-item__title
+          font-size: 36px
+          line-height: 44px
+          color: #55ce7e
+          span
+            font-size: 96px
+            line-height: 117px
