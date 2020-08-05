@@ -382,17 +382,155 @@ html, body
 
 // Services
 
-.services
-  .services__inner
+.services,
+.services-onco
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    top: 200px
+    right: -300px
+    z-index: -1
+    width: 1000px
+    height: 1000px
+    background: url(../img/services/leaves.png) center no-repeat
+    background-size: cover
+  .services__inner,
+  .services-onco__inner
     .services__title
       width: 76%
       margin-bottom: 40px
     .services__row
       display: flex
+      position: relative
+      margin-bottom: 20px
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        width: 100%
+        height: 60%
+        background: #ededed
+        filter: blur(100px)
+        border-radius: 133px
       .services__card
+        min-height: 750px
         flex-basis: 25%
+        display: flex
+        flex-direction: column
         background: #fff
         border-radius: 12px
+        padding: 30px
         margin-right: 20px
         &:last-child
           margin-right: 0
+        .services-card__img
+          margin-bottom: 30px
+          img
+            width: 100%
+            border-radius: 12px
+            object-fit: cover
+        .services-card__title
+          font-size: 18px
+          line-height: 22px
+          font-weight: 600
+          color: $dark
+          margin-bottom: 10px
+        .services-card__text
+          font-size: 14px
+          line-height: 17px
+          margin-bottom: 20px
+          b
+            display: block
+            margin-bottom: 70px
+        .services-card__price
+          margin-top: auto
+          display: flex
+          justify-content: space-between
+          padding: 15px
+          border-top: 1px solid #d3d3d3
+          border-bottom: 1px solid #d3d3d3
+          margin-bottom: 30px
+          p
+            &:first-child
+              font-weight: 500
+            &:last-child
+              font-size: 24px
+              line-height: 29px
+              font-weight: 600
+              color: $dark
+        .services-card__button
+          display: block
+          text-align: center
+          max-width: 280px
+          margin: 0 auto
+      .services__col
+        min-height: 750px
+        flex-basis: 25%
+        display: flex
+        flex-direction: column
+        .services__consultation
+          display: flex
+          flex-direction: column
+          height: 60%
+          background: $gradient
+          border-radius: 12px
+          padding: 30px
+          margin-bottom: 20px
+          .services-consultation__img
+            margin: 40px 0 50px
+            img
+              margin: 0 auto
+          .services-consultation__title
+            font-size: 24px
+            line-height: 29px
+            font-weight: 700
+            color: #fff
+            max-width: 200px
+            margin-bottom: 30px
+          .services-consultation__button
+            display: block
+            text-align: center
+            background: transparent
+            box-shadow: none
+            border: 2px solid #fff
+        .services__pricelist
+          background: #fff
+          border-radius: 12px
+          padding: 30px
+          .services-pricelist__img
+            img
+              transform: translateY(-40px)
+          .services-pricelist__title
+            font-size: 24px
+            line-height: 29px
+            font-weight: 700
+            color: $dark
+            margin-bottom: 30px
+          .services-pricelist__button
+            display: block
+            text-align: center
+            background: transparent
+            box-shadow: none
+            text-shadow: none
+            color: $dark
+            border: 2px solid $dark
+
+// Services-onco
+
+.services-onco
+  background: $light-gradient
+  opacity: .8
+  &::after
+    display: none
+  .services-onco__inner
+    padding: 50px 0 100px
+    .services-onco__title
+      color: #fff
+      margin-bottom: 50px
+    .services__row
+      &::before
+        display: none
+      .services__card

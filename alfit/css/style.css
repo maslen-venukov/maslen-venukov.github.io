@@ -647,25 +647,308 @@ html, body {
      object-fit: cover;
 }
 
-.services .services__inner .services__title {
+.services,
+.services-onco {
+  position: relative;
+}
+
+.services::after,
+.services-onco::after {
+  content: '';
+  position: absolute;
+  top: 200px;
+  right: -300px;
+  z-index: -1;
+  width: 1000px;
+  height: 1000px;
+  background: url(../img/services/leaves.png) center no-repeat;
+  background-size: cover;
+}
+
+.services .services__inner .services__title,
+.services .services-onco__inner .services__title,
+.services-onco .services__inner .services__title,
+.services-onco .services-onco__inner .services__title {
   width: 76%;
   margin-bottom: 40px;
 }
 
-.services .services__inner .services__row {
+.services .services__inner .services__row,
+.services .services-onco__inner .services__row,
+.services-onco .services__inner .services__row,
+.services-onco .services-onco__inner .services__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.services .services__inner .services__row .services__card {
+.services .services__inner .services__row::before,
+.services .services-onco__inner .services__row::before,
+.services-onco .services__inner .services__row::before,
+.services-onco .services-onco__inner .services__row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 60%;
+  background: #ededed;
+  -webkit-filter: blur(100px);
+          filter: blur(100px);
+  border-radius: 133px;
+}
+
+.services .services__inner .services__row .services__card,
+.services .services-onco__inner .services__row .services__card,
+.services-onco .services__inner .services__row .services__card,
+.services-onco .services-onco__inner .services__row .services__card {
+  min-height: 750px;
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: #fff;
   border-radius: 12px;
+  padding: 30px;
   margin-right: 20px;
 }
 
-.services .services__inner .services__row .services__card:last-child {
+.services .services__inner .services__row .services__card:last-child,
+.services .services-onco__inner .services__row .services__card:last-child,
+.services-onco .services__inner .services__row .services__card:last-child,
+.services-onco .services-onco__inner .services__row .services__card:last-child {
   margin-right: 0;
+}
+
+.services .services__inner .services__row .services__card .services-card__img,
+.services .services-onco__inner .services__row .services__card .services-card__img,
+.services-onco .services__inner .services__row .services__card .services-card__img,
+.services-onco .services-onco__inner .services__row .services__card .services-card__img {
+  margin-bottom: 30px;
+}
+
+.services .services__inner .services__row .services__card .services-card__img img,
+.services .services-onco__inner .services__row .services__card .services-card__img img,
+.services-onco .services__inner .services__row .services__card .services-card__img img,
+.services-onco .services-onco__inner .services__row .services__card .services-card__img img {
+  width: 100%;
+  border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.services .services__inner .services__row .services__card .services-card__title,
+.services .services-onco__inner .services__row .services__card .services-card__title,
+.services-onco .services__inner .services__row .services__card .services-card__title,
+.services-onco .services-onco__inner .services__row .services__card .services-card__title {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #35ccb1;
+  margin-bottom: 10px;
+}
+
+.services .services__inner .services__row .services__card .services-card__text,
+.services .services-onco__inner .services__row .services__card .services-card__text,
+.services-onco .services__inner .services__row .services__card .services-card__text,
+.services-onco .services-onco__inner .services__row .services__card .services-card__text {
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 20px;
+}
+
+.services .services__inner .services__row .services__card .services-card__text b,
+.services .services-onco__inner .services__row .services__card .services-card__text b,
+.services-onco .services__inner .services__row .services__card .services-card__text b,
+.services-onco .services-onco__inner .services__row .services__card .services-card__text b {
+  display: block;
+  margin-bottom: 70px;
+}
+
+.services .services__inner .services__row .services__card .services-card__price,
+.services .services-onco__inner .services__row .services__card .services-card__price,
+.services-onco .services__inner .services__row .services__card .services-card__price,
+.services-onco .services-onco__inner .services__row .services__card .services-card__price {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  margin-bottom: 30px;
+}
+
+.services .services__inner .services__row .services__card .services-card__price p:first-child,
+.services .services-onco__inner .services__row .services__card .services-card__price p:first-child,
+.services-onco .services__inner .services__row .services__card .services-card__price p:first-child,
+.services-onco .services-onco__inner .services__row .services__card .services-card__price p:first-child {
+  font-weight: 500;
+}
+
+.services .services__inner .services__row .services__card .services-card__price p:last-child,
+.services .services-onco__inner .services__row .services__card .services-card__price p:last-child,
+.services-onco .services__inner .services__row .services__card .services-card__price p:last-child,
+.services-onco .services-onco__inner .services__row .services__card .services-card__price p:last-child {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+  color: #35ccb1;
+}
+
+.services .services__inner .services__row .services__card .services-card__button,
+.services .services-onco__inner .services__row .services__card .services-card__button,
+.services-onco .services__inner .services__row .services__card .services-card__button,
+.services-onco .services-onco__inner .services__row .services__card .services-card__button {
+  display: block;
+  text-align: center;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.services .services__inner .services__row .services__col,
+.services .services-onco__inner .services__row .services__col,
+.services-onco .services__inner .services__row .services__col,
+.services-onco .services-onco__inner .services__row .services__col {
+  min-height: 750px;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.services .services__inner .services__row .services__col .services__consultation,
+.services .services-onco__inner .services__row .services__col .services__consultation,
+.services-onco .services__inner .services__row .services__col .services__consultation,
+.services-onco .services-onco__inner .services__row .services__col .services__consultation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 60%;
+  background: linear-gradient(150.95deg, #54e2cb 8.63%, #35CCB1 84.35%);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.services .services__inner .services__row .services__col .services__consultation .services-consultation__img,
+.services .services-onco__inner .services__row .services__col .services__consultation .services-consultation__img,
+.services-onco .services__inner .services__row .services__col .services__consultation .services-consultation__img,
+.services-onco .services-onco__inner .services__row .services__col .services__consultation .services-consultation__img {
+  margin: 40px 0 50px;
+}
+
+.services .services__inner .services__row .services__col .services__consultation .services-consultation__img img,
+.services .services-onco__inner .services__row .services__col .services__consultation .services-consultation__img img,
+.services-onco .services__inner .services__row .services__col .services__consultation .services-consultation__img img,
+.services-onco .services-onco__inner .services__row .services__col .services__consultation .services-consultation__img img {
+  margin: 0 auto;
+}
+
+.services .services__inner .services__row .services__col .services__consultation .services-consultation__title,
+.services .services-onco__inner .services__row .services__col .services__consultation .services-consultation__title,
+.services-onco .services__inner .services__row .services__col .services__consultation .services-consultation__title,
+.services-onco .services-onco__inner .services__row .services__col .services__consultation .services-consultation__title {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #fff;
+  max-width: 200px;
+  margin-bottom: 30px;
+}
+
+.services .services__inner .services__row .services__col .services__consultation .services-consultation__button,
+.services .services-onco__inner .services__row .services__col .services__consultation .services-consultation__button,
+.services-onco .services__inner .services__row .services__col .services__consultation .services-consultation__button,
+.services-onco .services-onco__inner .services__row .services__col .services__consultation .services-consultation__button {
+  display: block;
+  text-align: center;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 2px solid #fff;
+}
+
+.services .services__inner .services__row .services__col .services__pricelist,
+.services .services-onco__inner .services__row .services__col .services__pricelist,
+.services-onco .services__inner .services__row .services__col .services__pricelist,
+.services-onco .services-onco__inner .services__row .services__col .services__pricelist {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.services .services__inner .services__row .services__col .services__pricelist .services-pricelist__img img,
+.services .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__img img,
+.services-onco .services__inner .services__row .services__col .services__pricelist .services-pricelist__img img,
+.services-onco .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__img img {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.services .services__inner .services__row .services__col .services__pricelist .services-pricelist__title,
+.services .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__title,
+.services-onco .services__inner .services__row .services__col .services__pricelist .services-pricelist__title,
+.services-onco .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__title {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #35ccb1;
+  margin-bottom: 30px;
+}
+
+.services .services__inner .services__row .services__col .services__pricelist .services-pricelist__button,
+.services .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__button,
+.services-onco .services__inner .services__row .services__col .services__pricelist .services-pricelist__button,
+.services-onco .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__button {
+  display: block;
+  text-align: center;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-shadow: none;
+  color: #35ccb1;
+  border: 2px solid #35ccb1;
+}
+
+.services-onco {
+  background: linear-gradient(94.76deg, rgba(0, 205, 172, 0.5) 23.04%, rgba(2, 170, 176, 0.5) 91.95%);
+  opacity: .8;
+}
+
+.services-onco::after {
+  display: none;
+}
+
+.services-onco .services-onco__inner {
+  padding: 50px 0 100px;
+}
+
+.services-onco .services-onco__inner .services-onco__title {
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.services-onco .services-onco__inner .services__row::before {
+  display: none;
 }
