@@ -18,7 +18,7 @@ $text: #585858
   height: 10px
 
 html, body
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif
   font-size: 18px
   line-height: 22px
   color: $text
@@ -582,3 +582,380 @@ html, body
           span
             font-size: 96px
             line-height: 117px
+
+// Individual
+
+.individual
+  .individual__inner
+    display: flex
+    justify-content: space-between
+    .individual__img
+      flex-basis: 50%
+      img
+        width: 100%
+        border-radius: 0 12px 12px 0
+        object-fit: cover
+    .individual__content
+      flex-basis: 50%
+      max-width: 530px
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: center
+      .individual__title
+        margin-bottom: 40px
+      .individual__text
+        font-size: 14px
+        line-height: 17px
+        margin-bottom: 70px
+
+// Specialists
+
+.specialists
+  .specialists__inner
+    .specialists__title
+      max-width: 530px
+      margin-bottom: 70px
+    .specialists__row
+      position: relative
+      display: flex
+      justify-content: space-between
+      margin-bottom: 20px
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        width: 100%
+        height: 60%
+        background: #ededed
+        filter: blur(100px)
+        border-radius: 133px
+      .specialists__card
+        position: relative
+        width: 100%
+        display: flex
+        min-height: 570px
+        background: #fff
+        border-radius: 12px
+        padding-top: 50px
+        &::after
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 60px
+          background: $light-gradient
+          border-radius: 0 0 12px 12px
+        .specialists-card__img
+          position: absolute
+          bottom: 60px
+          img
+        .specialists-card__content
+          margin-left: 350px
+          .specialists-card__title
+            margin-bottom: 60px
+            p
+              font-weight: 700
+              &:first-child
+                font-size: 36px
+                line-height: 44px
+                color: $dark
+              &:last-child
+                font-size: 24px
+                line-height: 29px
+          .specialists-card__row
+            display: flex
+          .specialists-card__list
+            max-width: 420px
+            font-size: 14px
+            line-height: 17px
+            margin-right: 45px
+            .specialists-card__item
+              position: relative
+              padding-left: 50px
+              margin-bottom: 60px
+              &:last-child
+                margin-bottom: 80px
+              &::before
+                content: ''
+                position: absolute
+                top: -5px
+                left: 0
+                display: block
+                border-radius: 50%
+                background: #fff
+                padding: 10px
+                border: 10px solid rgba($light, .5)
+      .specialists__col
+        flex-basis: 50%
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+        .specialists__card
+          height: 100%
+          .specialists-card__img
+            width: 40%
+            img
+              width: 100%
+              object-fit: cover
+          .specialists-card__content
+            margin-left: 45%
+            .specialists-card__title
+              margin-bottom: 45px
+            .specialists-card__list
+              .specialists-card__item
+                padding-left: 40px
+                margin-bottom: 30px
+                &:last-child
+                  margin-bottom: 80px
+                &::before
+                  top: -4px
+                  background: #fff
+                  padding: 6px
+                  border: 8px solid rgba($light, .5)
+
+// Work
+
+.work
+  .work__inner
+    .work__title
+      margin-bottom: 80px
+    .work__subtitle
+      font-size: 64px
+      line-height: 78px
+      font-weight: 700
+      color: $dark
+      margin-bottom: 40px
+    .work__card
+      padding: 55px 125px
+      border: 1px solid #ededed
+      background: #fff
+      border-bottom: 120px solid $light
+      border-radius: 12px
+      margin-bottom: 200px
+      .work__row
+        display: flex
+        margin-bottom: 100px
+        .work__item
+          position: relative
+          flex-basis: 25%
+          margin-right: 50px
+          &::after
+            content: ''
+            position: absolute
+            top: 40px
+            right: 35px
+            width: 23px
+            height: 15px
+            background: url(../img/work/arrow.svg) center no-repeat
+          &:last-child
+            margin-right: 0
+            &::after
+              display: none
+          .work-item__img
+            margin-bottom: 28px
+            img
+          .work-item__num
+            font-size: 36px
+            line-height: 44px
+            font-weight: 700
+            color: $dark
+            margin-bottom: 10px
+          .work-item__text
+            font-weight: 600
+    .work__intramural
+      position: relative
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+      &::before
+        top: -30px
+        right: -420px
+        width: 960px
+        height: 960px
+        z-index: -1
+        background: url(../img/work/circle.png) center no-repeat
+      &::after
+        top: 30px
+        left: 65%
+        z-index: 2
+        width: 508px
+        height: 940px
+        background: url(../img/work/flower.png) center no-repeat
+    .work__extramural
+      position: relative
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+      &::before
+        top: -30px
+        left: -420px
+        width: 960px
+        height: 960px
+        z-index: -1
+        background: url(../img/work/circle.png) center no-repeat
+      &::after
+        top: 5%
+        left: -28%
+        z-index: 2
+        width: 1100px
+        height: 1180px
+        background: url(../img/work/branch.png) center no-repeat
+      .work__row
+        justify-content: flex-end
+
+// History
+
+.history
+  .history__inner
+    .history__title
+      margin-bottom: 80px
+    .history__card
+      max-width: 690px
+      padding-right: 150px
+    .history-card__date
+      position: relative
+      font-size: 72px
+      line-height: 88px
+      font-weight: 700
+      color: $dark
+      &::after
+        content: ''
+        position: absolute
+        top: 50%
+        right: 0
+        height: 3px
+        width: 270px
+        background: $gradient
+    .history-card__title
+      font-size: 24px
+      line-height: 29px
+      font-weight: 500
+      margin-bottom: 30px
+    .history-card__text
+
+// Timeline
+
+.timeline-container
+  margin: auto auto auto 31%
+.timeline-list
+  overflow: visible
+.timeline-item
+  width: auto
+  height: auto
+  padding: 0
+  border: 0
+.timeline-dots-wrap
+  overflow: visible
+  .timeline-dots
+    overflow: hidden
+    display: flex
+    justify-content: space-around
+    height: 70px
+    li
+      overflow: visible
+      background: transparent
+      margin-right: 70px
+      button
+        font-family: 'Montserrat', sans-serif
+        font-style: normal
+        font-weight: 700
+        font-size: 24px
+        line-height: 29px
+        color: #585858
+        padding-bottom: 40px
+    li.slide-active
+      button
+        font-size: 36px
+        line-height: 44px
+        color: $dark
+        padding-bottom: 25px
+
+// Licenses
+
+.licenses
+  .licenses__inner
+    .licenses__title
+      margin-bottom: 70px
+    .licenses__row
+      display: flex
+      justify-content: space-between
+      margin-bottom: 60px
+      .licenses__item
+        position: relative
+        &::before,
+        &::after
+          content: ''
+          position: absolute
+          top: 0
+          right: 0
+          width: 30px
+          height: 30px
+        &::before
+          left: 0
+          border-top: 2px solid $dark
+          border-left: 2px solid $dark
+        &::after
+          right: 0
+          border-top: 2px solid $dark
+          border-right: 2px solid $dark
+        .licenses__border
+          position: relative
+          &::before,
+          &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            right: 0
+            width: 30px
+            height: 30px
+          &::before
+            left: 0
+            border-bottom: 2px solid $dark
+            border-left: 2px solid $dark
+          &::after
+            right: 0
+            border-bottom: 2px solid $dark
+            border-right: 2px solid $dark
+          .licenses__img
+            padding: 15px
+            img
+    .licenses__link
+      font-weight: 700
+      text-align: center
+      text-decoration: underline
+      color: $dark
+      display: block
+      max-width: 300px
+      margin: 0 auto
+
+// Reviews
+
+.reviews
+  background: $light-gradient
+  padding: 60px 0
+  .reviews__inner
+    .reviews__title
+      color: #fff
+      margin-bottom: 60px
+    .reviews__row
+      display: flex
+      .review__item
+        background: #fff
+        border-radius: 12px
+        padding: 55px 40px
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+        .review-item__name
+          font-size: 24px
+          font-weight: 29px
+          font-weight: 700
+          color: $dark
+        .review-item__city
+        .review-item__text
