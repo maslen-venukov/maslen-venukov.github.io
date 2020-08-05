@@ -1,0 +1,398 @@
+@import 'normalize'
+
+$gradient: linear-gradient(150.95deg, rgb(84, 226, 203) 8.63%, #35CCB1 84.35%)
+$light-gradient: linear-gradient(94.76deg, rgba(0, 205, 172, 0.5) 23.04%, rgba(2, 170, 176, 0.5) 91.95%)
+$dark: #35ccb1
+$light: #40d4ba
+$text: #585858
+
+@mixin listCircle()
+  content: ''
+  position: absolute
+  top: 7px
+  left: 0
+  background: $light
+  display: block
+  border-radius: 50%
+  width: 10px
+  height: 10px
+
+html, body
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px
+  line-height: 22px
+  color: $text
+  overflow-x: hidden
+
+.container
+  width: 100%
+  max-width: 1460px
+  padding: 0 15px
+  margin: 0 auto
+
+.button
+  display: inline-block
+  color: #fff
+  font-weight: 700
+  text-shadow: 0 2px 2px #02c7a7
+  background: $gradient
+  box-shadow: 0 2px 10px #54e2cb
+  border-radius: 30px
+  padding: 20px 70px
+
+.section
+  margin-bottom: 200px
+  .section__title
+    font-size: 36px
+    line-height: 44px
+    font-weight: 700
+    &_color
+      color: $dark
+
+// Header
+
+.header
+  margin: 35px 0 160px
+  .header__inner
+    .header__upper
+      position: relative
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      margin-bottom: 15px
+      .header__figure
+        position: absolute
+        right: -60%
+        top: -550%
+        z-index: -1
+      .header__logo
+        max-width: 250px
+        display: flex
+        align-items: flex-end
+        font-size: 14px
+        line-height: 17px
+        font-weight: 600
+        img
+          margin-right: 20px
+      .header__phones
+        flex-basis: 30%
+        font-size: 24px
+        line-height: 29px
+        color: #fff
+        .header-phones__item
+          &:first-child
+            position: relative
+            &::before
+              content: '\f879'
+              position: absolute
+              top: 50%
+              left: -40px
+              transform: translateY(-50%)
+              display: flex
+              justify-content: center
+              align-items: center
+              width: 25px
+              height: 25px
+              border-radius: 50%
+              background: #fff
+              font-family: FontAwesome
+              font-size: 16px
+              color: #40D4BA
+    .header__lower
+      display: flex
+      justify-content: space-between
+      .nav
+        .nav__inner
+          display: flex
+          .nav__item
+            color: $text
+            margin-right: 50px
+            transition: color .2s linear
+            &:hover
+              color: $dark
+            &:last-child
+              margin-right: 0
+      .header__contact
+        position: relative
+        flex-basis: 30%
+        font-size: 14px
+        line-height: 17px
+        font-weight: 500
+        color: #fff
+        text-decoration: underline
+        &::before
+          content: '\f232'
+          position: absolute
+          top: 0
+          left: -38px
+          font-family: FontAwesome
+          font-size: 25px
+
+// Main
+
+.main
+  margin-bottom: 20px
+  .main__inner
+    display: flex
+    justify-content: space-between
+    .main__content
+      flex-basis: 55%
+      .main__title
+        font-size: 36px
+        line-height: 44px
+        font-weight: 700
+        margin-bottom: 40px
+        span
+          color: $light
+      .main__list
+        margin-bottom: 80px
+        .main-list__item
+          position: relative
+          padding-left: 30px
+          margin-bottom: 15px
+          &::before
+            @include listCircle()
+          .main-list__title
+            font-weight: 600
+            margin-bottom: 5px
+          .main-list__text
+      .main__button
+        margin-right: 30px
+      .main__link
+        color: $dark
+        font-weight: 700
+        text-decoration: underline
+    .main__img
+      img
+        transform: translateY(-120px)
+
+// Features
+
+.features
+  position: relative
+  padding-top: 40px
+  .features__bg
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    width: 100vw
+  .features__inner
+    .features__text
+      &:not(:first-child)
+        margin-bottom: 70px
+    .features__title
+      position: relative
+      font-size: 200px
+      line-height: 1
+      color: rgba($dark, .6)
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: -140px
+        transform: translateY(-50%) rotate(45deg)
+        display: block
+        width: 80px
+        height: 80px
+        border-top: 20px solid rgba($dark, .6)
+        border-right: 20px solid rgba($dark, .6)
+    .features__subtitle
+      font-size: 96px
+      line-height: 117px
+      font-weight: 500
+      color: $dark
+      margin-bottom: 200px
+    .features__cards
+      margin-bottom: 200px
+      .features-cards__item
+        display: flex
+        justify-content: space-between
+        background: #fff
+        box-shadow: 0 10px 20px rgba(2, 170, 176, .3)
+        border-radius: 12px
+        max-width: 1140px
+        padding: 30px
+        margin-bottom: 30px
+        &:last-child
+          margin-bottom: 0
+        &:nth-last-child(2n+2)
+          margin-left: auto
+        .features-cards__img
+          flex-basis: 500px
+          margin-right: 50px
+          img
+            width: 100%
+            border-radius: 12px
+            object-fit: cover
+        .features-cards__content
+          flex-basis: 500px
+          display: flex
+          flex-direction: column
+          justify-content: center
+          .features-cards__number
+            font-size: 56px
+            line-height: 1
+            font-weight: 700
+            color: $light
+            margin-bottom: 25px
+          .features-cards__title
+            font-size: 36px
+            line-height: 44px
+            font-weight: 700
+            color: $light
+            margin-bottom: 12px
+          .features-cards__text
+
+// Help
+
+.help
+  .help__inner
+    display: flex
+    justify-content: space-between
+    .help__content
+      flex-basis: 50%
+      max-width: 500px
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: center
+      .help__title
+        margin-bottom: 40px
+      .help__text
+        font-size: 14px
+        line-height: 17px
+        margin-bottom: 50px
+        p
+          margin-bottom: 20px
+          &:last-child
+            font-weight: 600
+    .help__img
+      flex-basis: 50%
+      img
+        width: 100%
+        border-radius: 12px 0 0 12px
+        object-fit: cover
+
+// Use
+
+.use
+  margin-bottom: 0
+  .use__inner
+    .use__text
+      position: relative
+      max-width: 1150px
+      padding-left: 45px
+      z-index: 2
+      &::before
+        content: ''
+        position: absolute
+        top: 15px
+        left: 0
+        width: 15px
+        height: 93%
+        background: rgba($light, .6)
+      &::after
+        content: ''
+        position: absolute
+        top: -100px
+        right: -357px
+        width: 357px
+        height: 369px
+        background: url(../img/use/leaves-small.png) center no-repeat
+        background-size: cover
+      .use__title
+        font-size: 48px
+        line-height: 59px
+        font-weight: 700
+        color: $light
+        margin-bottom: 15px
+      .use__subtitle
+        font-size: 36px
+        line-height: 44px
+        font-weight: 500
+    .use__img
+      padding-left: 45px
+      transform: translateY(-100px)
+      img
+        margin: 0 auto
+    .use__card
+      position: relative
+      z-index: -1
+      transform: translateY(-190px)
+      background: #fff
+      box-shadow: 0 10px 20px rgba(2, 170, 176, .3)
+      border-radius: 12px
+      max-width: 995px
+      padding: 45px
+      margin-left: auto
+      &::before
+        content: ''
+        position: absolute
+        top: -50px
+        left: -870px
+        width: 900px
+        height: 800px
+        background: url(../img/use/leaves-large.png) center no-repeat
+        background-size: cover
+      .use-card__title
+        margin-bottom: 30px
+      .use-card__text
+        margin-bottom: 60px
+      .use-card__list
+        .use-card__item
+          &:first-child
+            margin-bottom: 30px
+          &:not(:first-child)
+            position: relative
+            font-weight: 600
+            padding-left: 50px
+            margin-bottom: 20px
+            &::before
+              @include listCircle()
+
+// Request
+
+.request
+  .request__inner
+    display: flex
+    justify-content: space-between
+    .request__content
+      flex-basis: 50%
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: center
+      .request__title
+        margin-bottom: 40px
+      .request__text
+        margin-bottom: 70px
+      .request__button
+        margin-right: 30px
+      .request__link
+        font-weight: 700
+        color: $dark
+        text-decoration: underline
+    .request__img
+      flex-basis: 50%
+      img
+        width: 100%
+        border-radius: 12px 0 0 12px
+        object-fit: cover
+
+// Services
+
+.services
+  .services__inner
+    .services__title
+      width: 76%
+      margin-bottom: 40px
+    .services__row
+      display: flex
+      .services__card
+        flex-basis: 25%
+        background: #fff
+        border-radius: 12px
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
