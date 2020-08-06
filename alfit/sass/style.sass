@@ -49,15 +49,19 @@ html, body
     &_color
       color: $dark
 
+.intro
+  background: url(../img/intro/bg.jpg) center no-repeat
+  background-size: cover
+
 // Header
 
 .header
-  margin: 35px 0 160px
+  padding-top: 35px
+  margin-bottom: 160px
   .header__inner
     .header__upper
       position: relative
       display: flex
-      justify-content: space-between
       align-items: flex-start
       margin-bottom: 15px
       .header__figure
@@ -66,7 +70,7 @@ html, body
         top: -550%
         z-index: -1
       .header__logo
-        max-width: 250px
+        flex-basis: 75%
         display: flex
         align-items: flex-end
         font-size: 14px
@@ -74,8 +78,10 @@ html, body
         font-weight: 600
         img
           margin-right: 20px
+        p
+          max-width: 150px
       .header__phones
-        flex-basis: 30%
+        flex-basis: 20%
         font-size: 24px
         line-height: 29px
         color: #fff
@@ -98,6 +104,15 @@ html, body
               font-family: FontAwesome
               font-size: 16px
               color: #40D4BA
+      .header__poor-vision
+        flex-basis: 5%
+        display: flex
+        align-items: center
+        img
+          margin-right: 20px
+        p
+          font-weight: 700
+          color: #fff
     .header__lower
       display: flex
       justify-content: space-between
@@ -115,16 +130,18 @@ html, body
       .header__contact
         position: relative
         flex-basis: 30%
-        font-size: 14px
-        line-height: 17px
-        font-weight: 500
         color: #fff
-        text-decoration: underline
+        .header-contacts__link
+          font-size: 14px
+          line-height: 17px
+          font-weight: 500
+          color: #fff
+          text-decoration: underline
         &::before
           content: '\f232'
           position: absolute
           top: 0
-          left: -38px
+          left: -42px
           font-family: FontAwesome
           font-size: 25px
 
@@ -157,19 +174,47 @@ html, body
             margin-bottom: 5px
           .main-list__text
       .main__button
-        margin-right: 30px
+        margin: 0 30px 100px 0
       .main__link
         color: $dark
         font-weight: 700
         text-decoration: underline
+      .main__city
+        display: flex
+        align-items: center
+        .fas
+          font-size: 20px
+          color: $dark
+          margin-right: 15px
     .main__img
+      position: relative
       img
         transform: translateY(-120px)
+      .main__card
+        position: absolute
+        right: 0
+        bottom: 80px
+        max-width: 280px
+        background: #fff
+        box-shadow: 0 10px 30px rgba(#000, .2)
+        border-radius: 20px
+        padding: 20px
+        .main-card__surname
+          font-weight: 700
+          color: $dark
+        .main-card__name
+          font-weight: 500
+          color: $dark
+          margin-bottom: 20px
+        .main-card__profession
+          font-size: 12px
+          line-height: 15px
 
 // Features
 
 .features
   position: relative
+  background: url(../img/features/bg.jpg) top no-repeat
   padding-top: 40px
   .features__bg
     position: absolute
@@ -277,13 +322,14 @@ html, body
 // Use
 
 .use
-  margin-bottom: 0
+  background: url(../img/use/illustration.jpg) top no-repeat
   .use__inner
     .use__text
       position: relative
+      z-index: 2
       max-width: 1150px
       padding-left: 45px
-      z-index: 2
+      margin-bottom: 740px
       &::before
         content: ''
         position: absolute
@@ -318,8 +364,6 @@ html, body
         margin: 0 auto
     .use__card
       position: relative
-      z-index: -1
-      transform: translateY(-190px)
       background: #fff
       box-shadow: 0 10px 20px rgba(2, 170, 176, .3)
       border-radius: 12px
@@ -385,16 +429,10 @@ html, body
 .services,
 .services-onco
   position: relative
-  &::after
-    content: ''
+  .services__img
     position: absolute
-    top: 200px
-    right: -300px
-    z-index: -1
-    width: 1000px
-    height: 1000px
-    background: url(../img/services/leaves.png) center no-repeat
-    background-size: cover
+    top: 250px
+    right: -250px
   .services__inner,
   .services-onco__inner
     .services__title
@@ -543,7 +581,7 @@ html, body
     position: absolute
     top: -150px
     right: -300px
-    z-index: -1
+    // z-index: -1
     width: 1000px
     height: 1000px
     background: url(../img/stats/leaves.png) center no-repeat
@@ -777,12 +815,11 @@ html, body
         right: -420px
         width: 960px
         height: 960px
-        z-index: -1
+        // z-index: 1
         background: url(../img/work/circle.png) center no-repeat
       &::after
         top: 30px
         left: 65%
-        z-index: 2
         width: 508px
         height: 940px
         background: url(../img/work/flower.png) center no-repeat
@@ -797,12 +834,11 @@ html, body
         left: -420px
         width: 960px
         height: 960px
-        z-index: -1
+        // z-index: 1
         background: url(../img/work/circle.png) center no-repeat
       &::after
         top: 5%
         left: -28%
-        z-index: 2
         width: 1100px
         height: 1180px
         background: url(../img/work/branch.png) center no-repeat
@@ -1013,6 +1049,7 @@ html, body
   height: 0
 
 .production
+  margin-bottom: 400px
   .production__inner
     position: relative
     &::before
@@ -1089,11 +1126,14 @@ html, body
 // Footer
 
 .footer
+  background: url(../img/footer/bg.jpg) bottom no-repeat
   .footer__inner
     display: flex
     justify-content: space-between
+    transform: translateY(-150px)
     .footer__contacts
       position: relative
+      z-index: 2
       display: flex
       flex-direction: column
       width: 40%
@@ -1106,19 +1146,23 @@ html, body
       &::after
         content: ''
         position: absolute
+      &::before
         top: 20px
         left: 20px
+        z-index: 3
         width: 90%
-      &::before
         height: 92%
         border: 1px solid #ededed
-        border-radius: 10px
+        border-radius: 12px
       &::after
-        z-index: -1
-        height: 100%
-        background: #fff
+        bottom: 0px
+        left: 20px
+        transform: translateY(20px)
+        width: 90%
+        height: 20px
+        background: #e7e7e7
+        border-radius: 0 0 12px 12px
         box-shadow: 0 10px 40px rgba(#000, .2)
-        border-radius: 12px;
       .footer__title
         font-size: 36px
         line-height: 44px
