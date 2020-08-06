@@ -59,29 +59,37 @@ html, body
   padding-top: 35px
   margin-bottom: 160px
   .header__inner
-    .header__upper
-      position: relative
-      display: flex
-      align-items: flex-start
-      margin-bottom: 15px
-      .header__figure
-        position: absolute
-        right: -60%
-        top: -550%
-        z-index: -1
+    display: flex
+    justify-content: space-between
+    .header__nav
+      flex-basis: 60%
       .header__logo
-        flex-basis: 75%
         display: flex
         align-items: flex-end
         font-size: 14px
         line-height: 17px
         font-weight: 600
+        margin-bottom: 30px
         img
           margin-right: 20px
         p
           max-width: 150px
+      .nav
+        .nav__inner
+          display: flex
+          .nav__item
+            color: $text
+            margin-right: 50px
+            transition: color .2s linear
+            &:hover
+              color: $dark
+            &:last-child
+              margin-right: 0
+    .header__contacts
+      display: flex
+      flex-direction: column
+      justify-content: space-between
       .header__phones
-        flex-basis: 20%
         font-size: 24px
         line-height: 29px
         color: #fff
@@ -103,33 +111,9 @@ html, body
               background: #fff
               font-family: FontAwesome
               font-size: 16px
-              color: #40D4BA
-      .header__poor-vision
-        flex-basis: 5%
-        display: flex
-        align-items: center
-        img
-          margin-right: 20px
-        p
-          font-weight: 700
-          color: #fff
-    .header__lower
-      display: flex
-      justify-content: space-between
-      .nav
-        .nav__inner
-          display: flex
-          .nav__item
-            color: $text
-            margin-right: 50px
-            transition: color .2s linear
-            &:hover
-              color: $dark
-            &:last-child
-              margin-right: 0
-      .header__contact
+              color: #40d4ba
+      .header-contacts__link
         position: relative
-        flex-basis: 30%
         color: #fff
         .header-contacts__link
           font-size: 14px
@@ -141,9 +125,20 @@ html, body
           content: '\f232'
           position: absolute
           top: 0
-          left: -42px
+          left: -40px
           font-family: FontAwesome
           font-size: 25px
+    .header__poor-vision
+      .header-poor-vision__wrapper
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        img
+          margin-right: 20px
+        p
+          max-width: 150px
+          font-weight: 700
+          color: #fff
 
 // Main
 
@@ -442,6 +437,8 @@ html, body
       display: flex
       position: relative
       margin-bottom: 20px
+      &:last-of-type
+        margin-bottom: 40px
       &::before
         content: ''
         position: absolute
@@ -555,6 +552,14 @@ html, body
             text-shadow: none
             color: $dark
             border: 2px solid $dark
+    .services__link
+      display: block
+      max-width: 150px
+      font-weight: 700
+      color: $dark
+      text-align: center
+      text-decoration: underline
+      margin: 0 auto
 
 // Services-onco
 
@@ -659,6 +664,8 @@ html, body
       display: flex
       justify-content: space-between
       margin-bottom: 20px
+      &:last-of-type
+        margin-bottom: 40px
       &::before
         content: ''
         position: absolute
@@ -754,6 +761,14 @@ html, body
                   background: #fff
                   padding: 6px
                   border: 8px solid rgba($light, .5)
+    .specialists__link
+      display: block
+      max-width: 200px
+      font-weight: 700
+      color: $dark
+      text-align: center
+      text-decoration: underline
+      margin: 0 auto
 
 // Work
 
