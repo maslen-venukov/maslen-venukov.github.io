@@ -63,4 +63,14 @@ $(document).ready(function () {
         $('.nav__inner').toggleClass('nav__inner_active');
     });
 
+    $('.modal__close, .modal-online__close').click(function() {
+        $('.modal__outer').removeClass('modal__outer_active');
+        $('.modal-online__outer').removeClass('modal-online__outer_active');
+    });
+
+    $('.rights__title, .agreement__title').click(function() {
+        $('.rights').removeClass('rights_active');
+        $('.agreement').removeClass('agreement_active');
+    });
+
 });

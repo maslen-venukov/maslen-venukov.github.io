@@ -50,6 +50,7 @@ input,
 button,
 textarea,
 select {
+  border: 0;
   font-family: inherit;
 }
 
@@ -3508,4 +3509,645 @@ html, body {
 
 .footer .footer__inner .footer__map {
   width: 100%;
+}
+
+.form {
+  width: 100%;
+}
+
+.form .form__input,
+.form .form__button {
+  display: block;
+  width: 100%;
+}
+
+.form .form__input {
+  background: #f2f2f2;
+  -webkit-box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 15px 15px 15px 50px;
+  margin-bottom: 15px;
+}
+
+.form .form__input:last-of-type {
+  margin-bottom: 70px;
+}
+
+.form .form__button {
+  margin-bottom: 40px;
+}
+
+.modal__outer,
+.modal-online__outer {
+  position: fixed;
+  z-index: 2000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal__outer_active,
+.modal-online__outer_active {
+  display: block;
+}
+
+.modal__outer .modal,
+.modal__outer .modal-online,
+.modal-online__outer .modal,
+.modal-online__outer .modal-online {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 900px;
+  max-height: 600px;
+  width: 95%;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.modal__outer .modal .modal__inner,
+.modal__outer .modal .modal-online__inner,
+.modal__outer .modal-online .modal__inner,
+.modal__outer .modal-online .modal-online__inner,
+.modal-online__outer .modal .modal__inner,
+.modal-online__outer .modal .modal-online__inner,
+.modal-online__outer .modal-online .modal__inner,
+.modal-online__outer .modal-online .modal-online__inner {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal__outer .modal .modal__inner .modal__close,
+.modal__outer .modal .modal__inner .modal-online__close,
+.modal__outer .modal .modal-online__inner .modal__close,
+.modal__outer .modal .modal-online__inner .modal-online__close,
+.modal__outer .modal-online .modal__inner .modal__close,
+.modal__outer .modal-online .modal__inner .modal-online__close,
+.modal__outer .modal-online .modal-online__inner .modal__close,
+.modal__outer .modal-online .modal-online__inner .modal-online__close,
+.modal-online__outer .modal .modal__inner .modal__close,
+.modal-online__outer .modal .modal__inner .modal-online__close,
+.modal-online__outer .modal .modal-online__inner .modal__close,
+.modal-online__outer .modal .modal-online__inner .modal-online__close,
+.modal-online__outer .modal-online .modal__inner .modal__close,
+.modal-online__outer .modal-online .modal__inner .modal-online__close,
+.modal-online__outer .modal-online .modal-online__inner .modal__close,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: #35ccb1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.modal__outer .modal .modal__inner .modal__content,
+.modal__outer .modal .modal__inner .modal-online__content,
+.modal__outer .modal .modal-online__inner .modal__content,
+.modal__outer .modal .modal-online__inner .modal-online__content,
+.modal__outer .modal-online .modal__inner .modal__content,
+.modal__outer .modal-online .modal__inner .modal-online__content,
+.modal__outer .modal-online .modal-online__inner .modal__content,
+.modal__outer .modal-online .modal-online__inner .modal-online__content,
+.modal-online__outer .modal .modal__inner .modal__content,
+.modal-online__outer .modal .modal__inner .modal-online__content,
+.modal-online__outer .modal .modal-online__inner .modal__content,
+.modal-online__outer .modal .modal-online__inner .modal-online__content,
+.modal-online__outer .modal-online .modal__inner .modal__content,
+.modal-online__outer .modal-online .modal__inner .modal-online__content,
+.modal-online__outer .modal-online .modal-online__inner .modal__content,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+}
+
+@media screen and (max-width: 920px) {
+  .modal__outer .modal .modal__inner .modal__content,
+  .modal__outer .modal .modal__inner .modal-online__content,
+  .modal__outer .modal .modal-online__inner .modal__content,
+  .modal__outer .modal .modal-online__inner .modal-online__content,
+  .modal__outer .modal-online .modal__inner .modal__content,
+  .modal__outer .modal-online .modal__inner .modal-online__content,
+  .modal__outer .modal-online .modal-online__inner .modal__content,
+  .modal__outer .modal-online .modal-online__inner .modal-online__content,
+  .modal-online__outer .modal .modal__inner .modal__content,
+  .modal-online__outer .modal .modal__inner .modal-online__content,
+  .modal-online__outer .modal .modal-online__inner .modal__content,
+  .modal-online__outer .modal .modal-online__inner .modal-online__content,
+  .modal-online__outer .modal-online .modal__inner .modal__content,
+  .modal-online__outer .modal-online .modal__inner .modal-online__content,
+  .modal-online__outer .modal-online .modal-online__inner .modal__content,
+  .modal-online__outer .modal-online .modal-online__inner .modal-online__content {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .modal__outer .modal .modal__inner .modal__content,
+  .modal__outer .modal .modal__inner .modal-online__content,
+  .modal__outer .modal .modal-online__inner .modal__content,
+  .modal__outer .modal .modal-online__inner .modal-online__content,
+  .modal__outer .modal-online .modal__inner .modal__content,
+  .modal__outer .modal-online .modal__inner .modal-online__content,
+  .modal__outer .modal-online .modal-online__inner .modal__content,
+  .modal__outer .modal-online .modal-online__inner .modal-online__content,
+  .modal-online__outer .modal .modal__inner .modal__content,
+  .modal-online__outer .modal .modal__inner .modal-online__content,
+  .modal-online__outer .modal .modal-online__inner .modal__content,
+  .modal-online__outer .modal .modal-online__inner .modal-online__content,
+  .modal-online__outer .modal-online .modal__inner .modal__content,
+  .modal-online__outer .modal-online .modal__inner .modal-online__content,
+  .modal-online__outer .modal-online .modal-online__inner .modal__content,
+  .modal-online__outer .modal-online .modal-online__inner .modal-online__content {
+    padding: 25px;
+  }
+}
+
+.modal__outer .modal .modal__inner .modal__content .modal__title,
+.modal__outer .modal .modal__inner .modal__content .modal-online__title,
+.modal__outer .modal .modal__inner .modal-online__content .modal__title,
+.modal__outer .modal .modal__inner .modal-online__content .modal-online__title,
+.modal__outer .modal .modal-online__inner .modal__content .modal__title,
+.modal__outer .modal .modal-online__inner .modal__content .modal-online__title,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal__title,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal-online__title,
+.modal__outer .modal-online .modal__inner .modal__content .modal__title,
+.modal__outer .modal-online .modal__inner .modal__content .modal-online__title,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal__title,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal-online__title,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal__title,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal-online__title,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal__title,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal-online__title,
+.modal-online__outer .modal .modal__inner .modal__content .modal__title,
+.modal-online__outer .modal .modal__inner .modal__content .modal-online__title,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal__title,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal-online__title,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal__title,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal-online__title,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal__title,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal-online__title,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal__title,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal-online__title,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal__title,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal-online__title,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal__title,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal-online__title,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal__title,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal-online__title {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #35ccb1;
+  margin: 0 auto 5px 0;
+}
+
+.modal__outer .modal .modal__inner .modal__content .modal__text,
+.modal__outer .modal .modal__inner .modal__content .modal-online__text,
+.modal__outer .modal .modal__inner .modal-online__content .modal__text,
+.modal__outer .modal .modal__inner .modal-online__content .modal-online__text,
+.modal__outer .modal .modal-online__inner .modal__content .modal__text,
+.modal__outer .modal .modal-online__inner .modal__content .modal-online__text,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal__text,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal-online__text,
+.modal__outer .modal-online .modal__inner .modal__content .modal__text,
+.modal__outer .modal-online .modal__inner .modal__content .modal-online__text,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal__text,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal-online__text,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal__text,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal-online__text,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal__text,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal-online__text,
+.modal-online__outer .modal .modal__inner .modal__content .modal__text,
+.modal-online__outer .modal .modal__inner .modal__content .modal-online__text,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal__text,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal-online__text,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal__text,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal-online__text,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal__text,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal-online__text,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal__text,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal-online__text,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal__text,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal-online__text,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal__text,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal-online__text,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal__text,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal-online__text {
+  font-size: 14px;
+  line-height: 17px;
+  max-width: 280px;
+  margin: 0 auto 50px 0;
+}
+
+.modal__outer .modal .modal__inner .modal__content small,
+.modal__outer .modal .modal__inner .modal__content .modal__link,
+.modal__outer .modal .modal__inner .modal__content .modal-online__link,
+.modal__outer .modal .modal__inner .modal-online__content small,
+.modal__outer .modal .modal__inner .modal-online__content .modal__link,
+.modal__outer .modal .modal__inner .modal-online__content .modal-online__link,
+.modal__outer .modal .modal-online__inner .modal__content small,
+.modal__outer .modal .modal-online__inner .modal__content .modal__link,
+.modal__outer .modal .modal-online__inner .modal__content .modal-online__link,
+.modal__outer .modal .modal-online__inner .modal-online__content small,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal__link,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal-online__link,
+.modal__outer .modal-online .modal__inner .modal__content small,
+.modal__outer .modal-online .modal__inner .modal__content .modal__link,
+.modal__outer .modal-online .modal__inner .modal__content .modal-online__link,
+.modal__outer .modal-online .modal__inner .modal-online__content small,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal__link,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal-online__link,
+.modal__outer .modal-online .modal-online__inner .modal__content small,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal__link,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal-online__link,
+.modal__outer .modal-online .modal-online__inner .modal-online__content small,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal__link,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal .modal__inner .modal__content small,
+.modal-online__outer .modal .modal__inner .modal__content .modal__link,
+.modal-online__outer .modal .modal__inner .modal__content .modal-online__link,
+.modal-online__outer .modal .modal__inner .modal-online__content small,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal__link,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal .modal-online__inner .modal__content small,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal__link,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal-online__link,
+.modal-online__outer .modal .modal-online__inner .modal-online__content small,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal__link,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal-online .modal__inner .modal__content small,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal__link,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal-online__link,
+.modal-online__outer .modal-online .modal__inner .modal-online__content small,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal__link,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal-online .modal-online__inner .modal__content small,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal__link,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal-online__link,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content small,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal__link,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal-online__link {
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #9c9c9c;
+}
+
+.modal__outer .modal .modal__inner .modal__content small,
+.modal__outer .modal .modal__inner .modal-online__content small,
+.modal__outer .modal .modal-online__inner .modal__content small,
+.modal__outer .modal .modal-online__inner .modal-online__content small,
+.modal__outer .modal-online .modal__inner .modal__content small,
+.modal__outer .modal-online .modal__inner .modal-online__content small,
+.modal__outer .modal-online .modal-online__inner .modal__content small,
+.modal__outer .modal-online .modal-online__inner .modal-online__content small,
+.modal-online__outer .modal .modal__inner .modal__content small,
+.modal-online__outer .modal .modal__inner .modal-online__content small,
+.modal-online__outer .modal .modal-online__inner .modal__content small,
+.modal-online__outer .modal .modal-online__inner .modal-online__content small,
+.modal-online__outer .modal-online .modal__inner .modal__content small,
+.modal-online__outer .modal-online .modal__inner .modal-online__content small,
+.modal-online__outer .modal-online .modal-online__inner .modal__content small,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content small {
+  font-weight: 400;
+  max-width: 300px;
+  margin-bottom: 5px;
+}
+
+.modal__outer .modal .modal__inner .modal__content .modal__link,
+.modal__outer .modal .modal__inner .modal__content .modal-online__link,
+.modal__outer .modal .modal__inner .modal-online__content .modal__link,
+.modal__outer .modal .modal__inner .modal-online__content .modal-online__link,
+.modal__outer .modal .modal-online__inner .modal__content .modal__link,
+.modal__outer .modal .modal-online__inner .modal__content .modal-online__link,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal__link,
+.modal__outer .modal .modal-online__inner .modal-online__content .modal-online__link,
+.modal__outer .modal-online .modal__inner .modal__content .modal__link,
+.modal__outer .modal-online .modal__inner .modal__content .modal-online__link,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal__link,
+.modal__outer .modal-online .modal__inner .modal-online__content .modal-online__link,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal__link,
+.modal__outer .modal-online .modal-online__inner .modal__content .modal-online__link,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal__link,
+.modal__outer .modal-online .modal-online__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal .modal__inner .modal__content .modal__link,
+.modal-online__outer .modal .modal__inner .modal__content .modal-online__link,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal__link,
+.modal-online__outer .modal .modal__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal__link,
+.modal-online__outer .modal .modal-online__inner .modal__content .modal-online__link,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal__link,
+.modal-online__outer .modal .modal-online__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal__link,
+.modal-online__outer .modal-online .modal__inner .modal__content .modal-online__link,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal__link,
+.modal-online__outer .modal-online .modal__inner .modal-online__content .modal-online__link,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal__link,
+.modal-online__outer .modal-online .modal-online__inner .modal__content .modal-online__link,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal__link,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal-online__link {
+  font-weight: 500;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.modal__outer .modal .modal__inner .modal__img,
+.modal__outer .modal .modal__inner .modal-online__img,
+.modal__outer .modal .modal-online__inner .modal__img,
+.modal__outer .modal .modal-online__inner .modal-online__img,
+.modal__outer .modal-online .modal__inner .modal__img,
+.modal__outer .modal-online .modal__inner .modal-online__img,
+.modal__outer .modal-online .modal-online__inner .modal__img,
+.modal__outer .modal-online .modal-online__inner .modal-online__img,
+.modal-online__outer .modal .modal__inner .modal__img,
+.modal-online__outer .modal .modal__inner .modal-online__img,
+.modal-online__outer .modal .modal-online__inner .modal__img,
+.modal-online__outer .modal .modal-online__inner .modal-online__img,
+.modal-online__outer .modal-online .modal__inner .modal__img,
+.modal-online__outer .modal-online .modal__inner .modal-online__img,
+.modal-online__outer .modal-online .modal-online__inner .modal__img,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__img {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  height: 100%;
+}
+
+@media screen and (max-width: 920px) {
+  .modal__outer .modal .modal__inner .modal__img,
+  .modal__outer .modal .modal__inner .modal-online__img,
+  .modal__outer .modal .modal-online__inner .modal__img,
+  .modal__outer .modal .modal-online__inner .modal-online__img,
+  .modal__outer .modal-online .modal__inner .modal__img,
+  .modal__outer .modal-online .modal__inner .modal-online__img,
+  .modal__outer .modal-online .modal-online__inner .modal__img,
+  .modal__outer .modal-online .modal-online__inner .modal-online__img,
+  .modal-online__outer .modal .modal__inner .modal__img,
+  .modal-online__outer .modal .modal__inner .modal-online__img,
+  .modal-online__outer .modal .modal-online__inner .modal__img,
+  .modal-online__outer .modal .modal-online__inner .modal-online__img,
+  .modal-online__outer .modal-online .modal__inner .modal__img,
+  .modal-online__outer .modal-online .modal__inner .modal-online__img,
+  .modal-online__outer .modal-online .modal-online__inner .modal__img,
+  .modal-online__outer .modal-online .modal-online__inner .modal-online__img {
+    display: none;
+  }
+}
+
+.modal__outer .modal .modal__inner .modal__img img,
+.modal__outer .modal .modal__inner .modal-online__img img,
+.modal__outer .modal .modal-online__inner .modal__img img,
+.modal__outer .modal .modal-online__inner .modal-online__img img,
+.modal__outer .modal-online .modal__inner .modal__img img,
+.modal__outer .modal-online .modal__inner .modal-online__img img,
+.modal__outer .modal-online .modal-online__inner .modal__img img,
+.modal__outer .modal-online .modal-online__inner .modal-online__img img,
+.modal-online__outer .modal .modal__inner .modal__img img,
+.modal-online__outer .modal .modal__inner .modal-online__img img,
+.modal-online__outer .modal .modal-online__inner .modal__img img,
+.modal-online__outer .modal .modal-online__inner .modal-online__img img,
+.modal-online__outer .modal-online .modal__inner .modal__img img,
+.modal-online__outer .modal-online .modal__inner .modal-online__img img,
+.modal-online__outer .modal-online .modal-online__inner .modal__img img,
+.modal-online__outer .modal-online .modal-online__inner .modal-online__img img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0 12px 12px 0;
+}
+
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal-online__text {
+  margin-bottom: 40px;
+}
+
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal-online__form .modal-online__input:last-of-type {
+  margin-bottom: 40px;
+}
+
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .or {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .or::after, .modal-online__outer .modal-online .modal-online__inner .modal-online__content .or::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 1px;
+  height: 20px;
+  background: #c4c4c4;
+}
+
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .or::before {
+  top: -170%;
+}
+
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .or::after {
+  bottom: -170%;
+}
+
+.modal-online__outer .modal-online .modal-online__inner .modal-online__content .modal-online__whatsapp {
+  font-size: 14px;
+  line-height: 17px;
+  color: #585858;
+  text-align: center;
+  display: block;
+  border: 1px solid #c4c4c4;
+  border-radius: 12px;
+  padding: 15px 0;
+  margin: 0 auto 20px;
+}
+
+.rights,
+.agreement {
+  display: none;
+}
+
+.rights_active,
+.agreement_active {
+  display: block;
+}
+
+.rights .rights__inner,
+.rights .agreement__inner,
+.agreement .rights__inner,
+.agreement .agreement__inner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 11000;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 1400px;
+  max-height: 700px;
+  width: 95%;
+  height: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.rights .rights__inner .rights__title,
+.rights .rights__inner .agreement__title,
+.rights .agreement__inner .rights__title,
+.rights .agreement__inner .agreement__title,
+.agreement .rights__inner .rights__title,
+.agreement .rights__inner .agreement__title,
+.agreement .agreement__inner .rights__title,
+.agreement .agreement__inner .agreement__title {
+  position: relative;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #35ccb1;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 425px) {
+  .rights .rights__inner .rights__title,
+  .rights .rights__inner .agreement__title,
+  .rights .agreement__inner .rights__title,
+  .rights .agreement__inner .agreement__title,
+  .agreement .rights__inner .rights__title,
+  .agreement .rights__inner .agreement__title,
+  .agreement .agreement__inner .rights__title,
+  .agreement .agreement__inner .agreement__title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+.rights .rights__inner .rights__title::after,
+.rights .rights__inner .agreement__title::after,
+.rights .agreement__inner .rights__title::after,
+.rights .agreement__inner .agreement__title::after,
+.agreement .rights__inner .rights__title::after,
+.agreement .rights__inner .agreement__title::after,
+.agreement .agreement__inner .rights__title::after,
+.agreement .agreement__inner .agreement__title::after {
+  content: '\f00d';
+  font-family: 'FontAwesome';
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .rights .rights__inner .rights__title::after,
+  .rights .rights__inner .agreement__title::after,
+  .rights .agreement__inner .rights__title::after,
+  .rights .agreement__inner .agreement__title::after,
+  .agreement .rights__inner .rights__title::after,
+  .agreement .rights__inner .agreement__title::after,
+  .agreement .agreement__inner .rights__title::after,
+  .agreement .agreement__inner .agreement__title::after {
+    font-size: 18px;
+  }
+}
+
+.rights .rights__inner .rights__text,
+.rights .rights__inner .agreement__text,
+.rights .agreement__inner .rights__text,
+.rights .agreement__inner .agreement__text,
+.agreement .rights__inner .rights__text,
+.agreement .rights__inner .agreement__text,
+.agreement .agreement__inner .rights__text,
+.agreement .agreement__inner .agreement__text {
+  color: #000;
+  padding: 35px;
+  border: 1px solid #585858;
+  border-radius: 12px;
+  height: 88%;
+  overflow-x: hidden;
+  overflow: auto;
+}
+
+@media screen and (max-width: 425px) {
+  .rights .rights__inner .rights__text,
+  .rights .rights__inner .agreement__text,
+  .rights .agreement__inner .rights__text,
+  .rights .agreement__inner .agreement__text,
+  .agreement .rights__inner .rights__text,
+  .agreement .rights__inner .agreement__text,
+  .agreement .agreement__inner .rights__text,
+  .agreement .agreement__inner .agreement__text {
+    padding: 15px;
+  }
+}
+
+.rights .rights__inner .rights__text p,
+.rights .rights__inner .agreement__text p,
+.rights .agreement__inner .rights__text p,
+.rights .agreement__inner .agreement__text p,
+.agreement .rights__inner .rights__text p,
+.agreement .rights__inner .agreement__text p,
+.agreement .agreement__inner .rights__text p,
+.agreement .agreement__inner .agreement__text p {
+  margin-bottom: 20px;
+}
+
+.rights .rights__inner .rights__text p:last-child,
+.rights .rights__inner .agreement__text p:last-child,
+.rights .agreement__inner .rights__text p:last-child,
+.rights .agreement__inner .agreement__text p:last-child,
+.agreement .rights__inner .rights__text p:last-child,
+.agreement .rights__inner .agreement__text p:last-child,
+.agreement .agreement__inner .rights__text p:last-child,
+.agreement .agreement__inner .agreement__text p:last-child {
+  margin-bottom: 0;
 }
