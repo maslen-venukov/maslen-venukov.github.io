@@ -30,4 +30,9 @@ $(document).ready(function () {
         $('.production .slick-next').click();
     });
 
+    $('.nav__burger').click(function () {
+        $(this).toggleClass('nav__burger_active');
+        $('.nav__inner').toggleClass('nav__inner_active');
+    });
+
 });
