@@ -1437,6 +1437,8 @@ html, body
     .reviews__title
       color: #fff
       margin-bottom: 60px
+      @media screen and ( max-width: 425px )
+        margin-bottom: 30px
     .reviews__arrows
       position: absolute
       top: 0
@@ -1457,6 +1459,9 @@ html, body
         background: #fff
         border-radius: 50%
         cursor: pointer
+        @media screen and ( max-width: 425px )
+          width: 60px
+          height: 60px
       .reviews-arrows__left
         top: 0
         right: 100px
@@ -1548,6 +1553,10 @@ html, body
 
 .production
   margin-bottom: 400px
+  @media screen and ( max-width: 1024px )
+    margin-bottom: 300px
+  @media screen and ( max-width: 768px )
+    margin-bottom: 200px
   .production__inner
     position: relative
     &::before
@@ -1566,14 +1575,21 @@ html, body
       font-weight: 700
       max-width: 550px
       margin-bottom: 70px
+      @media screen and ( max-width: 768px )
+        max-width: 450px
+      @media screen and ( max-width: 425px )
+        margin-bottom: 30px
     .production__arrows
       position: absolute
       top: 0
       right: 0
+      bottom: 0
+      left: 0
       display: flex
       font-size: 45px
       .production-arrows__left,
       .production-arrows__right
+        position: absolute
         color: $dark
         display: flex
         justify-content: center
@@ -1584,21 +1600,40 @@ html, body
         border-radius: 50%
         border: 1px solid #ededed
         cursor: pointer
+        @media screen and ( max-width: 425px )
+          width: 60px
+          height: 60px
       .production-arrows__left
-        position: absolute
         top: 0
         right: 100px
+        @media screen and ( max-width: 425px )
+          top: 100%
+          transform: translateY(10px)
       .production-arrows__right
+        top: 0
+        right: 0
+        @media screen and ( max-width: 425px )
+          top: 100%
+          transform: translateY(10px)
     .production__row
       display: flex
       min-width: 0
       .production__item
         position: relative
         max-width: 850px
+        width: 96vw
+        min-height: 1010px
         background: #fff
         border-radius: 12px
         padding: 50px
         margin-right: 20px
+        @media screen and ( max-width: 768px )
+          padding: 25px
+        @media screen and ( max-width: 425px )
+          width: 92vw
+          min-height: 0
+        @media screen and ( max-width: 320px )
+          width: 90vw
         &:last-child
           margin-right: 0
         &::after
@@ -1613,13 +1648,25 @@ html, body
         .production-item__title
           max-width: 520px
           margin-bottom: 30px
+          @media screen and ( max-width: 425px )
+            font-size: 18px
+            margin-bottom: 15px
         .production-item__img
           margin-bottom: 45px
+          @media screen and ( max-width: 425px )
+            margin-bottom: 20px
           img
         .production-item__text
           margin-bottom: 50px
+          @media screen and ( max-width: 425px )
+            font-size: 14px
+            margin-bottom: 25px
         .production-item__button
           margin-bottom: 50px
+          @media screen and ( max-width: 425px )
+            display: block
+            max-width: 305px
+            margin: 0 auto 50px
 
 // Footer
 

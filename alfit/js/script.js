@@ -38,7 +38,16 @@ $(document).ready(function () {
     $('.production__row').slick({
         variableWidth: true,
         infinite: false,
-        touchThreshold: 100
+        touchThreshold: 100,
+        responsive: [
+            {
+              breakpoint: 630,
+              settings: {
+                    adaptiveHeight: true,
+                    infinite: true
+              }
+            }
+        ]
     });
 
     $('.production-arrows__left').click(function () { 
