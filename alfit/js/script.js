@@ -2,10 +2,29 @@ $(document).ready(function () {
 
     $('.js-timeline').Timeline();
 
+    function checkTimeline() {
+        if ($(window).width() < '1440') {
+            $('.timeline').removeClass('js-timeline');
+        } checkTimeline();
+    }
+
+    $(window).resize(function() {
+        checkTimeline();
+    });
+
     $('.reviews__row').slick({
         variableWidth: true,
         infinite: false,
-        touchThreshold: 100
+        touchThreshold: 100,
+        responsive: [
+            {
+              breakpoint: 630,
+              settings: {
+                    adaptiveHeight: true,
+                    infinite: true
+              }
+            }
+        ]
     });
 
     $('.reviews-arrows__left').click(function () { 
