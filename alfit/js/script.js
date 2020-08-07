@@ -80,6 +80,19 @@ $(document).ready(function () {
     $('.modal__close, .modal-online__close').click(function() {
         $('.modal__outer').removeClass('modal__outer_active');
         $('.modal-online__outer').removeClass('modal-online__outer_active');
+        $('html').removeClass('lock');
+    });
+
+    $('a[data-modal="form"]').click(function (e) { 
+        e.preventDefault();
+        $('.modal__outer').addClass('modal__outer_active');
+        $('html').addClass('lock');
+    });
+
+    $('a[data-modal="online-form"]').click(function (e) { 
+        e.preventDefault();
+        $('.modal-online__outer').addClass('modal-online__outer_active');
+        $('html').addClass('lock');
     });
 
     // Правовая информация / Пользовательское соглашение
@@ -87,6 +100,19 @@ $(document).ready(function () {
     $('.rights__title, .agreement__title').click(function() {
         $('.rights').removeClass('rights_active');
         $('.agreement').removeClass('agreement_active');
+        $('html').removeClass('lock');
+    });
+
+    $('a[data-modal="agreement"]').click(function (e) { 
+        e.preventDefault();
+        $('.agreement').addClass('agreement_active');
+        $('html').addClass('lock');
+    });
+
+    $('a[data-modal="rights"]').click(function (e) { 
+        e.preventDefault();
+        $('.rights').addClass('rights_active');
+        $('html').addClass('lock');
     });
 
     // AOS / Анимация

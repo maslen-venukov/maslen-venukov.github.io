@@ -24,6 +24,9 @@ html, body
   color: $text
   overflow-x: hidden
 
+.lock
+  overflow: hidden
+
 .container
   width: 100%
   max-width: 1460px
@@ -771,7 +774,7 @@ html, body
           margin: 0 auto
       .services__col
         min-height: 750px
-        flex-basis: 25%
+        flex-basis: 23%
         display: flex
         flex-direction: column
         @media screen and ( max-width: 1440px )
@@ -839,7 +842,8 @@ html, body
               border-color: #fff
               color: #fff
               text-shadow: none
-    .services__link
+    .services__link,
+    .services-onco__link
       display: block
       max-width: 150px
       font-weight: 700
@@ -865,6 +869,10 @@ html, body
     .services__row
       &::before
         display: none
+    .services-onco__link
+      color: #fff
+      &:hover
+        color: darken(#54dae2, 20%)
 
 // Stats
 
@@ -1600,8 +1608,6 @@ html, body
   margin-bottom: 400px
   @media screen and ( max-width: 1024px )
     margin-bottom: 300px
-  @media screen and ( max-width: 768px )
-    margin-bottom: 200px
   .production__inner
     position: relative
     &::before
@@ -1665,6 +1671,8 @@ html, body
       min-width: 0
       .production__item
         position: relative
+        display: flex
+        flex-direction: column
         max-width: 850px
         width: 96vw
         min-height: 1010px
@@ -1707,7 +1715,8 @@ html, body
             font-size: 14px
             margin-bottom: 25px
         .production-item__button
-          margin-bottom: 50px
+          max-width: 310px
+          margin: auto 0 50px
           @media screen and ( max-width: 425px )
             display: block
             max-width: 305px
@@ -1718,15 +1727,14 @@ html, body
 .footer
   background: url(../img/footer/bg.jpg) bottom no-repeat
   .footer__inner
+    position: relative
     display: flex
     justify-content: space-between
     transform: translateY(-150px)
     @media screen and ( max-width: 1440px )
       flex-direction: column
     @media screen and ( max-width: 768px )
-      transform: translateY(-100px)
-    @media screen and ( max-width: 425px )
-      transform: translateY(-50px)
+      transform: translateY(-120px)
     .footer__contacts
       position: relative
       display: flex
@@ -1815,6 +1823,19 @@ html, body
           color: #54e2cb
     .footer__map
       width: 100%
+    .footer__logo
+      position: absolute
+      bottom: -100px
+      left: 50%
+      transform: translateX(-50%)
+      padding: 10px 25px 15px
+      background: #fff
+      border-radius: 12px
+      @media screen and ( max-width: 425px )
+        min-width: 300px
+      img
+        width: 100%
+        object-fit: cover
 
 // Form
 
