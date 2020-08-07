@@ -1,0 +1,786 @@
+@import 'normalize'
+
+$bg: #ffeefe
+$gradient: linear-gradient(135deg, #ed81e5 0%, #a857a2 100%)
+$primary: #a857a2
+$secondary: #5eb304
+$text: #6d4b4f
+
+@mixin gradientText ()
+  background: $gradient
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+html, body
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px
+  color: $text
+
+h1, h2, h3, h4, h5, h6
+  line-height: 1.4
+
+.container
+  width: 100%
+  max-width: 1460px
+  padding: 0 15px
+  margin: 0 auto
+
+.button
+  display: inline-block
+  font-size: 24px
+  line-height: 1.2
+  font-weight: 600
+  color: #fff
+  padding: 25px 75px
+  background: $gradient
+  border-radius: 43.5px
+  text-shadow: 0 4px 4px rgba(#000, .25)
+
+.section
+  margin-bottom: 200px
+  .section__title
+    font-size: 48px
+    line-height: 1.2
+    text-align: center
+    margin-bottom: 40px
+    span
+      font-size: 64px
+      color: $primary
+  .section__subtitle
+    font-size: 18px
+    font-weight: 500
+
+// Header
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 20px 0
+  .header__logo
+    img
+  .nav
+    .nav__inner
+      .nav__item
+        margin-right: 100px
+        &:last-child
+          margin-right: 0
+  .header__phone
+    position: relative
+    font-weight: 500
+    border: 1px solid $primary
+    border-radius: 30px
+    padding: 10px 55px 10px 30px
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: -15px
+      transform: translateY(-50%)
+      width: 57px
+      height: 57px
+      border-radius: 50%
+      background: url(../img/intro/phone.svg) center no-repeat
+
+// Intro
+
+.intro
+  position: relative
+  height: 100vh
+  background: $bg
+  .intro__inner
+    display: flex
+    justify-content: space-between
+    margin-top: 20vh
+    .intro__content
+      flex-basis: 40%
+      max-width: 570px
+      .intro__title
+        margin-bottom: 1vh
+        span
+          @include gradientText ()
+      .intro__text
+        margin-bottom: 2vh
+      .intro__subtitle
+        margin-bottom: 4vh
+      .intro__button
+      .intro__scroll
+        position: absolute
+        font-size: 14px
+        line-height: 1.2
+        font-weight: 500
+        color: $primary
+        transform: rotate(-90deg) translateX(100px) translateY(-50px)
+        @media screen and ( max-height: 895px )
+          display: none
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: -30px
+          display: block
+          width: 15px
+          height: 15px
+          border-top: 2px solid $primary
+          border-left: 2px solid $primary
+          transform: rotate(-45deg)
+    .intro__img
+      flex-basis: 60%
+      transform: translateY(-100px)
+      img
+        object-fit: cover
+
+// Stats
+
+.stats
+  padding: 100px 0
+  .stats__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .stats__content
+      flex-basis: 40%
+      .stats__suptitle
+        font-size: 36px
+        font-weight: 700
+        color: $text
+      .stats__title
+        font-size: 288px
+        line-height: 210px
+        @include gradientText ()
+        margin-bottom: 15px
+      .stats__text
+        font-size: 24px
+        line-height: 1.2
+    .stats__list
+      flex-basis: 60%
+      .stats-list__item
+        position: relative
+        display: flex
+        align-items: center
+        margin-bottom: 50px
+        &:last-child
+          margin-bottom: 0
+        .stats-list__img
+          display: flex
+          justify-content: center
+          align-items: center
+          border: 1px solid $primary
+          border-radius: 50%
+          width: 120px
+          height: 120px
+          margin-right: 40px
+        .stats-list__num
+          position: absolute
+          top: 5px
+          left: 160px
+          font-size: 100px
+          line-height: 1
+          font-weight: 700
+          opacity: .15
+        .stats-list__text
+          font-size: 36px
+          line-height: 1
+          font-weight: 700
+
+// Free
+
+.free
+  display: flex
+  justify-content: center
+  align-items: center
+  background: $bg
+  margin-bottom: 120px
+  .free__content
+    flex-basis: 50%
+    text-align: right
+    margin-right: 80px
+    .free__title
+      max-width: 530px
+      margin-left: auto
+      margin-bottom: 50px
+      span
+        color: $primary
+    .free__button
+  .free__img
+    flex-basis: 50%
+    img
+      width: 50vw
+      object-fit: cover
+      border-radius: 30px 0px 0px 30px
+
+// Block
+
+.block
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 120px
+  .block__img
+    flex-basis: 50%
+    img
+      margin: auto
+  .block__content
+    flex-basis: 50%
+    .block__title
+      font-size: 96px
+      @include gradientText ()
+    .block__text
+      font-size: 48px
+      line-height: 1.2
+      font-weight: 700
+      max-width: 620px
+
+// Ages
+
+.ages
+  margin-bottom: 100px
+  .ages__inner
+    .ages__title
+    .ages__slider
+      position: relative
+      display: flex
+      min-width: 0
+      .ages-slider__item
+        flex-basis: 33.333%
+        text-align: center
+        transform: scale(.5)
+        transition: .2s
+        .ages-slider__img
+          margin-bottom: 50px
+          img
+            opacity: .5
+            border-radius: 20px
+            object-fit: cover
+            transition: .2s
+        .ages-slider__title
+          font-size: 36px
+          line-height: 1.2
+          color: $primary
+          margin-bottom: 20px
+        .ages-slider__text
+          opacity: 0
+          transition: .2s
+      .slick-center
+        transform: scale(1)
+        .ages-slider__img
+          img
+            opacity: 1
+        .ages-slider__text
+          opacity: 1
+      .slick-arrow
+        position: absolute
+        top: 30%
+        z-index: 10
+        background: 0
+        border: 0
+        font-size: 0
+        display: block
+        width: 30px
+        height: 30px
+        border-top: 3px solid $primary
+        border-left: 3px solid $primary
+        opacity: .5
+      .slick-prev
+        left: 30%
+        transform: rotate(-45deg)
+      .slick-next
+        right: 30%
+        transform: rotate(135deg)
+
+// Minuses
+
+.minuses
+  margin-bottom: 100px
+  .minuses__inner
+    display: flex
+    align-items: center
+    .minuses__img
+      flex-basis: 33.333%
+      margin-right: 100px
+      img
+        object-fit: cover
+    .minuses__content
+      flex-basis: 66.666%
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      .minuses__row
+        flex-basis: 100%
+        display: flex
+        .minuses__item
+          position: relative
+          flex-basis: 50%
+          margin-right: 75px
+          margin-bottom: 100px
+          &::before
+            content: ''
+            position: absolute
+            top: 15px
+            left: -50px
+            width: 100%
+            height: 150px
+            border: 4px solid rgba($text, .1)
+            border-radius: 75px
+          &:last-child
+            margin-right: 0
+          .minuses-item__title
+            position: relative
+            font-size: 36px
+            line-height: 1
+            max-width: 400px
+            margin-bottom: 20px
+            &::before
+              content: ''
+              position: absolute
+              top: 50%
+              left: -65px
+              transform: translateY(-50%)
+              display: block
+              width: 45px
+              height: 45px
+              border-radius: 50%
+              background: url(../img/minuses/minus.svg) center no-repeat
+          .minuses-item__text
+            font-size: 24px
+            line-height: 1.2
+
+// Result
+
+.result
+  .result__inner
+    .result__title
+      max-width: 930px
+      margin: 0 auto 40px
+    .result__subtitle
+      text-align: center
+      max-width: 810px
+      margin: 0 auto 80px
+    .result__slider
+      display: flex
+      min-width: 0
+      .result-slider__item
+        flex-basis: 16.666%
+        opacity: .5
+        transition: opacity .2s
+        .result-slider__img
+          position: relative
+          margin-bottom: 50px
+          img
+            object-fit: cover
+          &::after
+            content: ''
+            position: absolute
+            bottom: -30px
+            left: 37%
+            display: block
+            width: 60px
+            height: 60px
+            border-radius: 50%
+            background: url(../img/result/circle.svg) center no-repeat
+            background-size: cover
+            opacity: 0
+            transform: translateY(50px)
+            transition: opacity .6s, transform .6s
+        .result-slider__text
+          font-size: 24px
+          line-height: 1.2
+          font-weight: 700
+          color: $primary
+          white-space: nowrap
+          opacity: 0
+          transform: translateY(50px)
+          transition: opacity .3s, transform .3s
+      .slick-current + .slick-slide + .slick-slide
+        opacity: 1
+        .result-slider__img
+          &::after
+            opacity: 1
+            transform: translateY(0)
+        .result-slider__text
+          opacity: 1
+          transform: translateY(0)
+      .slick-arrow
+        position: absolute
+        bottom: 3%
+        z-index: 10
+        background: 0
+        border: 0
+        font-size: 0
+        display: block
+        width: 20px
+        height: 20px
+        border-top: 3px solid $primary
+        border-left: 3px solid $primary
+        opacity: .5
+      .slick-prev
+        left: 30%
+        transform: rotate(-45deg)
+      .slick-next
+        right: 30%
+        transform: rotate(135deg)
+
+// Consultation
+
+.consultation
+  background: $bg
+  padding-top: 120px
+  margin-bottom: 200px
+  .consultation__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .consultation__img
+      flex-basis: 35%
+      margin-right: 50px
+      img
+    .consultation__content
+      flex-basis: 65%
+      .consultation__title
+        font-size: 36px
+        margin-bottom: 70px
+        span
+          @include gradientText ()
+      .consultation__button
+
+// Program
+
+.program
+  .program__inner
+    .program__title
+    .program__subtitle
+      text-align: center
+      max-width: 530px
+      margin: 0 auto 80px
+    .program__list
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      .program-list__item
+        position: relative
+        flex-basis: 49%
+        display: flex
+        justify-content: space-between
+        background: #fff
+        box-shadow: 0 15px 50px rgba(157, 58, 141, .25)
+        border-radius: 15px
+        padding: 40px 80px
+        margin-bottom: 20px
+        .program-list__num
+          position: absolute
+          top: 35px
+          left: -5px
+          width: 54px
+          height: 54px
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: 50%
+          font-weight: 700
+          color: #fff
+          background: $secondary
+        .program-list__content
+          max-width: 430px
+          .program-list__title
+            font-size: 24px
+            color: $secondary
+            margin-bottom: 10px
+          .program-list__text
+        .program-list__img
+          img
+        &:last-child
+          background: $secondary
+          padding: 0
+          .program-list__content
+            padding: 40px 0 40px 80px
+            .program-list__title
+              color: #fff
+            .program-list__suptitle
+              color: #fff
+            .program-list__button
+              font-size: 18px
+              text-shadow: none
+              background: transparent
+              padding: 15px 95px
+              border: 2px solid #fff
+          .program-list__img
+            position: absolute
+            right: 15px
+
+// Features and About background
+
+.features-about-bg
+  background: url(../img/features-about/bg.jpg) center no-repeat
+  background-size: cover
+
+// Features
+
+.features
+  margin-bottom: 100px
+  .features__title
+    margin-bottom: 100px
+  .features__list
+    max-width: 620px
+    margin: 0 auto
+    .features-list__item
+      position: relative
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0
+      &::before
+        content: ''
+        position: absolute
+        top: -20px
+        left: -70px
+        z-index: 1
+        display: block
+        border-radius: 50%
+        width: 80px
+        height: 80px
+        background: url(../img/features-about/mark.svg) center no-repeat
+        background-size: cover
+      .features-list__title
+        position: relative
+        z-index: 2
+        font-size: 24px
+        color: $secondary
+      .features-list__text
+        position: relative
+        z-index: 2
+
+// About
+
+.about
+  padding-bottom: 40px
+  .about__title
+    margin-bottom: 100px
+  .about__list
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    .about-list__item
+      position: relative
+      flex-basis: 50%
+      padding-left: 110px
+      margin-bottom: 65px
+      &::before
+        content: ''
+        position: absolute
+        top: 35px
+        left: 0
+        display: block
+        width: 70px
+        height: 70px
+        border-radius: 50%
+        background: url(../img/features-about/circle.svg) center no-repeat
+        background-size: cover
+      .about-list__title
+        font-size: 72px
+        line-height: 1
+        white-space: nowrap
+        @include gradientText ()
+        span
+          font-size: 144px
+      .about-list__text
+        max-width: 425px
+
+// Certificates
+
+.certificates
+  .certificates__inner
+    .certificates__title
+      margin-bottom: 100px
+    .certificates__list
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      .certificates-list__item
+        position: relative
+        flex-basis: 24%
+        padding: 10px 0
+        border-top: 2px solid $primary
+        border-bottom: 2px solid $primary
+        margin-bottom: 20px
+        cursor: pointer
+        &::before,
+        &::after
+          content: ''
+          position: absolute
+          opacity: 0
+          transition: opacity .2s
+        &::before
+          top: 0
+          bottom: 0
+          right: 0
+          left: 0
+          background: $gradient
+        &::after
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          width: 53px
+          height: 51px
+          background: url(../img/certificates/loupe.svg) center no-repeat
+        &:hover::before,
+        &:hover::after
+          opacity: .6
+
+// Reviews
+
+.reviews
+  .reviews__inner
+    .reviews__title
+    .reviews__subtitle
+      text-align: center
+      max-width: 600px
+      margin: 0 auto 100px
+    .reviews__slider
+      position: relative
+      .reviews-slider__item
+        display: flex
+        min-width: 0
+        margin-right: 60px
+        opacity: .3
+        transition: opacity .6s
+        .reviews-slider__img
+          margin-right: 60px
+        .reviews-slider__content
+          max-width: 500px
+          .reviews-slider__title
+            font-size: 36px
+            margin-bottom: 40px
+          .reviews-slider__text
+            font-weight: 500
+      .slick-current.slick-active
+        opacity: 1
+      .slick-arrow
+        position: absolute
+        bottom: -80px
+        z-index: 10
+        background: 0
+        border: 0
+        font-size: 0
+        display: block
+        width: 30px
+        height: 30px
+        border-top: 3px solid $primary
+        border-left: 3px solid $primary
+        opacity: .5
+      .slick-prev
+        left: 30%
+        transform: rotate(-45deg)
+      .slick-next
+        right: 30%
+        transform: rotate(135deg)
+      .slick-dots
+        position: absolute
+        bottom: -75px
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        li
+          margin-right: 15px
+          &:last-child
+            margin-right: 0
+          button
+            font-size: 0
+            width: 15px
+            height: 15px
+            border-radius: 50%
+            background: transparent
+            border: 2px solid $primary
+            transition: .4s
+        li.slick-active
+          button
+            width: 24px
+            height: 24px
+            background: $primary
+
+// Efficiency
+
+.efficiency
+  background: $bg
+  margin-bottom: 200px
+  .efficiency__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-top: 60px
+    .efficiency__content
+      flex-basis: 55%
+      text-align: right
+      margin-right: 50px
+      .efficiency__title
+        font-size: 36px
+        margin-bottom: 10px
+        span
+          @include gradientText ()
+      .efficiency__subtitle
+        max-width: 500px
+        margin: 0 0 50px auto
+    .efficiency__img
+      flex-basis: 45%
+      img
+        object-fit: cover
+
+// Gyms
+
+.gyms
+  .gyms__title
+    max-width: 800px
+    margin: 0 auto 100px
+  .gyms__slider
+    .gyms-slider__item
+      max-width: 700px
+      width: 100%
+      height: 475px
+      opacity: .4
+      transition: opacity .6s
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .slick-current.slick-active
+      opacity: 1
+    .slick-arrow
+      position: absolute
+      bottom: -80px
+      z-index: 10
+      background: 0
+      border: 0
+      font-size: 0
+      display: block
+      width: 30px
+      height: 30px
+      border-top: 3px solid $primary
+      border-left: 3px solid $primary
+      opacity: .5
+    .slick-prev
+      left: 30%
+      transform: rotate(-45deg)
+    .slick-next
+      right: 30%
+      transform: rotate(135deg)
+    .slick-dots
+      position: absolute
+      bottom: -75px
+      left: 50%
+      transform: translateX(-50%)
+      display: flex
+      li
+        margin-right: 15px
+        &:last-child
+          margin-right: 0
+        button
+          font-size: 0
+          width: 15px
+          height: 15px
+          border-radius: 50%
+          background: transparent
+          border: 2px solid $primary
+          transition: .4s
+      li.slick-active
+        button
+          width: 24px
+          height: 24px
+          background: $primary
