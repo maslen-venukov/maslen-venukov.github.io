@@ -87,8 +87,6 @@ html, body {
           box-shadow: 0 2px 10px #54e2cb;
   border-radius: 30px;
   padding: 20px 70px;
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
 .button:hover {
@@ -612,6 +610,10 @@ html, body {
   color: #35ccb1;
   font-weight: 700;
   text-decoration: underline;
+}
+
+.main .main__inner .main__content .main__link:hover {
+  color: #54dae2;
 }
 
 @media screen and (max-width: 600px) {
@@ -1328,6 +1330,9 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1365,6 +1370,10 @@ html, body {
   font-weight: 700;
   color: #35ccb1;
   text-decoration: underline;
+}
+
+.request .request__inner .request__content .request__buttons .request__link:hover {
+  color: #54dae2;
 }
 
 @media screen and (max-width: 900px) {
@@ -1707,6 +1716,16 @@ html, body {
   border: 2px solid #fff;
 }
 
+.services .services__inner .services__row .services__col .services__consultation .services-consultation__button:hover,
+.services .services-onco__inner .services__row .services__col .services__consultation .services-consultation__button:hover,
+.services-onco .services__inner .services__row .services__col .services__consultation .services-consultation__button:hover,
+.services-onco .services-onco__inner .services__row .services__col .services__consultation .services-consultation__button:hover {
+  background: #fff;
+  border-color: #54dae2;
+  color: #54dae2;
+  text-shadow: none;
+}
+
 @media screen and (max-width: 1440px) {
   .services .services__inner .services__row .services__col .services__consultation .services-consultation__button,
   .services .services-onco__inner .services__row .services__col .services__consultation .services-consultation__button,
@@ -1759,6 +1778,16 @@ html, body {
   border: 2px solid #35ccb1;
 }
 
+.services .services__inner .services__row .services__col .services__pricelist .services-pricelist__button:hover,
+.services .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__button:hover,
+.services-onco .services__inner .services__row .services__col .services__pricelist .services-pricelist__button:hover,
+.services-onco .services-onco__inner .services__row .services__col .services__pricelist .services-pricelist__button:hover {
+  background: #54dae2;
+  border-color: #fff;
+  color: #fff;
+  text-shadow: none;
+}
+
 .services .services__inner .services__link,
 .services .services-onco__inner .services__link,
 .services-onco .services__inner .services__link,
@@ -1770,6 +1799,13 @@ html, body {
   text-align: center;
   text-decoration: underline;
   margin: 0 auto;
+}
+
+.services .services__inner .services__link:hover,
+.services .services-onco__inner .services__link:hover,
+.services-onco .services__inner .services__link:hover,
+.services-onco .services-onco__inner .services__link:hover {
+  color: #54dae2;
 }
 
 .services-onco {
@@ -2141,6 +2177,12 @@ html, body {
   height: 60px;
   background: linear-gradient(94.76deg, rgba(0, 205, 172, 0.5) 23.04%, rgba(2, 170, 176, 0.5) 91.95%);
   border-radius: 0 0 12px 12px;
+  -webkit-transition: background .2s linear;
+  transition: background .2s linear;
+}
+
+.specialists .specialists__inner .specialists__row .specialists__card:hover::after {
+  background: linear-gradient(150.95deg, #54e2cb 8.63%, #35CCB1 84.35%);
 }
 
 .specialists .specialists__inner .specialists__row .specialists__card .specialists-card__img {
@@ -2333,6 +2375,10 @@ html, body {
   margin: 0 auto;
 }
 
+.specialists .specialists__inner .specialists__link:hover {
+  color: #54dae2;
+}
+
 .work .work__inner .work__title {
   margin-bottom: 80px;
 }
@@ -2377,6 +2423,10 @@ html, body {
   border-bottom: 120px solid #40d4ba;
   border-radius: 12px;
   margin-bottom: 200px;
+}
+
+.work .work__inner .work__card:hover {
+  border-bottom: 120px solid #35ccb1;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2796,6 +2846,8 @@ html, body {
   right: 0;
   width: 30px;
   height: 30px;
+  -webkit-transition: top .2s, left .2s, right .2s;
+  transition: top .2s, left .2s, right .2s;
 }
 
 .licenses .licenses__inner .licenses__row .licenses__item::before {
@@ -2810,6 +2862,20 @@ html, body {
   border-right: 2px solid #35ccb1;
 }
 
+.licenses .licenses__inner .licenses__row .licenses__item:hover {
+  cursor: pointer;
+}
+
+.licenses .licenses__inner .licenses__row .licenses__item:hover::after {
+  top: 7px;
+  right: 7px;
+}
+
+.licenses .licenses__inner .licenses__row .licenses__item:hover::before {
+  top: 7px;
+  left: 7px;
+}
+
 .licenses .licenses__inner .licenses__row .licenses__item .licenses__border {
   position: relative;
 }
@@ -2821,6 +2887,8 @@ html, body {
   right: 0;
   width: 30px;
   height: 30px;
+  -webkit-transition: bottom .2s, left .2s, right .2s;
+  transition: bottom .2s, left .2s, right .2s;
 }
 
 .licenses .licenses__inner .licenses__row .licenses__item .licenses__border::before {
@@ -2835,6 +2903,20 @@ html, body {
   border-right: 2px solid #35ccb1;
 }
 
+.licenses .licenses__inner .licenses__row .licenses__item .licenses__border:hover {
+  cursor: pointer;
+}
+
+.licenses .licenses__inner .licenses__row .licenses__item .licenses__border:hover::after {
+  bottom: 7px;
+  right: 7px;
+}
+
+.licenses .licenses__inner .licenses__row .licenses__item .licenses__border:hover::before {
+  bottom: 7px;
+  left: 7px;
+}
+
 .licenses .licenses__inner .licenses__row .licenses__item .licenses__border .licenses__img {
   padding: 15px;
 }
@@ -2847,6 +2929,10 @@ html, body {
   display: block;
   max-width: 300px;
   margin: 0 auto;
+}
+
+.licenses .licenses__inner .licenses__link:hover {
+  color: #54dae2;
 }
 
 .reviews {
@@ -3353,7 +3439,6 @@ html, body {
 
 .footer .footer__inner .footer__contacts {
   position: relative;
-  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3387,7 +3472,7 @@ html, body {
   left: 20px;
   bottom: 20px;
   right: 20px;
-  z-index: 3;
+  z-index: -1;
   border: 1px solid #ededed;
   border-radius: 12px;
 }
@@ -3507,6 +3592,10 @@ html, body {
   text-align: center;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.footer .footer__inner .footer__contacts .contacts__link:hover {
+  color: #54e2cb;
 }
 
 .footer .footer__inner .footer__map {

@@ -39,7 +39,6 @@ html, body
   box-shadow: 0 2px 10px #54e2cb
   border-radius: 30px
   padding: 20px 70px
-  transition: .2s
   &:hover
     background: #54dae2
 
@@ -145,7 +144,6 @@ html, body
               margin-top: 0
         .nav__inner
           display: flex
-          // transition: transform .2s linear
           @media screen and ( max-width: 1330px )
             flex-direction: column
             justify-content: center
@@ -296,6 +294,8 @@ html, body
         color: $dark
         font-weight: 700
         text-decoration: underline
+        &:hover
+          color: #54dae2
         @media screen and ( max-width: 600px )
           display: block
           margin-bottom: 20px
@@ -649,6 +649,7 @@ html, body
           margin-bottom: 30px
       .request__buttons
         display: flex
+        align-items: center
         @media screen and ( max-width: 1000px )
           flex-direction: column
         @media screen and ( max-width: 900px )
@@ -663,6 +664,8 @@ html, body
           font-weight: 700
           color: $dark
           text-decoration: underline
+          &:hover
+            color: #54dae2
           @media screen and ( max-width: 900px )
             margin-bottom: 20px
     .request__img
@@ -802,6 +805,11 @@ html, body
             background: transparent
             box-shadow: none
             border: 2px solid #fff
+            &:hover
+              background: #fff
+              border-color: #54dae2
+              color: #54dae2
+              text-shadow: none
             @media screen and ( max-width: 1440px )
               margin-top: auto
         .services__pricelist
@@ -826,6 +834,11 @@ html, body
             text-shadow: none
             color: $dark
             border: 2px solid $dark
+            &:hover
+              background: #54dae2
+              border-color: #fff
+              color: #fff
+              text-shadow: none
     .services__link
       display: block
       max-width: 150px
@@ -834,6 +847,8 @@ html, body
       text-align: center
       text-decoration: underline
       margin: 0 auto
+      &:hover
+        color: #54dae2
 
 // Services-onco
 
@@ -1030,6 +1045,9 @@ html, body
           height: 60px
           background: $light-gradient
           border-radius: 0 0 12px 12px
+          transition: background .2s linear
+        &:hover::after
+          background: $gradient
         .specialists-card__img
           position: absolute
           bottom: 60px
@@ -1130,6 +1148,8 @@ html, body
       text-align: center
       text-decoration: underline
       margin: 0 auto
+      &:hover
+        color: #54dae2
 
 // Work
 
@@ -1159,6 +1179,8 @@ html, body
       border-bottom: 120px solid $light
       border-radius: 12px
       margin-bottom: 200px
+      &:hover
+        border-bottom: 120px solid $dark
       @media screen and ( max-width: 1024px )
         padding: 55px
       @media screen and ( max-width: 768px )
@@ -1390,6 +1412,7 @@ html, body
           right: 0
           width: 30px
           height: 30px
+          transition: top .2s, left .2s, right .2s
         &::before
           left: 0
           border-top: 2px solid $dark
@@ -1398,6 +1421,14 @@ html, body
           right: 0
           border-top: 2px solid $dark
           border-right: 2px solid $dark
+        &:hover
+          cursor: pointer
+        &:hover::after
+          top: 7px
+          right: 7px
+        &:hover::before
+          top: 7px
+          left: 7px
         .licenses__border
           position: relative
           &::before,
@@ -1408,6 +1439,7 @@ html, body
             right: 0
             width: 30px
             height: 30px
+            transition: bottom .2s, left .2s, right .2s
           &::before
             left: 0
             border-bottom: 2px solid $dark
@@ -1416,6 +1448,14 @@ html, body
             right: 0
             border-bottom: 2px solid $dark
             border-right: 2px solid $dark
+          &:hover
+            cursor: pointer
+          &:hover::after
+            bottom: 7px
+            right: 7px
+          &:hover::before
+            bottom: 7px
+            left: 7px
           .licenses__img
             padding: 15px
             img
@@ -1427,6 +1467,8 @@ html, body
       display: block
       max-width: 300px
       margin: 0 auto
+      &:hover
+        color: #54dae2
 
 // Reviews
 
@@ -1687,7 +1729,6 @@ html, body
       transform: translateY(-50px)
     .footer__contacts
       position: relative
-      z-index: 2
       display: flex
       flex-direction: column
       width: 40%
@@ -1708,7 +1749,7 @@ html, body
         left: 20px
         bottom: 20px
         right: 20px
-        z-index: 3
+        z-index: -1
         border: 1px solid #ededed
         border-radius: 12px
       &::after
@@ -1770,6 +1811,8 @@ html, body
         color: $dark
         text-align: center
         text-decoration-line: underline
+        &:hover
+          color: #54e2cb
     .footer__map
       width: 100%
 
