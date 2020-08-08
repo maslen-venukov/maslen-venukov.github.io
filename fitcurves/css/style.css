@@ -66,7 +66,6 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   color: #6d4b4f;
-  overflow-x: hidden;
 }
 
 @media screen and (max-width: 425px) {
@@ -290,6 +289,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header .nav .nav__inner .nav__item {
+  color: #6d4b4f;
   margin-right: 100px;
 }
 
