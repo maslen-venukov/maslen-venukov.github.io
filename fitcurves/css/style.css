@@ -74,6 +74,10 @@ html, body {
   }
 }
 
+.lock {
+  overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
@@ -3099,4 +3103,215 @@ h1, h2, h3, h4, h5, h6 {
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
   width: 100%;
+}
+
+.modal,
+.thanks {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal_active,
+.thanks_active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal .modal__inner,
+.modal .thanks__inner,
+.thanks .modal__inner,
+.thanks .thanks__inner {
+  position: relative;
+  text-align: center;
+  padding: 50px 40px;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  max-width: 430px;
+  widht: 100%;
+  max-height: 530px;
+  height: 100%;
+}
+
+.modal .modal__inner .modal__close,
+.modal .modal__inner .thanks__close,
+.modal .thanks__inner .modal__close,
+.modal .thanks__inner .thanks__close,
+.thanks .modal__inner .modal__close,
+.thanks .modal__inner .thanks__close,
+.thanks .thanks__inner .modal__close,
+.thanks .thanks__inner .thanks__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.modal .modal__inner .modal__title,
+.modal .modal__inner .thanks__title,
+.modal .thanks__inner .modal__title,
+.modal .thanks__inner .thanks__title,
+.thanks .modal__inner .modal__title,
+.thanks .modal__inner .thanks__title,
+.thanks .thanks__inner .modal__title,
+.thanks .thanks__inner .thanks__title {
+  font-size: 24px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #ed81e5 0%, #a857a2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.modal .modal__inner .modal__subtitle,
+.modal .modal__inner .thanks__subtitle,
+.modal .thanks__inner .modal__subtitle,
+.modal .thanks__inner .thanks__subtitle,
+.thanks .modal__inner .modal__subtitle,
+.thanks .modal__inner .thanks__subtitle,
+.thanks .thanks__inner .modal__subtitle,
+.thanks .thanks__inner .thanks__subtitle {
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.modal .modal__inner .modal__form .modal-form__input-wrapper,
+.modal .thanks__inner .modal__form .modal-form__input-wrapper,
+.thanks .modal__inner .modal__form .modal-form__input-wrapper,
+.thanks .thanks__inner .modal__form .modal-form__input-wrapper {
+  position: relative;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.modal .modal__inner .modal__form .modal-form__input-wrapper:last-of-type,
+.modal .thanks__inner .modal__form .modal-form__input-wrapper:last-of-type,
+.thanks .modal__inner .modal__form .modal-form__input-wrapper:last-of-type,
+.thanks .thanks__inner .modal__form .modal-form__input-wrapper:last-of-type {
+  margin-bottom: 40px;
+}
+
+.modal .modal__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before, .modal .modal__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before,
+.modal .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before,
+.modal .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before,
+.thanks .modal__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before,
+.thanks .modal__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before,
+.thanks .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before,
+.thanks .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+}
+
+.modal .modal__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before,
+.modal .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before,
+.thanks .modal__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before,
+.thanks .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(1)::before {
+  background: url(../img/modal/name.svg) center no-repeat;
+}
+
+.modal .modal__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before,
+.modal .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before,
+.thanks .modal__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before,
+.thanks .thanks__inner .modal__form .modal-form__input-wrapper:nth-child(2)::before {
+  background: url(../img/modal/tel.svg) center no-repeat;
+}
+
+.modal .modal__inner .modal__form .modal-form__input-wrapper .modal-form__input,
+.modal .thanks__inner .modal__form .modal-form__input-wrapper .modal-form__input,
+.thanks .modal__inner .modal__form .modal-form__input-wrapper .modal-form__input,
+.thanks .thanks__inner .modal__form .modal-form__input-wrapper .modal-form__input {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 18px;
+  width: 100%;
+  padding: 15px 0 15px 50px;
+  border: 0;
+  border-bottom: 2px solid #a857a2;
+}
+
+.modal .modal__inner .modal__form .modal-form__button,
+.modal .thanks__inner .modal__form .modal-form__button,
+.thanks .modal__inner .modal__form .modal-form__button,
+.thanks .thanks__inner .modal__form .modal-form__button {
+  font-size: 18px;
+  min-width: 0;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.modal .modal__inner .modal__text,
+.modal .thanks__inner .modal__text,
+.thanks .modal__inner .modal__text,
+.thanks .thanks__inner .modal__text {
+  font-size: 12px;
+  color: #9c9c9c;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.thanks .thanks__inner .thanks__title {
+  max-width: 280px;
+  margin: 0 auto 10px;
+}
+
+.thanks .thanks__inner .thanks__subtitle {
+  max-width: 240px;
+  margin: 0 auto 30px;
+}
+
+.thanks .thanks__inner .thanks__buttons {
+  max-width: 135px;
+  background: linear-gradient(135deg, #ed81e5 0%, #a857a2 100%);
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 30px;
+  margin: 0 auto 30px;
+}
+
+.thanks .thanks__inner .thanks__buttons .thanks-buttons__item {
+  margin-right: 20px;
+}
+
+.thanks .thanks__inner .thanks__buttons .thanks-buttons__item:last-child {
+  margin-right: 0;
+}
+
+.thanks .thanks__inner .thanks__img {
+  max-width: 250px;
+  max-height: 250px;
+  margin: 0 auto;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.thanks .thanks__inner .thanks__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }

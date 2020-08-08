@@ -49,7 +49,7 @@
                     <p class="intro__text">Танцуйте, занимайтесь,  двигайтесь, будьте здоровыми и достигайте результатов без изнурительных упражнений вместе с нами.
                     </p>
                     <h2 class="intro__subtitle">Уникальная система <span>30 минутных</span> занятий</h2>
-                    <a href="#!" class="intro__button button">Оставить заявку</a>
+                    <a href="#!" class="intro__button button" data-modal="form">Оставить заявку</a>
                     <p class="intro__scroll">Листай дальше</p>
                 </div>
 
@@ -102,7 +102,7 @@
     <div class="free">
         <div class="free__content">
             <h2 class="free__title">Получите <span>бесплатную тренеровку</span> в сопровождении эксперта</h2>
-            <a href="#!" class="free__button button">Оставить заявку</a>
+            <a href="#!" class="free__button button" data-modal="form">Оставить заявку</a>
         </div>
         <div class="free__img">
             <img src="img/free/img.jpg" alt="">
@@ -301,7 +301,7 @@
 
                 <div class="consultation__content">
                     <h2 class="consultation__title">Запишитесь на тренировку и получите <span>консультацию по питанию</span> с нутрициологом</h2>
-                    <a href="#!" class="consultation__button button">Оставить заявку</a>
+                    <a href="#!" class="consultation__button button" data-modal="form">Оставить заявку</a>
                 </div>
 
             </div>
@@ -451,7 +451,7 @@
                     </div>
                 </div>
 
-                <a href="#!" class="first__button button">Оставить заявку</a>
+                <a href="#!" class="first__button button" data-modal="form">Оставить заявку</a>
 
             </div>
         </div>
@@ -620,7 +620,7 @@
                 <div class="efficiency__content">
                     <h2 class="efficiency__title">Эффективность программы доказана <span>пятью миллионами женщин</span></h2>
                     <p class="efficiency__subtitle">которые являются постоянными членами клуба сети более, чем в 96 странах мира.</p>
-                    <a href="#!" class="efficiency__button button">Запишись сейчас</a>
+                    <a href="#!" class="efficiency__button button" data-modal="form">Запишись сейчас</a>
                 </div>
 
                 <div class="efficiency__img">
@@ -723,7 +723,7 @@
 
                 <div class="certificate__content">
                     <h2 class="certificate__title">Пройдите курс тренировок и получите настоящий сертификат <span>Fit Curves</span></h2>
-                    <a href="#!" class="certificate__button button">Получить</a>
+                    <a href="#!" class="certificate__button button" data-modal="form">Получить</a>
                 </div>
 
             </div>
@@ -768,6 +768,51 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal">
+        <div class="modal__inner">
+
+            <div class="modal__close">
+                <img src="img/modal/close.svg" alt="">
+            </div>
+            <h2 class="modal__title">Оставьте заявку на посещение прямо сейчас</h2>
+            <p class="modal__subtitle">Заполните форму и нажмите кнопку “Отправить”</p>
+            <form action="" method="POST" class="modal__form">
+                <div class="modal-form__input-wrapper">
+                    <input type="text" name="name" placeholder="Ваше имя" class="modal-form__input">
+                </div>
+                <div class="modal-form__input-wrapper">
+                    <input type="text" name="tel" placeholder="Номер телефона" class="modal-form__input">
+                </div>
+                <button type="submit" class="modal-form__button button">Отправить</button>
+            </form>
+            <p class="modal__text">Нажимая на кнопку Вы принимаете условия политики конфиденциальности</p>
+
+        </div>
+    </div>
+
+    <div class="thanks">
+        <div class="thanks__inner">
+
+            <div class="thanks__close">
+                <img src="img/modal/close.svg" alt="">
+            </div>
+            <h2 class="thanks__title">Спасибо, что выбрали нас!</h2>
+            <p class="thanks__subtitle">В ближайшее время наш менеджер свяжется с Вами</p>
+            <div class="thanks__buttons">
+                <a href="#!" class="thanks-buttons__item">
+                    <img src="img/footer/whatsapp.svg" alt="">
+                </a>
+                <a href="#!" class="thanks-buttons__item">
+                    <img src="img/footer/instagram.svg" alt="">
+                </a>
+            </div>
+            <div class="thanks__img">
+                <img src="img/block/img.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
