@@ -28,10 +28,27 @@ $(document).ready(function () {
         ]
     });
 
+    $('.first__slider').slick({
+        variableWidth: true,
+        centerMode: true,
+        centerPadding: '0px',
+        initialSlide: 1,
+        infinite: false,
+    });
+
     $('.reviews__slider').slick({
         variableWidth: true,
         dots: true,
-        infinite: false
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 530,
+                settings: {
+                    variableWidth: false,
+                    infinite: true
+                }
+            }
+        ]
     });
 
     $('.gyms__slider').slick({
@@ -39,14 +56,14 @@ $(document).ready(function () {
         dots: true,
         centerMode: true,
         centerPadding: '0px',
-    });
-
-    $('.first__slider').slick({
-        variableWidth: true,
-        centerMode: true,
-        centerPadding: '0px',
-        initialSlide: 1,
-        infinite: false
+        responsive: [
+            {
+                breakpoint: 530,
+                settings: {
+                    variableWidth: false,
+                }
+            }
+        ]
     });
 
     $('.nav__burger').click(function () {
