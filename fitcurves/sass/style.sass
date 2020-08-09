@@ -15,6 +15,7 @@ html, body
   font-family: 'Montserrat', sans-serif
   font-size: 18px
   color: $text
+  overflow-x: hidden
   @media screen and ( max-width: 425px )
     font-size: 14px
 
@@ -264,94 +265,96 @@ h1, h2, h3, h4, h5, h6
   padding: 100px 0
   @media screen and ( max-width: 425px )
     padding: 75px 0
-  .stats__inner
-    display: flex
-    justify-content: space-between
-    align-items: center
-    flex-wrap: wrap
-    @media screen and ( max-width: 1440px )
-      flex-direction: column
-    .stats__content
-      flex-basis: 40%
+  .container
+    max-width: 1550px
+    .stats__inner
+      display: flex
+      justify-content: space-between
+      align-items: center
+      flex-wrap: wrap
       @media screen and ( max-width: 1440px )
-        flex-basis: 100%
-        margin-bottom: 50px
-      .stats__suptitle
-        font-size: 36px
-        font-weight: 700
-        color: $text
-        @media screen and ( max-width: 425px )
-          font-size: 30px
-      .stats__title
-        font-size: 288px
-        line-height: 210px
-        @include gradientText ()
-        margin-bottom: 15px
-        @media screen and ( max-width: 1024px )
-          font-size: 180px
-          line-height: 1
-        @media screen and ( max-width: 640px )
-          font-size: 140px
-        @media screen and ( max-width: 640px )
-          font-size: 100px
-        @media screen and ( max-width: 360px )
-          font-size: 80px
-      .stats__text
-        font-size: 24px
-        line-height: 1.2
-        @media screen and ( max-width: 425px )
-          font-size: 18px
-    .stats__list
-      flex-basis: 60%
-      @media screen and ( max-width: 1440px )
-        flex-basis: 100%
-      .stats-list__item
-        position: relative
-        display: flex
-        align-items: center
-        margin-bottom: 50px
-        &:last-child
-          margin-bottom: 0
-        .stats-list__img
-          display: flex
-          justify-content: center
-          align-items: center
-          border: 1px solid $primary
-          border-radius: 50%
-          min-width: 120px
-          height: 120px
-          margin-right: 40px
-          @media screen and ( max-width: 768px )
-            min-width: 80px
-            height: 80px
-            img
-              width: 40px
-              height: 40px
-          @media screen and ( max-width: 425px )
-            min-width: 50px
-            height: 50px
-            margin-right: 20px
-            img
-              width: 25px
-              height: 25px
-        .stats-list__num
-          position: absolute
-          top: 5px
-          left: 160px
-          font-size: 100px
-          line-height: 1
-          font-weight: 700
-          opacity: .15
-          @media screen and ( max-width: 425px )
-            display: none
-        .stats-list__text
+        flex-direction: column
+      .stats__content
+        flex-basis: 35%
+        @media screen and ( max-width: 1440px )
+          flex-basis: 100%
+          margin-bottom: 50px
+        .stats__suptitle
           font-size: 36px
-          line-height: 1
           font-weight: 700
-          @media screen and ( max-width: 768px )
-            font-size: 28px
-          @media screen and ( max-width: 375px )
-            font-size: 22px
+          color: $text
+          @media screen and ( max-width: 425px )
+            font-size: 30px
+        .stats__title
+          font-size: 288px
+          line-height: 210px
+          @include gradientText ()
+          margin-bottom: 15px
+          @media screen and ( max-width: 1024px )
+            font-size: 180px
+            line-height: 1
+          @media screen and ( max-width: 640px )
+            font-size: 140px
+          @media screen and ( max-width: 640px )
+            font-size: 100px
+          @media screen and ( max-width: 360px )
+            font-size: 80px
+        .stats__text
+          font-size: 24px
+          line-height: 1.2
+          @media screen and ( max-width: 425px )
+            font-size: 18px
+      .stats__list
+        flex-basis: 58%
+        @media screen and ( max-width: 1440px )
+          flex-basis: 100%
+        .stats-list__item
+          position: relative
+          display: flex
+          align-items: center
+          margin-bottom: 50px
+          &:last-child
+            margin-bottom: 0
+          .stats-list__img
+            display: flex
+            justify-content: center
+            align-items: center
+            border: 1px solid $primary
+            border-radius: 50%
+            min-width: 120px
+            height: 120px
+            margin-right: 40px
+            @media screen and ( max-width: 768px )
+              min-width: 80px
+              height: 80px
+              img
+                width: 40px
+                height: 40px
+            @media screen and ( max-width: 425px )
+              min-width: 50px
+              height: 50px
+              margin-right: 20px
+              img
+                width: 25px
+                height: 25px
+          .stats-list__num
+            position: absolute
+            top: 5px
+            left: 160px
+            font-size: 100px
+            line-height: 1
+            font-weight: 700
+            opacity: .15
+            @media screen and ( max-width: 425px )
+              display: none
+          .stats-list__text
+            font-size: 36px
+            line-height: 1
+            font-weight: 700
+            @media screen and ( max-width: 768px )
+              font-size: 28px
+            @media screen and ( max-width: 375px )
+              font-size: 22px
 
 // Free
 
@@ -745,6 +748,9 @@ h1, h2, h3, h4, h5, h6
     .program__title
       @media screen and ( max-width: 1024px )
         margin-bottom: 20px
+      span
+        @media screen and ( max-width: 345px )
+          font-size: 40px
     .program__subtitle
       text-align: center
       max-width: 530px
@@ -850,18 +856,15 @@ h1, h2, h3, h4, h5, h6
   .first__inner
     .first__title
       max-width: 880px
-      margin: 0 auto 100px
+      margin: 0 auto
       span
         @media screen and ( max-width: 330px )
           font-size: 36px
     .first__slider
-      margin-bottom: 100px
-      .first-slider__item.first-slider__text-item
-        opacity: 1
       .first-slider__item
         position: relative
         max-width: 450px
-        opacity: .5
+        opacity: 0
         padding: 100px 50px
         margin-right: 100px
         transition: opacity .4s, transform .4s
@@ -885,60 +888,106 @@ h1, h2, h3, h4, h5, h6
       display: block
       max-width: 415px
       margin: 0 auto
-    .slick-list
-      overflow: visible
-    .slick-current.slick-center
-      &:not(.first-slider__text-item)
-        opacity: 1
-        transform: scale(2) rotate(360deg)
-    .slick-arrow
-      position: absolute
-      bottom: 40px
-      z-index: 10
-      background: 0
-      border: 0
-      font-size: 0
-      display: block
-      width: 30px
-      height: 30px
-      border-top: 3px solid $primary
-      border-left: 3px solid $primary
-      @media screen and ( max-width: 768px )
-        bottom: 0
+
+.first__slider
+  transform: translateY(-150px)
+  .slick-list
+    overflow: visible
+    @media screen and ( max-width: 1250px )
+      transform: translateX(20%)
+    @media screen and ( max-width: 900px )
+      transform: translateX(30%)
+    @media screen and ( max-width: 790px )
+      opacity: 0
+  .slick-track
+  .slick-current.slick-center
+    & ~ .first-slider__item
       opacity: .5
-    .slick-prev
-      left: 0
-      transform: rotate(-45deg)
-      @media screen and ( max-width: 768px )
-        left: 30%
-    .slick-next
-      left: 150px
-      transform: rotate(135deg)
-      @media screen and ( max-width: 768px )
-        left: 60%
-    .slick-dots
+    &:not(.first-slider__text-item)
+      opacity: 1
+      transform: scale(2) rotate(360deg)
+  .slick-arrow
+    position: absolute
+    bottom: 40px
+    z-index: 10
+    background: 0
+    border: 0
+    font-size: 0
+    display: block
+    width: 30px
+    height: 30px
+    border-top: 3px solid $primary
+    border-left: 3px solid $primary
+    opacity: .5
+  .slick-prev
+    left: 0
+    transform: rotate(-45deg)
+    @media screen and ( max-width: 790px )
+      left: 30%
+  .slick-next
+    left: 150px
+    transform: rotate(135deg)
+    @media screen and ( max-width: 790px )
+      left: 65%
+  .slick-dots
+    position: absolute
+    bottom: -75px
+    left: 50%
+    transform: translateX(-50%)
+    display: flex
+    li
+      margin-right: 15px
+      &:last-child
+        margin-right: 0
+      button
+        font-size: 0
+        width: 15px
+        height: 15px
+        border-radius: 50%
+        background: transparent
+        border: 2px solid $primary
+        transition: .4s
+    li.slick-active
+      button
+        width: 24px
+        height: 24px
+        background: $primary
+
+.first__num-slider
+  transform: translateY(150px)
+  // height: 300px
+  .first-num-slider__item
+    position: relative
+    height: 250px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    .first-num-slider__num
       position: absolute
-      bottom: -75px
-      left: 50%
-      transform: translateX(-50%)
-      display: flex
-      li
-        margin-right: 15px
-        &:last-child
-          margin-right: 0
-        button
-          font-size: 0
-          width: 15px
-          height: 15px
-          border-radius: 50%
-          background: transparent
-          border: 2px solid $primary
-          transition: .4s
-      li.slick-active
-        button
-          width: 24px
-          height: 24px
-          background: $primary
+      top: 0
+      left: 0
+      z-index: -1
+      font-size: 144px
+      line-height: 1
+      font-weight: 700
+      opacity: .5
+      @include gradientText ()
+      @media screen and ( max-width: 790px )
+        left: 20%
+      @media screen and ( max-width: 425px )
+        left: 0
+    .first-num-slider__title
+      font-size: 36px
+      max-width: 430px
+      @media screen and ( max-width: 790px )
+        text-align: center
+        margin: 0 auto
+    .first-num-slider__text
+      font-size: 24px
+      max-width: 430px
+      @media screen and ( max-width: 790px )
+        text-align: center
+        margin: 0 auto
 
 // Features and About background
 
@@ -961,7 +1010,9 @@ h1, h2, h3, h4, h5, h6
         font-size: 44px
   .features__list
     max-width: 620px
-    margin: 0 auto
+    margin: 0 auto 0 45%
+    @media screen and ( max-width: 768px )
+      margin: 0 auto
     .features-list__item
       position: relative
       margin-bottom: 30px
@@ -1529,6 +1580,7 @@ h1, h2, h3, h4, h5, h6
 
 .footer
   .footer__inner
+    margin-bottom: 60px
     .footer__title
       font-size: 36px
       text-align: center
@@ -1537,6 +1589,7 @@ h1, h2, h3, h4, h5, h6
     .footer__row
       display: flex
       justify-content: space-between
+      margin-bottom: 60px
       @media screen and ( max-width: 1024px )
         flex-direction: column
       .footer__contacts
@@ -1593,6 +1646,13 @@ h1, h2, h3, h4, h5, h6
       .footer__map
         flex-basis: 60%
         width: 100%
+    .footer__logo
+      max-width: 340px
+      background: #fff
+      border-radius: 12px
+      box-shadow: 0 15px 50px rgba(157, 58, 141, .25)
+      padding: 10px 25px 15px
+      margin: 0 auto
 
 // Modal
 

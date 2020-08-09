@@ -28,13 +28,24 @@ $(document).ready(function () {
         ]
     });
 
+    $('.first__num-slider').slick({
+        vertical: true,
+        slidesToShow: 1,
+        infinite: false,
+        arrows: false,
+    });
+
     $('.first__slider').slick({
         variableWidth: true,
         centerMode: true,
         centerPadding: '0px',
-        initialSlide: 1,
         infinite: false,
+        asNavFor: '.first__num-slider'
     });
+
+    // $('.first__slider .slick-arrow').click(function() {
+    //     $('.first-num__slider .slick-list.draggable').css('height', '400px');
+    // });
 
     $('.reviews__slider').slick({
         variableWidth: true,
