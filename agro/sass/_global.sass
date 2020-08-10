@@ -1,11 +1,13 @@
 $primary: #e12025
 $secondary: #045038
+$shadow: 0 15px 50px rgba(#000, .25)
 
 html, body
   font-family: 'Montserrat', sans-serif
   font-size: 18px
   line-height: 1.2
   color: #000
+  overflow-x: hidden
 
 .container
   width: 100%
@@ -47,9 +49,17 @@ html, body
   font-weight: 500
   color: #000
   max-width: 600px
+  @media screen and ( max-width: 768px )
+    font-size: 32px
+  @media screen and ( max-width: 425px )
+    font-size: 28px
   b
     font-weight: 700
     color: $primary
 
 .section
   margin-bottom: 200px
+  @media screen and ( max-width: 768px )
+    margin-bottom: 150px
+  @media screen and ( max-width: 425px )
+    margin-bottom: 100px

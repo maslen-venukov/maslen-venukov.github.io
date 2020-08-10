@@ -8,6 +8,14 @@ $(document).ready(function () {
     $('.production__slider').slick({
         variableWidth: true,
         infinite: false,
+        responsive: [
+            {
+                breakpoint: 881,
+                settings: {
+                    variableWidth: false
+                }
+            }
+        ]
     });
 
     function counter() {
@@ -25,6 +33,11 @@ $(document).ready(function () {
     $('.production__arrow-right').click(function () {
         $('.slick-next').click();
         counter();
+    });
+
+    $('.nav__burger').click(function () {
+        $(this).toggleClass('nav__burger_active');
+        $('.nav__list').toggleClass('nav__list_active');
     });
 
 });
