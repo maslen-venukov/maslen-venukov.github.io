@@ -99,7 +99,8 @@
             transform: translateX(0)
         .nav-list__item
           position: relative
-          color: #000
+          .nav-list__link
+            color: #000
           @media screen and ( max-width: 1230px )
             font-size: 36px
             font-weight: 700
@@ -205,13 +206,13 @@
     .blog__content
       display: flex
       justify-content: space-between
-      @media screen and ( max-width: 1860px )
+      @media screen and ( max-width: 1000px )
         flex-direction: column
       .blog__col
         position: relative
         display: flex
         flex-direction: column
-        @media screen and ( max-width: 1860px )
+        @media screen and ( max-width: 1000px )
           margin-bottom: 140px
         .blog__list
           flex-basis: 30%
@@ -236,7 +237,7 @@
           bottom: 120px
           font-size: 48px
           font-weight: 500
-          @media screen and ( max-width: 1860px )
+          @media screen and ( max-width: 1000px )
             bottom: -80px
         .blog__arrow-left,
         .blog__arrow-right
@@ -244,7 +245,7 @@
           bottom: 80px
           z-index: 100
           cursor: pointer
-          @media screen and ( max-width: 1860px )
+          @media screen and ( max-width: 1000px )
             bottom: -110px
         .blog__arrow-left
           left: 0
@@ -259,22 +260,33 @@
         display: flex
         justify-content: space-between
         min-width: 0
+        @media screen and ( max-width: 1860px )
+          flex-basis: 50%
+        @media screen and ( max-width: 1200px )
+          flex-basis: 55%
         .blog-slider__item
           display: flex
           justify-content: space-between
-          flex-wrap: wrap
+          flex-direction: column
           min-width: 0
           max-width: 1160px
-          @media screen and ( max-width: 610px )
+          @media screen and ( max-width: 1860px )
             flex-direction: column
+          @media screen and ( max-width: 1000px )
+            justify-content: center
           .blog-slider__card
             flex-basis: 50%
             max-width: 560px
             background: $primary
+            min-height: 475px
             margin-right: 20px
             margin-bottom: 20px
-            @media screen and ( max-width: 1860px )
-              // flex-basis: 100%
+            @media screen and ( max-width: 1000px )
+              margin: 0 auto 20px
+            @media screen and ( max-width: 650px )
+              margin-right: 30px
+            @media screen and ( max-width: 1000px )
+              min-height: 0
             .blog-slider__img
               width: 100%
               img
@@ -307,6 +319,8 @@
           @media screen and ( max-width: 1860px )
             opacity: 1
         .slick-current.slick-active
+          opacity: 1
+        .slick-current.slick-active + .slick-slide
           opacity: 1
         .slick-arrow
           position: absolute
