@@ -1,0 +1,55 @@
+$primary: #e12025
+$secondary: #045038
+
+html, body
+  font-family: 'Montserrat', sans-serif
+  font-size: 18px
+  line-height: 1.2
+  color: #000
+
+.container
+  width: 100%
+  max-width: 1460px
+  padding: 0 15px
+  margin: 0 auto
+
+.button
+  display: inline-block
+  border-radius: 10px
+  padding: 20px 80px
+  color: #fff
+  font-weight: 700
+  &--primary
+    background: $primary
+  &--secondary
+    background: $secondary
+  &--white
+    color: $secondary
+    background: #fff
+    border: 2px solid $secondary
+    border-radius: 10px
+
+.link
+  position: relative
+  font-size: 24px
+  color: #575757
+  &::after
+    content: ''
+    position: absolute
+    bottom: -4px
+    left: 0
+    width: 100%
+    height: 1px
+    background: #c4c4c4
+
+.title
+  font-size: 36px
+  font-weight: 500
+  color: #000
+  max-width: 600px
+  b
+    font-weight: 700
+    color: $primary
+
+.section
+  margin-bottom: 200px
