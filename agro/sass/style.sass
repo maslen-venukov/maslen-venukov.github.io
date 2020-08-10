@@ -197,38 +197,63 @@
   .container
     max-width: 1660px
     transform: translateX(100px)
+    @media screen and ( max-width: 1500px )
+      transform: translateX(15px)
   .blog__inner
     .blog__title
       margin-bottom: 70px
     .blog__content
       display: flex
       justify-content: space-between
-      .blog__list
-        flex-basis: 30%
+      @media screen and ( max-width: 1860px )
+        flex-direction: column
+      .blog__col
+        position: relative
         display: flex
         flex-direction: column
-        .blog-list__item
-          position: relative
-          font-size: 24px
-          font-weight: 500
-          max-width: 400px
-          padding-left: 80px
-          margin-bottom: 30px
-          &::before
-            content: ''
-            position: absolute
-            left: 0
-            top: 50%
-            transform: translateY(-50%)
-            width: 47px
-            height: 47px
-            background: url(../img/blog/gear.svg)
-          &:last-child
-            font-weight: 400
-            padding-left: 0
-            margin: auto 0 4px
+        @media screen and ( max-width: 1860px )
+          margin-bottom: 140px
+        .blog__list
+          flex-basis: 30%
+          .blog-list__item
+            position: relative
+            font-size: 24px
+            font-weight: 500
+            max-width: 400px
+            padding-left: 80px
+            margin-bottom: 30px
             &::before
-              display: none
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              width: 47px
+              height: 47px
+              background: url(../img/blog/gear.svg)
+        .blog__number-slide
+          position: absolute
+          bottom: 120px
+          font-size: 48px
+          font-weight: 500
+          @media screen and ( max-width: 1860px )
+            bottom: -80px
+        .blog__arrow-left,
+        .blog__arrow-right
+          position: absolute
+          bottom: 80px
+          z-index: 100
+          cursor: pointer
+          @media screen and ( max-width: 1860px )
+            bottom: -110px
+        .blog__arrow-left
+          left: 0
+        .blog__arrow-right
+          left: 50px
+        .blog__link
+          font-weight: 400
+          max-width: 270px
+          margin: auto 0 4px
       .blog__slider
         flex-basis: 70%
         display: flex
@@ -240,7 +265,7 @@
           flex-wrap: wrap
           min-width: 0
           max-width: 1160px
-          @media screen and ( max-width: 1860px )
+          @media screen and ( max-width: 610px )
             flex-direction: column
           .blog-slider__card
             flex-basis: 50%
@@ -249,7 +274,7 @@
             margin-right: 20px
             margin-bottom: 20px
             @media screen and ( max-width: 1860px )
-              flex-basis: 100%
+              // flex-basis: 100%
             .blog-slider__img
               width: 100%
               img
@@ -279,10 +304,14 @@
         .slick-slide
           opacity: 0
           transition: opacity .6s
+          @media screen and ( max-width: 1860px )
+            opacity: 1
         .slick-current.slick-active
           opacity: 1
         .slick-arrow
           position: absolute
+          opacity: 0
+          visibility: hidden
 
 // Technics
 
