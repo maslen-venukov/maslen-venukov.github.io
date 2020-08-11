@@ -1,0 +1,814 @@
+@import 'normalize'
+@import 'global'
+@import 'fonts'
+
+.header
+  height: 12.5vh
+  background: #fff
+  padding: 30px 0
+  .header__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .header__logo
+      flex-basis: 30%
+      display: flex
+      align-items: center
+      img
+        margin-right: 30px
+      .header-logo__text
+        display: flex
+        flex-direction: column
+        b
+          font-size: 14px
+          margin-bottom: 5px
+        p
+          font-size: 12px
+          max-width: 160px
+    .header__contacts
+      flex-basis: 70%
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      .header__social
+        display: flex
+        margin-right: 60px
+        .header-social__item
+          margin-right: 25px
+          &:last-child
+            margin-right: 0
+      .header__col
+        margin-right: 45px
+        &:last-child
+          margin-right: 0
+        .header__phone
+          display: flex
+          justify-content: flex-end
+          align-items: center
+          font-size: 24px
+          font-weight: 700
+          margin-bottom: 5px
+          img
+            margin-right: 20px
+        .header__email
+          display: flex
+          justify-content: flex-end
+          align-items: center
+          img
+            margin-right: 20px
+        .header__link
+          font-size: 14px
+          color: $text
+          text-decoration: underline
+          text-align: right
+
+.intro
+  background: url(../img/intro/bg.jpg) center no-repeat
+  background-size: cover
+  padding-bottom: 100px
+  margin-bottom: 200px
+
+.nav
+  position: absolute
+  top: 36px
+  height: 60px
+  &--fixed
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 10000
+    width: 100%
+    background: #000
+    padding: 18px 0
+    .nav__inner
+      max-width: 1460px
+      padding: 0 15px
+      margin: 0 auto
+  .nav__inner
+    .nav__item
+      color: #fff
+      margin-right: 80px
+      transition: color .2s, text-shadow .2s
+      &:hover
+        color: $main
+        text-shadow: $shadow
+      &:last-child
+        margin-right: 0
+
+.main
+  color: #fff
+  height: 87.5vh
+  margin-bottom: 200px
+  .main__inner
+    position: relative
+    display: flex
+    justify-content: space-between
+    .main__content
+      flex-basis: 60%
+      padding-top: 20vh
+      .main__title
+        max-width: 850px
+        margin-bottom: 1vh
+      .main__subtitle
+        max-width: 490px
+        margin-bottom: 5vh
+      .main__btns
+        margin-bottom: 5vh
+        .main__btn
+          margin-right: 20px
+          &:last-child
+            margin-right: 0
+      .main__lists
+        display: flex
+        .main__list
+          .main-list__item
+            position: relative
+            max-width: 285px
+            padding-left: 40px
+            margin-bottom: 2vh
+            &::before
+              @include listMark ()
+    .main__img
+      flex-basis: 40%
+      display: flex
+      align-items: flex-end
+      img
+        transform: translate(-30%, 30%)
+
+.development
+  color: #fff
+  .development__inner
+    position: relative
+    .development__header
+      display: flex
+      margin-bottom: 100px
+      .development__titles
+        flex-basis: 65%
+        .development__suptitle
+          font-size: 48px
+          font-weight: 700
+        .development__title
+          font-size: 72px
+          @include gradientText ()
+          span
+            font-size: 288px
+            line-height: 1
+      .development__text
+        flex-basis: 35%
+        display: flex
+        flex-direction: column
+        p
+          font-size: 36px
+          margin: auto 0 45px
+          b
+            @include gradientText ()
+    .development__body
+      max-width: 1200px
+      .development__list
+        display: flex
+        margin-bottom: 60px
+        &:last-child
+          margin-bottom: 0
+        .development-list__item
+          flex-basis: 50%
+          display: flex
+          align-items: center
+          margin-right: 60px
+          &:last-child
+            margin-right: 0
+          .development-list__number
+            position: relative
+            font-size: 144px
+            font-weight: 700
+            @include gradientText ()
+            margin-right: 80px
+            &::before,
+            &::after
+              content: ''
+              position: absolute
+              top: 50%
+              left: 50%
+              transform: translate(-50%, -50%)
+              border-radius: 50%
+            &::before
+              width: 160px
+              height: 160px
+              border: 1px solid #878787
+            &::after
+              width: 180px
+              height: 180px
+              border: 1px solid #313131
+          .development-list__text
+            b
+              @include gradientText ()
+      .development__img
+        position: absolute
+        bottom: -50px
+        right: -500px
+        img
+
+.presentation
+  color: #fff
+  background: #000
+  padding: 100px 0
+  margin-bottom: 200px
+  .presentation__inner
+    display: flex
+    justify-content: space-between
+    .presentation__img
+      flex-basis: 45%
+      transform: translateX(-50px)
+      img
+    .presentation__content
+      flex-basis: 55%
+      .presentation__title
+      .presentation__subtitle
+        font-size: 36px
+        margin-bottom: 30px
+      .presentation__text
+        margin-bottom: 115px
+      .presentation__btns
+        .presentation__btn
+          margin-right: 20px
+        .btn:not(.btn--transparent)
+          padding: 25px 35px
+          &:last-child
+            margin-right: 0
+
+.tech
+  .tech__inner
+    .tech__title
+      max-width: 420px
+    .tech__item
+      display: flex
+      justify-content: center
+      align-items: center
+      margin-bottom: 120px
+      &:nth-child(odd)
+        flex-direction: row-reverse
+        .tech-item__content
+          text-align: right
+          padding-left: 0
+          padding-right: 70px
+          .tech-item__text
+            margin-left: auto
+      &:last-child
+        margin-bottom: 0
+      .tech-item__img
+        flex-basis: 50%
+        width: 705px
+        height: 320px
+        background: $gradient
+        border-radius: $radius
+        img
+          width: 100%
+          height: 100%
+          opacity: .8
+          border-radius: $radius
+          object-fit: cover
+      .tech-item__content
+        flex-basis: 50%
+        padding-left: 70px
+        .tech-item__title
+          margin-bottom: 30px
+        .tech-item__text
+          max-width: 560px
+
+.terms
+  background: url(../img/terms/bg.jpg) center no-repeat
+  background-size: cover
+  padding: 100px 0
+  .terms__inner
+    .terms__title
+      max-width: 750px
+    .terms__row
+      display: flex
+      justify-content: space-between
+      margin-bottom: 100px
+      .terms__card
+        position: relative
+        flex-basis: 25%
+        padding: 25px
+        margin-right: 25px
+        &:last-child
+          margin-right: 0
+        .terms-card__img
+          position: absolute
+          top: 0
+          bottom: 0
+          left: 0
+          right: 0
+          object-fit: cover
+        .terms-card__number,
+        .terms-card__title,
+        .terms-card__text,
+          position: relative
+          z-index: 1
+        .terms-card__number
+          font-size: 144px
+          font-weight: 700
+          @include gradientText ()
+        .terms-card__title
+          font-size: 24px
+          margin-bottom: 10px
+          @include gradientText ()
+        .terms-card__text
+          font-size: 14px
+          color: #fff
+  .terms__get-title
+    text-align: center
+    max-width: 630px
+    margin: 0 auto 50px
+  .terms__btn
+    display: block
+    width: 320px
+    margin: 0 auto
+
+.video
+  .video__inner
+    .video__title
+      max-width: 780px
+    .video__card
+      position: relative
+      border-radius: $radius
+      width: 100%
+      min-height: 300px
+      height: 35vw
+      background: $gradient
+      .video-card__poster
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        border-radius: $radius
+        opacity: .5
+      .video-card__content
+        position: relative
+        z-index: 1
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100%
+        cursor: pointer
+        .video-card__img
+          margin-right: 20px
+          img
+        .video-card__text
+          color: #fff
+          .video-card__title
+            font-size: 36px
+          .video-card__subtitle
+            font-size: 24px
+
+.special
+  position: relative
+  .special__inner
+    .special__title
+    .special__subtitle
+      font-size: 36px
+      margin-bottom: 70px
+    .special__row
+      display: flex
+      justify-content: space-between
+      .special__card
+        flex-basis: 50%
+        display: flex
+        flex-direction: column
+        background: #fff
+        border-radius: $radius
+        border: 1px solid #ff9334
+        padding: 40px
+        margin-right: 25px
+        transition: box-shadow .2s
+        &:last-child
+          margin-right: 0
+        &:hover
+          box-shadow: 0 10px 20px #e5e5e5
+        .special-card__header
+          display: flex
+          align-items: center
+          margin-bottom: 40px
+          .special-card__img
+            margin-right: 40px
+            img
+          .special-card__title
+            font-size: 36px
+            font-weight: 400
+            max-width: 240px
+        .special-card__list
+          margin-bottom: 60px
+          .special-card-list__item
+            position: relative
+            padding-left: 40px
+            margin-bottom: 15px
+            &:last-child
+              margin-bottom: 0
+            &::before
+              @include listMark ()
+        .special-card__btn
+          display: block
+          width: 320px
+          padding: 25px
+          margin-top: auto
+  .special__img
+    position: absolute
+    right: 0
+    bottom: -250px
+    img
+
+.production
+  .production__inner
+    .production__title
+      margin-bottom: 70px
+    .production__row
+      display: flex
+      justify-content: space-between
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+      .production__img-card,
+      .production__card,
+      .production__dark-card
+        color: #fff
+        padding: 40px
+        border-radius: $radius
+      .production__col
+        flex-basis: 50%
+        margin-right: 20px
+        min-height: 515px
+        &:last-child
+          margin-right: 0
+        .production__img-card
+          position: relative
+          display: flex
+          flex-direction: column
+          justify-content: flex-end
+          background: $gradient
+          height: 100%
+          .production-img-card__img
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            object-fit: cover
+        .production__card
+          display: flex
+          justify-content: center
+          align-items: center
+          background: $gradient
+          margin-bottom: 20px
+          height: 50%
+          &:last-child
+            height: calc( 50% - 20px )
+            margin-bottom: 0
+      .production__dark-card
+        background: url(../img/production/dark-img.jpg) center no-repeat
+        background-size: cover
+        width: 100%
+        .production-dark-card__header
+          display: flex
+          align-items: center
+          padding-left: 35px
+          margin-bottom: 15px
+          .production-dark-card__img
+            margin-right: 30px
+            img
+          .production-dark-card__title
+            font-size: 24px
+      .production-card__text
+        position: relative
+        font-size: 24px
+        max-width: 600px
+        padding-left: 35px
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          top: 5px
+          width: 15px
+          height: 15px
+          border-top: 3px solid #fff
+          border-right: 3px solid #fff
+          transform: rotate(45deg)
+
+.reviews
+  .reviews__inner
+    .reviews__title
+      margin-bottom: 70px
+    .reviews__row
+      display: flex
+      justify-content: space-between
+      .reviews__card
+        flex-basis: 33%
+        display: flex
+        flex-direction: column
+        margin-right: 20px
+        background: #fff
+        border-radius: $radius
+        border: 2px solid $main
+        &:last-child
+          margin-right: 0
+        .reviews-card__text
+          font-size: 14px
+          padding: 30px 40px
+        .reviews-card__footer
+          position: relative
+          height: 100px
+          color: #fff
+          background: $gradient
+          padding: 20px 40px
+          margin-top: auto
+          .reviews-card__name
+            font-size: 24px
+            font-weight: 700
+          .reviews-card__profession
+            font-size: 14px
+            max-width: 260px
+          .reviews-card__city
+            position: absolute
+            bottom: 15px
+            right: 40px
+            font-size: 12px
+            font-weight: 700
+            text-align: right
+
+.free
+  background: #000
+  padding: 150px 0
+  margin-bottom: 200px
+  .free__inner
+    display: flex
+    justify-content: space-between
+    .free__content
+      flex-basis: 50%
+      color: #fff
+      .free__title
+      .free__subtitle
+        font-size: 36px
+        margin-bottom: 30px
+      .free__text
+        margin-bottom: 100px
+        max-width: 560px
+      .free__btn
+    .free__img
+      position: relative
+      flex-basis: 50%
+      img
+        position: absolute
+        transform: translate(-100px, 120px) scale(1.4)
+
+.achievements
+  overflow-x: hidden
+  margin-bottom: 200px
+  .achievements__inner
+    display: flex
+    .achievements__col
+      display: flex
+      flex-direction: column
+      margin-right: 160px
+      .achievements__title
+        max-width: 280px
+      .achievements__arrows
+        display: flex
+        margin-top: auto
+        .achievements__arrow-left,
+        .achievements__arrow-right
+          position: relative
+          z-index: 1
+          cursor: pointer
+        .achievements__arrow-left
+          margin-right: 20px
+        .achievements__arrow-right
+    .achievements__slider
+      min-width: 0
+      .achievements-slider__item
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+      .slick-list
+        overflow: visible
+      .slick-slide
+        opacity: 0
+        transition: opacity .4s
+      .slick-current.slick-active
+        opacity: 1
+      .slick-current.slick-active ~ .slick-slide
+        opacity: 1
+      .slick-arrow
+        position: absolute
+        opacity: 0
+
+.quality
+  position: relative
+  .quality__inner
+    .quality__title
+      max-width: 810px
+    .quality__card
+      max-width: 1000px
+      width: 100%
+      padding: 40px
+      border-radius: $radius
+      border: 1px solid $main
+      margin-bottom: 40px
+      .quality-card__img
+        margin-bottom: 30px
+        img
+      .quality-card__list
+        .quality-card-list__item
+          position: relative
+          max-width: 500px
+          padding-left: 35px
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+          &::before
+            @include listMark ()
+      .quality__btn
+    .quality__img
+      position: absolute
+      right: 0
+      bottom: -130px
+      img
+
+.geo
+  .geo__inner
+    display: flex
+    justify-content: space-between
+    .geo__content
+      flex-basis: 50%
+      .geo__title
+        max-width: 715px
+        margin-bottom: 30px
+      .geo__subtitle
+        margin-bottom: 65px
+        max-width: 400px
+      .geo__img
+        img
+          position: relative
+          z-index: 1
+          transform: translate(115px, 40px) scale(1.35)
+    .geo__map
+      flex-basis: 50%
+      img
+        transform: translateY(35px) scale(1.1)
+
+.footer
+  background: url(../img/footer/bg.jpg) center no-repeat
+  background-size: cover
+  padding: 70px 0
+
+.consultation
+  margin-bottom: 250px
+  .consultation__inner
+    display: flex
+    justify-content: space-between
+    .consultation__col
+      flex-basis: 75%
+      .consultation__title
+        font-size: 36px
+        color: #fff
+      .consultation__form
+        .consultation-form__row
+          position: relative
+          display: flex
+          align-items: center
+          margin-bottom: 70px
+          &:last-child
+            margin-bottom: 0
+          .consultation-form__input
+            position: relative
+            max-width: 415px
+            width: 100%
+            margin-right: 100px
+            &::before
+              content: ''
+              position: absolute
+              left: 10px
+              top: 50%
+              transform: translateY(-50%)
+              width: 26px
+              height: 26px
+            &:nth-child(1)::before
+              background: url(../img/footer/name.svg)
+              background-size: cover
+            &:nth-child(2)::before
+              background: url(../img/footer/tel.svg)
+              background-size: cover
+            &:last-child
+              margin-right: 0
+            input
+              font-size: 24px
+              color: #fff
+              width: 100%
+              background: transparent
+              border: 0
+              border-bottom: 1px solid #414141
+              padding: 15px 15px 15px 60px
+          .consultation-form__radio
+            position: absolute
+            opacity: 0
+            &:checked
+              & + .consultation-form__text
+                font-weight: 700
+                @include gradientText ()
+                &::before
+                  background: $gradient
+          .consultation-form__text
+            position: relative
+            font-size: 24px
+            color: #fff
+            cursor: pointer
+            padding-left: 60px
+            margin-right: 100px
+            &:last-child
+              margin-right: 0
+            &::before
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              width: 27px
+              height: 27px
+              display: block
+              border-radius: 50%
+              background: #e4e4e4
+              border: 4px solid #e4e4e4
+          .consultation-form__btn
+            font-size: 18px
+            max-width: 400px
+            width: 100%
+            margin-right: 60px
+          .consultation-form__policy
+            font-size: 12px
+            color: #9c9c9c
+            max-width: 260px
+    .consultation__img
+      flex-basis: 25%
+      img
+        transform: translate(0px, 90px) scale(1.4)
+
+.contacts
+  .contacts__inner
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    .contacts__col
+      flex-basis: 35%
+      color: #fff
+      .contacts__title
+        font-size: 36px
+        margin-bottom: 50px
+      .contacts__subtitle
+        font-size: 24px
+        margin-bottom: 60px
+      .contacts__adress,
+      .contacts__phones,
+      .contacts__email,
+      .contacts__social
+        position: relative
+        padding-left: 35px
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          top: 4px
+          width: 17px
+      .contacts__adress,
+      .contacts__phones
+        font-size: 24px
+        margin-bottom: 15px
+      .contacts__adress
+        &::before
+          height: 23px
+          background: url(../img/footer/contacts-adress.svg)
+      .contacts__phones
+        &::before
+          height: 17px
+          background: url(../img/footer/contacts-tel.svg)
+        p
+          font-size: 18px
+          margin-bottom: 15px
+      .contacts__email
+        margin-bottom: 40px
+        &::before
+          width: 18px
+          height: 14px
+          background: url(../img/footer/contacts-email.svg)
+      .contacts__social
+        display: flex
+        .contacts-social__item
+          margin-right: 25px
+          &:last-child
+            margin-right: 0
+    .contacts__map
+      flex-basis: 65%
+    .contacts__img
+      margin: 80px auto 0
+      img
+        border-radius: 12px
