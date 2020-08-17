@@ -3,7 +3,7 @@
 
 .wrapper
   width: 100vw
-  height: 100vh
+  min-height: 100vh
   display: flex
   flex-direction: column
 
@@ -13,6 +13,17 @@
   right: 0
   z-index: -1
   height: 90vh
+  @media screen and ( max-width: 1700px )
+    right: -10vw
+    top: -10px
+  @media screen and ( max-width: 1440px )
+    right: -17vw
+  @media screen and ( max-width: 1366px )
+    right: -20vw
+  @media screen and ( max-width: 1224px )
+    right: -23vw
+  @media screen and ( max-width: 1150px )
+    right: -26vw
   @media screen and ( max-width: 1024px )
     display: none
   img
