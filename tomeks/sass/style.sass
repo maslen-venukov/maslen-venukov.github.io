@@ -1,0 +1,120 @@
+@import 'normalize'
+@import 'global'
+
+.wrapper
+  width: 100vw
+  height: 100vh
+  display: flex
+  flex-direction: column
+
+.picture
+  position: absolute
+  top: 0
+  right: 0
+  z-index: -1
+  height: 90vh
+  img
+    width: 100%
+    height: 100%
+
+.header
+  padding: 20px 0
+  margin-bottom: 4vh
+  .header__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .header__logo
+      display: flex
+      align-items: center
+      img
+        margin-right: 15px
+      p
+        font-size: 36px
+        font-weight: 800
+        text-transform: uppercase
+        span
+          color: $primary
+    .header__info
+      color: #fff
+      text-align: right
+      .header__phone
+        font-weight: 800
+        color: #fff
+
+.main
+  .main__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .main__content
+      flex-basis: 54%
+      .main__title
+        font-size: 56px
+        margin-bottom: 2vh
+        .primary
+          color: $primary
+        .secondary
+          font-weight: 800
+          color: $secondary
+      .main__subtitle
+        font-size: 24px
+        margin-bottom: 4vh
+      .main__buttons
+        display: flex
+        margin-bottom: 4vh
+        .btn
+          color: #fff
+        .main__btn.btn--secondary
+          margin-right: 15px
+        .main__btn.btn--primary
+      .main__list
+        .main-list__item
+          display: flex
+          align-items: center
+          margin-bottom: 2vh
+          &:last-child
+            margin-bottom: 0
+          .main-list__img
+            margin-right: 30px
+            img
+          .main-list__info
+            .main-list__title
+              font-size: 24px
+              color: $secondary
+              margin-bottom: 10px
+            .main-list__text
+    .main__img
+      flex-basis: 38%
+      position: relative
+      img
+        margin: 0 auto
+      .main-img__info
+        color: #fff
+        text-align: center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        .main-img__text
+          font-size: 700
+        .main-img__price
+          font-size: 56px
+          font-weight: 800
+          text-transform: uppercase
+
+.footer
+  padding: 15px 0
+  margin-top: auto
+  .footer__inner
+    display: flex
+    flex-direction: column
+    align-items: center
+    .footer__nav
+      margin-bottom: 10px
+      .footer-nav__item
+        color: $secondary
+        margin-right: 35px
+        &:last-child
+          margin-right: 0
+    .footer__text
