@@ -44,6 +44,9 @@
 
                         <h1 class="main__title">Новые <span class="primary">экпресс-тесты</span> на антитела к <span class="secondary">COVID-19</span> в Томске</h1>
                         <p class="main__subtitle">Экспресс-тест за <b>15 минут</b> выявляет антитела (IgG и IgM) и позволяет определить наличие у человека иммунитета к коронавирусу</p>
+                        <div class="main__popup">
+                            <p><b>COVID-19 - острая респираторная инфекция,</b> вызываемая коронавирусом SARS-CoV-2 (2019-nCoV).</p>
+                            <p>Представляет собой <b>опасное заболевание</b>, которое может протекать как в форме острой респираторной вирусной инфекции лёгкого течения, так и в тяжёлой форме.</p></div>
                         <div class="main__buttons">
                             <a href="#!" class="main__btn btn btn--secondary">Получить консультацию</a>
                             <a href="#!" class="main__btn btn btn--primary">Приобрести</a>
@@ -107,6 +110,25 @@
                 </div>
             </div>
         </footer>
+
+        <div class="popup">
+            <div class="popup__close"></div>
+            <div class="popup__inner">
+                <h2 class="popup__title">Оставьте заявку</h2>
+                <p class="popup__text">наш специалист свяжется с Вами по вопросу приобретения теста</p>
+                <form action="#" method="POST" class="popup__form">
+                    <!-- Hidden Required Fields -->
+                    <input type="hidden" name="project_name" value="Томэкс">
+                    <input type="hidden" name="admin_email" value="saleproject42@gmail.com">
+                    <input type="hidden" name="form_subject" value="Заявка на консультацию — Томэкс">
+                    <!-- End Hidden Required Fields -->
+                    <input type="text" name="name" placeholder="Ваше имя" class="popup-form__input">
+                    <input type="text" name="tel" placeholder="Ваш телефон" class="popup-form__input">
+                    <button type="submit" class="popup-form__btn btn btn--secondary">Получить консультацию</button>
+                </form>
+                <p class="popup__agree">Оставляя заявку, Вы соглашаетесь на обработку персональных данных</p>
+            </div>
+        </div>
 
     </div>
 
