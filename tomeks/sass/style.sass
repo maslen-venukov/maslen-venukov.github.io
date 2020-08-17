@@ -2,34 +2,14 @@
 @import 'global'
 
 .wrapper
+  background: url(../img/bg.jpg) center no-repeat
   width: 100vw
   min-height: 100vh
   display: flex
   flex-direction: column
   overflow-x: hidden
-
-.picture
-  position: absolute
-  top: 0
-  right: 0
-  z-index: -1
-  height: 90vh
-  @media screen and ( max-width: 1700px )
-    right: -10vw
-    top: -10px
-  @media screen and ( max-width: 1440px )
-    right: -17vw
-  @media screen and ( max-width: 1366px )
-    right: -20vw
-  @media screen and ( max-width: 1224px )
-    right: -23vw
-  @media screen and ( max-width: 1150px )
-    right: -26vw
   @media screen and ( max-width: 1024px )
-    display: none
-  img
-    width: 100%
-    height: 100%
+    background: none
 
 .header
   padding: 20px 0
@@ -237,7 +217,7 @@
   align-items: center
   opacity: 0
   visibility: hidden
-  transition: .3s
+  transition: opacity .3s, visibility .3s
   &--active
     opacity: 1
     visibility: visible
