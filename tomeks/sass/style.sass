@@ -121,6 +121,8 @@
       .main__buttons
         display: flex
         margin-bottom: 4vh
+        @media screen and ( max-width: 1024px )
+          justify-content: center
         @media screen and ( max-width: 650px )
           flex-direction: column
         .btn
@@ -132,6 +134,28 @@
           @media screen and ( max-width: 650px )
             margin: 0 auto 15px
         .main__btn.btn--primary
+      .main__img--mobile
+        display: none
+        @media screen and ( max-width: 1024px )
+          display: block
+          display: flex
+          justify-content: flex-start
+          img
+          .main-img__info
+            .main-img__text
+              font-weight: 700
+              @media screen and ( max-width: 425px )
+                font-size: 14px
+              @media screen and ( max-width: 360px )
+                font-size: 12px
+            .main-img__price
+              font-size: 56px
+              font-weight: 800
+              text-transform: uppercase
+              @media screen and ( max-width: 425px )
+                font-size: 50px
+              @media screen and ( max-width: 360px )
+                font-size: 44px
       .main__list
         .main-list__item
           display: flex
@@ -156,7 +180,7 @@
       flex-basis: 38%
       position: relative
       @media screen and ( max-width: 1024px )
-        flex-basis: 100%
+        display: none
       img
         margin: 0 auto
       .main-img__info
