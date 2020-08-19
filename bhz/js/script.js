@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-    const headerHeight = $('.header').innerHeight();
     const nav = $('.nav');
+    const navOffsetTop = nav.offset().top;
     $(window).scroll(function () { 
-        if ($(window).scrollTop() >= headerHeight) {
+        if ($(window).scrollTop() >= navOffsetTop) {
             nav.addClass('nav--fixed');
         } else {
             nav.removeClass('nav--fixed');
