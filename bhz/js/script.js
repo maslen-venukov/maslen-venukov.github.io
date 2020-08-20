@@ -71,7 +71,7 @@ $(document).ready(function () {
     $('.video-modal__close').click(function () {
         $('.video__modal').removeClass('video__modal--active');
         $('html, body').removeClass('lock');
-        $('.video-modal__video').stopVideo();
+        $('.video-modal__video').pauseVideo();
     });
 
 });
