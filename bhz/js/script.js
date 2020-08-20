@@ -55,4 +55,16 @@ $(document).ready(function () {
         $('.header-contacts__inner').toggleClass('header-contacts__inner--active');
     });
 
+    $('.video__card').click(function () {
+        $('.video__modal').addClass('video__modal--active');
+    });
+
+    $('.video-modal__area').click(function () {
+        $('.video__modal').removeClass('video__modal--active');
+    });
+
+    $('.video-modal__close').click(function () {
+        $('.video__modal').removeClass('video__modal--active');
+    });
+
 });
