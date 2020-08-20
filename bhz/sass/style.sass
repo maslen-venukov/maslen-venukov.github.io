@@ -667,7 +667,7 @@
     right: 0
     z-index: -1
     @media screen and ( max-width: 1440px )
-      right: -71px
+      right: -180px
       transform: scale(.8)
     img
 
@@ -813,6 +813,8 @@
           padding: 25px 35px
 
 .tech
+  @media screen and ( max-width: 500px )
+    margin-bottom: 50px
   .tech__inner
     .tech__title
       max-width: 420px
@@ -905,6 +907,7 @@
   padding: 100px 0
   @media screen and ( max-width: 500px )
     padding: 75px 0
+    margin-bottom: 50px
   .terms__inner
     .terms__title
       max-width: 750px
@@ -1105,32 +1108,6 @@
     .video-modal__inner
       transform: translateY(0)
 
-  // .achievements-modal__img
-  //   position: relative
-  //   max-width: 520px
-  //   width: 100%
-  //   max-height: 770px
-  //   height: 100%
-  //   transform: translateY(100%)
-  //   transition: transform .3s
-  //   .achievements-modal__close
-  //     position: absolute
-  //     top: 10px
-  //     right: 10px
-  //     width: 40px
-  //     height: 40px
-  //     cursor: pointer
-  //   img
-  //     width: 100%
-  //     height: 100%
-  //     object-fit: cover
-  // &--active
-  //   opacity: 1
-  //   visibility: visible
-  //   transform: translateY(0)
-  //   .achievements-modal__img
-  //     transform: translateY(0)
-
 .special
   position: relative
   .special__inner
@@ -1138,9 +1115,13 @@
     .special__subtitle
       font-size: 36px
       margin-bottom: 70px
+      @media screen and ( max-width: 1440px )
+        margin-bottom: 55px
     .special__row
       display: flex
       justify-content: space-between
+      @media screen and ( max-width: 860px )
+        flex-direction: column
       .special__card
         flex-basis: 50%
         display: flex
@@ -1151,50 +1132,100 @@
         padding: 40px
         margin-right: 25px
         transition: box-shadow .2s
+        @media screen and ( max-width: 1440px )
+          padding: 20px
+        @media screen and ( max-width: 860px )
+          align-items: center
+          margin-right: 0
+          margin-bottom: 20px
         &:last-child
           margin-right: 0
+          @media screen and ( max-width: 860px )
+            margin-bottom: 0
         &:hover
           box-shadow: 0 10px 20px #e5e5e5
         .special-card__header
           display: flex
           align-items: center
           margin-bottom: 40px
+          @media screen and ( max-width: 860px )
+            margin-bottom: 20px
           .special-card__img
+            flex-shrink: 0
             margin-right: 40px
+            @media screen and ( max-width: 500px )
+              margin-right: 20px
+              width: 100px
+              height: 100px
             img
+              width: 100%
+              height: 100%
           .special-card__title
             font-size: 36px
             font-weight: 400
             max-width: 240px
+            @media screen and ( max-width: 1440px )
+              font-size: 32px
+            @media screen and ( max-width: 500px )
+              font-size: 28px
+              max-width: 160px
         .special-card__list
           margin-bottom: 60px
+          @media screen and ( max-width: 860px )
+            width: 100%
+            margin-bottom: 30px
           .special-card-list__item
             position: relative
+            max-width: 80%
             padding-left: 40px
             margin-bottom: 15px
+            @media screen and ( max-width: 1440px )
+              font-size: 16px
+            @media screen and ( max-width: 860px )
+              text-align: center
+              max-width: 75%
+              margin: 0 auto 15px
+            @media screen and ( max-width: 650px )
+              text-align: left
+              margin: 0 auto 15px 0
             &:last-child
               margin-bottom: 0
             &::before
               @include listMark ()
+              top: -9px
         .special-card__btn
           display: block
           width: 320px
           padding: 25px
           margin-top: auto
+          @media screen and ( max-width: 1440px )
+            width: 280px
   .special__img
     position: absolute
     right: 0
-    bottom: -250px
+    bottom: -200px
+    @media screen and ( max-width: 1440px )
+      transform: scale(.75)
+      right: -100px
+      bottom: -200px
+    @media screen and ( max-width: 1300px )
+      display: none
     img
 
 .production
   .production__inner
     .production__title
       margin-bottom: 70px
+      @media screen and ( max-width: 1440px )
+        margin-bottom: 55px
+      @media screen and ( max-width: 600px )
+        font-size: 36px
     .production__row
       display: flex
       justify-content: space-between
       margin-bottom: 20px
+      @media screen and ( max-width: 600px )
+        flex-direction: column
       &:last-child
         margin-bottom: 0
       .production__img-card,
@@ -1203,10 +1234,26 @@
         color: #fff
         padding: 40px
         border-radius: $radius
+        @media screen and ( max-width: 1440px )
+          padding: 40px 20px
+        @media screen and ( max-width: 768px )
+          padding: 20px
+        @media screen and ( max-width: 500px )
+          padding: 15px
       .production__col
         flex-basis: 50%
         margin-right: 20px
         min-height: 515px
+        @media screen and ( max-width: 1440px )
+          min-height: 400px
+        @media screen and ( max-width: 768px )
+          min-height: 280px
+        @media screen and ( max-width: 600px )
+          min-height: 0
+          margin-right: 0
+          margin-bottom: 20px
+          &:last-child
+            margin-bottom: 0
         &:last-child
           margin-right: 0
         .production__img-card
@@ -1216,6 +1263,8 @@
           justify-content: flex-end
           background: $gradient
           height: 100%
+          @media screen and ( max-width: 600px )
+            height: 310px
           .production-img-card__img
             position: absolute
             top: 0
@@ -1242,16 +1291,32 @@
           align-items: center
           padding-left: 35px
           margin-bottom: 15px
+          @media screen and ( max-width: 500px )
+            padding-left: 25px
           .production-dark-card__img
             margin-right: 30px
+            @media screen and ( max-width: 768px )
+              margin-right: 15px
+            @media screen and ( max-width: 600px )
+              display: none
             img
           .production-dark-card__title
             font-size: 24px
+            @media screen and ( max-width: 768px )
+              font-size: 20px
+            @media screen and ( max-width: 500px )
+              font-size: 18px
       .production-card__text
         position: relative
         font-size: 24px
         max-width: 600px
         padding-left: 35px
+        @media screen and ( max-width: 1440px )
+          font-size: 20px
+        @media screen and ( max-width: 768px )
+          font-size: 16px
+        @media screen and ( max-width: 500px )
+          padding-left: 25px
         &::before
           content: ''
           position: absolute
@@ -1262,14 +1327,21 @@
           border-top: 3px solid #fff
           border-right: 3px solid #fff
           transform: rotate(45deg)
+          @media screen and ( max-width: 500px )
+            width: 10px
+            height: 10px
 
 .reviews
   .reviews__inner
     .reviews__title
       margin-bottom: 70px
+      @media screen and ( max-width: 1440px )
+        margin-bottom: 55px
     .reviews__row
       display: flex
       justify-content: space-between
+      @media screen and ( max-width: 768px )
+        flex-direction: column
       .reviews__card
         flex-basis: 33%
         display: flex
@@ -1278,24 +1350,48 @@
         background: #fff
         border-radius: $radius
         border: 2px solid $main
+        @media screen and ( max-width: 768px )
+          margin-right: 0
+          margin-bottom: 20px
         &:last-child
           margin-right: 0
+          @media screen and ( max-width: 768px )
+            margin-bottom: 0
         .reviews-card__text
           font-size: 14px
           padding: 30px 40px
+          @media screen and ( max-width: 1440px )
+            font-size: 12px
+            padding: 15px 25px
+          @media screen and ( max-width: 768px )
+            font-size: 14px
+          @media screen and ( max-width: 350px )
+            padding: 15px
         .reviews-card__footer
           position: relative
-          height: 100px
+          min-height: 100px
           color: #fff
           background: $gradient
           padding: 20px 40px
           margin-top: auto
+          @media screen and ( max-width: 1440px )
+            padding: 15px 25px
+          @media screen and ( max-width: 350px )
+            padding: 15px
           .reviews-card__name
             font-size: 24px
             font-weight: 700
+            @media screen and ( max-width: 1440px )
+              font-size: 22px
+            @media screen and ( max-width: 768px )
+              font-size: 24px
           .reviews-card__profession
             font-size: 14px
             max-width: 260px
+            @media screen and ( max-width: 1440px )
+              font-size: 12px
+            @media screen and ( max-width: 768px )
+              font-size: 14px
           .reviews-card__city
             position: absolute
             bottom: 15px
@@ -1303,24 +1399,52 @@
             font-size: 12px
             font-weight: 700
             text-align: right
+            @media screen and ( max-width: 1440px )
+              bottom: 10px
+              right: 25px
 
 .free
   background: #000
   padding: 150px 0
   margin-bottom: 200px
+  @media screen and ( max-width: 1440px )
+    padding: 100px 0
+  @media screen and ( max-width: 500px )
+    padding: 75px 0
+    margin-bottom: 100px
   .free__inner
     display: flex
     justify-content: space-between
+    @media screen and ( max-width: 880px )
+      flex-direction: column-reverse
     .free__content
       flex-basis: 50%
       color: #fff
+      @media screen and ( max-width: 880px )
+        text-align: center
       .free__title
+        @media screen and ( max-width: 1440px )
+          font-size: 36px
+        @media screen and ( max-width: 500px )
+          font-size: 24px
       .free__subtitle
         font-size: 36px
         margin-bottom: 30px
+        @media screen and ( max-width: 1440px )
+          font-size: 30px
+          margin-bottom: 25px
+        @media screen and ( max-width: 500px )
+          font-size: 22px
+          margin-bottom: 10px
       .free__text
         margin-bottom: 100px
         max-width: 560px
+        @media screen and ( max-width: 1440px )
+          margin-bottom: 75px
+        @media screen and ( max-width: 880px )
+          margin: 0 auto 50px
+        @media screen and ( max-width: 500px )
+          margin-bottom: 30px
       .free__btn
     .free__img
       position: relative
@@ -1328,35 +1452,84 @@
       img
         position: absolute
         transform: translate(-100px, 120px) scale(1.4)
+        @media screen and ( max-width: 1440px )
+          transform: translate(0, 70px) scale(1.4)
+        @media screen and ( max-width: 1024px )
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%) scale(1)
+        @media screen and ( max-width: 880px )
+          position: static
+          transform: translate(0, 0) scale(1)
+          width: 75%
+          margin: 0 auto 20px
 
 .achievements
   overflow-x: hidden
-  margin-bottom: 200px
+  padding-bottom: 100px
+  margin-bottom: 100px
   .achievements__inner
+    position: relative
     display: flex
+    @media screen and ( max-width: 700px )
+      flex-direction: column
     .achievements__col
       display: flex
       flex-direction: column
       margin-right: 160px
+      @media screen and ( max-width: 1440px )
+        margin-right: 120px
+      @media screen and ( max-width: 1024px )
+        margin-right: 80px
+      @media screen and ( max-width: 700px )
+        margin-right: 0
       .achievements__title
         max-width: 280px
+        @media screen and ( max-width: 700px )
+          margin-bottom: 15px
       .achievements__arrows
         display: flex
         margin-top: auto
+        @media screen and ( max-width: 700px )
+          position: absolute
+          bottom: -90px
+          left: 50%
+          transform: translateX(-50%)
+          @media screen and ( max-width: 340px )
+            bottom: -75px
         .achievements__arrow-left,
         .achievements__arrow-right
           position: relative
           z-index: 1
           cursor: pointer
+          width: 80px
+          @media screen and ( max-width: 1440px )
+            width: 70px
+          @media screen and ( max-width: 340px )
+            width: 60px
+          img
+            width: 100%
         .achievements__arrow-left
           margin-right: 20px
+          @media screen and ( max-width: 500px )
+            margin-right: 40px
         .achievements__arrow-right
     .achievements__slider
       min-width: 0
       .achievements-slider__item
         margin-right: 20px
+        @media screen and ( max-width: 1440px )
+          height: 450px
+        @media screen and ( max-width: 500px )
+          margin-right: 0
+          width: 100vw
+          height: 130vw
         &:last-child
           margin-right: 0
+        img
+          height: 100%
+          @media screen and ( max-width: 500px )
+            margin: 0 auto
       .slick-list
         overflow: visible
       .slick-slide
@@ -1364,59 +1537,61 @@
         transition: opacity .4s
       .slick-current.slick-active
         opacity: 1
-        cursor: pointer
       .slick-current.slick-active ~ .slick-slide
         opacity: 1
-        cursor: pointer
+        @media screen and ( max-width: 500px )
+          opacity: 0
       .slick-arrow
         position: absolute
         opacity: 0
 
-.achievements__modal
-  position: fixed
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-  z-index: 20000
-  background: rgba(#000, .5)
-  display: flex
-  justify-content: center
-  align-items: center
-  opacity: 0
-  visibility: hidden
-  transition: opacity .3s, visibility .3s
-  .achievements-modal__img
-    position: relative
-    max-width: 520px
-    width: 100%
-    max-height: 770px
-    height: 100%
-    transform: translateY(100%)
-    transition: transform .3s
-    .achievements-modal__close
-      position: absolute
-      top: 10px
-      right: 10px
-      width: 40px
-      height: 40px
-      cursor: pointer
-    img
-      width: 100%
-      height: 100%
-      object-fit: cover
-  &--active
-    opacity: 1
-    visibility: visible
-    transform: translateY(0)
-    .achievements-modal__img
-      transform: translateY(0)
+// .achievements__modal
+//   position: fixed
+//   top: 0
+//   bottom: 0
+//   left: 0
+//   right: 0
+//   z-index: 20000
+//   background: rgba(#000, .5)
+//   display: flex
+//   justify-content: center
+//   align-items: center
+//   opacity: 0
+//   visibility: hidden
+//   transition: opacity .3s, visibility .3s
+//   .achievements-modal__img
+//     position: relative
+//     max-width: 520px
+//     width: 100%
+//     max-height: 770px
+//     height: 100%
+//     transform: translateY(100%)
+//     transition: transform .3s
+//     .achievements-modal__close
+//       position: absolute
+//       top: 10px
+//       right: 10px
+//       width: 40px
+//       height: 40px
+//       cursor: pointer
+//     img
+//       width: 100%
+//       height: 100%
+//       object-fit: cover
+//   &--active
+//     opacity: 1
+//     visibility: visible
+//     transform: translateY(0)
+//     .achievements-modal__img
+//       transform: translateY(0)
 
 .quality
   position: relative
   .quality__inner
     .quality__title
       max-width: 810px
+      @media screen and ( max-width: 768px )
+        font-size: 36px
     .quality__card
       max-width: 1000px
       width: 100%
@@ -1424,47 +1599,99 @@
       border-radius: $radius
       border: 1px solid $main
       margin-bottom: 40px
+      @media screen and ( max-width: 1440px )
+        max-width: 800px
+      @media screen and ( max-width: 500px )
+        padding: 20px
+        margin-bottom: 20px
       .quality-card__img
         margin-bottom: 30px
         img
+          @media screen and ( max-width: 500px )
+            margin: 0 auto
       .quality-card__list
         .quality-card-list__item
           position: relative
-          max-width: 500px
+          max-width: 450px
           padding-left: 35px
           margin-bottom: 10px
+          @media screen and ( max-width: 500px )
+            font-size: 16px
           &:last-child
             margin-bottom: 0
           &::before
             @include listMark ()
-      .quality__btn
+            top: -9px
+    .quality__btn
+      @media screen and ( max-width: 500px )
+        display: block
+        max-width: 320px
+        padding: 25px
+        margin: 0 auto
     .quality__img
       position: absolute
       right: 0
       bottom: -130px
+      @media screen and ( max-width: 1600px )
+        right: -180px
+        transform: scale(.8)
+      @media screen and ( max-width: 1120px )
+        display: none
       img
 
 .geo
   .geo__inner
+    position: relative
     display: flex
     justify-content: space-between
+    @media screen and ( max-width: 1000px )
+      flex-direction: column-reverse
     .geo__content
-      flex-basis: 50%
+      flex-basis: 53%
+      @media screen and ( max-width: 1040px )
+        flex-basis: 55%
       .geo__title
         max-width: 715px
         margin-bottom: 30px
+        @media screen and ( max-width: 1600px )
+          font-size: 36px
+          margin-bottom: 15px
+        @media screen and ( max-width: 500px )
+          font-size: 32px
+        b
+          white-space: nowrap
       .geo__subtitle
-        margin-bottom: 65px
         max-width: 400px
+        margin-bottom: 65px
+        @media screen and ( max-width: 1440px )
+          margin-bottom: 45px
       .geo__img
         img
           position: relative
           z-index: 1
           transform: translate(115px, 40px) scale(1.35)
+          @media screen and ( max-width: 1440px )
+            transform: translate(95px, 40px) scale(1.35)
+          @media screen and ( max-width: 1000px )
+            transform: translate(0, 0) scale(1)
     .geo__map
-      flex-basis: 50%
+      flex-basis: 47%
+      @media screen and ( max-width: 1040px )
+        flex-basis: 45%
+      @media screen and ( max-width: 1000px )
+        position: absolute
+        z-index: -1
       img
-        transform: translateY(35px) scale(1.1)
+        transform: translate(-60px, 50px) scale(1.1)
+        @media screen and ( max-width: 1600px )
+          transform: translate(20px, 50px) scale(1.2)
+        @media screen and ( max-width: 1440px )
+          transform: translate(50px, 60px) scale(1.4)
+        @media screen and ( max-width: 1000px )
+          transform: translate(30px, 60px) scale(1)
+          opacity: .75
+        @media screen and ( max-width: 600px )
+          transform: translate(10px, 40px) scale(1.2)
 
 .footer
   background: url(../img/footer/bg.jpg) center no-repeat
@@ -1473,6 +1700,8 @@
 
 .consultation
   margin-bottom: 250px
+  @media screen and ( max-width: 1600px )
+    margin-bottom: 150px
   .consultation__inner
     display: flex
     justify-content: space-between
@@ -1481,12 +1710,16 @@
       .consultation__title
         font-size: 36px
         color: #fff
+        @media screen and ( max-width: 1440px )
+          font-size: 30px
       .consultation__form
         .consultation-form__row
           position: relative
           display: flex
           align-items: center
           margin-bottom: 70px
+          @media screen and ( max-width: 1440px )
+            margin-bottom: 60px
           &:last-child
             margin-bottom: 0
           .consultation-form__input
@@ -1494,6 +1727,15 @@
             max-width: 415px
             width: 100%
             margin-right: 100px
+            @media screen and ( max-width: 1800px )
+              max-width: 380px
+              margin-right: 80px
+            @media screen and ( max-width: 1600px )
+              max-width: 350px
+              margin-right: 75px
+            @media screen and ( max-width: 1440px )
+              max-width: 320px
+              margin-right: 55px
             &::before
               content: ''
               position: absolute
@@ -1518,6 +1760,8 @@
               border: 0
               border-bottom: 1px solid #414141
               padding: 15px 15px 15px 60px
+              @media screen and ( max-width: 1440px )
+                font-size: 18px
           .consultation-form__radio
             position: absolute
             opacity: 0
@@ -1534,6 +1778,9 @@
             cursor: pointer
             padding-left: 60px
             margin-right: 100px
+            @media screen and ( max-width: 1440px )
+              font-size: 18px
+              margin-right: 55px
             &:last-child
               margin-right: 0
             &::before
@@ -1553,6 +1800,9 @@
             max-width: 400px
             width: 100%
             margin-right: 60px
+            @media screen and ( max-width: 1440px )
+              max-width: 320px
+              margin-right: 50px
           .consultation-form__policy
             font-size: 12px
             color: #9c9c9c
@@ -1573,9 +1823,15 @@
       .contacts__title
         font-size: 36px
         margin-bottom: 50px
+        @media screen and ( max-width: 1440px )
+          font-size: 30px
+          margin-bottom: 30px
       .contacts__subtitle
         font-size: 24px
         margin-bottom: 60px
+        @media screen and ( max-width: 1440px )
+          font-size: 18px
+          margin-bottom: 40px
       .contacts__adress,
       .contacts__phones,
       .contacts__email,
@@ -1592,6 +1848,8 @@
       .contacts__phones
         font-size: 24px
         margin-bottom: 15px
+        @media screen and ( max-width: 1440px )
+          font-size: 18px
       .contacts__adress
         &::before
           height: 23px
@@ -1606,6 +1864,8 @@
         p
           font-size: 18px
           margin-bottom: 15px
+          @media screen and ( max-width: 1440px )
+            font-size: 16px
       .contacts__email
         display: block
         color: #fff
@@ -1623,7 +1883,11 @@
           &:last-child
             margin-right: 0
     .contacts__map
-      flex-basis: 65%
+      flex-basis: 60%
+      iframe
+        height: 470px
+        @media screen and ( max-width: 1440px )
+          height: 370px
     .contacts__img
       margin: 80px auto 0
       img

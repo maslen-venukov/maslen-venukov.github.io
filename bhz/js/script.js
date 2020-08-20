@@ -13,7 +13,15 @@ $(document).ready(function () {
     $('.achievements__slider').slick({
         variableWidth: true,
         infinite: false,
-        swipe: false
+        // swipe: false,
+        responsive: [
+            {
+                breakpoint: 501,
+                settings: {
+                    variableWidth: false,
+                }
+            }
+        ]
     });
 
     $('.achievements__arrow-left').click(function () {
@@ -24,17 +32,17 @@ $(document).ready(function () {
         $('.achievements__slider .slick-next').click();
     });
 
-    $('.achievements__slider .slick-slide').click(function () {
-        let path = $(this).children('img').attr('src');
-        $('.achievements__modal .achievements-modal__img').children('img').attr('src', path);
-        $('.achievements__modal').addClass('achievements__modal--active');
-        $('html, body').addClass('lock');
-    });
+    // $('.achievements__slider .slick-slide').click(function () {
+    //     let path = $(this).children('img').attr('src');
+    //     $('.achievements__modal .achievements-modal__img').children('img').attr('src', path);
+    //     $('.achievements__modal').addClass('achievements__modal--active');
+    //     $('html, body').addClass('lock');
+    // });
 
-    $('.achievements__modal').click(function () {
-        $(this).removeClass('achievements__modal--active');
-        $('html, body').removeClass('lock');
-    });
+    // $('.achievements__modal').click(function () {
+    //     $(this).removeClass('achievements__modal--active');
+    //     $('html, body').removeClass('lock');
+    // });
 
     $('.pricelist-card__open-btn').click(function (e) {
         e.preventDefault();
@@ -65,13 +73,11 @@ $(document).ready(function () {
     $('.video-modal__area').click(function () {
         $('.video__modal').removeClass('video__modal--active');
         $('html, body').removeClass('lock');
-        $('.video-modal__video iframe').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     });
 
     $('.video-modal__close').click(function () {
         $('.video__modal').removeClass('video__modal--active');
         $('html, body').removeClass('lock');
-        $('.video-modal__video iframe').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     });
 
 });

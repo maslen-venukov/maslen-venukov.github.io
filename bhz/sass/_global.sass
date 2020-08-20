@@ -59,7 +59,17 @@ html, body
       width: 21px
       height: 20px
       background: url(../img/btn.svg)
- 
+
+.title
+  font-size: 48px
+
+.section
+  margin-bottom: 200px
+  @media screen and ( max-width: 768px )
+    margin-bottom: 150px
+  @media screen and ( max-width: 500px )
+    margin-bottom: 100px
+
 .section__title
   font-size: 48px
   font-weight: 400
@@ -71,13 +81,3 @@ html, body
     font-size: 36px
   b
     @include gradientText ()
-
-.title
-  font-size: 48px
-
-.section
-  margin-bottom: 200px
-  @media screen and ( max-width: 768px )
-    margin-bottom: 140px
-  @media screen and ( max-width: 500px )
-    margin-bottom: 75px
