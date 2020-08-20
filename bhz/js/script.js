@@ -28,10 +28,12 @@ $(document).ready(function () {
         let path = $(this).children('img').attr('src');
         $('.achievements__modal .achievements-modal__img').children('img').attr('src', path);
         $('.achievements__modal').addClass('achievements__modal--active');
+        $('html, body').addClass('lock');
     });
 
     $('.achievements__modal').click(function () {
         $(this).removeClass('achievements__modal--active');
+        $('html, body').removeClass('lock');
     });
 
     $('.pricelist-card__open-btn').click(function (e) {
@@ -57,14 +59,19 @@ $(document).ready(function () {
 
     $('.video__card').click(function () {
         $('.video__modal').addClass('video__modal--active');
+        $('html, body').addClass('lock');
     });
 
     $('.video-modal__area').click(function () {
         $('.video__modal').removeClass('video__modal--active');
+        $('html, body').removeClass('lock');
+        $('.video-modal__video').stopVideo();
     });
 
     $('.video-modal__close').click(function () {
         $('.video__modal').removeClass('video__modal--active');
+        $('html, body').removeClass('lock');
+        $('.video-modal__video').stopVideo();
     });
 
 });
