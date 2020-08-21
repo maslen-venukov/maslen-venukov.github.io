@@ -818,8 +818,6 @@
   .tech__inner
     .tech__title
       max-width: 420px
-      @media screen and ( max-width: 800px )
-        margin-bottom: 35px
     .tech__item
       display: flex
       justify-content: center
@@ -911,6 +909,8 @@
   .terms__inner
     .terms__title
       max-width: 750px
+      @media screen and ( max-width: 500px )
+        font-size: 30px
     .terms__row
       display: flex
       justify-content: space-between
@@ -1000,6 +1000,8 @@
   .video__inner
     .video__title
       max-width: 780px
+      @media screen and ( max-width: 500px )
+        font-size: 30px
     .video__card
       position: relative
       border-radius: $radius
@@ -1112,11 +1114,16 @@
   position: relative
   .special__inner
     .special__title
+      @media screen and ( max-width: 500px )
+        font-size: 36px
     .special__subtitle
       font-size: 36px
       margin-bottom: 70px
       @media screen and ( max-width: 1440px )
         margin-bottom: 55px
+      @media screen and ( max-width: 500px )
+        font-size: 30px
+        margin-bottom: 35px
     .special__row
       display: flex
       justify-content: space-between
@@ -1220,6 +1227,8 @@
         margin-bottom: 55px
       @media screen and ( max-width: 600px )
         font-size: 36px
+      @media screen and ( max-width: 500px )
+        margin-bottom: 35px
     .production__row
       display: flex
       justify-content: space-between
@@ -1337,6 +1346,9 @@
       margin-bottom: 70px
       @media screen and ( max-width: 1440px )
         margin-bottom: 55px
+      @media screen and ( max-width: 500px )
+        font-size: 36px
+        margin-bottom: 20px
     .reviews__row
       display: flex
       justify-content: space-between
@@ -1487,6 +1499,8 @@
         max-width: 280px
         @media screen and ( max-width: 700px )
           margin-bottom: 15px
+        @media screen and ( max-width: 500px )
+          font-size: 36px
       .achievements__arrows
         display: flex
         margin-top: auto
@@ -1592,6 +1606,9 @@
       max-width: 810px
       @media screen and ( max-width: 768px )
         font-size: 36px
+      @media screen and ( max-width: 500px )
+        font-size: 28px
+        margin-bottom: 20px
     .quality__card
       max-width: 1000px
       width: 100%
@@ -1617,6 +1634,7 @@
           margin-bottom: 10px
           @media screen and ( max-width: 500px )
             font-size: 16px
+            margin-bottom: 15px
           &:last-child
             margin-bottom: 0
           &::before
@@ -1697,21 +1715,32 @@
   background: url(../img/footer/bg.jpg) center no-repeat
   background-size: cover
   padding: 70px 0
+  @media screen and ( max-width: 650px )
+    padding: 30px 0
 
 .consultation
   margin-bottom: 250px
   @media screen and ( max-width: 1600px )
     margin-bottom: 150px
+  @media screen and ( max-width: 500px )
+    margin-bottom: 100px
   .consultation__inner
     display: flex
     justify-content: space-between
     .consultation__col
       flex-basis: 75%
+      @media screen and ( max-width: 1024px )
+        flex-basis: 100%
       .consultation__title
         font-size: 36px
         color: #fff
         @media screen and ( max-width: 1440px )
           font-size: 30px
+        @media screen and ( max-width: 1024px )
+          font-size: 36px
+        @media screen and ( max-width: 500px )
+          font-size: 20px
+          margin-bottom: 40px
       .consultation__form
         .consultation-form__row
           position: relative
@@ -1720,6 +1749,13 @@
           margin-bottom: 70px
           @media screen and ( max-width: 1440px )
             margin-bottom: 60px
+          @media screen and ( max-width: 1024px )
+            justify-content: center
+            margin-bottom: 40px
+            &:last-of-type
+              flex-direction: column
+          @media screen and ( max-width: 500px )
+            flex-direction: column
           &:last-child
             margin-bottom: 0
           .consultation-form__input
@@ -1736,6 +1772,12 @@
             @media screen and ( max-width: 1440px )
               max-width: 320px
               margin-right: 55px
+            @media screen and ( max-width: 500px )
+              max-width: 100%
+              margin-right: 0
+              margin-bottom: 20px
+              &:last-child
+                margin-bottom: 0
             &::before
               content: ''
               position: absolute
@@ -1781,6 +1823,13 @@
             @media screen and ( max-width: 1440px )
               font-size: 18px
               margin-right: 55px
+            @media screen and ( max-width: 500px )
+              margin-right: 0
+              margin-bottom: 30px
+              max-width: 100%
+              width: 100%
+              &:last-child
+                margin-bottom: 0
             &:last-child
               margin-right: 0
             &::before
@@ -1803,12 +1852,19 @@
             @media screen and ( max-width: 1440px )
               max-width: 320px
               margin-right: 50px
+            @media screen and ( max-width: 1024px )
+              margin-right: 0
+              margin-bottom: 20px
           .consultation-form__policy
             font-size: 12px
             color: #9c9c9c
             max-width: 260px
+            @media screen and ( max-width: 1024px )
+              text-align: center
     .consultation__img
       flex-basis: 25%
+      @media screen and ( max-width: 1024px )
+        display: none
       img
         transform: translate(0px, 90px) scale(1.4)
 
@@ -1817,21 +1873,33 @@
     display: flex
     justify-content: space-between
     flex-wrap: wrap
+    @media screen and ( max-width: 650px )
+      flex-direction: column
     .contacts__col
       flex-basis: 35%
       color: #fff
+      @media screen and ( max-width: 650px )
+        margin-bottom: 20px
       .contacts__title
         font-size: 36px
         margin-bottom: 50px
         @media screen and ( max-width: 1440px )
           font-size: 30px
           margin-bottom: 30px
+        @media screen and ( max-width: 650px )
+          font-size: 36px
+          margin-bottom: 20px
+        @media screen and ( max-width: 500px )
+          font-size: 32px
+          margin-bottom: 10px
       .contacts__subtitle
         font-size: 24px
         margin-bottom: 60px
         @media screen and ( max-width: 1440px )
           font-size: 18px
           margin-bottom: 40px
+        @media screen and ( max-width: 500px )
+          margin-bottom: 30px
       .contacts__adress,
       .contacts__phones,
       .contacts__email,
@@ -1870,6 +1938,8 @@
         display: block
         color: #fff
         margin-bottom: 40px
+        @media screen and ( max-width: 650px )
+          margin-bottom: 15px
         &::before
           width: 18px
           height: 14px
@@ -1890,5 +1960,7 @@
           height: 370px
     .contacts__img
       margin: 80px auto 0
+      @media screen and ( max-width: 650px )
+        margin-top: 30px
       img
         border-radius: 12px
