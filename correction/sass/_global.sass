@@ -1,0 +1,43 @@
+$text: #282d26
+$main: #c1cb8f
+
+html, body
+  font-family: 'Montserrat', sans-serif
+  font-size: 18px
+  line-height: 1.2
+  font-weight: 500
+  color: $text
+
+.container
+  width: 100%
+  max-width: 1125px
+  padding: 0 15px
+  margin: 0 auto
+
+.section
+  padding: 50px 0
+  &:nth-child(odd)
+    background: #e8e8ea
+  &:nth-child(even)
+    background: #d5d8cd
+  .section__title
+    font-size: 49px
+    font-weight: 700
+
+.btn
+  display: inline-block
+  font-size: 22px
+  font-weight: 600
+  color: #fff
+  text-transform: uppercase
+  text-align: center
+  min-width: 480px
+  min-height: 75px
+  background: $text
+  border-radius: 16px
+  padding: 8px 17px
+  border: 3px solid $text
+  transition: color .2s, background .2s
+  &:hover
+    color: $text
+    background: $main

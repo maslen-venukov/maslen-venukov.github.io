@@ -1,0 +1,507 @@
+@import 'normalize'
+@import 'global'
+
+.header
+  position: fixed
+  top: 0
+  z-index: 1000
+  width: 100vw
+  height: 80px
+  display: flex
+  align-items: center
+  background: $main
+  border-bottom: 3px solid $text
+  @media screen and ( max-width: 1000px )
+    height: 60px
+  .header__inner
+    display: flex
+    justify-content: space-between
+    .header__mobile-text
+      display: none
+      max-width: 120px
+      font-weight: 700
+      text-transform: uppercase
+      @media screen and ( max-width: 1000px )
+        display: block
+    .nav
+      display: flex
+      &--left,
+      &--right
+        @media screen and ( max-width: 1000px )
+          display: none
+      &--left
+      &--right
+      .nav__item
+        font-size: 16px
+        font-weight: 600
+        color: $text
+        text-transform: uppercase
+        margin-right: 45px
+        &:last-child
+          margin-right: 0
+      &--mobile
+        display: none
+        .nav__item
+    .header__logo
+      position: fixed
+      top: -25px
+      left: 50%
+      transform: translateX(-50%)
+      width: 150px
+      height: 150px
+      @media screen and ( max-width: 1000px )
+        display: none
+    .header__burger
+      display: none
+      @media screen and ( max-width: 1000px )
+        display: block
+
+.intro
+  height: 100vh
+  .intro__inner
+    display: flex
+    justify-content: space-between
+    margin-top: 20vh
+    .intro__content
+      flex-basis: 45%
+      .intro__title
+        text-transform: uppercase
+        margin-bottom: 8vh
+      .intro__subtitle
+        font-size: 22px
+        opacity: .5
+        margin-bottom: 8vh
+      .intro__btn
+    .intro__img
+      flex-basis: 45%
+      img
+
+.specialization
+  .specialization__inner
+    .specialization__title
+      margin-bottom: 60px
+    .specialization__list
+      display: flex
+      justify-content: space-between
+      margin-bottom: 80px
+      &:last-child
+        margin-bottom: 0
+      .specialization__item
+        flex-basis: 33%
+        margin-right: 80px
+        &:last-child
+          margin-right: 0
+        .specialization-item__header
+          display: flex
+          align-items: center
+          margin-bottom: 30px
+          .specialization-item__img
+            width: 65px
+            margin-right: 25px
+            img
+              width: 100%
+              object-fit: cover
+          .specialization-item__title
+            font-size: 22px
+            font-weight: 600
+            text-transform: uppercase
+        .specialization-item__text
+          max-width: 320px
+
+.psychotechnics
+  .psychotechnics__inner
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 30%
+      left: 50%
+      transform: translateX(-50%)
+      background: url(../img/psychotechnics/img.svg)
+      background-size: cover
+      width: 455px
+      height: 455px
+    .psychotechnics__title
+      margin-bottom: 60px
+    .psychotechnics__row
+      position: relative
+      z-index: 2
+      display: flex
+      justify-content: space-between
+      margin-bottom: 75px
+      &:last-child
+        margin-bottom: 0
+      .psychotechnics__card
+        flex-basis: 50%
+        position: relative
+        background: $main
+        padding: 30px 20px
+        border: 3px solid $text
+        border-radius: 24px
+        margin-right: 85px
+        &:last-child
+          margin-right: 0
+        .psychotechnics-card__number
+          font-size: 34px
+          font-weight: 600
+          display: flex
+          justify-content: center
+          align-items: center
+          position: absolute
+          top: -30px
+          left: -3px
+          width: 50px
+          height: 50px
+          background: #fff
+          border: 3px solid $text
+          border-radius: 50%
+        .psychotechnics-card__text
+
+.schema
+  .schema__inner
+    .schema__title
+      margin-bottom: 45px
+    .schema__row
+      display: flex
+      justify-content: space-between
+      margin-bottom: 60px
+      &:last-child
+        margin-bottom: 0
+      .schema__card
+        position: relative
+        flex-basis: 50%
+        background: #fff
+        padding: 40px
+        border: 3px solid $text
+        border-radius: 24px
+        margin-right: 85px
+        &:last-child
+          margin-right: 0
+        .schema-card__img
+          position: absolute
+          top: 20px
+          right: 20px
+          img
+        .schema-card__title
+          font-size: 22px
+          font-weight: 600
+          text-transform: uppercase
+          margin-bottom: 25px
+        .schema-card__text
+
+.reviews
+  .reviews__inner
+    .reviews__title
+      margin-bottom: 50px
+    .reviews__slider
+      position: relative
+      max-width: 950px
+      margin: 0 auto
+      .reviews-slider__item
+        min-height: 510px
+        border: 3px solid $text
+        border-radius: 24px
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+        .reviews-slider__header
+          display: flex
+          align-items: center
+          background: $main
+          padding: 15px
+          border-bottom: 3px solid $text
+          border-radius: 24px 24px 0 0
+          .reviews-slider__img
+            margin-right: 20px
+            img
+              border: 3px solid $text
+              border-radius: 50%
+          .reviews-slider__info
+            max-width: 110px
+            .reviews-slider__name
+              font-size: 16px
+              font-weight: 600
+              text-transform: uppercase
+            .reviews-slider__age
+        .reviews-slider__text
+          font-size: 14px
+          font-weight: 500
+          padding: 18px 15px 15px
+          padding-bottom: auto
+      .slick-dots
+        position: absolute
+        bottom: -30px
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        li
+          margin-right: 10px
+          &:last-child
+            margin-right: 0
+          &.slick-active
+            button
+              background: $text
+          button
+            font-size: 0
+            width: 12px
+            height: 12px
+            background: transparent
+            border: 3px solid $text
+            border-radius: 50%
+      .slick-arrow
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 60px
+        height: 110px
+        font-size: 0
+        border: 0
+        background-size: cover
+        &.slick-prev
+          left: -75px
+          background: url(../img/reviews/arrow-left.svg) center no-repeat
+        &.slick-next
+          right: -55px
+          background: url(../img/reviews/arrow-right.svg) center no-repeat
+
+.cost
+  .cost__inner
+    .cost__title
+      margin-bottom: 40px
+    .cost__row
+      position: relative
+      height: 500px
+      .cost__text
+        position: absolute
+        height: 100px
+        text-align: center
+        border: 3px dashed $text
+        padding: 15px 20px
+        &:first-of-type,
+        &:last-of-type
+          &::after
+            content: ''
+            position: absolute
+        &:first-of-type
+          max-width: 320px
+          bottom: 0
+          left: 50px
+          &::after
+            bottom: 110px
+            left: 140px
+            width: 220px
+            height: 185px
+            background: url(../img/cost/arrow-down.svg) center no-repeat
+            background-size: cover
+        &:last-of-type
+          max-width: 390px
+          top: 0
+          right: 100px
+          &::after
+            top: 110px
+            right: 160px
+            width: 165px
+            height: 250px
+            background: url(../img/cost/arrow-up.svg) center no-repeat
+            background-size: cover
+      .cost__img
+        position: absolute
+        width: 270px
+        height: 270px
+        display: flex
+        justify-content: center
+        align-items: center
+        &:first-of-type
+          top: 0
+          left: 0
+        &:nth-of-type(2)
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+        &:last-of-type
+          bottom: 0
+          right: 0
+          
+
+.consultation
+  .consultation__inner
+    .consultation__title
+      margin-bottom: 60px
+    .consultation__row
+      display: flex
+      justify-content: space-between
+      .consultation__content
+        flex-basis: 50%
+        margin-right: 50px
+        .consultation-content__header
+          position: relative
+          font-size: 22px
+          font-weight: 600
+          text-transform: uppercase
+          max-width: 300px
+          background: #fff
+          border: 3px solid $text
+          border-radius: 16px 16px 16px 0
+          padding: 20px
+          margin-bottom: 50px
+          &::before
+            content: ''
+            position: absolute
+            left: -3px
+            bottom: -61px
+            width: 3px
+            height: 61px
+            background: $text
+        .consultation__list
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 8px
+            width: 3px
+            height: 88%
+            background: $text
+          .consultation-list__item
+            position: relative
+            display: flex
+            padding-left: 20px
+            margin-bottom: 35px
+            &::before
+              content: ''
+              position: absolute
+              left: 0
+              top: 8px
+              width: 20px
+              height: 3px
+              background: $text
+            .consultation-list-item__num
+              flex-shrink: 0
+              font-weight: 500
+              display: flex
+              justify-content: center
+              align-items: center
+              width: 28px
+              height: 28px
+              background: $main
+              border-radius: 50%
+              border: 3px solid $text
+              margin-right: 15px
+              transform: translateY(-4px)
+      .consultation__form
+        flex-basis: 50%
+        .consultation__input,
+        .consultation__textarea
+          width: 100%
+          background: rgba(#fff, .5)
+          border: 3px dashed $text
+          padding: 15px 20px
+          &::placeholder
+            font-size: 18px
+            font-weight: 500
+            color: rgba(40, 45, 38, .5)
+        .consultation__input
+          margin-bottom: 25px
+        .consultation__textarea
+          height: 140px
+          margin-bottom: 35px
+        .consultation__agree
+          font-size: 15px
+          font-weight: 400
+          margin-bottom: 12px
+          &:last-of-type
+            margin-bottom: 30px
+        .consultation__btn
+          display: block
+          margin-left: auto
+
+.contacts
+  .contacts__inner
+    .contacts__title
+      margin-bottom: 40px
+    .contacts__row
+      display: flex
+      justify-content: space-between
+      border-left: 3px dashed $text
+      border-right: 3px dashed $text
+      border-bottom: 3px dashed $text
+      margin-bottom: 25px
+      .contacts__item
+        flex-basis: 33%
+        &:first-child
+          .contacts-item__header
+            border-left: 0
+        &:nth-child(2)
+          display: flex
+          flex-direction: column
+          justify-content: flex-end
+        &:last-child
+          .contacts-item__header
+            border-right: 0
+        .contacts-item__header
+          display: flex
+          align-items: center
+          padding: 15px 25px
+          border: 3px dashed $text
+          .contacts-item__img
+            flex-shrink: 0
+            width: 140px
+            height: 140px
+            border: 3px solid $text
+            border-radius: 50%
+            margin-right: 25px
+            img
+              width: 100%
+              height: 100%
+              border-radius: 50%
+              object-fit: cover
+          .contacts-item__name
+            font-size: 22px
+            font-weight: 600
+            text-transform: uppercase
+        .contacts__list
+          padding: 35px 50px
+          .contacts-list__item
+            margin-bottom: 30px
+            &:last-child
+              margin-bottom: 0
+            .contacts-list-item__img
+              max-width: 57px
+              margin-right: 25px
+              img
+                width: 100%
+                object-fit: cover
+            .contacts-list-item__link
+              display: flex
+              align-items: center
+              font-weight: 600
+              color: $text
+              text-transform: uppercase
+        .contacts-item__text
+          position: relative
+          font-style: italic
+          text-align: center
+          padding: 25px 30px
+          border: 3px solid #fff
+          border-radius: 25px
+          margin: 70px 0
+          &::before,
+          &::after
+            content: ''
+            position: absolute
+          &::before
+            top: -86px
+            left: 0
+            width: 100%
+            height: 3px
+            border-top: 3px dashed $text
+          &::after
+            bottom: -20px
+            right: 35px
+            width: 45px
+            height: 40px
+            background: url(../img/contacts/quote.svg) center no-repeat
+    .contacts__copyright
+      font-size: 16px
+      font-weight: 400
+      text-align: center
