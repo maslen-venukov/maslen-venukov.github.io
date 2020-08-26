@@ -1,0 +1,61 @@
+$text: #282d26
+$main: #c1cb8f
+
+html, body
+  font-family: 'Montserrat', sans-serif
+  font-size: 18px
+  line-height: 1.2
+  font-weight: 500
+  color: $text
+  overflow-x: hidden
+  @media screen and ( max-width: 375px )
+    font-size: 14px
+
+.lock
+  overflow: hidden
+
+.container
+  width: 100%
+  max-width: 1125px
+  padding: 0 10px
+  margin: 0 auto
+
+.section
+  padding: 50px 0
+  @media screen and ( max-width: 500px )
+    padding: 40px 0
+  @media screen and ( max-width: 375px )
+    padding: 30px 0
+  &:nth-child(odd)
+    background: #e8e8ea
+  &:nth-child(even)
+    background: #d5d8cd
+  .section__title
+    font-size: 49px
+    font-weight: 700
+    @media screen and ( max-width: 768px )
+      font-size: 36px
+    @media screen and ( max-width: 500px )
+      font-size: 30px
+    @media screen and ( max-width: 400px )
+      font-size: 25px
+
+.btn
+  display: inline-block
+  font-size: 22px
+  font-weight: 600
+  color: #fff
+  text-transform: uppercase
+  text-align: center
+  min-width: 480px
+  min-height: 75px
+  background: $text
+  border-radius: 16px
+  padding: 8px 17px
+  border: 3px solid $text
+  transition: color .2s, background .2s
+  @media screen and ( max-width: 500px )
+    font-size: 14px
+  &:hover
+    color: $text
+    background: $main
