@@ -33,6 +33,119 @@ $(document).ready(function () {
         $('body, html').toggleClass('lock');
     });
 
+    // Навигация
+
+    $('#nav--psychotechnics').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.psychotechnics').offset().top-80
+        }, 500);
+    });
+
+    $('#nav--schema').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.schema').offset().top-80
+        }, 500);
+    });
+
+    $('#nav--intro').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.intro').offset().top-80
+        }, 500);
+    });
+
+    $('nav--reviews').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.reviews').offset().top-80
+        }, 500);
+    });
+
+    $('#nav--cost').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.cost').offset().top-80
+        }, 500);
+    });
+
+    $('#nav--contacts').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.contacts').offset().top-80
+        }, 500);
+    });
+
+    $('.header__mobile-text').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.intro').offset().top-80
+        }, 500);
+    });
+
+    function closeNavMobile() {
+        $('.nav--mobile').removeClass('nav--mobile--active');
+        $('.header__burger').removeClass('header__burger--active');
+        $('html, body').removeClass('lock');
+    }
+
+    $('#nav--mobile-specialization').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.specialization').offset().top-80
+        }, 500);
+        closeNavMobile();
+    });
+
+    $('#nav--mobile-psychotechnics').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.psychotechnics').offset().top-80
+        }, 500);
+        closeNavMobile();
+    });
+
+    $('#nav--mobile-schema').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.schema').offset().top-80
+        }, 500);
+        closeNavMobile();
+    });
+
+    $('#nav--mobile-reviews').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.reviews').offset().top-80
+        }, 500);
+        closeNavMobile();
+    });
+
+    $('#nav--mobile-cost').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.cost').offset().top-80
+        }, 500);
+        closeNavMobile();
+    });
+
+    $('#nav--mobile-consultation').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.consultation').offset().top-80
+        }, 500);
+        closeNavMobile();
+    });
+
+    $('#nav--mobile-contacts').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.contacts').offset().top-80
+        }, 500);
+        closeNavMobile();
+    });
+
     // Закрытие попапа "Спасибо"
 
     function closePopup() {
