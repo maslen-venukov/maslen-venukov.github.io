@@ -1057,6 +1057,9 @@
     height: 100%
     background: $main
     padding: 50px
+    margin: 0 10px
+    @media screen and ( max-width: 375px )
+      max-height: 250px
     .popup__close
       position: absolute
       top: 10px
@@ -1076,6 +1079,8 @@
       border: 3px solid $text
       border-radius: 20px
       padding: 20px
+      @media screen and ( max-width: 375px )
+        padding: 15px
       &::before,
       &::after
         content: ''
@@ -1096,5 +1101,8 @@
         font-size: 40px
         font-weight: 600
         margin-bottom: 30px
+        @media screen and ( max-width: 375px )
+          font-size: 24px
+          margin-bottom: 15px
       .popup__text
         p
