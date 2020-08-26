@@ -56,7 +56,7 @@ $(document).ready(function () {
         }, 500);
     });
 
-    $('nav--reviews').click(function(e) {
+    $('#nav--reviews').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $('.reviews').offset().top-80
