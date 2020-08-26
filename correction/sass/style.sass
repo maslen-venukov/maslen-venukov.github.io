@@ -22,7 +22,10 @@
       font-weight: 700
       text-transform: uppercase
       @media screen and ( max-width: 1000px )
-        display: block
+        display: flex
+        align-items: center
+      @media screen and ( max-width: 500px )
+        font-size: 18px
     .nav
       display: flex
       &--left,
@@ -40,8 +43,79 @@
         &:last-child
           margin-right: 0
       &--mobile
+        position: relative
         display: none
-        .nav__item
+        &::after
+          display: none
+          content: ''
+          position: absolute
+          bottom: -50vw
+          left: 0
+          width: 100vw
+          height: 100vw
+          background: url(../img/header/circle.svg) center no-repeat
+          background-size: cover
+          @media screen and ( max-width: 500px )
+            display: block
+        @media screen and ( max-width: 1000px )
+          display: flex
+          flex-direction: column
+          position: fixed
+          top: 60px
+          right: 0
+          width: 100%
+          height: 100%
+          background: #e8e8ea
+          padding: 30px 15px
+          transform: translateX(100%)
+          transition: transform .2s
+          &--active
+            transform: translateX(0)
+        .nav__list
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            top: 5px
+            left: 3px
+            width: 2px
+            height: 97%
+            background: $text
+          .nav__item
+            position: relative
+            text-transform: none
+            padding-left: 30px
+            margin-right: 0
+            margin-bottom: 35px
+            &::before
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              width: 20px
+              height: 20px
+              border-radius: 50%
+              background: url(../img/header/mark.svg) center no-repeat
+              background-size: cover
+            &:last-child
+              margin-bottom: 0
+            .nav__link
+              position: relative
+              font-size: 18px
+              color: $text
+              &:hover::after
+                bottom: -4px
+                height: 2px
+              &::after
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 0
+                background: $text
+                transition: .2s
     .header__logo
       position: fixed
       top: -25px
@@ -53,51 +127,176 @@
         display: none
     .header__burger
       display: none
+      img
+        &:last-child
+          position: absolute
+          opacity: 0
+          visibility: hidden
+      &--active
+        img
+          &:first-child
+            position: absolute
+            opacity: 0
+            visibility: hidden
+          &:last-child
+            position: static
+            opacity: 1
+            visibility: visible
       @media screen and ( max-width: 1000px )
-        display: block
+        display: flex
+        justify-content: center
+        align-items: center
 
 .intro
-  height: 100vh
+  min-height: 100vh
   .intro__inner
     display: flex
     justify-content: space-between
     margin-top: 20vh
+    @media screen and ( max-width: 1120px )
+      align-items: center
+    @media screen and ( max-width: 780px )
+      flex-direction: column
+      margin-top: 10vh
+    @media screen and ( max-width: 375px ) and ( max-height: 600px )
+      margin-top: 6vh
+    @media screen and ( max-width: 375px ) and ( max-height: 568px )
+      margin-top: 4vh
     .intro__content
       flex-basis: 45%
+      @media screen and ( max-width: 1120px )
+        flex-basis: 48%
+      @media screen and ( max-width: 780px )
+        text-align: center
       .intro__title
         text-transform: uppercase
         margin-bottom: 8vh
+        @media screen and ( max-width: 1120px )
+          font-size: 44px
+          margin-bottom: 4vh
+        @media screen and ( max-width: 1024px )
+          font-size: 36px
+          margin-bottom: 2vh
+        @media screen and ( max-width: 600px )
+          font-size: 30px
+        @media screen and ( max-width: 375px )
+          font-size: 24px
       .intro__subtitle
         font-size: 22px
         opacity: .5
         margin-bottom: 8vh
+        @media screen and ( max-width: 1120px )
+          font-size: 18px
+          margin-bottom: 4vh
+        @media screen and ( max-width: 780px )
+          opacity: 1
+        @media screen and ( max-width: 600px )
+          font-size: 16px
+          margin-bottom: 3vh
+        @media screen and ( max-width: 375px )
+          font-size: 14px
       .intro__btn
+        @media screen and ( max-width: 1120px )
+          font-size: 18px
+          min-height: 55px
+          min-width: 100%
+        @media screen and ( max-width: 780px )
+          display: none
     .intro__img
       flex-basis: 45%
+      @media screen and ( max-width: 1120px )
+        flex-basis: 48%
       img
+        &:first-of-type
+          @media screen and ( max-width: 780px )
+            width: 75%
+            margin: 0 auto 4vh
+          @media screen and ( max-width: 425px )
+            display: none
+        &:last-of-type
+          display: none
+          @media screen and ( max-width: 425px )
+            display: block
+            margin: 0 auto 4vh
+      .intro__btn
+        display: none
+        @media screen and ( max-width: 780px )
+          display: inline-block
+          font-size: 18px
+          min-height: 55px
+          min-width: 100%
+        @media screen and ( max-width: 600px )
+          display: block
+          font-size: 16px
+          min-width: 0
+          max-width: 320px
+          margin: 0 auto
+        @media screen and ( max-width: 375px )
+          font-size: 14px
 
 .specialization
+  padding: 50px 0 0
   .specialization__inner
     .specialization__title
       margin-bottom: 60px
+      @media screen and ( max-width: 500px )
+        margin-bottom: 30px
     .specialization__list
       display: flex
       justify-content: space-between
+      flex-wrap: wrap
       margin-bottom: 80px
       &:last-child
         margin-bottom: 0
       .specialization__item
-        flex-basis: 33%
-        margin-right: 80px
-        &:last-child
-          margin-right: 0
+        flex-basis: 30%
+        margin-bottom: 80px
+        @media screen and ( max-width: 1110px )
+          flex-basis: 50%
+        @media screen and ( max-width: 730px )
+          flex-basis: 100%
+        @media screen and ( max-width: 425px )
+          margin-bottom: 15px
+          &:first-child
+            .specialization-item__header
+              &::before
+                display: none
+          &:last-child
+            .specialization-item__header
+              &::after
+                display: none
+            .specialization-item__text
+              border: 0
+              &::before,
+              &::after
+                display: none
         .specialization-item__header
           display: flex
           align-items: center
           margin-bottom: 30px
+          @media screen and ( max-width: 1110px )
+            justify-content: center
+          @media screen and ( max-width: 425px )
+            position: relative
+            justify-content: flex-start
+            margin-bottom: 15px
+            &::before,
+            &::after
+              content: ''
+              position: absolute
+              left: 26px
+              height: 16px
+              border-right: 2px dashed $text
+            &::before
+              top: -15px
+            &::after
+              bottom: -15px
           .specialization-item__img
             width: 65px
             margin-right: 25px
+            @media screen and ( max-width: 425px )
+              width: 55px
+              margin-right: 20px
             img
               width: 100%
               object-fit: cover
@@ -105,8 +304,41 @@
             font-size: 22px
             font-weight: 600
             text-transform: uppercase
+            @media screen and ( max-width: 1110px )
+              min-width: 240px
+            @media screen and ( max-width: 425px )
+              font-size: 18px
+              font-weight: 700
+              margin-top: 40px
         .specialization-item__text
           max-width: 320px
+          @media screen and ( max-width: 1110px )
+            margin: 0 auto
+          @media screen and ( max-width: 425px )
+            position: relative
+            max-width: 100%
+            border-right: 2px dashed $text
+            padding: 15px 5px 15px 0
+            margin: 0
+            &::before,
+            &::after
+              content: ''
+              position: absolute
+              right: 0
+              width: 93%
+              border-top: 2px dashed $text
+              @media screen and ( max-width: 400px )
+                width: 92.5%
+              @media screen and ( max-width: 375px )
+                width: 92%
+              @media screen and ( max-width: 355px )
+                width: 91.5%
+              @media screen and ( max-width: 330px )
+                width: 91%
+            &::before
+              top: 0
+            &::after
+              bottom: 0
 
 .psychotechnics
   .psychotechnics__inner
@@ -117,18 +349,34 @@
       top: 30%
       left: 50%
       transform: translateX(-50%)
-      background: url(../img/psychotechnics/img.svg)
+      background: url(../img/psychotechnics/img.svg) center no-repeat
       background-size: cover
       width: 455px
       height: 455px
+      @media screen and ( max-width: 700px )
+        background-image: url(../img/psychotechnics/mobile-img.svg)
+        top: 0
+        left: calc( 100% - 100px )
+        transform: translateX(0)
+        width: 150px
+        height: 150px
     .psychotechnics__title
       margin-bottom: 60px
+      @media screen and ( max-width: 550px )
+        max-width: 75%
+        margin-bottom: 40px
     .psychotechnics__row
       position: relative
-      z-index: 2
+      z-index: 1
       display: flex
       justify-content: space-between
       margin-bottom: 75px
+      @media screen and ( max-width: 1024px )
+        margin-bottom: 35px
+      @media screen and ( max-width: 700px )
+        flex-direction: column
+      @media screen and ( max-width: 500px )
+        margin-bottom: 25px
       &:last-child
         margin-bottom: 0
       .psychotechnics__card
@@ -139,6 +387,16 @@
         border: 3px solid $text
         border-radius: 24px
         margin-right: 85px
+        @media screen and ( max-width: 1024px )
+          margin-right: 45px
+        @media screen and ( max-width: 700px )
+          margin-right: 0
+          margin-bottom: 35px
+          &:last-child
+            margin-bottom: 0
+        @media screen and ( max-width: 500px )
+          padding: 20px
+          margin-bottom: 25px
         &:last-child
           margin-right: 0
         .psychotechnics-card__number
@@ -155,16 +413,30 @@
           background: #fff
           border: 3px solid $text
           border-radius: 50%
+          @media screen and ( max-width: 500px )
+            font-size: 24px
+            top: -20px
+            width: 40px
+            height: 40px
         .psychotechnics-card__text
 
 .schema
   .schema__inner
     .schema__title
       margin-bottom: 45px
+      @media screen and ( max-width: 500px )
+        margin-bottom: 30px
     .schema__row
       display: flex
       justify-content: space-between
       margin-bottom: 60px
+      @media screen and ( max-width: 1024px )
+        margin-bottom: 35px
+      @media screen and ( max-width: 700px )
+        flex-direction: column
+        margin-bottom: 30px
+      @media screen and ( max-width: 500px )
+        margin-bottom: 25px
       &:last-child
         margin-bottom: 0
       .schema__card
@@ -175,33 +447,69 @@
         border: 3px solid $text
         border-radius: 24px
         margin-right: 85px
+        @media screen and ( max-width: 1024px )
+          margin-right: 45px
+          padding: 30px 20px
+        @media screen and ( max-width: 700px )
+          margin-right: 0
+          margin-bottom: 30px
+          &:last-child
+            margin-bottom: 0
+        @media screen and ( max-width: 500px )
+          margin-bottom: 25px
         &:last-child
           margin-right: 0
         .schema-card__img
           position: absolute
           top: 20px
           right: 20px
+          @media screen and ( max-width: 1024px )
+            top: -15px
+            right: 0
+            transform: scale(.75)
+          @media screen and ( max-width: 375px )
+            transform: scale(.7)
           img
         .schema-card__title
           font-size: 22px
           font-weight: 600
           text-transform: uppercase
           margin-bottom: 25px
+          @media screen and ( max-width: 500px )
+            font-size: 20px
+          @media screen and ( max-width: 375px )
+            font-size: 18px
+          @media screen and ( max-width: 320px )
+            font-size: 16px
         .schema-card__text
 
 .reviews
+  @media screen and ( max-width: 500px )
+    padding-bottom: 80px
   .reviews__inner
     .reviews__title
       margin-bottom: 50px
+      @media screen and ( max-width: 500px )
+        margin-bottom: 30px
     .reviews__slider
       position: relative
-      max-width: 950px
-      margin: 0 auto
+      margin: 0 70px
+      transform: translateX(10px)
+      @media screen and ( max-width: 500px )
+        margin: 0
       .reviews-slider__item
         min-height: 510px
         border: 3px solid $text
         border-radius: 24px
         margin-right: 20px
+        @media screen and ( max-width: 1130px )
+          min-height: 380px
+        @media screen and ( max-width: 1024px )
+          min-height: 410px
+        @media screen and ( max-width: 768px )
+          min-height: 555px
+        @media screen and ( max-width: 750px )
+          min-height: 0
         &:last-child
           margin-right: 0
         .reviews-slider__header
@@ -218,8 +526,10 @@
               border-radius: 50%
           .reviews-slider__info
             max-width: 110px
+            font-size: 16px
+            @media screen and ( max-width: 500px )
+              font-size: 14px
             .reviews-slider__name
-              font-size: 16px
               font-weight: 600
               text-transform: uppercase
             .reviews-slider__age
@@ -227,13 +537,16 @@
           font-size: 14px
           font-weight: 500
           padding: 18px 15px 15px
-          padding-bottom: auto
+          @media screen and ( max-width: 500px )
+            font-size: 12px
       .slick-dots
         position: absolute
         bottom: -30px
         left: 50%
-        transform: translateX(-50%)
+        transform: translateX(calc( -50% - 10px ))
         display: flex
+        @media screen and ( max-width: 500px )
+          bottom: -45px
         li
           margin-right: 10px
           &:last-child
@@ -256,13 +569,22 @@
         height: 110px
         font-size: 0
         border: 0
-        background-size: cover
+        @media screen and ( max-width: 500px )
+          top: calc(100% + 40px)
+          width: 30px
+          height: 55px
         &.slick-prev
           left: -75px
           background: url(../img/reviews/arrow-left.svg) center no-repeat
+          background-size: cover
+          @media screen and ( max-width: 500px )
+            left: 0
         &.slick-next
           right: -55px
           background: url(../img/reviews/arrow-right.svg) center no-repeat
+          background-size: cover
+          @media screen and ( max-width: 500px )
+            right: 20px
 
 .cost
   .cost__inner
@@ -271,12 +593,26 @@
     .cost__row
       position: relative
       height: 500px
+      @media screen and ( max-width: 500px )
+        height: 440px
       .cost__text
         position: absolute
         height: 100px
         text-align: center
         border: 3px dashed $text
         padding: 15px 20px
+        @media screen and ( max-width: 900px )
+          border-width: 2px
+        @media screen and ( max-width: 640px )
+          height: 115px
+        @media screen and ( max-width: 600px )
+          font-size: 16px
+          height: 110px
+        @media screen and ( max-width: 500px )
+          font-size: 11px
+          padding: 10px
+          display: flex
+          align-items: center
         &:first-of-type,
         &:last-of-type
           &::after
@@ -286,17 +622,59 @@
           max-width: 320px
           bottom: 0
           left: 50px
+          @media screen and ( max-width: 900px )
+            left: 0
+          @media screen and ( max-width: 640px )
+            max-width: 50%
+          @media screen and ( max-width: 600px )
+            height: 90px
+          @media screen and ( max-width: 585px )
+            height: 105px
+          @media screen and ( max-width: 500px )
+            margin-bottom: 40px
+            height: 75px
           &::after
             bottom: 110px
-            left: 140px
+            left: 145px
             width: 220px
             height: 185px
             background: url(../img/cost/arrow-down.svg) center no-repeat
             background-size: cover
+            @media screen and ( max-width: 980px )
+              left: 120px
+            @media screen and ( max-width: 920px )
+              left: 100px
+            @media screen and ( max-width: 900px )
+              left: 50px
+              width: 70px
+              height: 140px
+              background-image: url(../img/cost/mobile-arrow-down.svg)
+            @media screen and ( max-width: 740px )
+              bottom: 120px
+            @media screen and ( max-width: 640px )
+              bottom: 135px
+            @media screen and ( max-width: 600px )
+              bottom: 125px
+            @media screen and ( max-width: 520px )
+              width: 100px
+              height: 160px
+              left: 20px
+            @media screen and ( max-width: 500px )
+              left: 0
+              bottom: 90px
         &:last-of-type
           max-width: 390px
           top: 0
           right: 100px
+          @media screen and ( max-width: 900px )
+            right: 0
+          @media screen and ( max-width: 640px )
+            max-width: 50%
+          @media screen and ( max-width: 540px )
+            height: 125px
+          @media screen and ( max-width: 500px )
+            margin-top: 40px
+            height: 100px
           &::after
             top: 110px
             right: 160px
@@ -304,6 +682,28 @@
             height: 250px
             background: url(../img/cost/arrow-up.svg) center no-repeat
             background-size: cover
+            @media screen and ( max-width: 1000px )
+              right: 140px
+            @media screen and ( max-width: 960px )
+              right: 125px
+            @media screen and ( max-width: 920px )
+              right: 115px
+            @media screen and ( max-width: 900px )
+              right: 75px
+              width: 70px
+              height: 140px
+              background-image: url(../img/cost/mobile-arrow-up.svg)
+            @media screen and ( max-width: 740px )
+              top: 120px
+            @media screen and ( max-width: 640px )
+              top: 135px
+            @media screen and ( max-width: 520px )
+              width: 100px
+              height: 160px
+              right: 20px
+            @media screen and ( max-width: 500px )
+              right: -10px
+              top: 105px
       .cost__img
         position: absolute
         width: 270px
@@ -311,6 +711,21 @@
         display: flex
         justify-content: center
         align-items: center
+        @media screen and ( max-width: 900px )
+          width: 240px
+          height: 240px
+        @media screen and ( max-width: 740px )
+          width: 220px
+          height: 220px
+        @media screen and ( max-width: 640px )
+          width: 200px
+          height: 200px
+        @media screen and ( max-width: 520px )
+          width: 180px
+          height: 180px
+        @media screen and ( max-width: 500px )
+          width: 130px
+          height: 130px
         &:first-of-type
           top: 0
           left: 0
@@ -318,6 +733,9 @@
           top: 50%
           left: 50%
           transform: translate(-50%, -50%)
+          @media screen and ( max-width: 500px )
+            width: 160px
+            height: 160px
         &:last-of-type
           bottom: 0
           right: 0
