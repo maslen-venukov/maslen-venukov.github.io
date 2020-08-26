@@ -401,13 +401,18 @@
                         </ul>
                     </div>
                     <form action="#" method="POST" class="consultation__form">
+                        <!-- Hidden Required Fields -->
+                        <input type="hidden" name="project_name" value="Коррекция восприятия">
+                        <input type="hidden" name="admin_email" value="ouy41112@cuoly.com">
+                        <input type="hidden" name="form_subject" value="Запись на бесплатную консультацию">
+                        <!-- End Hidden Required Fields -->
                         <input type="text" name="name" placeholder="ваше имя" class="consultation__input">
                         <input type="text" name="tel" placeholder="номер телефона" class="consultation__input">
                         <textarea name="textarea" placeholder="коротко, что беспокоит (необязательно)" class="consultation__textarea"></textarea>
                         <p class="consultation__agree consultation__agree--mobile">Я соглашаюсь на обработку моих персональных данных и подтверждаю, что мне больше 18 лет</p>
                         <p class="consultation__agree">Я соглашаюсь на обработку моих персональных данных</p>
                         <p class="consultation__agree">Я подтверждаю, что мне больше 18 лет</p>
-                        <button class="consultation__btn btn">Записаться на консультацию</button>
+                        <button type="submit" class="consultation__btn btn">Записаться на консультацию</button>
                     </form>
                 </div>
 

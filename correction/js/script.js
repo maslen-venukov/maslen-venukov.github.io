@@ -33,4 +33,40 @@ $(document).ready(function () {
         $('body, html').toggleClass('lock');
     });
 
+    // Закрытие попапа "Спасибо"
+
+    function closePopup() {
+        $('.popup').removeClass('popup--active');
+        $('html, body').removeClass('lock');
+    }
+
+    $('.popup__close img').click(function () {
+        closePopup();
+    });
+
+    $('.popup__area').click(function () {
+        closePopup();
+    });
+
+    $(window).keydown(function(e) {
+        closePopup();
+    });
+
+    // Обработчик формы
+
+    $('.consultation__form').submit(function() {
+        var th = $(this);
+        $.ajax({
+            type: 'POST',
+            url: 'mail.php',
+            data: th.serialize()
+        }).done(function() {
+            $('.popup').addClass('popup--active');
+            setTimeout(function() {
+                th.trigger('reset');
+            }, 1000);
+        });
+        return false;
+    });
+
 });
