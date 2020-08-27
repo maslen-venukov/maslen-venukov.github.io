@@ -25,6 +25,11 @@
       @media screen and ( max-width: 1000px )
         display: flex
         align-items: center
+        width: 110px
+        height: 30px
+      img
+        width: 100%
+        height: 100%
     .nav
       display: flex
       &--left,
@@ -129,6 +134,9 @@
       height: 125px
       @media screen and ( max-width: 1000px )
         display: none
+      img
+        border: 3px solid $text
+        border-radius: 50%
     .header__burger
       display: none
       img
@@ -150,6 +158,9 @@
         display: flex
         justify-content: center
         align-items: center
+        height: 45px
+        img
+          height: 100%
 
 .intro
   min-height: 100vh
@@ -499,18 +510,9 @@
       @media screen and ( max-width: 500px )
         margin: 0
       .reviews-slider__item
-        min-height: 490px
         border: 3px solid $text
         border-radius: 24px
         margin-right: 20px
-        @media screen and ( max-width: 1130px )
-          min-height: 380px
-        @media screen and ( max-width: 1024px )
-          min-height: 410px
-        @media screen and ( max-width: 768px )
-          min-height: 555px
-        @media screen and ( max-width: 750px )
-          min-height: 0
         &:last-child
           margin-right: 0
         .reviews-slider__header
@@ -546,7 +548,7 @@
             font-size: 12px
       .slick-dots
         position: absolute
-        bottom: -30px
+        bottom: -25px
         left: 50%
         transform: translateX(calc( -50% - 10px ))
         display: flex

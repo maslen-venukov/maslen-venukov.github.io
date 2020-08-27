@@ -25,6 +25,12 @@ $(document).ready(function () {
         ]
     });
 
+    $('.reviews-slider__item').css('height', $('.reviews__slider .slick-track').innerHeight());
+
+    $(window).resize(function () { 
+        $('.reviews-slider__item').css('height', $('.reviews__slider .slick-track').innerHeight());
+    });
+
     // Меню в шапке
 
     $('.header__burger').click(function () {
