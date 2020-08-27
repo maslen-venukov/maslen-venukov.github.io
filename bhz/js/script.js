@@ -10,9 +10,45 @@ $(document).ready(function () {
         };
     });
 
+    $('#nav__intro').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.intro').offset().top
+        }, 1000);
+    });
+
+    $('#nav__use').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.pricelist').offset().top
+        }, 1000);
+    });
+
+    $('#nav__special').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.special').offset().top
+        }, 1000);
+    });
+
+    $('#nav__about').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.production').offset().top
+        }, 1000);
+    });
+
+
+    $('#nav__contacts').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.contacts').offset().top
+        }, 1000);
+    });
+
+
     $('.achievements__slider').slick({
         variableWidth: true,
-        infinite: false,
         // swipe: false,
         responsive: [
             {
@@ -32,18 +68,6 @@ $(document).ready(function () {
         $('.achievements__slider .slick-next').click();
     });
 
-    // $('.achievements__slider .slick-slide').click(function () {
-    //     let path = $(this).children('img').attr('src');
-    //     $('.achievements__modal .achievements-modal__img').children('img').attr('src', path);
-    //     $('.achievements__modal').addClass('achievements__modal--active');
-    //     $('html, body').addClass('lock');
-    // });
-
-    // $('.achievements__modal').click(function () {
-    //     $(this).removeClass('achievements__modal--active');
-    //     $('html, body').removeClass('lock');
-    // });
-
     $('.pricelist-card__open-btn').click(function (e) {
         e.preventDefault();
         $(this).closest('.pricelist__card').addClass('pricelist__card--active');
@@ -57,7 +81,12 @@ $(document).ready(function () {
 
     $('.checked-tabs__item').click(function () {
         $(this).addClass('checked-tabs__item--active');
-        $('.checked-tabs__item').not($(this)).removeClass('checked-tabs__item--active')
+        $('.checked-tabs__item').not($(this)).removeClass('checked-tabs__item--active');
+        let index = $(this).index('.checked-tabs__item');
+        console.log('dasgjbsdgfisgfdhibsgfihbosfgihbsfgibhgsfihbsgfibhosfgihbosgfibhsfgibhosgfibho');
+        $('.checked__img img').removeClass('active');
+        // $('.checked__img img').index(index).addClass('active');
+        $('.checked__img img:eq(' + index + ')').addClass('active');
     });
 
     $('.header__burger').click(function () {
@@ -78,6 +107,51 @@ $(document).ready(function () {
     $('.video-modal__close').click(function () {
         $('.video__modal').removeClass('video__modal--active');
         $('html, body').removeClass('lock');
+    });
+
+    $('a[data-modal="request"]').click(function (e) { 
+        e.preventDefault();
+        $('.modal-request').addClass('modal--active');
+        $('html, body').addClass('lock');
+    });
+
+    $('a[data-modal="test"]').click(function (e) { 
+        e.preventDefault();
+        $('.modal-test').addClass('modal--active');
+        $('html, body').addClass('lock');
+    });
+
+    $('a[data-modal="best"]').click(function (e) { 
+        e.preventDefault();
+        $('.modal-best').addClass('modal--active');
+        $('html, body').addClass('lock');
+    });
+
+    $('a[data-modal="pricelist"]').click(function (e) { 
+        e.preventDefault();
+        $('.modal-pricelist').addClass('modal--active');
+        $('html, body').addClass('lock');
+    });
+
+    $('a[data-modal="presentation"]').click(function (e) { 
+        e.preventDefault();
+        $('.modal-presentation').addClass('modal--active');
+        $('html, body').addClass('lock');
+    });
+
+    function closeModal() {
+        $('.modal--active').removeClass('modal--active');
+        $('html, body').removeClass('lock');
+    }
+
+    $('.modal__close').click(function(e) {
+        closeModal();
+    });
+
+    $(window).keydown(function(e) {
+        if(e.keyCode === 27) {
+            closeModal();
+        }
     });
 
 });

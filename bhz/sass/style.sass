@@ -838,6 +838,9 @@
           margin-right: 0
           margin-bottom: 20px
         img
+          display: none
+          &.active
+            display: block
       .checked__top
         display: flex
         flex-direction: column
@@ -1227,7 +1230,7 @@
         display: none
       img
     .video-modal__video
-      iframe
+      video
         max-width: 100%
         min-height: 315px
         padding: 0 15px
@@ -1414,6 +1417,7 @@
             bottom: 0
             left: 0
             right: 0
+            width: 100%
             object-fit: cover
         .production__card
           display: flex
@@ -1682,16 +1686,20 @@
         overflow: visible
       .slick-slide
         opacity: 0
-        transition: opacity .4s
+        visibility: hidden
+        transition: opacity .4s, visibility .4s
       .slick-current.slick-active
         opacity: 1
+        visibility: visible
       .slick-current.slick-active ~ .slick-slide
         opacity: 1
+        visibility: visible
         @media screen and ( max-width: 500px )
           opacity: 0
       .slick-arrow
         position: absolute
         opacity: 0
+        visibility: hidden
 
 // .achievements__modal
 //   position: fixed
@@ -2098,3 +2106,76 @@
         margin-top: 30px
       img
         border-radius: 12px
+
+.modal-request,
+.modal-test,
+.modal-best,
+.modal-pricelist,
+.modal-presentation
+  display: none
+  justify-content: center
+  align-items: center
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10000
+  width: 100vw
+  height: 100vh
+  background: rgba(#000, .4)
+  &.modal--active
+    display: flex
+  .modal__inner
+    max-width: 600px
+    width: 100%
+    padding: 20px
+    border-radius: $radius
+    background: url(../img/footer/bg.jpg) center no-repeat
+    background-size: cover
+    .modal__close
+      font-size: 20px
+      color: #fff
+      text-align: right
+      cursor: pointer
+    .modal__title
+      font-size: 32px
+      color: #fff
+      text-align: center
+      margin-bottom: 20px
+      @media screen and ( max-width: 500px )
+        font-size: 22px
+    .modal__form
+      display: flex
+      flex-direction: column
+      .modal-form__input
+        position: relative
+        width: 100%
+        margin-bottom: 20px
+        &::before
+          content: ''
+          position: absolute
+          left: 10px
+          top: 50%
+          transform: translateY(-50%)
+          width: 26px
+          height: 26px
+        &:nth-child(1)::before
+          background: url(../img/footer/name.svg)
+          background-size: cover
+        &:nth-child(2)::before
+          background: url(../img/footer/tel.svg)
+          background-size: cover
+        &:nth-child(3)::before
+          background: url(../img/footer/email.svg)
+          background-size: cover
+        input
+          font-size: 24px
+          color: #fff
+          width: 100%
+          background: transparent
+          border: 0
+          border-bottom: 1px solid #414141
+          padding: 15px 15px 15px 60px
+          @media screen and ( max-width: 500px )
+            font-size: 20px
+      .modal-form__button
+        font-size: 20px

@@ -63,7 +63,7 @@
                                 <div class="header__phone">
                                     <a href="tel:+88003338115">8 (800) 333-81-15</a>
                                 </div>
-                                <a href="#!" class="header__link">Заказать обратный звонок</a>
+                                <a href="#!" class="header__link" data-modal="request">Заказать обратный звонок</a>
                             </div>
 
                         </div>
@@ -80,12 +80,12 @@
 
                     <nav class="nav">
                         <div class="nav__inner">
-                            <a href="#!" class="nav__item">Главная</a>
-                            <a href="#!" class="nav__item">Прайс-лист</a>
-                            <a href="#!" class="nav__item">Как использовать</a>
-                            <a href="#!" class="nav__item">Партнёрство</a>
-                            <a href="#!" class="nav__item">О нас</a>
-                            <a href="#!" class="nav__item">Контакты</a>
+                            <a href="#!" id="nav__intro" class="nav__item">Главная</a>
+                            <a href="#!" class="nav__item" data-modal="pricelist">Прайс-лист</a>
+                            <a href="#!" id="nav__use" class="nav__item">Как использовать</a>
+                            <a href="#!" id="nav__special" class="nav__item">Партнёрство</a>
+                            <a href="#!" id="nav__about" class="nav__item">О нас</a>
+                            <a href="#!" id="nav__contacts" class="nav__item">Контакты</a>
                         </div>
                     </nav>
 
@@ -93,8 +93,8 @@
                         <h1 class="main__title title">Производим расходные материалы для шиномонтажа</h1>
                         <p class="main__subtitle">для ремонта шин, работающие при горячей и холодной вулканизации</p>
                         <div class="main__btns">
-                            <a href="#!" class="main__btn btn">Заказать звонок</a>
-                            <a href="#!" class="main__btn btn btn--transparent">Скачать прайс-лист</a>
+                            <a href="#!" class="main__btn btn" data-modal="request">Заказать звонок</a>
+                            <a href="#!" class="main__btn btn btn--transparent" data-modal="pricelist">Скачать прайс-лист</a>
                         </div>
                         <div class="main__lists">
                             <ul class="main__list">
@@ -183,7 +183,7 @@
                             </div>
                             <div class="pricelist-card__btns">
                                 <a href="#!" class="pricelist-card__open-btn">Подробнее</a>
-                                <a href="#!" class="pricelist-card__btn btn btn--transparent">Скачать прайс-лист</a>
+                                <a href="#!" class="pricelist-card__btn btn btn--transparent" data-modal="pricelist">Скачать прайс-лист</a>
                                 <a href="#!" class="pricelist-card__close-btn">свернуть</a>
                             </div>
                         </div>
@@ -197,7 +197,7 @@
                             </div>
                             <div class="pricelist-card__btns">
                                 <a href="#!" class="pricelist-card__open-btn">Подробнее</a>
-                                <a href="#!" class="pricelist-card__btn btn btn--transparent">Скачать прайс-лист</a>
+                                <a href="#!" class="pricelist-card__btn btn btn--transparent" data-modal="pricelist">Скачать прайс-лист</a>
                                 <a href="#!" class="pricelist-card__close-btn">свернуть</a>
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                             </div>
                             <div class="pricelist-card__btns">
                                 <a href="#!" class="pricelist-card__open-btn">Подробнее</a>
-                                <a href="#!" class="pricelist-card__btn btn btn--transparent">Скачать прайс-лист</a>
+                                <a href="#!" class="pricelist-card__btn btn btn--transparent" data-modal="pricelist">Скачать прайс-лист</a>
                                 <a href="#!" class="pricelist-card__close-btn">свернуть</a>
                             </div>
                         </div>
@@ -233,7 +233,7 @@
                             </div>
                             <div class="pricelist-card__btns">
                                 <a href="#!" class="pricelist-card__open-btn">Подробнее</a>
-                                <a href="#!" class="pricelist-card__btn btn btn--transparent">Скачать прайс-лист</a>
+                                <a href="#!" class="pricelist-card__btn btn btn--transparent" data-modal="pricelist">Скачать прайс-лист</a>
                                 <a href="#!" class="pricelist-card__close-btn">свернуть</a>
                             </div>
                         </div>
@@ -241,7 +241,7 @@
                     <div class="pricelist__info">
                         <h2 class="pricelist__title section__title">Вся линейка пластырей <b>BHZ professional</b> универсальная</h2>
                         <p class="pricelist__text">Эффективно работают, как при установке холодным методом, так и методом горячей вулканизации</p>
-                        <a href="#!" class="pricelist__btn btn">Заказать тестовый набор</a>
+                        <a href="#!" class="pricelist__btn btn" data-modal="test">Заказать тестовый набор</a>
                     </div>
                 </div>
 
@@ -257,14 +257,14 @@
                             </div>
                             <div class="pricelist-card__btns">
                                 <a href="#!" class="pricelist-card__open-btn">Подробнее</a>
-                                <a href="#!" class="pricelist-card__btn btn btn--transparent">Скачать прайс-лист</a>
+                                <a href="#!" class="pricelist-card__btn btn btn--transparent" data-modal="pricelist">Скачать прайс-лист</a>
                                 <a href="#!" class="pricelist-card__close-btn">свернуть</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="#!" class="pricelist__mobile-btn btn">Заказать тестовый набор</a>
+                <a href="#!" class="pricelist__mobile-btn btn" data-modal="test">Заказать тестовый набор</a>
 
             </div>
         </div>
@@ -290,7 +290,9 @@
                         <p class="checked__note">* Испытания проводились на стендах, аккредитованных лабораторий ведущих шинных предприятий России</p>
                     </div>
                     <div class="checked__img">
-                        <img src="img/checked/img.svg" alt="">
+                        <img src="img/checked/img-1.svg" alt="">
+                        <img class="active" src="img/checked/img-2.svg" alt="">
+                        <img src="img/checked/img-3.svg" alt="">
                     </div>
                     <div class="checked__top">
                         <ul class="checked__list">
@@ -346,8 +348,8 @@
                     <p class="presentation__subtitle">о продукции BHZ professional</p>
                     <p class="presentation__text">И тестовый набор продукции</p>
                     <div class="presentation__btns">
-                        <a href="#!" class="presentation__btn btn">Получить презентацию</a>
-                        <a href="#!" class="presentation__btn btn btn--transparent">Скачать прайс-лист</a>
+                        <a href="#!" class="presentation__btn btn" data-modal="presentation">Получить презентацию</a>
+                        <a href="#!" class="presentation__btn btn btn--transparent" data-modal="pricelist">Скачать прайс-лист</a>
                     </div>
                 </div>
 
@@ -419,7 +421,7 @@
                 </div>
 
                 <h2 class="terms__get-title title">Получить индивидуальные условия</h2>
-                <a href="#!" class="terms__btn btn">Хочу с вами работать</a>
+                <a href="#!" class="terms__btn btn" data-modal="best">Хочу с вами работать</a>
 
             </div>
         </div>
@@ -455,7 +457,9 @@
                 <img src="img/achievements/close.svg" alt="">
             </div>
             <div class="video-modal__video">
-                <iframe width="560" src="https://www.youtube.com/embed/sX1Y2JMK6g8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <video controls="controls">
+                    <source src="video/bhz.mp4">
+                </video>
             </div>
         </div>
     </div>
@@ -480,7 +484,7 @@
                             <li class="special-card-list__item">Получите скидку 25% на первый заказ</li>
                             <li class="special-card-list__item">Бесплатная доставка по России на сумму от 3 000 рублей</li>
                         </ul>
-                        <a href="#!" class="special-card__btn btn">Узнать о всех условиях</a>
+                        <a href="#!" class="special-card__btn btn" data-modal="best">Узнать о всех условиях</a>
                     </div>
                     <div class="special__card">
                         <div class="special-card__header">
@@ -492,7 +496,7 @@
                         <ul class="special-card__list">
                             <li class="special-card-list__item">После трех первых поставок - отсрочка платежа и другие персональные условия работы</li>
                         </ul>
-                        <a href="#!" class="special-card__btn btn">Узнать о всех условиях</a>
+                        <a href="#!" class="special-card__btn btn" data-modal="best">Узнать о всех условиях</a>
                     </div>
                 </div>
                 
@@ -586,7 +590,7 @@
                     <h2 class="free__title title">Получите бесплатный набор</h2>
                     <p class="free__subtitle">прямо сейчас</p>
                     <p class="free__text">Три различных пластыря и клей для холодной или горячей вулканизации на выбор</p>
-                    <a href="#!" class="free__btn btn">Получить набор</a>
+                    <a href="#!" class="free__btn btn" data-modal="test">Получить набор</a>
                 </div>
 
                 <div class="free__img">
@@ -659,7 +663,7 @@
                     </ul>
                 </div>
 
-                <a href="#!" class="quality__btn btn">Хочу с вами работать</a>
+                <a href="#!" class="quality__btn btn" data-modal="best">Хочу с вами работать</a>
 
                 <div class="quality__img">
                     <img src="img/quality/img.png" alt="">
@@ -763,6 +767,92 @@
         </div>
 
     </footer>
+
+    <div class="modal-request">
+        <div class="modal__inner">
+            <div class="modal__close">X</div>
+            <h3 class="modal__title">Заказать звонок</h3>
+            <form action="#" method="POST" class="modal__form">
+                <div class="modal-form__input">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                </div>
+                <div class="modal-form__input">
+                    <input type="text" name="tel" placeholder="Номер телефона">
+                </div>
+                <button class="modal__btn btn">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-test">
+        <div class="modal__inner">
+            <div class="modal__close">X</div>
+            <h3 class="modal__title">Заказать тестовый набор</h3>
+            <form action="#" method="POST" class="modal__form">
+                <div class="modal-form__input">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                </div>
+                <div class="modal-form__input">
+                    <input type="text" name="tel" placeholder="Номер телефона">
+                </div>
+                <button class="modal__btn btn">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-best">
+        <div class="modal__inner">
+            <div class="modal__close">X</div>
+            <h3 class="modal__title">Получите лучшие условия сотрудничества на рынке</h3>
+            <form action="#" method="POST" class="modal__form">
+                <div class="modal-form__input">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                </div>
+                <div class="modal-form__input">
+                    <input type="text" name="tel" placeholder="Номер телефона">
+                </div>
+                <button class="modal__btn btn">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-pricelist">
+        <div class="modal__inner">
+            <div class="modal__close">X</div>
+            <h3 class="modal__title">Скачать прайс-лист</h3>
+            <form action="#" method="POST" class="modal__form">
+                <div class="modal-form__input">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                </div>
+                <div class="modal-form__input">
+                    <input type="text" name="tel" placeholder="Номер телефона">
+                </div>
+                <div class="modal-form__input">
+                    <input type="text" name="email" placeholder="Ваш email">
+                </div>
+                <button class="modal__btn btn">Скачать</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-presentation">
+        <div class="modal__inner">
+            <div class="modal__close">X</div>
+            <h3 class="modal__title">Получить каталог продукции</h3>
+            <form action="#" method="POST" class="modal__form">
+                <div class="modal-form__input">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                </div>
+                <div class="modal-form__input">
+                    <input type="text" name="tel" placeholder="Номер телефона">
+                </div>
+                <div class="modal-form__input">
+                    <input type="text" name="email" placeholder="Ваш email">
+                </div>
+                <button class="modal__btn btn">Получить</button>
+            </form>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
