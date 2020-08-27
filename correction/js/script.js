@@ -35,52 +35,61 @@ $(document).ready(function () {
 
     // Навигация
 
+    const headerHeight = $('.header').innerHeight();
+
     $('#nav--psychotechnics').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.psychotechnics').offset().top-80
+            scrollTop: $('.psychotechnics').offset().top-headerHeight
         }, 500);
     });
 
     $('#nav--schema').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.schema').offset().top-80
+            scrollTop: $('.schema').offset().top-headerHeight
+        }, 500);
+    });
+
+    $('.intro__btn').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.consultation').offset().top-headerHeight
         }, 500);
     });
 
     $('#nav--intro').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.intro').offset().top-80
+            scrollTop: $('.intro').offset().top-headerHeight
         }, 500);
     });
 
     $('#nav--reviews').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.reviews').offset().top-80
+            scrollTop: $('.reviews').offset().top-headerHeight
         }, 500);
     });
 
     $('#nav--cost').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.cost').offset().top-80
+            scrollTop: $('.cost').offset().top-headerHeightheaderHeight
         }, 500);
     });
 
     $('#nav--contacts').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.contacts').offset().top-80
+            scrollTop: $('.contacts').offset().top-headerHeight
         }, 500);
     });
 
     $('.header__mobile-text').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.intro').offset().top-80
+            scrollTop: $('.intro').offset().top-headerHeight
         }, 500);
     });
 
@@ -93,7 +102,7 @@ $(document).ready(function () {
     $('#nav--mobile-specialization').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.specialization').offset().top-80
+            scrollTop: $('.specialization').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
@@ -101,7 +110,7 @@ $(document).ready(function () {
     $('#nav--mobile-psychotechnics').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.psychotechnics').offset().top-80
+            scrollTop: $('.psychotechnics').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
@@ -109,7 +118,7 @@ $(document).ready(function () {
     $('#nav--mobile-schema').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.schema').offset().top-80
+            scrollTop: $('.schema').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
@@ -117,7 +126,7 @@ $(document).ready(function () {
     $('#nav--mobile-reviews').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.reviews').offset().top-80
+            scrollTop: $('.reviews').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
@@ -125,7 +134,7 @@ $(document).ready(function () {
     $('#nav--mobile-cost').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.cost').offset().top-80
+            scrollTop: $('.cost').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
@@ -133,7 +142,7 @@ $(document).ready(function () {
     $('#nav--mobile-consultation').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.consultation').offset().top-80
+            scrollTop: $('.consultation').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
@@ -141,7 +150,7 @@ $(document).ready(function () {
     $('#nav--mobile-contacts').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.contacts').offset().top-80
+            scrollTop: $('.contacts').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });

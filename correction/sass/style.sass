@@ -6,7 +6,7 @@
   top: 0
   z-index: 1000
   width: 100vw
-  height: 80px
+  height: 65px
   display: flex
   align-items: center
   background: $main
@@ -126,8 +126,8 @@
       top: -25px
       left: 50%
       transform: translateX(-50%)
-      width: 150px
-      height: 150px
+      width: 135px
+      height: 135px
       @media screen and ( max-width: 1000px )
         display: none
     .header__burger
@@ -543,7 +543,7 @@
           font-size: 14px
           font-weight: 500
           padding: 18px 15px 15px
-          @media screen and ( max-width: 500px )
+          @media screen and ( max-width: 375px )
             font-size: 12px
       .slick-dots
         position: absolute
@@ -667,6 +667,8 @@
               left: 20px
             @media screen and ( max-width: 500px )
               left: 0
+              bottom: 80px
+            @media screen and ( max-width: 375px )
               bottom: 90px
         &:last-of-type
           max-width: 390px
@@ -680,6 +682,8 @@
             height: 125px
           @media screen and ( max-width: 500px )
             margin-top: 40px
+            height: 75px
+          @media screen and ( max-width: 367px )
             height: 100px
           &::after
             top: 110px
@@ -708,8 +712,15 @@
               height: 160px
               right: 20px
             @media screen and ( max-width: 500px )
-              right: -10px
+              right: 10px
+              top: 85px
+            @media screen and ( max-width: 375px )
+              top: 95px
+            @media screen and ( max-width: 367px )
               top: 105px
+              height: 155px
+            @media screen and ( max-width: 340px )
+              right: -10px
       .cost__img
         position: absolute
         width: 270px
@@ -730,6 +741,9 @@
           width: 180px
           height: 180px
         @media screen and ( max-width: 500px )
+          width: 150px
+          height: 150px
+        @media screen and ( max-width: 375px )
           width: 130px
           height: 130px
         &:first-of-type
@@ -740,6 +754,9 @@
           left: 50%
           transform: translate(-50%, -50%)
           @media screen and ( max-width: 500px )
+            width: 170px
+            height: 170px
+          @media screen and ( max-width: 375px )
             width: 160px
             height: 160px
         &:last-of-type
@@ -749,9 +766,7 @@
 .consultation
   .consultation__inner
     .consultation__title
-      margin-bottom: 50px
-      @media screen and ( max-width: 500px )
-        margin-bottom: 40px
+      margin-bottom: 40px
     .consultation__row
       display: flex
       justify-content: space-between
