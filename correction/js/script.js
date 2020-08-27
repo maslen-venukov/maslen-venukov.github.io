@@ -92,7 +92,7 @@ $(document).ready(function () {
         }, 500);
     });
 
-    $('.header__mobile-text').click(function(e) {
+    $('.header__mobile-logo').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $('.intro').offset().top-headerHeight
