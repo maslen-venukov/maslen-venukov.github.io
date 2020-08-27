@@ -75,7 +75,7 @@ $(document).ready(function () {
     $('#nav--cost').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.cost').offset().top-headerHeightheaderHeight
+            scrollTop: $('.cost').offset().top-headerHeight
         }, 500);
     });
 
