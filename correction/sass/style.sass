@@ -134,9 +134,6 @@
       height: 125px
       @media screen and ( max-width: 1000px )
         display: none
-      img
-        border: 3px solid $text
-        border-radius: 50%
     .header__burger
       display: none
       img
@@ -182,6 +179,7 @@
       @media screen and ( max-width: 1120px )
         flex-basis: 48%
       @media screen and ( max-width: 780px )
+        max-width: 500px
         text-align: center
       .intro__title
         text-transform: uppercase
@@ -218,10 +216,15 @@
       flex-basis: 45%
       @media screen and ( max-width: 1120px )
         flex-basis: 48%
+      @media screen and ( max-width: 780px )
+        flex-basis: 100%
+        width: 100%
       img
         &:first-of-type
+          transform: translateY(-25px)
           @media screen and ( max-width: 780px )
-            width: 75%
+            width: 50%
+            transform: translateY(0)
             margin: 0 auto 4vh
           @media screen and ( max-width: 425px )
             display: none
@@ -233,16 +236,15 @@
       .intro__btn
         display: none
         @media screen and ( max-width: 780px )
-          display: inline-block
+          display: block
           font-size: 18px
           min-height: 55px
-          min-width: 100%
-        @media screen and ( max-width: 600px )
-          display: block
-          font-size: 16px
           min-width: 0
-          max-width: 320px
+          max-width: 480px
+          width: 100%
           margin: 0 auto
+        @media screen and ( max-width: 600px )
+          font-size: 16px
         @media screen and ( max-width: 375px )
           font-size: 14px
 
