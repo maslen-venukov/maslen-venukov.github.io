@@ -223,11 +223,11 @@
             width: 50%
             transform: translateY(0)
             margin: 0 auto 4vh
-          @media screen and ( max-width: 425px )
+          @media screen and ( max-width: 500px )
             display: none
         &:last-of-type
           display: none
-          @media screen and ( max-width: 425px )
+          @media screen and ( max-width: 500px )
             display: block
             width: 100%
             margin: 0 auto 4vh
@@ -852,18 +852,20 @@
         .consultation__input,
         .consultation__textarea
           width: 100%
+          font-size: 18px
+          font-weight: 500
+          color: $text
           resize: none
           background: rgba(#fff, .5)
           border: 3px dashed $main
           padding: 15px 20px
           @media screen and ( max-width: 375px )
+            font-size: 14px
             padding: 10px
           &::placeholder
-            font-size: 18px
-            font-weight: 500
-            color: $text
-            @media screen and ( max-width: 375px )
-              font-size: 14px
+            font-size: inherit
+            font-weight: inherit
+            color: inherit
         .consultation__input
           margin-bottom: 25px
         .consultation__textarea
