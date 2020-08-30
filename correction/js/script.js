@@ -43,10 +43,10 @@ $(document).ready(function () {
 
     const headerHeight = $('.header').innerHeight();
 
-    $('#nav--psychotechnics').click(function(e) {
+    $('#nav--about').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.psychotechnics').offset().top-headerHeight
+            scrollTop: $('.about').offset().top-headerHeight
         }, 500);
     });
 
@@ -105,18 +105,18 @@ $(document).ready(function () {
         $('html, body').removeClass('lock');
     }
 
-    $('#nav--mobile-specialization').click(function(e) {
+    $('#nav--mobile-works').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.specialization').offset().top-headerHeight
+            scrollTop: $('.works').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
 
-    $('#nav--mobile-psychotechnics').click(function(e) {
+    $('#nav--mobile-about').click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: $('.psychotechnics').offset().top-headerHeight
+            scrollTop: $('.about').offset().top-headerHeight
         }, 500);
         closeNavMobile();
     });
