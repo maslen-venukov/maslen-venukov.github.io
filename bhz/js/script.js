@@ -85,7 +85,6 @@ $(document).ready(function () {
         let index = $(this).index('.checked-tabs__item');
         console.log('dasgjbsdgfisgfdhibsgfihbosfgihbsfgibhgsfihbsgfibhosfgihbosgfibhsfgibhosgfibho');
         $('.checked__img img').removeClass('active');
-        // $('.checked__img img').index(index).addClass('active');
         $('.checked__img img:eq(' + index + ')').addClass('active');
     });
 
