@@ -43,14 +43,10 @@ $(document).ready(function () {
         asNavFor: '.first__num-slider'
     });
 
-    // $('.first__slider .slick-arrow').click(function() {
-    //     $('.first-num__slider .slick-list.draggable').css('height', '400px');
-    // });
-
     $('.reviews__slider').slick({
         variableWidth: true,
         dots: true,
-        infinite: false,
+        infinite: true,
         responsive: [
             {
                 breakpoint: 530,

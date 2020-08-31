@@ -27,9 +27,11 @@ h1, h2, h3, h4, h5, h6
 
 .container
   width: 100%
-  max-width: 1460px
-  padding: 0 15px
+  // max-width: 1460px
+  padding: 0 12%
   margin: 0 auto
+  @media screen and ( max-width: 768px )
+    padding: 0 15px
 
 .button
   display: inline-block
@@ -47,7 +49,7 @@ h1, h2, h3, h4, h5, h6
     min-width: 100%
   @media screen and ( max-width: 425px )
     font-size: 20px
-    padding: 25px 50px
+    padding: 25px
 
 .section
   margin-bottom: 200px
@@ -61,12 +63,12 @@ h1, h2, h3, h4, h5, h6
     text-align: center
     margin-bottom: 40px
     @media screen and ( max-width: 425px )
-      font-size: 36px
+      font-size: 24px
     span
       font-size: 64px
       color: $primary
       @media screen and ( max-width: 425px )
-        font-size: 48px
+        font-size: 36px
   .section__subtitle
     font-size: 18px
     font-weight: 500
@@ -74,10 +76,13 @@ h1, h2, h3, h4, h5, h6
 // Header
 
 .header
+  position: relative
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 20px 0
+  padding: 20px 12% 20px 0
+  @media screen and ( max-width: 1024px )
+    padding: 20px 0
   .header__logo
     @media screen and ( max-width: 768px )
       display: none
@@ -143,7 +148,9 @@ h1, h2, h3, h4, h5, h6
           transform: translateX(-10px)
       .nav__item
         color: $text
-        margin-right: 100px
+        margin-right: 5vw
+        @media screen and ( max-width: 1550px )
+          margin-right: 3vw
         @media screen and ( max-width: 1350px )
           font-size: 36px
           font-weight: 700
@@ -160,6 +167,8 @@ h1, h2, h3, h4, h5, h6
     border: 1px solid $primary
     border-radius: 30px
     padding: 10px 70px 10px 30px
+    a
+      color: $text
     @media screen and ( max-width: 350px )
       border: 0
       padding: 0
@@ -175,6 +184,25 @@ h1, h2, h3, h4, h5, h6
       background: url(../img/intro/phone.svg) center no-repeat
       @media screen and ( max-width: 350px )
         display: none
+  .header__city
+    position: absolute
+    bottom: -20px
+    right: 310px
+    display: flex
+    @media screen and ( max-width: 1800px )
+      right: 290px
+    @media screen and ( max-width: 1600px )
+      right: 280px
+    @media screen and ( max-width: 1440px )
+      right: 250px
+      @media screen and ( max-width: 1220px )
+        right: 240px
+    @media screen and ( max-width: 1024px )
+      right: 10px
+    @media screen and ( max-width: 425px )
+      display: none
+    img
+      margin-right: 15px
 
 // Intro
 
@@ -182,6 +210,12 @@ h1, h2, h3, h4, h5, h6
   position: relative
   min-height: 100vh
   background: $bg
+  .container
+    padding: 0 0 0 12%
+    @media screen and ( max-width: 1024px )
+      padding: 0 12%
+    @media screen and ( max-width: 768px )
+      padding: 0 15px
   .intro__inner
     display: flex
     justify-content: space-between
@@ -191,8 +225,7 @@ h1, h2, h3, h4, h5, h6
     @media screen and ( max-width: 620px )
       margin-top: 10vh
     @media screen and ( max-width: 425px )
-      margin-top: 5vh
-    @media screen and ( max-width: 320px )
+      flex-direction: column-reverse
       margin-top: 0
     .intro__content
       flex-basis: 40%
@@ -200,28 +233,37 @@ h1, h2, h3, h4, h5, h6
       @media screen and ( max-width: 1250px )
         flex-basis: 100%
         max-width: 800px
-        margin: 0 auto
+      @media screen and ( max-width: 425px )
+        text-align: center
       .intro__title
         font-size: 36px
         margin-bottom: 1vh
+        @media screen and ( max-width: 1366px )
+          font-size: 30px
         @media screen and ( max-width: 425px )
-          font-size: 32px
+          font-size: 21px
         span
           @include gradientText ()
       .intro__text
         margin-bottom: 2vh
+        @media screen and ( max-width: 1366px )
+          font-size: 16px
+        @media screen and ( max-width: 425px )
+          margin-bottom: 1vh
       .intro__subtitle
         font-size: 36px
+        max-width: 460px
         margin-bottom: 4vh
+        @media screen and ( max-width: 1366px )
+          font-size: 30px
         @media screen and ( max-width: 425px )
-          font-size: 32px
+          font-size: 22px
+          margin-bottom: 2vh
         span
-          @include gradientText ()
+          color: $primary
       .intro__button
-        @media screen and ( max-width: 1250px )
-          display: block
-          max-width: 415px
-          margin: 0 auto
+        @media screen and ( max-width: 425px )
+          margin-bottom: 25px
       .intro__scroll
         position: absolute
         font-size: 14px
@@ -246,8 +288,10 @@ h1, h2, h3, h4, h5, h6
     .intro__img
       flex-basis: 60%
       transform: translateY(-100px)
-      @media screen and ( max-width: 1250px )
+      @media screen and ( max-width: 1250px ) and ( min-width: 426px)
         display: none
+      @media screen and ( max-width: 425px )
+        transform: translateY(0)
       img
         object-fit: cover
 
@@ -265,96 +309,109 @@ h1, h2, h3, h4, h5, h6
   padding: 100px 0
   @media screen and ( max-width: 425px )
     padding: 75px 0
-  .container
-    max-width: 1550px
-    .stats__inner
-      display: flex
-      justify-content: space-between
-      align-items: center
-      flex-wrap: wrap
-      @media screen and ( max-width: 1440px )
-        flex-direction: column
-      .stats__content
-        flex-basis: 35%
+  .stats__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @media screen and ( max-width: 1340px )
+      flex-direction: column
+    .stats__content
+      flex-basis: 35%
+      margin-right: 50px
+      @media screen and ( max-width: 1340px )
+        flex-basis: 100%
+        width: 100%
+        margin-right: 0
+        margin-bottom: 50px
+      .stats__suptitle
+        font-size: 36px
+        font-weight: 700
+        color: $text
+        @media screen and ( max-width: 425px )
+          font-size: 30px
+      .stats__title
+        font-size: 288px
+        line-height: 210px
+        @include gradientText ()
+        margin-bottom: 15px
+        @media screen and ( max-width: 1860px )
+          font-size: 220px
+          line-height: .75
+        @media screen and ( max-width: 640px )
+          font-size: 140px
+        @media screen and ( max-width: 640px )
+          font-size: 100px
+        @media screen and ( max-width: 360px )
+          font-size: 80px
+      .stats__text
+        font-size: 23px
+        line-height: 1.2
+        b
+          span
+            white-space: nowrap
         @media screen and ( max-width: 1440px )
-          flex-basis: 100%
-          margin-bottom: 50px
-        .stats__suptitle
-          font-size: 36px
-          font-weight: 700
-          color: $text
-          @media screen and ( max-width: 425px )
-            font-size: 30px
-        .stats__title
-          font-size: 288px
-          line-height: 210px
-          @include gradientText ()
-          margin-bottom: 15px
-          @media screen and ( max-width: 1024px )
-            font-size: 180px
-            line-height: 1
-          @media screen and ( max-width: 640px )
-            font-size: 140px
-          @media screen and ( max-width: 640px )
-            font-size: 100px
-          @media screen and ( max-width: 360px )
-            font-size: 80px
-        .stats__text
-          font-size: 24px
-          line-height: 1.2
-          @media screen and ( max-width: 425px )
-            font-size: 18px
-      .stats__list
-        flex-basis: 58%
+          font-size: 20px
+        @media screen and ( max-width: 425px )
+          font-size: 18px
+    .stats__list
+      flex-basis: 58%
+      @media screen and ( max-width: 1340px )
+        flex-basis: 100%
+      .stats-list__item
+        position: relative
+        display: flex
+        align-items: center
+        margin-bottom: 50px
         @media screen and ( max-width: 1440px )
-          flex-basis: 100%
-        .stats-list__item
-          position: relative
+          margin-bottom: 35px
+        &:last-child
+          margin-bottom: 0
+        .stats-list__img
           display: flex
+          justify-content: center
           align-items: center
-          margin-bottom: 50px
-          &:last-child
-            margin-bottom: 0
-          .stats-list__img
-            display: flex
-            justify-content: center
-            align-items: center
-            border: 1px solid $primary
-            border-radius: 50%
-            min-width: 120px
-            height: 120px
-            margin-right: 40px
-            @media screen and ( max-width: 768px )
-              min-width: 80px
-              height: 80px
-              img
-                width: 40px
-                height: 40px
-            @media screen and ( max-width: 425px )
-              min-width: 50px
-              height: 50px
-              margin-right: 20px
-              img
-                width: 25px
-                height: 25px
-          .stats-list__num
-            position: absolute
-            top: 5px
-            left: 160px
-            font-size: 100px
-            line-height: 1
-            font-weight: 700
-            opacity: .15
-            @media screen and ( max-width: 425px )
-              display: none
-          .stats-list__text
-            font-size: 36px
-            line-height: 1
-            font-weight: 700
-            @media screen and ( max-width: 768px )
-              font-size: 28px
-            @media screen and ( max-width: 375px )
-              font-size: 22px
+          border: 1px solid $primary
+          border-radius: 50%
+          min-width: 120px
+          height: 120px
+          margin-right: 40px
+          @media screen and ( max-width: 1440px )
+            margin-right: 25px
+          @media screen and ( max-width: 768px )
+            min-width: 80px
+            height: 80px
+            img
+              width: 40px
+              height: 40px
+          @media screen and ( max-width: 425px )
+            min-width: 50px
+            height: 50px
+            margin-right: 20px
+            img
+              width: 25px
+              height: 25px
+        .stats-list__num
+          position: absolute
+          top: 5px
+          left: 160px
+          font-size: 100px
+          line-height: 1
+          font-weight: 700
+          opacity: .15
+          @media screen and ( max-width: 425px )
+            display: none
+        .stats-list__text
+          font-size: 36px
+          line-height: 1
+          font-weight: 700
+          white-space: nowrap
+          @media screen and ( max-width: 1440px )
+            font-size: 30px
+          @media screen and ( max-width: 768px )
+            font-size: 28px
+            white-space: normal
+          @media screen and ( max-width: 375px )
+            font-size: 22px
 
 // Free
 
@@ -468,6 +525,8 @@ h1, h2, h3, h4, h5, h6
           line-height: 1.2
           color: $primary
           margin-bottom: 20px
+          @media screen and ( max-width: 1440px )
+            font-size: 32px
           @media screen and ( max-width: 1100px )
             font-size: 24px
           @media screen and ( max-width: 900px )
@@ -475,7 +534,7 @@ h1, h2, h3, h4, h5, h6
         .ages-slider__text
           opacity: 0
           transition: .2s
-          @media screen and ( max-width: 1100px )
+          @media screen and ( max-width: 1440px )
             font-size: 14px
       .slick-center
         transform: scale(1)
@@ -509,6 +568,7 @@ h1, h2, h3, h4, h5, h6
 // Minuses
 
 .minuses
+  padding: 0 15px
   margin-bottom: 100px
   .minuses__inner
     display: flex
@@ -542,31 +602,30 @@ h1, h2, h3, h4, h5, h6
           @media screen and ( max-width: 900px )
             flex-basis: 100%
             margin-right: 0
-          @media screen and ( max-width: 375px )
-            margin-bottom: 75px
-          @media screen and ( max-width: 320px )
-            margin-bottom: 50px
+          @media screen and ( max-width: 425px )
+            margin-bottom: 30px
           &::before
             content: ''
             position: absolute
-            top: 15px
+            top: 20px
             left: -50px
-            width: 100%
+            width: 90%
             height: 150px
             border: 4px solid rgba($text, .1)
             border-radius: 75px
+            @media screen and ( max-width: 1440px )
+              width: 100%
             @media screen and ( max-width: 1024px )
               left: 0
             @media screen and ( max-width: 550px )
-              height: 120px
-            @media screen and ( max-width: 375px )
-              height: 80px
+              top: 15px
+              height: 90px
           &:last-child
             margin-right: 0
           .minuses-item__title
             position: relative
             font-size: 36px
-            line-height: 1
+            line-height: 1.4
             max-width: 400px
             margin-bottom: 20px
             @media screen and ( max-width: 550px )
@@ -575,6 +634,8 @@ h1, h2, h3, h4, h5, h6
               font-size: 24px
             @media screen and ( max-width: 375px )
               margin-bottom: 10px
+            @media screen and ( max-width: 320px )
+              font-size: 20px
             &::before
               content: ''
               position: absolute
@@ -586,9 +647,12 @@ h1, h2, h3, h4, h5, h6
               height: 45px
               border-radius: 50%
               background: url(../img/minuses/minus.svg) center no-repeat
+              @media screen and ( max-width: 320px )
+                top: 30px
           .minuses-item__text
             font-size: 24px
             line-height: 1.2
+            max-width: 400px
             @media screen and ( max-width: 550px )
               font-size: 18px
 
@@ -597,12 +661,17 @@ h1, h2, h3, h4, h5, h6
 .result
   @media screen and ( max-width: 1024px )
     margin-bottom: 100px
+  .container
+    padding: 0 5%
   .result__inner
     .result__title
       max-width: 930px
       margin: 0 auto 40px
       @media screen and ( max-width: 425px )
+        font-size: 24px
         margin-bottom: 20px
+        span
+          font-size: 36px
     .result__subtitle
       text-align: center
       max-width: 810px
@@ -707,10 +776,14 @@ h1, h2, h3, h4, h5, h6
   background: $bg
   padding-top: 120px
   margin-bottom: 200px
+  @media screen and ( max-width: 1440px )
+    padding-top: 70px
   @media screen and ( max-width: 1024px )
     margin-bottom: 100px
   @media screen and ( max-width: 768px )
     padding-top: 60px
+  .container
+    padding: 0 5%
   .consultation__inner
     display: flex
     justify-content: space-between
@@ -720,6 +793,8 @@ h1, h2, h3, h4, h5, h6
     .consultation__img
       flex-basis: 35%
       margin-right: 50px
+      @media screen and ( max-width: 1440px )
+        margin-right: 35px
       @media screen and ( max-width: 1024px )
         flex-basis: 100%
         margin-right: 0
@@ -733,12 +808,15 @@ h1, h2, h3, h4, h5, h6
       .consultation__title
         font-size: 36px
         margin-bottom: 70px
+        @media screen and ( max-width: 1440px )
+          font-size: 30px
+          margin-bottom: 50px
         @media screen and ( max-width: 1024px )
           margin-bottom: 35px
         @media screen and ( max-width: 425px )
-          font-size: 30px
+          font-size: 21px
         span
-          @include gradientText ()
+          color: $primary
       .consultation__button
 
 // Program
@@ -771,6 +849,8 @@ h1, h2, h3, h4, h5, h6
         border-radius: 15px
         padding: 40px 80px
         margin-bottom: 20px
+        @media screen and ( max-width: 1440px )
+          padding: 30px 30px 30px 60px
         @media screen and ( max-width: 1024px )
          flex-basis: 100%
         @media screen and ( max-width: 425px )
@@ -788,36 +868,52 @@ h1, h2, h3, h4, h5, h6
           font-weight: 700
           color: #fff
           background: $secondary
-          @media screen and ( max-width: 425px )
+          @media screen and ( max-width: 1440px )
             top: 15px
+            left: -10px
+          @media screen and ( max-width: 425px )
+            width: 46px
+            height: 46px
         .program-list__content
           max-width: 430px
           @media screen and ( max-width: 1439px ) and ( min-width: 1024px)
             max-width: 100%
           @media screen and ( max-width: 1024px )
             max-width: 80%
-          @media screen and ( max-width: 600px )
+          @media screen and ( max-width: 625px )
             max-width: 100%
           .program-list__title
             font-size: 24px
             color: $secondary
             margin-bottom: 10px
+            @media screen and ( max-width: 1440px )
+              font-size: 20px
+              margin-bottom: 5px
             @media screen and ( max-width: 425px )
               font-size: 18px
               line-height: 1.2
           .program-list__text
+            @media screen and ( max-width: 1440px )
+              max-width: 305px
+              font-size: 15px
+              @media screen and ( max-width: 1024px )
+                max-width: 100%
         .program-list__img
-          @media screen and ( max-width: 1439px ) and ( min-width: 1025px)
-            display: none
-          @media screen and ( max-width: 600px )
+          width: 100px
+          height: 100px
+          @media screen and ( max-width: 625px )
             display: none
           img
+            width: 100%
+            height: 100%
         &:last-child
           background: $secondary
           padding: 0
           .program-list__content
             padding: 40px 0 40px 80px
-            @media screen and ( max-width: 680px )
+            @media screen and ( max-width: 1440px )
+              padding: 30px 0 30px 60px
+            @media screen and ( max-width: 860px )
               width: 100%
               text-align: center
               padding: 40px
@@ -838,25 +934,35 @@ h1, h2, h3, h4, h5, h6
               max-width: 280px
               width: 100%
           .program-list__img
+            width: auto
+            height: auto
             position: absolute
             right: 15px
-            @media screen and ( max-width: 1439px ) and ( min-width: 1360px)
-              display: block
-            @media screen and ( max-width: 1360px )
+            @media screen and ( max-width: 1770px )
+              width: 30%
+            @media screen and ( max-width: 1300px ) and ( min-width: 1025px )
               display: none
             @media screen and ( max-width: 1024px )
               display: block
-            @media screen and ( max-width: 680px )
+            @media screen and ( max-width: 860px )
               display: none
 
 // First
 
 .first
   overflow: hidden
+  @media screen and ( max-width: 790px )
+    transform: translateY(-75px)
+  .container
+    padding: 0 10%
+    @media screen and ( max-width: 1440px )
+      padding: 0 5%
   .first__inner
     .first__title
       max-width: 880px
       margin: 0 auto
+      @media screen and ( max-width: 790px )
+        transform: translateY(100px)
       span
         @media screen and ( max-width: 330px )
           font-size: 36px
@@ -868,6 +974,8 @@ h1, h2, h3, h4, h5, h6
         padding: 100px 50px
         margin-right: 100px
         transition: opacity .4s, transform .4s
+        @media screen and ( max-width: 790px )
+          padding: 0
         .first-slider__num
           position: absolute
           top: 10px
@@ -885,6 +993,8 @@ h1, h2, h3, h4, h5, h6
         .first-slider__text
           font-size: 24px
     .first__button
+      position: relative
+      z-index: 1
       display: block
       max-width: 415px
       margin: 0 auto
@@ -919,6 +1029,8 @@ h1, h2, h3, h4, h5, h6
     border-top: 3px solid $primary
     border-left: 3px solid $primary
     opacity: .5
+    @media screen and ( max-width: 790px )
+      bottom: -110px
   .slick-prev
     left: 0
     transform: rotate(-45deg)
@@ -977,13 +1089,14 @@ h1, h2, h3, h4, h5, h6
       @media screen and ( max-width: 425px )
         left: 0
     .first-num-slider__title
-      font-size: 36px
+      font-size: 30px
       max-width: 430px
       @media screen and ( max-width: 790px )
+        font-size: 28px
         text-align: center
         margin: 0 auto
     .first-num-slider__text
-      font-size: 24px
+      font-size: 18px
       max-width: 430px
       @media screen and ( max-width: 790px )
         text-align: center
@@ -994,11 +1107,18 @@ h1, h2, h3, h4, h5, h6
 .features-about-bg
   background: url(../img/features-about/bg.jpg) top no-repeat
   background-size: cover
+  @media screen and ( max-width: 1440px )
+    background: url(../img/features-about/bg.jpg) 10% 0% no-repeat
+  @media screen and ( max-width: 1270px )
+    background: url(../img/features-about/bg.jpg) top no-repeat
 
 // Features
 
 .features
-  margin-bottom: 100px
+  position: relative
+  margin-bottom: 200px
+  @media screen and ( max-width: 1140px )
+    margin-bottom: 100px
   @media screen and ( max-width: 425px )
     margin-bottom: 50px
   .features__title
@@ -1016,6 +1136,8 @@ h1, h2, h3, h4, h5, h6
     .features-list__item
       position: relative
       margin-bottom: 30px
+      &:first-child
+        margin-bottom: 60px
       &:last-child
         margin-bottom: 0
       &::before
@@ -1030,6 +1152,10 @@ h1, h2, h3, h4, h5, h6
         height: 80px
         background: url(../img/features-about/mark.svg) center no-repeat
         background-size: cover
+        @media screen and ( max-width: 1440px )
+          width: 70px
+          height: 70px
+          left: -60px
         @media screen and ( max-width: 720px )
           display: none
       .features-list__title
@@ -1060,7 +1186,7 @@ h1, h2, h3, h4, h5, h6
       flex-basis: 50%
       padding-left: 110px
       margin-bottom: 65px
-      @media screen and ( max-width: 1120px )
+      @media screen and ( max-width: 1280px )
         flex-basis: 100%
         text-align: center
         padding-left: 0
@@ -1075,7 +1201,7 @@ h1, h2, h3, h4, h5, h6
         border-radius: 50%
         background: url(../img/features-about/circle.svg) center no-repeat
         background-size: cover
-        @media screen and ( max-width: 1120px )
+        @media screen and ( max-width: 1280px )
           display: none
       .about-list__title
         position: relative
@@ -1083,12 +1209,14 @@ h1, h2, h3, h4, h5, h6
         line-height: 1
         white-space: nowrap
         @include gradientText ()
+        @media screen and ( max-width: 1715px )
+          font-size: 50px
         @media screen and ( max-width: 425px )
           white-space: normal
           line-height: 1.11
         span
           font-size: 144px
-          @media screen and ( max-width: 1340px )
+          @media screen and ( max-width: 1715px )
             font-size: 100px
           @media screen and ( max-width: 1200px )
             font-size: 80px
@@ -1097,7 +1225,7 @@ h1, h2, h3, h4, h5, h6
             line-height: 1.11
       .about-list__text
         max-width: 425px
-        @media screen and ( max-width: 1120px )
+        @media screen and ( max-width: 1280px )
           margin: 0 auto
 
 // Certificates
@@ -1181,8 +1309,6 @@ h1, h2, h3, h4, h5, h6
       .reviews-slider__item
         display: flex
         margin-right: 60px
-        opacity: .3
-        transition: opacity .6s
         @media screen and ( max-width: 1100px )
           flex-direction: column
           max-width: 500px
@@ -1204,8 +1330,15 @@ h1, h2, h3, h4, h5, h6
             font-weight: 500
       .slick-list
         overflow: visible
+      .slick-slide
+        opacity: 0
+        transition: opacity .6s
       .slick-current.slick-active
         opacity: 1
+      .slick-current.slick-active ~ .slick-slide
+        opacity: .3
+        @media screen and ( max-width: 425px )
+          opacity: 0
       .slick-arrow
         position: absolute
         bottom: -80px
@@ -1281,8 +1414,10 @@ h1, h2, h3, h4, h5, h6
       .efficiency__title
         font-size: 36px
         margin-bottom: 10px
+        @media screen and ( max-width: 1440px )
+          font-size: 26px
         span
-          @include gradientText ()
+          color: $primary
       .efficiency__subtitle
         max-width: 500px
         margin: 0 0 50px auto
@@ -1306,6 +1441,11 @@ h1, h2, h3, h4, h5, h6
     margin: 0 auto 100px
     @media screen and ( max-width: 768px )
       margin-bottom: 50px
+    @media screen and ( max-width: 425px )
+      margin-bottom: 25px
+    span
+      @media screen and ( max-width: 425px )
+        font-size: 24px
   .gyms__slider
     .gyms-slider__item
       max-width: 700px
@@ -1382,7 +1522,7 @@ h1, h2, h3, h4, h5, h6
     width: 680px
     height: 680px
     background: url(../img/subscription/circle.svg) center no-repeat
-    @media screen and ( max-width: 1440px )
+    @media screen and ( max-width: 768px )
       display: none
   .subscription__inner
     display: flex
@@ -1404,6 +1544,8 @@ h1, h2, h3, h4, h5, h6
         font-size: 64px
         color: $primary
         margin-bottom: 80px
+        @media screen and ( max-width: 1440px )
+          margin-bottom: 40px
         @media screen and ( max-width: 1200px )
           text-align: center
         @media screen and ( max-width: 768px )
@@ -1417,6 +1559,9 @@ h1, h2, h3, h4, h5, h6
           font-size: 24px
           padding-left: 55px
           margin-bottom: 50px
+          @media screen and ( max-width: 1440px )
+            font-size: 18px
+            margin-bottom: 25px
           @media screen and ( max-width: 768px )
             margin-bottom: 25px
           @media screen and ( max-width: 425px )
@@ -1457,7 +1602,9 @@ h1, h2, h3, h4, h5, h6
         height: 70px
         font-size: 48px
         color: $text
-        @media screen and ( max-width: 1340px )
+        @media screen and ( max-width: 1800px )
+          font-size: 36px
+        @media screen and ( max-width: 1200px )
           display: none
       .subscription-form__suptitle
         font-size: 36px
@@ -1465,6 +1612,9 @@ h1, h2, h3, h4, h5, h6
       .subscription-form__title
         font-size: 48px
         line-height: 1
+        @media screen and ( max-width: 425px )
+          font-size: 36px
+          line-height: 1.2
       .subscription-form__text
         margin-bottom: 20px
         &:last-of-type
@@ -1556,6 +1706,10 @@ h1, h2, h3, h4, h5, h6
       flex-direction: column
     .certificate__img
       flex-basis: 50%
+      margin-right: 30px
+      @media screen and ( max-width: 900px )
+        margin-right: 0
+        margin-bottom: 15px
       img
     .certificate__content
       flex-basis: 50%
@@ -1586,6 +1740,8 @@ h1, h2, h3, h4, h5, h6
       text-align: center
       @include gradientText ()
       margin-bottom: 40px
+      @media screen and ( max-width: 425px )
+        margin-bottom: 25px
     .footer__row
       display: flex
       justify-content: space-between
@@ -1630,6 +1786,7 @@ h1, h2, h3, h4, h5, h6
           .footer-contacts-item__phone
             font-size: 24px
             font-weight: 500
+            color: #fff
             white-space: nowrap
             @media screen and ( max-width: 320px )
               font-size: 18px

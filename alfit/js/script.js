@@ -45,7 +45,6 @@ $(document).ready(function () {
 
     $('.production__row').slick({
         variableWidth: true,
-        infinite: false,
         touchThreshold: 100,
         responsive: [
             {
@@ -73,6 +72,43 @@ $(document).ready(function () {
     $('.nav__burger').click(function () {
         $(this).toggleClass('nav__burger_active');
         $('.nav__inner').toggleClass('nav__inner_active');
+    });
+
+    // Навигация
+
+    $('#nav__about').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.features').offset().top
+        }, 1000);
+    });
+
+    $('#nav__phyto').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.use__card').offset().top
+        }, 1000);
+    });
+
+    $('#nav__services').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.services').offset().top
+        }, 1000);
+    });
+
+    $('#nav__specialists').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.specialists').offset().top
+        }, 1000);
+    });
+
+    $('#nav__contacts').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.footer').offset().top
+        }, 1000);
     });
 
     // Модальные окна

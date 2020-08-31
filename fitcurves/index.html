@@ -6,7 +6,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Slick Slider -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="css/slick.css">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.min.css">
     <title>Fit Curves</title>
@@ -38,7 +38,12 @@
                 </nav>
 
                 <div class="header__phone">
-                    +7 (964) 603-38-28
+                    <a href="tel:+79646033828">+7 (964) 603-38-28</a>
+                </div>
+
+                <div class="header__city">
+                    <img src="img/intro/map.svg" alt="">
+                    г. Барнаул
                 </div>
 
             </header>
@@ -68,7 +73,7 @@
                 <div class="stats__content">
                     <p class="stats__suptitle">За</p>
                     <h2 class="stats__title">25 лет</h2>
-                    <p class="stats__text">существования всемирной сети фитнес-клубов FitCurves <b>более 5 000 000 женщин</b> достигли желаемых результатов!</p>
+                    <p class="stats__text">существования всемирной сети фитнес-клубов FitCurves <b>более <span>5 000 000</span> женщин</b> достигли желаемых результатов!</p>
                 </div>
 
                 <ul class="stats__list">
@@ -181,37 +186,35 @@
     </section>
 
     <div class="minuses">
-        <div class="container">
-            <div class="minuses__inner">
+        <div class="minuses__inner">
 
-                <div class="minuses__img">
-                    <img src="img/minuses/img.png" alt="">
-                </div>
-
-                <div class="minuses__content">
-                    <div class="minuses__row">
-                        <div class="minuses__item">
-                            <h3 class="minuses-item__title">В обычном тренажерном зале</h3>
-                            <p class="minuses-item__text">Скучно и однообразно</p>
-                        </div>
-                        <div class="minuses__item">
-                            <h3 class="minuses-item__title">Не знаешь, как тренироваться</h3>
-                            <p class="minuses-item__text">И не можешь получить результат</p>
-                        </div>
-                    </div>
-                    <div class="minuses__row">
-                        <div class="minuses__item">
-                            <h3 class="minuses-item__title">Не можешь заставить себя</h3>
-                            <p class="minuses-item__text">Регулярно заниматься</p>
-                        </div>
-                        <div class="minuses__item">
-                            <h3 class="minuses-item__title">Боишься травмироваться</h3>
-                            <p class="minuses-item__text">Рисковать не нужно!</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="minuses__img">
+                <img src="img/minuses/img.png" alt="">
             </div>
+
+            <div class="minuses__content">
+                <div class="minuses__row">
+                    <div class="minuses__item">
+                        <h3 class="minuses-item__title">В обычном тренажерном зале</h3>
+                        <p class="minuses-item__text">Скучно и однообразно</p>
+                    </div>
+                    <div class="minuses__item">
+                        <h3 class="minuses-item__title">Не знаешь, как тренироваться</h3>
+                        <p class="minuses-item__text">И не можешь получить результат</p>
+                    </div>
+                </div>
+                <div class="minuses__row">
+                    <div class="minuses__item">
+                        <h3 class="minuses-item__title">Не можешь заставить себя</h3>
+                        <p class="minuses-item__text">Регулярно заниматься</p>
+                    </div>
+                    <div class="minuses__item">
+                        <h3 class="minuses-item__title">Боишься травмироваться</h3>
+                        <p class="minuses-item__text">Рисковать не нужно!</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -745,8 +748,8 @@
                         <h3 class="footer-contacts__title">Контакты</h3>
                         <div class="footer-contacts__item">
                             <h4 class="footer-contacts-item__title">Телефон</h4>
-                            <p class="footer-contacts-item__phone">+7 (964) 603-38-28</p>
-                            <p class="footer-contacts-item__phone">+7 (995) 336-46-58</p>
+                            <a href="tel:+79646033828" class="footer-contacts-item__phone">+7 (964) 603-38-28</a>
+                            <a href="tel:+79953364658" class="footer-contacts-item__phone">+7 (995) 336-46-58</a>
                         </div>
                         <div class="footer-contacts__item">
                             <h4 class="footer-contacts-item__title">Адрес</h4>
@@ -824,7 +827,7 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Slick Slider -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/slick.min.js"></script>
     <!-- JS -->
     <script src="js/script.js"></script>
 

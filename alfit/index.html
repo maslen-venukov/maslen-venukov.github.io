@@ -21,7 +21,7 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <title>Алфит</title>
 </head>
 <body>
@@ -43,11 +43,11 @@
                                 <p>Меню</p>
                             </div>
                             <div class="nav__inner" data-aos="fade-right">
-                                <a href="#!" class="nav__item">о фитоцентре</a>
-                                <a href="#!" class="nav__item">фитотерапия</a>
-                                <a href="#!" class="nav__item">услуги</a>
-                                <a href="#!" class="nav__item">специалисты</a>
-                                <a href="#!" class="nav__item">контакты</a>
+                                <a href="#!" id="nav__about" class="nav__item">о фитоцентре</a>
+                                <a href="#!" id="nav__phyto" class="nav__item">фитотерапия</a>
+                                <a href="#!" id="nav__services" class="nav__item">услуги</a>
+                                <a href="#!" id="nav__specialists" class="nav__item">специалисты</a>
+                                <a href="#!" id="nav__contacts" class="nav__item">контакты</a>
                             </div>
                         </nav>
                     </div>
@@ -57,7 +57,7 @@
                             <div class="header-phones__item">+7 (3852) 34-30-62</div>
                             <div class="header-phones__item">+7 (960) 966-95-49</div>
                         </div>
-                        <a href="#!" class="header-contacts__link link" data-aos="fade-left" data-aos-delay="400">Связаться по WhatsApp</a>
+                        <a href="tel:+79609669549" class="header-contacts__link link" data-aos="fade-left" data-aos-delay="400">Связаться по WhatsApp</a>
                     </div>
 
                     <div class="header__poor-vision" data-aos="fade-down" data-aos-delay="600">
@@ -313,7 +313,7 @@
                                 <img src="img/services/newspaper.png" alt="">
                             </div>
                             <h3 class="services-pricelist__title">Прайс-лист</h3>
-                            <a href="#!" class="services-pricelist__button button">Скачать</a>
+                            <a href="http://alfit.ru/medcenter/price.pdf" class="services-pricelist__button button">Скачать</a>
                         </div>
                     </div>
                 </div>
@@ -341,7 +341,7 @@
                             <p>Цена:</p>
                             <p>000 р.</p>
                         </div>
-                        <a href="#!" class="services-card__button button">Записаться</a>
+                        <a href="#!" class="services-card__button button" data-modal="form">Записаться</a>
                     </div>
                     <div class="services__card" data-aos="fade-up" data-aos-delay="200">
                         <div class="services-card__img">
@@ -353,7 +353,7 @@
                             <p>Цена:</p>
                             <p>000 р.</p>
                         </div>
-                        <a href="#!" class="services-card__button button">Записаться</a>
+                        <a href="#!" class="services-card__button button" data-modal="form">Записаться</a>
                     </div>
                     <div class="services__card" data-aos="fade-up" data-aos-delay="400">
                         <div class="services-card__img">
@@ -365,7 +365,7 @@
                             <p>Цена:</p>
                             <p>000 р.</p>
                         </div>
-                        <a href="#!" class="services-card__button button">Записаться</a>
+                        <a href="#!" class="services-card__button button" data-modal="form">Записаться</a>
                     </div>
                     <div class="services__card" data-aos="fade-up" data-aos-delay="600">
                         <div class="services-card__img">
@@ -377,7 +377,7 @@
                             <p>Цена:</p>
                             <p>000 р.</p>
                         </div>
-                        <a href="#!" class="services-card__button button">Записаться</a>
+                        <a href="#!" class="services-card__button button" data-modal="form">Записаться</a>
                     </div>
                 </div>
 
@@ -814,7 +814,7 @@
                             <img src="img/production/img-1.jpg" alt="">
                         </div>
                         <p class="production-item__text">Руководитель предприятий – известный врач-онколог, фитотерапевт, кандидат медицинских наук Корепанов Сергей Валерьевич.  Главная цель его работы - признание фитотерапии, как части современной, практической медицины.  Под его руководством постоянно ведутся научные исследования с применением лекарственных растений в области профилактики и вспомогательного лечения онкозаболеваний и других тяжелых патологий.</p>
-                        <a href="#!" class="production-item__button button">Перейти на сайт</a>
+                        <a href="http://alfit.ru/korepanov/" class="production-item__button button">Перейти на сайт</a>
                     </div>
                     <div class="production__item">
                         <h3 class="production-item__title"><br><br></h3>
@@ -822,7 +822,7 @@
                             <img src="img/production/img-2.jpg" alt="">
                         </div>
                         <p class="production-item__text">В своей продукции компании удалось соединить бесценные дары Алтайской природы — лекарственные травы и накопленный веками опыт поколений в области народной медицины, науки и фитотерапии.</p>
-                        <a href="#!" class="production-item__button button">Перейти на сайт</a>
+                        <a href="http://alfit.ru/about/" class="production-item__button button">Перейти на сайт</a>
                     </div>
                     <div class="production__item">
                         <h3 class="production-item__title"><br><br></h3>
@@ -830,7 +830,7 @@
                             <img src="img/production/img-3.jpg" alt="">
                         </div>
                         <p class="production-item__text">При разработке фитокомпозиций ТМ «Алфит» используются принципы европейской школы фитотерапии. Обычно фитосборы содержат 4-6 лекарственных трав, в которых, как правило, одно или два растения являются основными, другие – вспомогательными, корректирующими лечебный эффект, вкус, запах т.д.</p>
-                        <a href="#!" class="production-item__button button">Перейти на сайт</a>
+                        <a href="http://alfit.ru/catalog/" class="production-item__button button">Перейти на сайт</a>
                     </div>
                     <div class="production__item">
                         <h3 class="production-item__title"><br><br></h3>
@@ -838,7 +838,7 @@
                             <img src="img/production/img-4.jpg" alt="">
                         </div>
                         <p class="production-item__text">Багаж научных знаний в сочетании с богатейшим практическим опытом врача-фитотерапевта позволили создать продукцию, обладающую поистине уникальными свойствами. Эффективность действия фитокомпозиций обусловлена сбалансированностью рецептуры, синергизмом компонентов и оригинальными технологиями производства.</p>
-                        <a href="#!" class="production-item__button button">Перейти на сайт</a>
+                        <a href="http://alfit.ru/about/" class="production-item__button button">Перейти на сайт</a>
                     </div>
                 </div>
 
@@ -922,7 +922,7 @@
                         <input class="modal-online__input form__input" type="text" name="tel" placeholder="Номер телефона">
                         <button class="modal-online__button form__button button" type="submit">Отправить</button>
                         <small class="or">или</small>
-                        <a href="#!" class="modal-online__whatsapp">Связаться по WhatsApp</a>
+                        <a href="tel:+79609669549" class="modal-online__whatsapp">Связаться по WhatsApp</a>
                     </form>
                     <small>Нажимая на кнопку вы даете согласие на обработку своих персональных данных.</small>
                     <a href="#!" class="modal-online__link" data-modal="agreement">Пользовательское соглашение</a>
