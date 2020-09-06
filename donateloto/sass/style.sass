@@ -1,0 +1,552 @@
+@import 'normalize'
+@import 'global'
+@import 'fonts'
+
+.wrapper
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+.header
+  margin-bottom: 30px
+  .header__upper
+    font-size: 16px
+    color: #fff
+    background: $gradient
+    box-shadow: 0 3px 23px rgba(#000, .33)
+    padding: 25px 0
+    .header__inner
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .header__logo
+      .header__btns
+        display: flex
+        align-items: center
+        .header__money
+          margin-right: 15px
+        .header__user
+          position: relative
+          display: flex
+          align-items: center
+          line-height: 1
+          background: rgba(#fff, .25)
+          border-radius: 19px
+          padding: 5px 35px 5px 5px
+          margin-right: 15px
+          &::after
+            content: ''
+            position: absolute
+            right: 15px
+            top: 50%
+            transform: translateY(-100%) rotate(135deg)
+            width: 8px
+            height: 8px
+            border-top: 2px solid #fff
+            border-right: 2px solid #fff
+            cursor: pointer
+          img
+            margin-right: 18px
+        .header__replenish
+          line-height: 1
+          color: $dark
+          background: #fff
+          border-radius: 19px
+          padding: 10px 20px
+  .header__lower
+    background: rgba(#eee, .4)
+    padding: 20px 0
+    .nav
+      .nav__inner
+        display: flex
+        .nav__item
+          font-size: 20px
+          font-weight: 700
+          color: $light
+          padding: 7px 20px
+          border-radius: 8px
+          margin-right: 25px
+          transition: .2s
+          &:last-child
+            margin-right: 0
+          &--active,
+          &:hover
+            font-weight: 400
+            color: #fff
+            background: $light
+
+.games
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  .games__card
+    width: 380px
+    background: #f8f8f8
+    border-radius: 10px
+    margin-bottom: 30px
+    .games-card__header
+      position: relative
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 20px 20px 15px
+      border-radius: 10px 10px 0 0
+      margin-bottom: 20px
+      &::after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 5px
+        width: 100%
+        height: 1px
+        background: url(../img/games/border.svg)
+        background-repeat: no-repeat
+      .games-card__number
+        font-weight: 500
+      .games-card__price
+        color: #fff
+        display: flex
+        background: $gradient
+        padding: 12px 20px
+        border-radius: 7px
+        img
+          margin-right: 15px
+    .games-card__body
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      padding: 0 20px 20px
+      .games-card__participants,
+      .games-card__chance
+        position: relative
+        font-size: 14px
+        color: $light
+        padding-left: 20px
+        margin-bottom: 20px
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          background-position: center
+          background-repeat: no-repeat
+          background-size: cover
+      .games-card__participants
+        .games-card__link
+          color: #535da1
+          text-decoration: underline
+        &::before
+          width: 12px
+          height: 16px
+          top: 1px
+          background-image: url(../img/games/participant.svg)
+      .games-card__chance
+        &::before
+          width: 12px
+          height: 12px
+          top: 3px
+          background-image: url(../img/games/percent.svg)
+      .games-card__btn
+        width: 100%
+        font-weight: 500
+        color: #fff
+        text-align: center
+        background: $light
+        padding: 15px
+        border-radius: 7px
+    &--completed
+      .games-card__header
+        .games-card__price
+          background: $light
+      .games-card__body
+        .games-card__btn
+          background: rgba($light, .2)
+          color: $light
+    &--participating
+      .games-card__header
+        color: #fff
+        background: $gradient
+        &::after
+          display: none
+        .games-card__price
+          background: none
+      .games-card__body
+        .games-card__participants
+          padding-left: 0
+          &::before
+            display: none
+        .games-card__btn
+          display: flex
+          justify-content: space-between
+          background: rgba($light, .2)
+          color: $light
+          padding: 0
+          span
+            padding: 15px
+            &:first-child
+              font-weight: 400
+              color: #fff
+              background: $gradient
+              border-radius: 7px 0 0 7px
+            &:last-child
+              font-weight: 700
+
+
+.footer
+  background: #f7f7f7
+  padding: 30px 0
+  margin-top: auto
+  .footer__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex: 1 1 auto
+    font-size: 14px
+    color: rgba($dark, .6)
+    .footer__copyright
+    .footer_links
+      display: flex
+      .footer__link
+        text-decoration: underline
+        margin-right: 25px
+        &:last-child
+          margin-right: 0
+    .footer__madeby
+      display: flex
+      align-items: center
+      width: 125px
+      color: $dark
+      img
+        margin-left: 5px
+
+.main
+  display: flex
+  justify-content: space-between
+  .sidebar
+    flex-basis: 18.333%
+    min-width: 220px
+  .content
+    flex-basis: 80%
+    margin-left: 20px
+
+.avatar
+  position: relative
+  & > img
+    width: 100%
+    border-radius: 10px
+    object-fit: cover
+  .avatar__btn
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 25px
+    height: 25px
+    background: #fff
+    border-radius: 6px
+  .avatar__close
+    top: 7px
+    right: 7px
+  .avatar__upload
+    bottom: 7px
+    left: 7px
+
+.profile
+  background: #f8f8f8
+  padding: 25px 25px 35px
+  border-radius: 10px
+  margin-bottom: 20px
+  .profile__title
+    margin-bottom: 25px
+  .profile__form
+    position: relative
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    .profile-form__label
+      flex-basis: 48%
+      margin-bottom: 15px
+      &:last-of-type
+        margin-bottom: 30px
+      .profile-form__text
+        font-size: 14px
+        color: $light
+        margin-left: 20px
+        margin-bottom: 12px
+        span
+          color: #d20000
+      .profile-form__input
+    .profile-form__btn
+      display: block
+      width: 100%
+      max-width: 265px
+      font-size: 18px
+      color: #fff
+      font-weight: 500
+      background: $gradient
+      padding: 20px
+      border: 0
+      border-radius: 10px
+      margin-left: auto
+    .profile__updated
+      position: absolute
+      width: 100%
+      height: 100%
+      background: $gradient
+      box-shadow: 0 0 55px rgba(#000, .16)
+      border-radius: 8px
+      display: flex
+      justify-content: center
+      align-items: center
+      font-size: 30px
+      font-weight: 500
+      color: #fff
+
+.tabs,
+.withdrawal,
+.balance,
+.history
+  width: 80%
+  margin-left: auto
+
+.tabs
+  display: flex
+  .tabs__item
+    font-weight: 500
+    color: $dark
+    background: #f8f8f8
+    border-radius: 10px 10px 0 0
+    padding: 20px 40px
+    margin-right: 20px
+    &:last-child
+      margin-right: 0
+    &--active
+      color: #fff
+      background: $gradient
+
+.withdrawal
+  background: #f8f8f8
+  padding: 20px
+  border-radius: 0 10px 10px 10px
+  margin-bottom: 100px
+  .withdrawal__header,
+  .withdrawal__row
+    display: flex
+    justify-content: space-between
+    margin-bottom: 2px
+    .withdrawal__col
+      font-size: 14px
+      color: $light
+      text-align: center
+      background: #fff
+      padding: 15px 10px
+      margin-right: 10px
+      &:last-child
+        margin-right: 0
+      &.withdrawal__number
+        flex-basis: 5.882%
+      &.withdrawal__date,
+      &.withdrawal__balance
+        flex-basis: 17.647%
+      &.withdrawal__change
+        flex-basis: 20%
+      &.withdrawal__comment
+        flex-basis: 41.176%
+  .withdrawal__row
+    &:last-of-type
+      .withdrawal__col
+        border-radius: 0 0 5px 5px 
+  .withdrawal__header
+    .withdrawal__col
+      border-radius: 5px 5px 0 0
+
+.balance
+  background: #f8f8f8
+  padding: 30px 25px
+  display: flex
+  justify-content: space-between
+  border-radius: 0 10px 10px 10px
+  margin-bottom: 20px
+  .balance__info
+    position: relative
+    flex-basis: 44%
+    margin-top: 20px
+    .balance__title
+      font-size: 30px
+    .balance__subtitle
+      font-size: 14px
+      color: $light
+    .balance__btn
+      position: absolute
+      top: 0
+      right: 0
+      width: 55px
+      height: 55px
+      display: flex
+      justify-content: center
+      align-items: center
+      background: $gradient
+      border-radius: 10px
+  .balance__form
+    position: relative
+    flex-basis: 48%
+    .balance-form__label
+      display: block
+      margin-bottom: 15px
+      &:last-of-type
+        margin-bottom: 30px
+      .balance-form__text
+        font-size: 14px
+        color: $light
+        margin-left: 20px
+        margin-bottom: 12px
+        span
+          color: #d20000
+      .balance-form__input
+    .balance-form__btn
+      display: block
+      width: 100%
+      max-width: 265px
+      font-size: 18px
+      color: #fff
+      font-weight: 500
+      background: $gradient
+      padding: 20px
+      border: 0
+      border-radius: 10px
+      margin-left: auto
+    .balance__formalized
+      position: absolute
+      width: 100%
+      height: 100%
+      background: $gradient
+      box-shadow: 0 0 55px rgba(#000, .16)
+      border-radius: 8px
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      font-size: 30px
+      line-height: 1.3
+      font-weight: 500
+      color: #fff
+      img
+        margin-bottom: 15px
+      p
+        max-width: 270px
+        text-align: center
+
+.history
+  background: #f8f8f8
+  padding: 30px 25px
+  border-radius: 10px
+  margin-bottom: 100px
+  .history__title
+    margin-bottom: 25px
+  .history__header,
+  .history__row
+    display: flex
+    justify-content: space-between
+    margin-bottom: 2px
+    .history__col
+      font-size: 14px
+      color: $light
+      text-align: center
+      background: #fff
+      padding: 15px 10px
+      margin-right: 10px
+      &:last-child
+        margin-right: 0
+      &.history__bucket
+        flex-basis: 5.882%
+        background: none
+        img
+          margin: 0 auto
+      &.history__date,
+      &.history__money
+        flex-basis: 17.647%
+      &.history__comment
+        flex: 35.294%
+      &.history__status
+        flex: 23.529%
+  .history__row
+    &:last-of-type
+      .history__col
+        border-radius: 0 0 5px 5px 
+  .history__header
+    .history__col
+      border-radius: 5px 5px 0 0
+
+.popup
+  width: 100vw
+  height: 100vh
+  background: rgba(#000, .1)
+  display: flex
+  justify-content: center
+  align-items: center
+  .popup__inner
+    position: relative
+    border-radius: 10px
+    background: #f8f8f8
+    box-shadow: 0 0 88px rgba(96, 96, 96, .16)
+    width: 100%
+    max-width: 490px
+    height: 100%
+    max-height: 370px
+    padding: 40px 30px
+    .popup__title
+      font-size: 30px
+      margin-bottom: 30px
+    .popup__form
+      .popup-form__label
+        display: block
+        margin-bottom: 40px
+        .popup-form__text
+          font-size: 14px
+          color: $light
+          margin-left: 20px
+          margin-bottom: 12px
+          span
+            color: #d20000
+        .popup-form__input
+          margin-bottom: 15px
+      .popup-form__btn
+        display: block
+        width: 100%
+        max-width: 265px
+        font-size: 18px
+        color: #fff
+        font-weight: 500
+        background: $gradient
+        padding: 20px
+        border: 0
+        border-radius: 10px
+        margin: 0 auto
+    .popup__close
+      position: absolute
+      top: 54px
+      right: 44px
+      img
+        width: 14px
+        height: 14px
+    .popup__replenished
+      position: absolute
+      top: 15px
+      bottom: 15px
+      left: 15px
+      right: 15px
+      background: $gradient
+      box-shadow: 0 0 55px rgba(#000, .16)
+      border-radius: 8px
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      font-size: 30px
+      line-height: 1.3
+      font-weight: 500
+      color: #fff
+      img
+        margin-bottom: 20px
+      p
+        max-width: 270px
+        text-align: center

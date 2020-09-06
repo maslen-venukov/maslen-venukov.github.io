@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Donateloto</title>
+</head>
+<body>
+
+    <div class="popup">
+        <div class="popup__inner">
+            <h2 class="popup__title title--sm">Ваш балланс: 1337 ₽</h2>
+            <form method="POST" class="popup__form">
+                <label class="popup-form__label">
+                    <p class="popup-form__text">Сумма пополнения</p>
+                    <input type="text" name="replenishment-amount" placeholder="|" class="popup-form__input">
+                    <p class="popup-form__text">Минимальная сумма пополнения: 100 ₽</p>
+                </label>
+                <button type="submit" class="popup-form__btn">Пополнить</button>
+            </form>
+            <div class="popup__close">
+                <img src="img/sidebar/close.svg" alt="">
+            </div>
+            <div class="popup__replenished">
+                <img src="img/history/money.svg" alt="">
+                <p>Балик пополнен, все чил</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

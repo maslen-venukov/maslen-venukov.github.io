@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Donateloto</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="header__upper">
+                <div class="container">
+                    <div class="header__inner">
+
+                        <div class="header__logo">
+                            <img src="img/header/logo.svg" alt="">
+                        </div>
+
+                        <div class="header__btns">
+                            <div class="header__money">
+                                1337 ₽
+                            </div>
+                            <div class="header__user">
+                                <img src="img/header/user.svg" alt="">
+                                ZetBlack
+                            </div>
+                            <div class="header__replenish">
+                                Пополнить баланс
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="header__lower">
+                <div class="container">
+                    <nav class="nav">
+                        <div class="nav__inner">
+
+                            <a href="#!" class="nav__item nav__item--active">Все игры</a>
+                            <a href="#!" class="nav__item">Подкрученные игры</a>
+                            <a href="#!" class="nav__item">Игры за 300</a>
+                            <a href="#!" class="nav__item">Не подкрученные игры</a>
+                            <a href="#!" class="nav__item">Чел ты</a>
+                            <a href="#!" class="nav__item">Ты не чел</a>
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="page">
+            <div class="container">
+
+                <h1 class="title">Личный кабинет</h1>
+
+                <main class="main">
+                    <aside class="sidebar">
+
+                        <div class="avatar">
+                            <a href="#!" class="avatar__btn avatar__close">
+                                <img src="img/sidebar/close.svg" alt="">
+                            </a>
+                            <img src="img/sidebar/avatar.jpg" alt="">
+                            <a href="#!" class="avatar__btn avatar__upload">
+                                <img src="img/sidebar/upload.svg" alt="">
+                            </a>
+                        </div>
+
+                    </aside>
+                    <div class="content">
+
+                        <div class="profile">
+                            <h2 class="profile__title title--sm">Профиль пользователя Autist</h2>
+                            <form class="profile__form">
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Email <span>*</span></p>
+                                    <input type="text" name="email" placeholder="|" class="profile-form__input">
+                                </label>
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Новый пароль</p>
+                                    <input type="password" name="password-1" placeholder="|" class="profile-form__input">
+                                </label>
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Телефон</p>
+                                    <input type="text" name="tel" placeholder="|" class="profile-form__input">
+                                </label>
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Повтор пароля</p>
+                                    <input type="password" name="password-2" placeholder="|" class="profile-form__input">
+                                </label>
+                                <button type="submit" class="profile-form__btn">Обновить профиль</button>
+                                <div class="profile__updated">Профиль обновлен, все чил!</div>
+                            </form>
+                        </div>
+
+                    </div>
+                </main>
+
+                <div class="tabs">
+                    <a href="#!" class="tabs__item">Вывод средств</a>
+                    <a href="#!" class="tabs__item tabs__item--active">История изменения баланса</a>
+                </div>
+
+                <div class="balance">
+                    <div class="balance__info">
+                        <h2 class="balance__title title--sm">Ваш балланс: 1337 ₽</h2>
+                        <p class="balance__subtitle">Минимальная сумма вывода: 100 ₽ </p>
+                        <a href="#!" class="balance__btn">
+                            <img src="img/balance/plus.svg" alt="">
+                        </a>
+                    </div>
+                    <form class="balance__form">
+                        <label class="balance-form__label">
+                            <p class="balance-form__text">Номер кошелька Яндекс.Деньги <span>*</span></p>
+                            <input type="text" name="wallet-number" placeholder="|" class="balance-form__input">
+                        </label>
+                        <label class="balance-form__label">
+                            <p class="balance-form__text">Сумма запроса <span>*</span></p>
+                            <input type="text" name="request-amount" placeholder="|" class="balance-form__input">
+                        </label>
+                        <button type="submit" class="balance-form__btn">Вывести</button>
+                    </form>
+                </div>
+
+                <div class="history">
+                    <h2 class="history__title title--sm">История изменения баланса</h2>
+                    <div class="history__header">
+                        <div class="history__col history__bucket"></div>
+                        <div class="history__col history__date">Дата</div>
+                        <div class="history__col history__money">Сумма запроса</div>
+                        <div class="history__col history__comment">Комментарий</div>
+                        <div class="history__col history__status">Статус</div>
+                    </div>
+                    <div class="history__row history__row--consideration">
+                        <div class="history__col history__bucket">
+                            <a href="#!" class="history__link">
+                                <img src="img/history/red-bucket.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="history__col history__date">2020-09-03 19:54</div>
+                        <div class="history__col history__money">- 200.00 ₽</div>
+                        <div class="history__col history__comment">Яндекс.Деньги 410016615146833</div>
+                        <div class="history__col history__status">Рассмотрение</div>
+                    </div>
+                    <div class="history__row history__row--consideration">
+                        <div class="history__col history__bucket">
+                            <a href="#!" class="history__link">
+                                <img src="img/history/grey-bucket.svg" alt=""></div>
+                            </a>
+                        <div class="history__col history__date">2020-09-03 19:54</div>
+                        <div class="history__col history__money">- 200.00 ₽</div>
+                        <div class="history__col history__comment">Яндекс.Деньги 410016615146833</div>
+                        <div class="history__col history__status">Рассмотрение</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

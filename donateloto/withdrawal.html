@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Donateloto</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="header__upper">
+                <div class="container">
+                    <div class="header__inner">
+
+                        <div class="header__logo">
+                            <img src="img/header/logo.svg" alt="">
+                        </div>
+
+                        <div class="header__btns">
+                            <div class="header__money">
+                                1337 ₽
+                            </div>
+                            <div class="header__user">
+                                <img src="img/header/user.svg" alt="">
+                                ZetBlack
+                            </div>
+                            <div class="header__replenish">
+                                Пополнить баланс
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="header__lower">
+                <div class="container">
+                    <nav class="nav">
+                        <div class="nav__inner">
+
+                            <a href="#!" class="nav__item nav__item--active">Все игры</a>
+                            <a href="#!" class="nav__item">Подкрученные игры</a>
+                            <a href="#!" class="nav__item">Игры за 300</a>
+                            <a href="#!" class="nav__item">Не подкрученные игры</a>
+                            <a href="#!" class="nav__item">Чел ты</a>
+                            <a href="#!" class="nav__item">Ты не чел</a>
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="page">
+            <div class="container">
+
+                <h1 class="title">Личный кабинет</h1>
+
+                <main class="main">
+                    <aside class="sidebar">
+
+                        <div class="avatar">
+                            <a href="#!" class="avatar__btn avatar__close">
+                                <img src="img/sidebar/close.svg" alt="">
+                            </a>
+                            <img src="img/sidebar/avatar.jpg" alt="">
+                            <a href="#!" class="avatar__btn avatar__upload">
+                                <img src="img/sidebar/upload.svg" alt="">
+                            </a>
+                        </div>
+
+                    </aside>
+                    <div class="content">
+
+                        <div class="profile">
+                            <h2 class="profile__title title--sm">Профиль пользователя Autist</h2>
+                            <form method="POST" class="profile__form">
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Email <span>*</span></p>
+                                    <input type="text" name="email" placeholder="|" class="profile-form__input">
+                                </label>
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Новый пароль</p>
+                                    <input type="password" name="password-1" placeholder="|" class="profile-form__input">
+                                </label>
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Телефон</p>
+                                    <input type="text" name="tel" placeholder="|" class="profile-form__input">
+                                </label>
+                                <label class="profile-form__label">
+                                    <p class="profile-form__text">Повтор пароля</p>
+                                    <input type="password" name="password-2" placeholder="|" class="profile-form__input">
+                                </label>
+                                <button type="submit" class="profile-form__btn">Обновить профиль</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </main>
+
+                <div class="tabs">
+                    <a href="#!" class="tabs__item">История изменения баланса</a>
+                    <a href="#!" class="tabs__item tabs__item--active">Вывод средств</a>
+                </div>
+
+                <div class="withdrawal">
+                    <div class="withdrawal__header">
+                        <div class="withdrawal__col withdrawal__number">№</div>
+                        <div class="withdrawal__col withdrawal__date">Дата</div>
+                        <div class="withdrawal__col withdrawal__change">Приход/расход</div>
+                        <div class="withdrawal__col withdrawal__balance">Остаток</div>
+                        <div class="withdrawal__col withdrawal__comment">Комментарий</div>
+                    </div>
+                    <div class="withdrawal__row">
+                        <div class="withdrawal__col withdrawal__number">1</div>
+                        <div class="withdrawal__col withdrawal__date">2020-09-03 19:54</div>
+                        <div class="withdrawal__col withdrawal__change">- 200.00 ₽</div>
+                        <div class="withdrawal__col withdrawal__balance">615.00 ₽</div>
+                        <div class="withdrawal__col withdrawal__comment">Оплата доступа к публикации "Главная"</div>
+                    </div>
+                    <div class="withdrawal__row">
+                        <div class="withdrawal__col withdrawal__number">2</div>
+                        <div class="withdrawal__col withdrawal__date">2020-09-03 19:16</div>
+                        <div class="withdrawal__col withdrawal__change">+ 11.00 ₽</div>
+                        <div class="withdrawal__col withdrawal__balance">815.00 ₽</div>
+                        <div class="withdrawal__col withdrawal__comment">Награда за победу в розыгрыше: 123</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
