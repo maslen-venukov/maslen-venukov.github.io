@@ -15,21 +15,36 @@
                 <a href="#!" class="auth-popup__login">Авторизация</a>
                 <a href="#!" class="auth-popup__reg auth-popup__reg--active">Регистрация</a>
             </div>
-            <div class="auth-popup__body">
+            <div class="auth-popup__body auth-popup__body--login">
                 <form method="POST" class="auth-popup__form">
                     <div class="auth-popup-form__input auth-popup-form__input--login">
                         <input type="text" name="login" placeholder="Логин">
                     </div>
                     <div class="auth-popup-form__input auth-popup-form__input--password">
-                        <input type="password" name="password" placeholder="Пароль">
+                        <input type="password" name="login" placeholder="Пароль">
+                    </div>
+                    <button type="submit" class="auth-popup-form__btn btn">Вход</button>
+                </form>
+                <a href="#!" class="auth-popup__link">Потеряли пароль?</a>
+            </div>
+            <div class="auth-popup__body auth-popup__body--reg">
+                <p class="auth-popup__info"><b>ВНИМАНИЕ:</b> Подтвердите номер полученным кодом. 79999994700</p>
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input disabled type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--password">
+                        <input disabled type="password" name="password" placeholder="Пароль">
                     </div>
                     <div class="auth-popup-form__input auth-popup-form__input--email">
-                        <input type="text" name="email" placeholder="E-mail">
+                        <input disabled type="text" name="email" placeholder="E-mail">
                     </div>
                     <div class="auth-popup-form__input auth-popup-form__input--phone">
-                        <input type="text" name="phone" placeholder="Номер телефона">
+                        <input disabled type="text" name="phone" placeholder="Номер телефона">
                     </div>
-                    <p class="auth-popup-form__text">На указанный номер будет выслан код подтверждения.</p>
+                    <div class="auth-popup-form__input auth-popup-form__input--key">
+                        <input type="text" name="key" placeholder="Код из СМС">
+                    </div>
                     <button type="submit" class="auth-popup-form__btn btn">Зарегестрироваться</button>
                 </form>
             </div>

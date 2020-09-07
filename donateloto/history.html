@@ -28,7 +28,7 @@
                                 <img src="img/header/user.svg" alt="">
                                 <span>ZetBlack</span>
                             </div>
-                            <a href="#!" class="header__replenish">
+                            <a href="#!" class="header__replenish" data-popup="withdrawal">
                                 <img src="img/header/plus.svg" alt="">
                                 <span>Пополнить баланс</span>
                             </a>
@@ -111,7 +111,7 @@
                     <div class="balance__info">
                         <h2 class="balance__title title--sm">Ваш балланс: 1337 ₽</h2>
                         <p class="balance__subtitle">Минимальная сумма вывода: 100 ₽ </p>
-                        <a href="#!" class="balance__btn">
+                        <a href="#!" class="balance__btn" data-popup="withdrawal">
                             <img src="img/balance/plus.svg" alt="">
                         </a>
                     </div>
@@ -161,6 +161,27 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <div class="popup">
+            <div class="popup__inner">
+                <h2 class="popup__title title--sm">Ваш балланс: 1337 ₽</h2>
+                <form method="POST" class="popup__form">
+                    <label class="popup-form__label">
+                        <p class="popup-form__text">Сумма пополнения</p>
+                        <input type="text" name="replenishment-amount" placeholder="|" class="popup-form__input">
+                        <p class="popup-form__text">Минимальная сумма пополнения: 100 ₽</p>
+                    </label>
+                    <button type="submit" class="popup-form__btn btn">Пополнить</button>
+                </form>
+                <div class="popup__close">
+                    <img src="img/sidebar/close.svg" alt="">
+                </div>
+                <div class="popup__replenished">
+                    <img src="img/history/money.svg" alt="">
+                    <p>Балик пополнен, все чил</p>
+                </div>
             </div>
         </div>
 

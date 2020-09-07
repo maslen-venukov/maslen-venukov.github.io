@@ -15,17 +15,33 @@
                 <a href="#!" class="auth-popup__login auth-popup__login--active">Авторизация</a>
                 <a href="#!" class="auth-popup__reg">Регистрация</a>
             </div>
-            <div class="auth-popup__body">
+            <div class="auth-popup__body auth-popup__body--login">
+                <p class="auth-popup__info">Мы вышлем вам ссылку для смены пароля на почту привязанную к вашему аккаунту</p>
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input type="text" name="login" placeholder="Логин или E-mail">
+                    </div>
+                    <button type="submit" class="auth-popup-form__btn btn">Получить новый пароль</button>
+                </form>
+                <a href="#!" class="auth-popup__link">Я помню свой пароль</a>
+            </div>
+            <div class="auth-popup__body auth-popup__body--reg">
                 <form method="POST" class="auth-popup__form">
                     <div class="auth-popup-form__input auth-popup-form__input--login">
                         <input type="text" name="login" placeholder="Логин">
                     </div>
                     <div class="auth-popup-form__input auth-popup-form__input--password">
-                        <input type="password" name="login" placeholder="Пароль">
+                        <input type="password" name="password" placeholder="Пароль">
                     </div>
-                    <button type="submit" class="auth-popup-form__btn btn">Вход</button>
+                    <div class="auth-popup-form__input auth-popup-form__input--email">
+                        <input type="text" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--phone">
+                        <input type="text" name="phone" placeholder="Номер телефона">
+                    </div>
+                    <p class="auth-popup-form__text">На указанный номер будет выслан код подтверждения.</p>
+                    <button type="submit" class="auth-popup-form__btn btn">Зарегестрироваться</button>
                 </form>
-                <a href="#!" class="auth-popup__link">Потеряли пароль?</a>
             </div>
         </div>
     </div>

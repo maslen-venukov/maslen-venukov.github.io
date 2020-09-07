@@ -9,23 +9,42 @@
 </head>
 <body>
 
-    <div class="popup">
-        <div class="popup__inner">
-            <h2 class="popup__title title--sm">Ваш балланс: 1337 ₽</h2>
-            <form method="POST" class="popup__form">
-                <label class="popup-form__label">
-                    <p class="popup-form__text">Сумма пополнения</p>
-                    <input type="text" name="replenishment-amount" placeholder="|" class="popup-form__input">
-                    <p class="popup-form__text">Минимальная сумма пополнения: 100 ₽</p>
-                </label>
-                <button type="submit" class="popup-form__btn btn">Пополнить</button>
-            </form>
-            <div class="popup__close">
-                <img src="img/sidebar/close.svg" alt="">
+    <div class="auth-popup popup">
+        <div class="auth-popup__inner">
+            <div class="auth-popup__header">
+                <a href="#!" class="auth-popup__login auth-popup__login--active">Авторизация</a>
+                <a href="#!" class="auth-popup__reg">Регистрация</a>
             </div>
-            <div class="popup__replenished">
-                <img src="img/history/money.svg" alt="">
-                <p>Балик пополнен, все чил</p>
+            <div class="auth-popup__body auth-popup__body--login">
+                <p class="auth-popup__error">Неизвестное имя пользователя. Перепроверьте или попробуйте ваш адрес email</p>
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--password">
+                        <input type="password" name="login" placeholder="Пароль">
+                    </div>
+                    <button type="submit" class="auth-popup-form__btn btn">Вход</button>
+                </form>
+                <a href="#!" class="auth-popup__link">Потеряли пароль?</a>
+            </div>
+            <div class="auth-popup__body auth-popup__body--reg">
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--password">
+                        <input type="password" name="password" placeholder="Пароль">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--email">
+                        <input type="text" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--phone">
+                        <input type="text" name="phone" placeholder="Номер телефона">
+                    </div>
+                    <p class="auth-popup-form__text">На указанный номер будет выслан код подтверждения.</p>
+                    <button type="submit" class="auth-popup-form__btn btn">Зарегестрироваться</button>
+                </form>
             </div>
         </div>
     </div>

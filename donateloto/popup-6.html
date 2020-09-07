@@ -12,14 +12,38 @@
     <div class="auth-popup popup">
         <div class="auth-popup__inner">
             <div class="auth-popup__header">
-                <a href="#!" class="auth-popup__login auth-popup__login--active">Авторизация</a>
-                <a href="#!" class="auth-popup__reg">Регистрация</a>
+                <a href="#!" class="auth-popup__login">Авторизация</a>
+                <a href="#!" class="auth-popup__reg auth-popup__reg--active">Регистрация</a>
             </div>
-            <div class="auth-popup__body">
-                <div class="auth-popup__formed">
-                    <p class="auth-popup__info auth-popup__info--white">Новый пароль был сформирован! Проверьте свою почту.</p>
-                    <a href="#!" class="auth-popup__thanks">Сенкс, все чил!</a>
-                </div>
+            <div class="auth-popup__body auth-popup__body--login">
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--password">
+                        <input type="password" name="login" placeholder="Пароль">
+                    </div>
+                    <button type="submit" class="auth-popup-form__btn btn">Вход</button>
+                </form>
+                <a href="#!" class="auth-popup__link">Потеряли пароль?</a>
+            </div>
+            <div class="auth-popup__body auth-popup__body--reg">
+                <p class="auth-popup__info"><b>ОШИБКА:</b> SMS не отправлено. Попробуйте повторить запрос через 3-5 минут.</p>
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--password">
+                        <input type="password" name="password" placeholder="Пароль">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--email">
+                        <input type="text" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--phone">
+                        <input type="text" name="phone" placeholder="Номер телефона">
+                    </div>
+                    <button type="submit" class="auth-popup-form__btn btn">Зарегестрироваться</button>
+                </form>
             </div>
         </div>
     </div>
