@@ -4,6 +4,8 @@
 
 .header
   margin-bottom: 30px
+  @media screen and ( max-width: 500px )
+    margin-bottom: 15px
   .header__upper
     font-size: 16px
     color: #fff
@@ -439,12 +441,21 @@
     height: 25px
     background: #fff
     border-radius: 6px
+    @media screen and ( max-width: 575px )
+      width: 30px
+      height: 30px
   .avatar__close
     top: 7px
     right: 7px
+    img
+      @media screen and ( max-width: 575px )
+        width: 11px
   .avatar__upload
     bottom: 7px
     left: 7px
+    img
+      @media screen and ( max-width: 575px )
+        width: 18px
 
 .profile
   background: #f8f8f8
@@ -500,6 +511,10 @@
       font-size: 30px
       font-weight: 500
       color: #fff
+      text-align: center
+      padding: 25px
+      @media screen and ( max-width: 375px )
+        font-size: 22px
 
 .tabs,
 .withdrawal,
@@ -513,6 +528,11 @@
 
 .tabs
   display: flex
+  @media screen and ( max-width: 600px )
+    flex-direction: column
+    background: #f8f8f8
+    border-radius: 10px 10px 0 0
+    padding-bottom: 30px
   .tabs__item
     font-weight: 500
     color: $dark
@@ -520,8 +540,18 @@
     border-radius: 10px 10px 0 0
     padding: 20px 40px
     margin-right: 20px
+    @media screen and ( max-width: 600px )
+      margin: 0 auto
+      width: calc(100% - 20px)
+      text-align: center
+      padding: 15px
+      border-radius: 10px
+    @media screen and ( max-width: 375px )
+      font-size: 15px
     &:last-child
       margin-right: 0
+      @media screen and ( max-width: 600px )
+        margin: 0 auto
     &--active
       color: #fff
       background: $gradient
@@ -530,7 +560,10 @@
   background: #f8f8f8
   padding: 20px
   border-radius: 0 10px 10px 10px
-  margin-bottom: 100px
+  margin-bottom: 40px
+  @media screen and ( max-width: 575px )
+    padding: 10px
+    margin-bottom: 20px
   .withdrawal__header,
   .withdrawal__row
     display: flex
@@ -543,17 +576,32 @@
       background: #fff
       padding: 15px 10px
       margin-right: 10px
+      @media screen and ( max-width: 375px )
+        font-size: 12px
+        padding: 15px 5px
       &:last-child
         margin-right: 0
       &.withdrawal__number
         flex-basis: 5.882%
-      &.withdrawal__date,
-      &.withdrawal__balance
+        @media screen and ( max-width: 725px )
+          flex-basis: 13.793%
+      &.withdrawal__date
         flex-basis: 17.647%
+        @media screen and ( max-width: 725px )
+          display: none
       &.withdrawal__change
         flex-basis: 20%
+        @media screen and ( max-width: 725px )
+          flex-basis: 48.724%
+      &.withdrawal__balance
+        flex-basis: 17.647%
+        @media screen and ( max-width: 725px )
+          flex-basis: 31.31%
+          margin-right: 0
       &.withdrawal__comment
         flex-basis: 41.176%
+        @media screen and ( max-width: 725px )
+          display: none
   .withdrawal__row
     &:last-of-type
       .withdrawal__col
@@ -569,15 +617,31 @@
   justify-content: space-between
   border-radius: 0 10px 10px 10px
   margin-bottom: 20px
+  @media screen and ( max-width: 980px )
+    flex-direction: column
+  @media screen and ( max-width: 500px )
+    padding: 0 10px 25px
   .balance__info
     position: relative
     flex-basis: 44%
     margin-top: 20px
+    @media screen and ( max-width: 980px )
+      width: 53%
+      margin: 0 0 40px 20px
+    @media screen and ( max-width: 840px )
+      width: 100%
+      margin-left: 0
+    @media screen and ( max-width: 500px )
+      text-align: center
     .balance__title
       font-size: 30px
+      @media screen and ( max-width: 375px )
+        font-size: 22px
     .balance__subtitle
       font-size: 14px
       color: $light
+      @media screen and ( max-width: 375px )
+        font-size: 12px
     .balance__btn
       position: absolute
       top: 0
@@ -589,12 +653,24 @@
       align-items: center
       background: $gradient
       border-radius: 10px
+      @media screen and ( max-width: 840px )
+        right: 20px
+      @media screen and ( max-width: 500px )
+        display: none
   .balance__form
     position: relative
     flex-basis: 48%
+    @media screen and ( max-width: 980px )
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+    @media screen and ( max-width: 600px )
+      flex-direction: column
     .balance-form__label
       display: block
       margin-bottom: 15px
+      @media screen and ( max-width: 980px )
+        flex-basis: 49%
       &:last-of-type
         margin-bottom: 30px
       .balance-form__text
@@ -605,6 +681,8 @@
         span
           color: #d20000
       .balance-form__input
+        @media screen and ( max-width: 600px )
+          max-width: 100%
     .balance-form__btn
       display: block
       width: 100%
@@ -617,6 +695,8 @@
       border: 0
       border-radius: 10px
       margin-left: auto
+      @media screen and ( max-width: 600px )
+        max-width: 100%
     .balance__formalized
       position: absolute
       width: 100%
@@ -632,6 +712,9 @@
       line-height: 1.3
       font-weight: 500
       color: #fff
+      padding: 25px
+      @media screen and ( max-width: 375px )
+        font-size: 22px
       img
         margin-bottom: 15px
       p
@@ -642,9 +725,14 @@
   background: #f8f8f8
   padding: 30px 25px
   border-radius: 10px
-  margin-bottom: 100px
+  margin-bottom: 40px
+  @media screen and ( max-width: 575px )
+    margin-bottom: 20px
+    padding: 20px 10px
   .history__title
     margin-bottom: 25px
+    @media screen and ( max-width: 575px )
+      margin-left: 15px
   .history__header,
   .history__row
     display: flex
@@ -657,21 +745,39 @@
       background: #fff
       padding: 15px 10px
       margin-right: 10px
+      @media screen and ( max-width: 375px )
+        padding: 15px 5px
+        font-size: 12px
       &:last-child
         margin-right: 0
       &.history__bucket
         flex-basis: 5.882%
         background: none
+        @media screen and ( max-width: 725px )
+          flex-basis: 13.793%
         img
           margin: 0 auto
-      &.history__date,
+          min-width: 18px
+      &.history__date
+        flex-basis: 17.647%
+        @media screen and ( max-width: 725px )
+          display: none
       &.history__money
         flex-basis: 17.647%
+        @media screen and ( max-width: 725px )
+          flex-basis: 31.31%
       &.history__comment
-        flex: 35.294%
+        flex-basis: 35.294%
+        @media screen and ( max-width: 725px )
+          display: none
       &.history__status
-        flex: 23.529%
+        flex-basis: 23.529%
+        @media screen and ( max-width: 725px )
+          flex-basis: 48.724%
   .history__row
+    &--consideration
+      .history__status
+        color: #d20000
     &:last-of-type
       .history__col
         border-radius: 0 0 5px 5px 
