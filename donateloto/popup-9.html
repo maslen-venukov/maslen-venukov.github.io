@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Donateloto</title>
+</head>
+<body>
+
+    <div class="auth-popup popup">
+        <div class="auth-popup__inner">
+            <div class="auth-popup__header">
+                <a href="#!" class="auth-popup__login">Авторизация</a>
+                <a href="#!" class="auth-popup__reg auth-popup__reg--active">Регистрация</a>
+            </div>
+            <div class="auth-popup__body">
+                <p class="auth-popup__info"><b>ВНИМАНИЕ:</b> Подтвердите номер полученным кодом. 79999994700</p>
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input disabled type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--password">
+                        <input disabled type="password" name="password" placeholder="Пароль">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--email">
+                        <input disabled type="text" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--phone">
+                        <input disabled type="text" name="phone" placeholder="Номер телефона">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--key">
+                        <input type="text" name="key" placeholder="Код из СМС">
+                    </div>
+                    <button type="submit" class="auth-popup-form__btn btn">Зарегестрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

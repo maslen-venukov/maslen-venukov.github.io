@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Donateloto</title>
+</head>
+<body>
+
+    <div class="auth-popup popup">
+        <div class="auth-popup__inner">
+            <div class="auth-popup__header">
+                <a href="#!" class="auth-popup__login auth-popup__login--active">Авторизация</a>
+                <a href="#!" class="auth-popup__reg">Регистрация</a>
+            </div>
+            <div class="auth-popup__body">
+                <p class="auth-popup__error">Неизвестное имя пользователя. Перепроверьте или попробуйте ваш адрес email</p>
+                <form method="POST" class="auth-popup__form">
+                    <div class="auth-popup-form__input auth-popup-form__input--login">
+                        <input type="text" name="login" placeholder="Логин">
+                    </div>
+                    <div class="auth-popup-form__input auth-popup-form__input--password">
+                        <input type="password" name="login" placeholder="Пароль">
+                    </div>
+                    <button type="submit" class="auth-popup-form__btn btn">Вход</button>
+                </form>
+                <a href="#!" class="auth-popup__link">Потеряли пароль?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
