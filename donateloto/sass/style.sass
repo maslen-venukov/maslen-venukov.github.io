@@ -138,7 +138,6 @@
             margin-right: 0
           &--active,
           &:hover
-            font-weight: 400
             color: #fff
             background: $light
 
@@ -1000,3 +999,88 @@
         display: block
         max-width: 150px
         margin: 20px auto 0
+
+.participants-popup
+  display: flex
+  .participants-popup__inner
+    position: relative
+    color: $dark
+    max-width: 320px
+    width: 100%
+    background: #f8f8f8
+    box-shadow: 0 0 88px rgba(96, 96, 96, .16)
+    padding: 25px 10px 10px 25px
+    border-radius: 10px
+    margin: 0 10px
+    .participants-popup__header
+      font-size: 18px
+      font-weight: 500
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 0 20px 0 10px
+      margin-bottom: 30px
+      .participants-popup__info
+        .participants-popup__title
+          line-height: 1
+        .participants-popup__name
+          font-size: 14px
+          font-weight: 400
+          color: $light
+      .participants-popup__quantity
+        position: relative
+        padding-left: 25px
+        &::before
+          content: ''
+          position: absolute
+          left: 0
+          top: 5px
+          width: 12px
+          height: 16px
+          background: url(../img/games/participant.svg) center no-repeat
+    .participants-popup__body
+      .participants-popup__list
+        overflow-y: scroll
+        max-height: 480px
+        font-size: 14px
+        &::-webkit-scrollbar
+          width: 8px
+          border-radius: 4px
+          background-color: #e2e2e2
+          &-thumb
+            width: 100%
+            border-radius: 4px
+            background: $dark
+        .participants-popup-list__item
+          display: flex
+          margin-bottom: 10px
+          &:last-child
+            margin-bottom: 0
+          .participants-popup-list__number,
+          .participants-popup-list__name
+            background: #fff
+            border-radius: 5px
+            padding: 10px 20px
+          .participants-popup-list__number
+            width: 50px
+            margin-right: 2px
+          .participants-popup-list__name
+            width: calc(100% - 60px)
+            .participants-popup-list__link
+              position: relative
+              &::after
+                content: ''
+                position: absolute
+                bottom: 1px
+                left: 0
+                width: 100%
+                height: 1px
+                background: $dark
+    .participants-popup__close
+      position: absolute
+      top: -36px
+      right: 14px
+      img
+        width: 14px
+        height: 14px
+        cursor: pointer
