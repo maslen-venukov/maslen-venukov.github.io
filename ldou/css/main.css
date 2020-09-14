@@ -112,8 +112,7 @@
     width: 560px;
   }
   .thanksmessage {
-    /*background: url(../img/pctnanksgirl.svg) 40px 100% no-repeat;*/
-    background: url(../img/pctnanksgirl.png) 40px 100% no-repeat;
+    background: url(../img/pctnanksgirl.svg) 40px 100% no-repeat;
     background-size: 185px auto;
     padding: 51px 60px 55px 252px;
     font-size: 18px;
