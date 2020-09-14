@@ -1,0 +1,29 @@
+include ./header.jade
+
+<div class="consultation">
+	<h1>консультация у В. Крутикова</h1>
+	<p>Вы можете записаться на личную консультацию к <strong>Владимиру Крутикову, если:</strong></p>
+	<div class="consultation-inner">
+		<ul>
+			<li>1) Вы осознаёте, что решение проблемы — это труд, который далеко не всегда бывает приятным и лёгким.</li>
+			<li>2) Не питаете иллюзий, что устранение проблемы — это отдых на пляже с бокалом мохито.</li>
+			<li>3) Вы готовы сейчас поработать регулярно и продолжительно, чтобы уже через несколько месяцев и до конца жизни получать удовольствие от каждого прожитого дня и быть счастливым!</li>
+			<li>4) Вы устали бороться со своими проблемами и хотите, наконец, гарантированно получить результаты.</li>
+		</ul>
+		<div class="consultation-form">
+			<form action="#">
+				<input type="text" class="text" placeholder="ваше имя" required minlength="3">
+				<input type="number" class="text" placeholder="номер телефона" required minlength="11">
+				<div class="consultation-coupon">
+					<div class="consultation-coupon--line1">1 сеанс</div>
+					<div class="consultation-coupon--line2">(до 3-х часов)</div>
+					<div class="consultation-coupon--line3">$200</div>
+				</div>
+				<p>Я соглашаюсь на обработку моих персональных данных<br>Я подтверждаю, что мне больше 18 лет</p>
+				<button class="button">записаться на консультацию</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+include ./footer.jade

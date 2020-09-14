@@ -1,0 +1,14 @@
+<svg width="160" height="104" viewBox="0 0 160 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2.03125" y="1.59717" width="156" height="100" rx="8" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="8.53125" y="8.09717" width="143" height="11" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="8.53125" y="23.0972" width="96" height="72" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="108.531" y="23.0972" width="43" height="26" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="108.531" y="53.0972" width="43" height="42" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M113.031 59.5972H147.031" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.0312 13.5972H48.0313" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M113.031 65.5972H147.031" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M113.031 71.5972H133.031" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="40.0312" y="42.5972" width="32" height="23" fill="white"/>
+<path d="M46.0312 77.5972L56.0312 65.5972M56.0312 65.5972L66.0312 77.5972M56.0312 65.5972V77.5972" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M135.031 30.5972H121.031V41.5972H135.031V37.2519L138.281 39.1283V33.0661L135.031 34.9425V30.5972Z" fill="white"/>
+</svg>

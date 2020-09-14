@@ -1,0 +1,19 @@
+include ./header.jade
+	<div class="price cls">
+		<h1>стоимость курса</h1>
+		<div class="price-coupon">
+			<div class="price-coupon--line1">СТАРТ 14.07.2020</div>
+			<div class="price-coupon--line2">$550</div>
+			<div class="price-coupon--line3">$1100</div>
+			<div class="price-coupon--line4">Цена действительна только для студентов пилотного запуска курса.</div>
+		</div>
+		<div class="price-form">
+			<form action="#">
+				<input type="text" class="text" placeholder="ваше имя" required minlength="3">
+				<input type="number" class="text" placeholder="номер телефона" required minlength="11">
+				<p>Я соглашаюсь на <a href="/policy.html">обработку моих персональных данных</a></p>
+				<button class="button">записаться на обучение</button>
+			</form>
+		</div>
+	</div>
+include ./footer.jade

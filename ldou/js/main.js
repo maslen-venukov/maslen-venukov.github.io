@@ -1,0 +1,342 @@
+//mobile menu
+
+const trigger = $('.tm-trigger');
+
+const menuPanel = $('.tm-panel');
+
+
+
+//modal
+
+const darkness = $(".darkness");
+
+const hider = $(".modal-x");
+
+const modal = $(".modal");
+
+const video = $('#video');
+
+
+
+function videoClear(){
+
+	if ( video.is(":visible") ) {
+
+		video.find('.modal-in').html("");
+
+	}
+
+}
+
+
+
+darkness.on("click", function(){
+
+	videoClear();
+
+	darkness.hide();
+
+	modal.hide();
+
+});
+
+
+
+hider.on("click", function(){
+
+	videoClear();
+
+	darkness.hide();
+
+	modal.hide();
+
+});
+
+
+
+trigger.on("click", function(){
+
+	trigger.toggleClass("active");
+
+	menuPanel.toggleClass("active");
+
+});
+
+
+
+
+
+document.onkeydown = function(evt) {
+
+    evt = evt || window.event;
+
+    if (evt.keyCode == 27) {
+
+		darkness.hide();
+
+		modal.hide();        
+
+    }
+
+};
+
+
+
+// активные пункты меню
+
+menuPanel.find("a").each(function(){
+
+	var $this = $(this);
+
+	if ( $this.attr("href") == ("/" + location.hash) ) {
+
+		$this.addClass("active");
+
+	}
+
+	$this.on("click", function(){
+
+		if (menuPanel.is(".active")) {
+
+			trigger.toggleClass("active");
+
+			menuPanel.toggleClass("active");
+
+		}
+
+		$(this).addClass("active").closest("li").siblings().find("a").removeClass("active");
+
+	});
+
+});
+
+
+
+
+
+//reviews
+
+let bigvideos = $(".main-reviews--bigvid");
+let clientsBigvideos = $(".main-reviews--clients .main-reviews--bigvid");
+
+$(".main-reviews--smallvid").find("span").on("click", function(){
+	if($(this).closest('.main-reviews').hasClass('main-reviews--clients')) {
+		clientsBigvideos.removeClass("active").eq( $(this).data("index") ).addClass("active");
+	} else {
+		bigvideos.not(clientsBigvideos).removeClass("active").eq( $(this).data("index") ).addClass("active");
+	};
+});
+
+// старый код из reviews
+// $(".main-reviews--smallvid").find("span").on("click", function(){
+// 	bigvideos.removeClass("active").eq( $(this).data("index") ).addClass("active");
+// });
+
+
+
+
+
+
+
+
+//Временный код для окна спасибо. его нужно убрать когда будет подключена форма.
+
+// $("form").on("submit", function(e){
+
+// 	e.preventDefault();
+
+// 	$('#thanks').show();
+
+// 	darkness.show();
+
+// });
+
+
+
+$("form").on("submit", function(e){
+
+  e.preventDefault();
+
+  var $this = $(this);
+
+  $.ajax({
+
+    url: '/sendnp.php',
+
+    type: 'GET',
+
+    data: {
+
+    	name: $this.find('input[name="name"]').val(), 
+
+    	phone: $this.find('input[name="phone"]').val(),
+
+    	ticket: $this.find('input[name="ticket"]').val(),
+
+    	forma: $this.find('input[name="forma"]').val()
+
+    }
+
+  })
+
+  .done(function() {
+
+    $('#thanks').show();
+
+    darkness.show();
+
+  })
+
+  .fail(function() {
+
+    console.log("error");
+
+  })
+
+  .always(function() {
+
+    console.log("complete");
+
+  });
+
+
+
+});
+
+
+
+
+
+
+
+// Получение видео о ЛДОУ
+
+$(".main-v--video").on("click", function(e){
+
+	e.preventDefault();
+
+	$.ajax({
+
+		url: '/video.php',
+
+		type: 'GET',
+
+		data: {video: 'about'},
+
+	})
+
+	.done(function(data) {
+
+		video.show().find(".modal-in").html(data);
+
+		darkness.show();
+
+	})
+
+	.fail(function() {
+
+		console.log("error");
+
+	})
+
+	.always(function() {
+
+		console.log("complete");
+
+	});
+
+	
+
+});
+
+
+
+//Получение видео отзыва
+
+$(".main-reviews--bigvid").on("click", function(e){
+
+	e.preventDefault();
+
+	var $this = $(this);
+
+	$.ajax({
+
+		url: $this.attr("href"),
+
+		type: 'GET',
+
+	})
+
+	.done(function(data) {
+
+		video.show().find(".modal-in").html(data);
+
+		darkness.show();
+
+	})
+
+	.fail(function() {
+
+		console.log("error");
+
+	})
+
+	.always(function() {
+
+		console.log("complete");
+
+	});
+
+	
+
+});
+
+
+
+// Поиск отзывов
+
+$('.reviews-form--button').on('click', function(e){
+	e.preventDefault();
+	const value = $('.reviews-form--input')[0].value.toLowerCase();
+	$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').css('display', 'none');
+	$('.reviews .main-reviews--bigvid span').each(function(index){
+		if($('.reviews .main-reviews--bigvid span')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value)){
+			$(this).closest('.reviews .main-reviews--bigvid').css('display', 'block');
+		};
+	});
+	$('.reviews-list .reviews-item .name').each(function(index){
+		if($('.reviews-list .reviews-item .name')[index].innerHTML.toLowerCase().includes(value)) {
+			$(this).closest($('.reviews-list .reviews-item')).css('display', 'block');
+		}
+	});
+});
+
+$('.reviews-form--input').on('keyup', function(){
+	if($('.reviews-form--input')[0].value === ''){
+		$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').css('display', 'inline-block');
+	}
+});
+
+
+
+// Табы в отзывах/выпускниках
+
+$('.reviews .tabs--item').click(function (e) {
+	e.preventDefault();
+	$(this).addClass('active');
+	if($(this).hasClass('video')) {
+		$('.reviews-list.video').addClass('active');
+		$('.reviews-list.more').removeClass('active');
+		$('.reviews .tabs--item.more').removeClass('active');
+	} else if($(this).hasClass('more')) {
+		$('.reviews-list.more').addClass('active');
+		$('.reviews-list.video').removeClass('active');
+		$('.reviews .tabs--item.video').removeClass('active');
+	}
+});
+
+$('.graduates .tabs--item').click(function (e) {
+	e.preventDefault();
+	$('.graduates .tabs--item').removeClass('active');
+	$(this).addClass('active');
+});
