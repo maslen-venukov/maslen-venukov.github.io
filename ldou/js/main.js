@@ -35,9 +35,11 @@ $('.graduates-button').on('click', function(e){
 	graduate.attr('style', 'display: block');
 	darkness.show();
 	const graduateName = $(this).closest('.graduates-info').children('.name').text(),
+		  graduatePrice = $(this).closest('.graduates-info').children('.price').text(),
 		  hiddenGraduateNameInput = $('.consultation-form form input[type="hidden"].graduate-name');
 	hiddenGraduateNameInput.val(graduateName)[0];
-	$('.consultation-form h2').text(graduateName);
+	$('#graduate .consultation-form h2').text(graduateName);
+	$('#graduate .consultation-coupon--line3').text(graduatePrice);
 })
 
 

@@ -3277,6 +3277,10 @@ input.text::placeholder {
   border-radius: 0 25px 25px 0;
 }
 
+.graduates-list .graduates-item .graduates-info .price {
+  display: none;
+}
+
 .graduates-list .graduates-item .graduates-info .name {
   position: relative;
   display: inline-block;
