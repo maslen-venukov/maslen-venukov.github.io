@@ -72,6 +72,38 @@
 		.modal-in {
 			border: 1px solid #fff;
 		}
+		h2 {
+			margin: 0 0 20px;
+			@media all and (max-width: 1094px) {
+				font-size: 18px;
+				line-height: 1.2;
+			}
+		}
+		@media all and (max-width: 1094px) {
+			.consultation {
+				&-form {
+					input.text {
+						font-size: 14px;
+						height: 35px;
+						margin-bottom: 15px;
+					}
+					.button {
+						font-size: 16px;
+						height: 55px;
+						padding: 5px;
+					}
+				}
+				&-coupon {
+					&--line1,
+					&--line2 {
+						font-size: 13px;
+					}
+					&--line3 {
+						font-size: 46px;
+					}
+				}
+			}
+		}
 	}
 	&-in {
 		border: 1px solid #181F23;
@@ -2199,7 +2231,7 @@ input.text {
 		&-coupon {
 			position: relative;
 			background: url(../img/mcoupon.svg) center no-repeat;
-			background-size: cover;
+			background-size: contain;
 			height: 245px;
 			width: 427px;
 			color: #181F23;
@@ -2567,7 +2599,7 @@ input.text {
 			margin-right: 0;
 		}
 		&.active,
-		&:hover, {
+		&:hover {
 			color: #fff;
 		}
 		&:before,
@@ -2703,12 +2735,13 @@ input.text {
 		}
 	}
 	&-form {
-		position: relative;
 		padding: 30px;
 		box-sizing: border-box;
-		margin-top: 10px;
+		form{
+			position: relative;
+		}
 		input.text {
-			width: 50%;
+			width: 55%;
 			height: 50px;
 			font-size: 18px;
 			margin-bottom: 20px;
@@ -2726,11 +2759,11 @@ input.text {
 		color: #181f23;
 		text-align: center;
 		font-weight: 700;
-		top: 30px;
-		right: 30px;
+		top: 0;
+		right: 0;
 		z-index: -1;
 		background: url(../img/consultation-coupon.svg) center no-repeat;
-		background-size: cover;
+		background-size: contain;
 		width: 40%;
 		box-sizing: border-box;
 		padding: 13px;
@@ -2785,7 +2818,6 @@ input.text {
 		&-coupon {
 			position: static;
 			width: 100%;
-			background-size: contain;
 			&--line1,
 			&--line2 {
 				font-size: 18px;
@@ -2805,13 +2837,140 @@ input.text {
 		ul {
 			margin-bottom: 280px;
 		}
-		&-form {
-			.button {
+	}
+}
+.consultation {
+	.consultation-form {
+		flex-basis: 48%;
+		position: relative;
+		padding: 30px;
+		border: 3px solid #fff;
+		box-sizing: border-box;
+		height: 320px;
+		margin-top: 10px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: -139px;
+			right: 10px;
+			width: 316px;
+			height: 174px;
+			background: url(../img/consultation-woman.svg) center no-repeat;
+		}
+		input.text {
+			width: 50%;
+			height: 50px;
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 15px;
+		}
+		.button {
+			width: 100%;
+			height: 70px;
+		}
+	}
+	.consultation-coupon {
+		position: absolute;
+		color: #181f23;
+		text-align: center;
+		font-weight: 700;
+		top: 30px;
+		right: 30px;
+		z-index: -1;
+		background: url(../img/consultation-coupon.svg) center no-repeat;
+		background-size: cover;
+		width: 40%;
+		box-sizing: border-box;
+		padding: 13px;
+		&--line1,
+		&--line2 {
+			font-size: 13px;
+		}
+		&--line2 {
+			margin-bottom: 5px;
+		}
+		&--line3 {
+			font-size: 46px;
+		}
+	}
+}
+@media all and (max-width: 1094px) {
+	.consultation {
+		.consultation-form {
+			width: 100%;
+			max-width: 470px;
+			padding: 25px;
+			margin-left: auto;
+			&::before {
+				display: none;
+			}
+			input.text {
+				width: 100%;
 				font-size: 16px;
-				height: 55px;
+			}
+			p {
+				font-size: 13px;
+				margin-bottom: 20px;
+			}
+			.button {
+				font-size: 20px;
+				height: 60px;
+				padding: 5px;
 			}
 		}
-		&-coupon {
+		.consultation-coupon {
+			background: none;
+			width: 250px;
+			top: -250px;
+			right: 50%;
+			transform: translateX(50%);
+			&--line1,
+			&--line2 {
+				font-size: 18px;
+			}
+			&--line3 {
+				font-size: 70px;
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				top: -20px;
+				right: -16%;
+				z-index: -1;
+				width: 630px;
+				height: 645px;
+				background: url(../img/consultation-woman-tablet.svg) center no-repeat;
+			}
+		}
+	}
+}
+@media all and (max-width: 700px) {
+	.consultation {
+		.consultation-form {
+			border: 0;
+			padding: 0;
+			input.text {
+				font-size: 14px;
+				height: 35px;
+				margin-bottom: 15px;
+			}
+			.button {
+				font-size: 16px;
+			}
+		}
+		.consultation-coupon {
+			width: 140px;
+			top: -190px;
+			right: 100px;
+			&::before {
+				background: url(../img/consultation-woman-mobile.svg) center no-repeat;
+				width: 290px;
+				height: 260px;
+				top: -68px;
+				right: -16%;
+			}
 			&--line1,
 			&--line2 {
 				font-size: 13px;
@@ -2822,6 +2981,7 @@ input.text {
 		}
 	}
 }
+/*-consultation*/
 /*-consultation*/
 
 /*+graduates*/

@@ -34,6 +34,10 @@ $('.graduates-button').on('click', function(e){
 	e.preventDefault();
 	graduate.attr('style', 'display: block');
 	darkness.show();
+	const graduateName = $(this).closest('.graduates-info').children('.name').text(),
+		  hiddenGraduateNameInput = $('.consultation-form form input[type="hidden"].graduate-name');
+	hiddenGraduateNameInput.val(graduateName)[0];
+	$('.consultation-form h2').text(graduateName);
 })
 
 
