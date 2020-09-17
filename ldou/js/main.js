@@ -16,6 +16,8 @@ const modal = $(".modal");
 
 const video = $('#video');
 
+const graduate = $('#graduate');
+
 
 
 function videoClear(){
@@ -28,6 +30,11 @@ function videoClear(){
 
 }
 
+$('.graduates-button').on('click', function(e){
+	e.preventDefault();
+	graduate.attr('style', 'display: block');
+	darkness.show();
+})
 
 
 darkness.on("click", function(){
@@ -74,7 +81,7 @@ document.onkeydown = function(evt) {
 
 		darkness.hide();
 
-		modal.hide();        
+		modal.hide();
 
     }
 
@@ -319,12 +326,13 @@ $('.reviews-form--input').on('keyup', function(){
 
 
 
-// Табы в отзывах/выпускниках
+// Табы в отзывах
 
 $('.reviews .tabs--item').click(function (e) {
+	const th = $(this);
 	e.preventDefault();
-	$(this).addClass('active');
-	if($(this).hasClass('video')) {
+	th.addClass('active');
+	if(th.hasClass('video')) {
 		$('.reviews-list.video').addClass('active');
 		$('.reviews-list.more').removeClass('active');
 		$('.reviews .tabs--item.more').removeClass('active');
@@ -335,8 +343,20 @@ $('.reviews .tabs--item').click(function (e) {
 	}
 });
 
-$('.graduates .tabs--item').click(function (e) {
+
+
+// Табы в выпускниках
+
+const graduatesTabsItem = $('.graduates .tabs--item'),
+	  graduatesCourse = $('.graduates .graduates-course');
+
+graduatesTabsItem.click(function (e) {
+	const th = $(this),
+		  dataTabs = th.data('tabs');
+		  graduatesThCourse = $('.graduates .graduates-course[data-course="' + dataTabs + '"]');
 	e.preventDefault();
-	$('.graduates .tabs--item').removeClass('active');
-	$(this).addClass('active');
+	graduatesTabsItem.removeClass('active');
+	graduatesCourse.removeClass('active');
+	th.addClass('active');
+	graduatesThCourse.addClass('active');
 });
