@@ -670,12 +670,37 @@ input.text {
 			margin: 0 0 30px;
 			font-size: 16px;
 			font-weight: 500;
-			& img {
+			.bigvid--img {
+				position: relative;
 				display: block;
 				max-width: 100%;
-				margin-bottom: 4px;
-				border: 2px solid #fff;
 				margin-bottom: 15px;
+				img {
+					width: calc(100% - 8px);
+					height: 100%;
+					border: 4px solid #fff;
+					border-radius: 2px;
+				}
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+				}
+				&::before {
+					top: 4px;
+					right: 4px;
+					left: 4px;
+					bottom: 8px;
+					background: rgba(#181F23, .7);
+				}
+				&::after {
+					width: 78px;
+					height: 78px;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background: url(../img/play.svg) center no-repeat;
+				}
 			}
 			&.box2, &.box5 {
 				margin: 0 5%;
@@ -1208,12 +1233,37 @@ input.text {
 			margin: 0 0 30px;
 			font-size: 16px;
 			font-weight: 500;
-			& img {
+			.bigvid--img {
+				position: relative;
 				display: block;
 				max-width: 100%;
-				margin-bottom: 4px;
-				border: 2px solid #fff;
 				margin-bottom: 15px;
+				img {
+					width: calc(100% - 8px);
+					height: 100%;
+					border: 4px solid #fff;
+					border-radius: 2px;
+				}
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+				}
+				&::before {
+					top: 4px;
+					right: 4px;
+					left: 4px;
+					bottom: 8px;
+					background: rgba(#181F23, .7);
+				}
+				&::after {
+					width: 78px;
+					height: 78px;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background: url(../img/play.svg) center no-repeat;
+				}
 			}
 			&.box2, &.box5 {
 				margin: 0 11%;
@@ -1222,12 +1272,12 @@ input.text {
 		&--clients {
 			.box5.button {
 				display: inline-block;
-				width: 282px;
+				width: 26%;
 				font-size: 22px;
 				line-height: 1.2;
 				font-weight: 600;
 				padding: 21px;
-				margin: 66px 124px;
+				margin: 66px 11%;
 			}
 			.main-reviews--bigvid {
 				margin-bottom: 50px;
@@ -1679,13 +1729,41 @@ input.text {
 			/*text-transform: uppercase;*/
 		}
 		&--bigvid {
+			max-width: 290px;
+			width: 100%;
 			display: none;
 			text-decoration: none;
 			text-align: center;
 			/*width: 296px;*/
 			min-height: 188px;	
-			& img {
-				border: 1px solid #fff;
+			margin: 0 auto;
+			.bigvid--img {
+				position: relative;
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+				}
+				&::before {
+					top: 2px;
+					right: 2px;
+					left: 2px;
+					bottom: 6px;
+					background: rgba(#181F23, .7);
+				}
+				&::after {
+					width: 78px;
+					height: 78px;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background: url(../img/play.svg) center no-repeat;
+				}
+				img {
+					width: calc(100% - 4px);
+					border: 2px solid #fff;
+					border-radius: 2px;
+				}
 			}
 			& span {
 				display: block;
@@ -1702,17 +1780,39 @@ input.text {
 			font-size: 0;
 			text-align: center;
 			& span {
+				position: relative;
 				cursor: pointer;
 				width: 53px;
 				cursor: pointer;
 				display: inline-block;
 				vertical-align: top;
 				& img {
-					max-width: 100%;
+					max-width: calc(100% - 2px);
 					border: 1px solid #fff;
 				}
 				& + span {
 					margin-left: 6px;
+				}
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+				}
+				&::before {
+					top: 1px;
+					right: 1px;
+					left: 1px;
+					bottom: 1px;
+					background: rgba(#181F23, .7);
+				}
+				&::after {
+					width: 14px;
+					height: 14px;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background: url(../img/play.svg) center no-repeat;
+					background-size: contain;
 				}
 			}
 		}
@@ -2637,7 +2737,7 @@ input.text {
 			width: 30%;
 			margin-bottom: 25px;
 			img {
-				width: 100%;
+				// width: calc(100% - 8px);
 			}
 			span {
 				padding: 10px;
@@ -2681,19 +2781,51 @@ input.text {
 			}
 		}
 		&-list {
+			flex-direction: column;
 			&--col {
 				flex-basis: 100%;
 			}
 		}
 		.main-reviews--bigvid {
 			width: 100%;
-			margin-bottom: 0;
+			margin-bottom: 20px;
+			@media all and (max-width: 615px) {
+				margin-bottom: 0;
+			}
 			span {
 				padding: 25px 0;
 			}
 			&.box2,
 			&.box5 {
 				margin: 0;
+			}
+			.bigvid--img {
+				position: relative;
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+				}
+				&::before {
+					top: 2px;
+					right: 2px;
+					left: 2px;
+					bottom: 6px;
+					background: rgba(#181F23, .7);
+				}
+				&::after {
+					width: 78px;
+					height: 78px;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background: url(../img/play.svg) center no-repeat;
+				}
+				img {
+					width: calc(100% - 4px);
+					border: 2px solid #fff;
+					border-radius: 2px;
+				}
 			}
 		}
 	}
@@ -3107,6 +3239,7 @@ input.text {
 				}
 				.button {
 					max-width: 260px;
+					width: 100%;
 					height: 45px;
 					padding: 12px;
 				}
@@ -3132,9 +3265,36 @@ input.text {
 				&::after {
 					bottom: -3px;
 				}
+				.bigvid--img {
+					position: relative;
+					&::before,
+					&::after {
+						content: '';
+						position: absolute;
+					}
+					&::before {
+						top: 4px;
+						right: 4px;
+						left: 4px;
+						bottom: 8px;
+						background: rgba(#181F23, .7);
+						border-radius: 14px;
+					}
+					&::after {
+						width: 78px;
+						height: 78px;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						background: url(../img/play.svg) center no-repeat;
+					}
+				}
 				img {
 					width: 320px;
 					height: 210px;
+					object-fit: cover;
+					border: 4px solid #fff;
+					border-radius: 14px;
 				}
 			}
 		}
@@ -3241,7 +3401,7 @@ input.text {
 				.graduates-info {
 					ul {
 						li {
-							font-size: 6px;
+							font-size: 8px;
 							border-width: 0.5px;
 							border-radius: 6px;
 							padding: 3px;
@@ -3502,9 +3662,6 @@ input.text {
 				flex-basis: 48%;
 				.main-reviews--bigvid {
 					width: 100%;
-					img {
-						width: 100%;
-					}
 				}
 			}
 		}
