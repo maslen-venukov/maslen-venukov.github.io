@@ -333,10 +333,20 @@ $('.reviews--input').on('keyup', function(e){
 $('.reviews--input').on('keyup', function(){
 	if($('.reviews--input')[0].value === ''){
 		$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').removeClass('hidden');
-	}
+	};
 });
 
+$('.reviews--reset').on('click', function(){
+	$(('.reviews--input')[0].value === '');
+	$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').removeClass('hidden');
+});
 
+$('.reviews--form').keydown(function(e){
+	if(e.keyCode == 13) {
+		e.preventDefault();
+		return false;
+	}
+});
 
 // Табы в отзывах
 

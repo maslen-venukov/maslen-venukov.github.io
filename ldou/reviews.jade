@@ -6,16 +6,21 @@ include ./header.jade
 		<a href="#!" class="tabs--item video active">видео-отзывы</a>
 		<a href="#!" class="tabs--item more">ещё отзывы</a>
 	</div>
-	<input list="cookies" type="text" placeholder="введите имя выпускника" class="reviews--input">
-	<datalist id="cookies">
-		<option value="Иван Егоров">
-		<option value="Татьяна Евдокимова">
-		<option value="Руслан Зуев">
-		<option value="Александр Петров">
-		<option value="Елена Крутикова">
-		<option value="Евгения Наконечная">
-		<option value="Евгения Кривич">
-	</datalist>
+	<form class="reviews--form">
+		<input list="graduates" type="text" placeholder="введите имя выпускника" class="reviews--input">
+		<datalist id="graduates">
+			<option value="Иван Егоров">
+			<option value="Татьяна Евдокимова">
+			<option value="Руслан Зуев">
+			<option value="Александр Петров">
+			<option value="Елена Крутикова">
+			<option value="Евгения Наконечная">
+			<option value="Евгения Кривич">
+		</datalist>
+		<button type="reset" class="reviews--reset">
+			<img src="img/close.svg" alt="">
+		</button>
+	</form>
 	<div class="reviews-list video active">
 		<a href="/video.php?video=review&index=12" class="main-reviews--bigvid" data-graduate="Иван Егоров">
 			<div class="bigvid--img">
