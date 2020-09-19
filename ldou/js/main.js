@@ -308,25 +308,31 @@ $(".main-reviews--bigvid").on("click", function(e){
 
 // Поиск отзывов
 
-$('.reviews-form--button').on('click', function(e){
+$('.reviews--input').on('keyup', function(e){
 	e.preventDefault();
-	const value = $('.reviews-form--input')[0].value.toLowerCase();
-	$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').css('display', 'none');
-	$('.reviews .main-reviews--bigvid span').each(function(index){
-		if($('.reviews .main-reviews--bigvid span')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value)){
-			$(this).closest('.reviews .main-reviews--bigvid').css('display', 'block');
+	const value = $('.reviews--input')[0].value.toLowerCase();
+	$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').addClass('hidden');
+	$('.reviews .main-reviews--bigvid[data-graduate]').each(function(index){
+		if($(this).data('graduate').toLowerCase() === value){
+			$(this).closest('.reviews .main-reviews--bigvid').removeClass('hidden');
+		};
+		if($('.reviews .main-reviews--bigvid span')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value) || $('.reviews .main-reviews--bigvid[data-graduate]')[index] === value){
+			$(this).closest('.reviews .main-reviews--bigvid').removeClass('hidden');
 		};
 	});
-	$('.reviews-list .reviews-item .name').each(function(index){
-		if($('.reviews-list .reviews-item .name')[index].innerHTML.toLowerCase().includes(value)) {
-			$(this).closest($('.reviews-list .reviews-item')).css('display', 'block');
-		}
+	$('.reviews-list .reviews-item[data-graduate]').each(function(index){
+		if($(this).data('graduate').toLowerCase() === value){
+			$(this).closest('.reviews-list .reviews-item').removeClass('hidden');
+		};
+		if($('.reviews-list .reviews-item .name')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value)) {
+			$(this).closest($('.reviews-list .reviews-item')).removeClass('hidden');
+		};
 	});
 });
 
-$('.reviews-form--input').on('keyup', function(){
-	if($('.reviews-form--input')[0].value === ''){
-		$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').css('display', 'inline-block');
+$('.reviews--input').on('keyup', function(){
+	if($('.reviews--input')[0].value === ''){
+		$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').removeClass('hidden');
 	}
 });
 

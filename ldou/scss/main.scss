@@ -2605,24 +2605,17 @@ input.text {
 .reviews {
 	padding-top: 60px;
 	padding-bottom: 0;
-	&-form {
+	&--input {
+		width: calc(100% - 50px);
+		height: 50px;
+		font-size: 18px;
+		color: #fff;
+		font-family: Montserrat;
+		background: transparent;
+		padding: 0 25px;
+		border: 1px solid #fff;
+		outline: none;
 		margin-bottom: 50px;
-		display: flex;
-		&--input {
-			width: 70%;
-			font-size: 18px;
-			color: #fff;
-			font-family: Montserrat;
-			background: transparent;
-			padding: 0 25px;
-			border: 1px solid #fff;
-			outline: none;
-		}
-		&--button {
-			width: 30%;
-			padding: 14.5px;
-			border-radius: 0;
-		}
 	}
 	&-list {
 		display: none;
@@ -2637,6 +2630,9 @@ input.text {
 	}
 	.main-reviews--bigvid {
 		margin-bottom: 50px;
+		&.hidden {
+			display: none;
+		}
 	}
 	&-item {
 		padding: 14px;
@@ -2766,19 +2762,13 @@ input.text {
 @media all and (max-width: 700px) {
 	.reviews {
 		padding-top: 0;
-		&-form {
+		&--input {
+			width: calc(100% - 15px);
+			height: 35px;
+			font-size: 14px;
+			padding: 0 7px;
+			border-radius: 5px;
 			margin-bottom: 35px;
-			&--input {
-				font-size: 14px;
-				width: calc(100% - 88px);
-				padding: 0 7px;
-				border-radius: 5px 0 0 5px;
-			}
-			&--button {
-				padding: 7px;
-				width: 88px;
-				border-radius: 0 5px 5px 0;
-			}
 		}
 		&-list {
 			flex-direction: column;
