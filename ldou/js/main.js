@@ -311,34 +311,31 @@ $(".main-reviews--bigvid").on("click", function(e){
 $('.reviews--input').on('keyup', function(e){
 	e.preventDefault();
 	const value = $('.reviews--input')[0].value.toLowerCase();
-	$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').addClass('hidden');
-	$('.reviews .main-reviews--bigvid[data-graduate]').each(function(index){
+	$('.reviews-list.video .main-reviews--bigvid, .reviews-list.more .reviews-item').addClass('hidden');
+	$('.reviews-list.video .main-reviews--bigvid[data-graduate]').each(function(index){
 		if($(this).data('graduate').toLowerCase() === value){
-			$(this).closest('.reviews .main-reviews--bigvid').removeClass('hidden');
+			$(this).closest('.reviews-list.video .main-reviews--bigvid').removeClass('hidden');
 		};
-		if($('.reviews .main-reviews--bigvid span')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value) || $('.reviews .main-reviews--bigvid[data-graduate]')[index] === value){
-			$(this).closest('.reviews .main-reviews--bigvid').removeClass('hidden');
+		if($('.reviews-list.video .main-reviews--bigvid span')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value) || $('.reviews-list.video .main-reviews--bigvid[data-graduate]')[index] === value){
+			$(this).closest('.reviews-list.video .main-reviews--bigvid').removeClass('hidden');
 		};
 	});
-	$('.reviews-list .reviews-item[data-graduate]').each(function(index){
+	$('.reviews-list.more .reviews-item[data-graduate]').each(function(index){
 		if($(this).data('graduate').toLowerCase() === value){
-			$(this).closest('.reviews-list .reviews-item').removeClass('hidden');
+			$(this).closest('.reviews-list.more .reviews-item').removeClass('hidden');
 		};
-		if($('.reviews-list .reviews-item .name')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value)) {
-			$(this).closest($('.reviews-list .reviews-item')).removeClass('hidden');
+		if($('.reviews-list.more .reviews-item .name')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value) || $('.reviews-list.more .reviews-item[data-graduate]')[index] === value) {
+			$(this).closest($('.reviews-list.more .reviews-item')).removeClass('hidden');
 		};
 	});
-});
-
-$('.reviews--input').on('keyup', function(){
 	if($('.reviews--input')[0].value === ''){
-		$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').removeClass('hidden');
+		$('.reviews-list.video .main-reviews--bigvid, .reviews-list.more .reviews-item').removeClass('hidden');
 	};
 });
 
 $('.reviews--reset').on('click', function(){
 	$(('.reviews--input')[0].value === '');
-	$('.reviews .main-reviews--bigvid, .reviews-list .reviews-item').removeClass('hidden');
+	$('.reviews-list.video .main-reviews--bigvid, .reviews-list.more .reviews-item').removeClass('hidden');
 });
 
 $('.reviews--form').keydown(function(e){
