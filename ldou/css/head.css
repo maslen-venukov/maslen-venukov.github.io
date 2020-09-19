@@ -47,6 +47,10 @@ h2 {
   display: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media all and (max-width: 1094px) {
   h1 {
     font-size: 34px;

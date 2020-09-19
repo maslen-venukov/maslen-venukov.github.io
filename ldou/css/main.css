@@ -2830,6 +2830,10 @@ input.text::placeholder {
   display: flex;
 }
 
+.reviews-list .reviews-item.hidden {
+  display: none;
+}
+
 .reviews-list--col {
   -ms-flex-preferred-size: 49%;
       flex-basis: 49%;

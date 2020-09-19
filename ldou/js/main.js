@@ -311,7 +311,8 @@ $(".main-reviews--bigvid").on("click", function(e){
 $('.reviews--input').on('keyup', function(e){
 	e.preventDefault();
 	const value = $('.reviews--input')[0].value.toLowerCase();
-	$('.reviews-list.video .main-reviews--bigvid, .reviews-list.more .reviews-item').addClass('hidden');
+	$('.reviews-list.video .main-reviews--bigvid').addClass('hidden');
+	$('.reviews-list.more .reviews-item').attr('style', 'display: none;');
 	$('.reviews-list.video .main-reviews--bigvid[data-graduate]').each(function(index){
 		if($(this).data('graduate').toLowerCase() === value){
 			$(this).closest('.reviews-list.video .main-reviews--bigvid').removeClass('hidden');
@@ -322,20 +323,24 @@ $('.reviews--input').on('keyup', function(e){
 	});
 	$('.reviews-list.more .reviews-item[data-graduate]').each(function(index){
 		if($(this).data('graduate').toLowerCase() === value){
-			$(this).closest('.reviews-list.more .reviews-item').removeClass('hidden');
+			// $(this).closest('.reviews-list.more .reviews-item').removeClass('hidden');
+			$(this).closest('.reviews-list.more .reviews-item').attr('style', 'display: block;');
 		};
 		if($('.reviews-list.more .reviews-item .name')[index].innerHTML.replace('<br>', '').toLowerCase().includes(value) || $('.reviews-list.more .reviews-item[data-graduate]')[index] === value) {
-			$(this).closest($('.reviews-list.more .reviews-item')).removeClass('hidden');
+			// $(this).closest($('.reviews-list.more .reviews-item')).removeClass('hidden');
+			$(this).closest($('.reviews-list.more .reviews-item')).attr('style', 'display: block;');
 		};
 	});
 	if($('.reviews--input')[0].value === ''){
-		$('.reviews-list.video .main-reviews--bigvid, .reviews-list.more .reviews-item').removeClass('hidden');
+		$('.reviews-list.video .main-reviews--bigvid').removeClass('hidden');
+		$('.reviews-list.more .reviews-item').attr('style', 'display: block;');
 	};
 });
 
 $('.reviews--reset').on('click', function(){
 	$(('.reviews--input')[0].value === '');
-	$('.reviews-list.video .main-reviews--bigvid, .reviews-list.more .reviews-item').removeClass('hidden');
+	$('.reviews-list.video .main-reviews--bigvid').removeClass('hidden');
+	$('.reviews-list.more .reviews-item').attr('style', 'display: block;');
 });
 
 $('.reviews--form').keydown(function(e){

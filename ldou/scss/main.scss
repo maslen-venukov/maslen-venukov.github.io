@@ -2648,6 +2648,9 @@ input.text {
 		&.active {
 			display: flex;
 		}
+		.reviews-item.hidden {
+			display: none;
+		}
 		&--col {
 			flex-basis: 49%;
 		}
