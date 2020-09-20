@@ -2401,10 +2401,9 @@ input.text {
 				font-size: 12px;
 				line-height: 15px;
 				color: #fff;
-				padding-right: 50px;
 				margin: 27px 0;
 				a {
-					text-decoration: none;
+					text-decoration: underline;
 				}
 			}
 			& .button {
@@ -2490,7 +2489,7 @@ input.text {
 				color: #fff;
 				margin: 30px 0;
 				a {
-					text-decoration: none;
+					text-decoration: underline;
 				}
 			}
 			& input.text {
@@ -2549,7 +2548,8 @@ input.text {
 			}
 		}
 		&-form {
-			width: 296px;
+			max-width: 400px;
+			width: 100%;
 			padding: 0;
 			border: 0;
 			margin: 0 auto;
@@ -2559,9 +2559,6 @@ input.text {
 			input.text {
 				height: 35px;
 				margin-bottom: 13px;
-			}
-			p {
-				padding-right: 70px;
 			}
 		}
 	}

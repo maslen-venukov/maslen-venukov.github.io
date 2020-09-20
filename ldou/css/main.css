@@ -2558,11 +2558,10 @@ input.text::placeholder {
     font-size: 12px;
     line-height: 15px;
     color: #fff;
-    padding-right: 50px;
     margin: 27px 0;
   }
   .price-form p a {
-    text-decoration: none;
+    text-decoration: underline;
   }
   .price-form .button {
     width: 100%;
@@ -2651,7 +2650,7 @@ input.text::placeholder {
     margin: 30px 0;
   }
   .price-form p a {
-    text-decoration: none;
+    text-decoration: underline;
   }
   .price-form input.text {
     height: 49px;
@@ -2708,7 +2707,8 @@ input.text::placeholder {
     display: none;
   }
   .price-form {
-    width: 296px;
+    max-width: 400px;
+    width: 100%;
     padding: 0;
     border: 0;
     margin: 0 auto;
@@ -2719,9 +2719,6 @@ input.text::placeholder {
   .price-form input.text {
     height: 35px;
     margin-bottom: 13px;
-  }
-  .price-form p {
-    padding-right: 70px;
   }
 }
 
