@@ -2645,14 +2645,9 @@ input.text {
 		display: none;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		margin-bottom: 40px;
 		&.active {
 			display: flex;
-		}
-		.reviews-item.hidden {
-			display: none;
-		}
-		&--col {
-			flex-basis: 49%;
 		}
 	}
 	.main-reviews--bigvid {
@@ -2662,13 +2657,12 @@ input.text {
 		}
 	}
 	&-item {
+		box-sizing: border-box;
+		width: 49%;
 		padding: 14px;
 		border: 1px solid #fff;
 		border-radius: 25px;
 		margin-bottom: 20px;
-		&:last-child {
-			margin-bottom: 40px;
-		}
 		&--header {
 			display: flex;
 			align-items: center;
@@ -2702,6 +2696,9 @@ input.text {
 		}
 		&--body {
 			font-size: 15px;
+		}
+		&.hidden {
+			display: none;
 		}
 	}
 }
@@ -2799,8 +2796,8 @@ input.text {
 		}
 		&-list {
 			flex-direction: column;
-			&--col {
-				flex-basis: 100%;
+			.reviews-item {
+				width: 100%;
 			}
 		}
 		.main-reviews--bigvid {
@@ -2903,30 +2900,6 @@ input.text {
 			height: 70px;
 		}
 	}
-	&-coupon {
-		position: absolute;
-		color: #181f23;
-		text-align: center;
-		font-weight: 700;
-		top: 0;
-		right: 0;
-		z-index: -1;
-		background: url(../img/consultation-coupon.svg) center no-repeat;
-		background-size: contain;
-		width: 40%;
-		box-sizing: border-box;
-		padding: 13px;
-		&--line1,
-		&--line2 {
-			font-size: 13px;
-		}
-		&--line2 {
-			margin-bottom: 5px;
-		}
-		&--line3 {
-			font-size: 46px;
-		}
-	}
 }
 @media all and (max-width: 1094px) {
 	.consultation {
@@ -3025,8 +2998,8 @@ input.text {
 		color: #181f23;
 		text-align: center;
 		font-weight: 700;
-		top: 30px;
-		right: 30px;
+		top: 0;
+		right: 0;
 		z-index: -1;
 		background: url(../img/consultation-coupon.svg) center no-repeat;
 		background-size: cover;
@@ -3100,6 +3073,7 @@ input.text {
 		.consultation-form {
 			border: 0;
 			padding: 0;
+			margin: 0 auto;
 			input.text {
 				font-size: 14px;
 				height: 35px;
