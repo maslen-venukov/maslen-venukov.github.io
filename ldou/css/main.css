@@ -3125,6 +3125,34 @@ input.text::placeholder {
   height: 70px;
 }
 
+.consultation-coupon {
+  position: absolute;
+  color: #181f23;
+  text-align: center;
+  font-weight: 700;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: url(../img/consultation-coupon.svg) center no-repeat;
+  background-size: contain;
+  width: 40%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 13px;
+}
+
+.consultation-coupon--line1, .consultation-coupon--line2 {
+  font-size: 13px;
+}
+
+.consultation-coupon--line2 {
+  margin-bottom: 5px;
+}
+
+.consultation-coupon--line3 {
+  font-size: 46px;
+}
+
 @media all and (max-width: 1094px) {
   .consultation {
     font-size: 16px;
