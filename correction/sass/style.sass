@@ -18,7 +18,7 @@
     justify-content: space-between
     @media screen and ( max-width: 1000px )
       align-items: center
-    .header__mobile-logo
+    .nav.header__mobile-logo
       display: none
       width: 100px
       height: 25px
@@ -160,16 +160,18 @@
           height: 100%
 
 .intro
-  min-height: 100vh
+  padding-top: 170px
+  @media screen and ( max-height: 768px )
+    padding-top: 155px
+  @media screen and ( max-width: 780px )
+    padding-top: 100px
   .intro__inner
     display: flex
     justify-content: space-between
-    margin-top: 16vh
     @media screen and ( max-width: 1120px )
       align-items: center
     @media screen and ( max-width: 780px )
       flex-direction: column
-      margin-top: 10vh
     .intro__content
       flex-basis: 45%
       @media screen and ( max-width: 1120px )

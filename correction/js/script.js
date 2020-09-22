@@ -34,131 +34,39 @@ $(document).ready(function () {
     // Меню в шапке
 
     $('.header__burger').click(function () {
-        $(this).toggleClass('header__burger--active');
+        $('.header__burger').toggleClass('header__burger--active');
         $('.nav--mobile').toggleClass('nav--mobile--active');
         $('body, html').toggleClass('lock');
     });
 
     // Навигация
 
-    const headerHeight = $('.header').innerHeight();
+    const headerHeight = $('.header').innerHeight()
+                   nav = $('.nav');
 
-    $('#nav--about').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.about').offset().top-headerHeight
-        }, 500);
-    });
-
-    $('#nav--schema').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.schema').offset().top-headerHeight
-        }, 500);
-    });
-
-    $('.intro__btn').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.consultation').offset().top-headerHeight
-        }, 500);
-    });
-
-    $('#nav--intro').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.intro').offset().top-headerHeight
-        }, 500);
-    });
-
-    $('#nav--reviews').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.reviews').offset().top-headerHeight
-        }, 500);
-    });
-
-    $('#nav--cost').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.cost').offset().top-headerHeight
-        }, 500);
-    });
-
-    $('#nav--contacts').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.contacts').offset().top-headerHeight
-        }, 500);
-    });
-
-    $('.header__mobile-logo').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.intro').offset().top-headerHeight
-        }, 500);
-    });
-
-    function closeNavMobile() {
-        $('.nav--mobile').removeClass('nav--mobile--active');
+    function burger() {
         $('.header__burger').removeClass('header__burger--active');
-        $('html, body').removeClass('lock');
+        $('.nav--mobile').removeClass('nav--mobile--active');
+        $('body, html').removeClass('lock');
     }
 
-    $('#nav--mobile-works').click(function(e) {
-        e.preventDefault();
+    nav.find('a').on('click', function () {
+        burger();
+        var th = $(this)
+            id = th.attr('href');
         $('html, body').animate({
-            scrollTop: $('.works').offset().top-headerHeight
+            scrollTop: $(id).offset().top - headerHeight
         }, 500);
-        closeNavMobile();
+    return false;
     });
 
-    $('#nav--mobile-about').click(function(e) {
-        e.preventDefault();
+    $('.intro__btn').on('click', function () {
+        var th = $(this)
+            id = th.attr('href');
         $('html, body').animate({
-            scrollTop: $('.about').offset().top-headerHeight
+            scrollTop: $(id).offset().top - headerHeight
         }, 500);
-        closeNavMobile();
-    });
-
-    $('#nav--mobile-schema').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.schema').offset().top-headerHeight
-        }, 500);
-        closeNavMobile();
-    });
-
-    $('#nav--mobile-reviews').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.reviews').offset().top-headerHeight
-        }, 500);
-        closeNavMobile();
-    });
-
-    $('#nav--mobile-cost').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.cost').offset().top-headerHeight
-        }, 500);
-        closeNavMobile();
-    });
-
-    $('#nav--mobile-consultation').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.consultation').offset().top-headerHeight
-        }, 500);
-        closeNavMobile();
-    });
-
-    $('#nav--mobile-contacts').click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $('.contacts').offset().top-headerHeight
-        }, 500);
-        closeNavMobile();
+    return false;
     });
 
     // Закрытие попапа "Спасибо"
@@ -177,7 +85,9 @@ $(document).ready(function () {
     });
 
     $(window).keydown(function(e) {
-        closePopup();
+        if(e.keyCode === 27) {
+            closePopup();
+        };
     });
 
     // Обработчик формы

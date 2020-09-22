@@ -25,28 +25,30 @@
         <div class="container">
             <div class="header__inner">
 
-                <div class="header__mobile-logo">
-                    <img src="img/header/mobile-logo.svg" alt="Коррекция восприятия">
+                <div class="nav header__mobile-logo">
+                    <a href="#intro">
+                        <img src="img/header/mobile-logo.svg" alt="Коррекция восприятия">
+                    </a>
                 </div>
 
                 <nav class="nav nav--left">
                     <div class="nav__inner">
-                        <a href="#!" id="nav--about" class="nav__item">О методе работы</a>
-                        <a href="#!" id="nav--schema" class="nav__item">Схема работы</a>
+                        <a href="#about" class="nav__item">О методе работы</a>
+                        <a href="#schema" class="nav__item">Схема работы</a>
                     </div>
                 </nav>
 
-                <div class="header__logo">
-                    <a href="#!" id="nav--intro" class="header-logo__link">
+                <div class="nav header__logo">
+                    <a href="#intro" class="header-logo__link">
                         <img src="img/header/logo.svg" alt="Коррекция восприятия">
                     </a>
                 </div>
 
                 <nav class="nav nav--right">
                     <div class="nav__inner">
-                        <a href="#!" id="nav--reviews" class="nav__item">Отзывы</a>
-                        <a href="#!" id="nav--cost" class="nav__item">Стоимость</a>
-                        <a href="#!" id="nav--contacts" class="nav__item">Контакты</a>
+                        <a href="#reviews" class="nav__item">Отзывы</a>
+                        <a href="#cost" class="nav__item">Стоимость</a>
+                        <a href="#contacts" class="nav__item">Контакты</a>
                     </div>
                 </nav>
 
@@ -58,25 +60,25 @@
                 <nav class="nav nav--mobile">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="#!" id="nav--mobile-works" class="nav__link">Сферы работы</a>
+                            <a href="#works" class="nav__link">Сферы работы</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#!" id="nav--mobile-about" class="nav__link">О методе работы</a>
+                            <a href="#about" class="nav__link">О методе работы</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#!" id="nav--mobile-schema" class="nav__link">Схема работы</a>
+                            <a href="#schema" class="nav__link">Схема работы</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#!" id="nav--mobile-reviews" class="nav__link">Отзывы клиентов</a>
+                            <a href="#reviews" class="nav__link">Отзывы клиентов</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#!" id="nav--mobile-cost" class="nav__link">Стоимость</a>
+                            <a href="#cost" class="nav__link">Стоимость</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#!" id="nav--mobile-consultation" class="nav__link">Запись на консультацию</a>
+                            <a href="#consultation" class="nav__link">Запись на консультацию</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#!" id="nav--mobile-contacts" class="nav__link">Контакты</a>
+                            <a href="#contacts" class="nav__link">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -85,27 +87,27 @@
         </div>
     </header>
 
-    <section class="intro section">
+    <section id="intro" class="intro section">
         <div class="container">
             <div class="intro__inner">
 
                 <div class="intro__content">
                     <h1 class="intro__title section__title">Специалисты<br> по ликвидации деструктивных эмоций</h1>
                     <p class="intro__subtitle">Коррекция восприятия и устранение негативных переживаний</p>
-                    <a href="#!" class="intro__btn btn">Записаться на<br> бесплатную консультацию</a>
+                    <a href="#consultation" class="intro__btn btn">Записаться на<br> бесплатную консультацию</a>
                 </div>
 
                 <div class="intro__img">
                     <img src="img/intro/img.svg" alt="Специалисты по ликвидации деструктивных эмоций">
                     <img src="img/intro/mobile-img.svg" alt="Специалисты по ликвидации деструктивных эмоций">
-                    <a href="#!" class="intro__btn btn">Записаться на<br> бесплатную консультацию</a>
+                    <a href="#consultation" class="intro__btn btn">Записаться на<br> бесплатную консультацию</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section class="section works">
+    <section id="works" class="section works">
         <div class="container">
             <div class="works__inner">
 
@@ -164,7 +166,7 @@
         </div>
     </section>
 
-    <section class="about section">
+    <section id="about" class="about section">
         <div class="container">
             <div class="about__inner">
 
@@ -196,7 +198,7 @@
         </div>
     </section>
 
-    <section class="schema section">
+    <section id="schema" class="schema section">
         <div class="container">
             <div class="schema__inner">
 
@@ -240,7 +242,7 @@
         </div>
     </section>
 
-    <section class="reviews section">
+    <section id="reviews" class="reviews section">
         <div class="container">
             <div class="reviews__inner">
 
@@ -360,7 +362,7 @@
         </div>
     </section>
 
-    <section class="cost section">
+    <section id="cost" class="cost section">
         <div class="container">
             <div class="cost__inner">
 
@@ -384,7 +386,7 @@
         </div>
     </section>
 
-    <section class="consultation section">
+    <section id="consultation" class="consultation section">
         <div class="container">
             <div class="consultation__inner">
 
@@ -405,7 +407,7 @@
                     <form action="#" method="POST" class="consultation__form">
                         <!-- Hidden Required Fields -->
                         <input type="hidden" name="project_name" value="Коррекция восприятия">
-                        <input type="hidden" name="admin_email" value="kushnarevdn@gmail.com">
+                        <input type="hidden" name="admin_email" value="gidafex583@acetesz.com">
                         <input type="hidden" name="form_subject" value="Запись на бесплатную консультацию">
                         <!-- End Hidden Required Fields -->
                         <input type="text" name="name" placeholder="ваше имя" class="consultation__input">
@@ -422,7 +424,7 @@
         </div>
     </section>
 
-    <section class="contacts section">
+    <section id="contacts" class="contacts section">
         <div class="container">
             <div class="contacts__inner">
 
