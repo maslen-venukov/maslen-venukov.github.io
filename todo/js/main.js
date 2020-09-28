@@ -2,8 +2,6 @@ const form = document.querySelector('#newTaskForm');
 const input = document.querySelector('#addNewTask');
 const ul = document.querySelector('#list-group');
 
-ul.innerHTML = localStorage.getItem('ul');
-
 const newTask = (text) => {
     return `<li class="list-group-item d-flex justify-content-between">
                 <span contenteditable="true" class="task-title">${text}</span>
@@ -14,19 +12,19 @@ const newTask = (text) => {
             </li>`
 }
 
-const emptyListItem = () => {
-    return `<li id="empty-list-item" class="list-group-item text-center">Список дел пуст</li>`
-}
+const emptyListItem = '<li id="empty-list-item" class="list-group-item text-center">Список дел пуст</li>';
 
 const checkTasksQuantity = () => {
     if(ul.querySelectorAll('li').length === 0) {
-        ul.insertAdjacentHTML('afterbegin', emptyListItem());
-    } else if (ul.innerHTML.includes(emptyListItem())) {
+        ul.insertAdjacentHTML('afterbegin', emptyListItem);
+    } else if (ul.innerHTML.includes(emptyListItem)) {
         ul.querySelector('#empty-list-item').remove();
     }
 }
 
 checkTasksQuantity();
+
+ul.innerHTML = localStorage.getItem('ul');
 
 const saveData = () => {
     localStorage.setItem('ul', ul.innerHTML);
