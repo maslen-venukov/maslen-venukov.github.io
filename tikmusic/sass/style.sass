@@ -333,10 +333,23 @@
     @media screen and ( max-width: 767px )
       display: block
     .tabs__link
+      position: relative
       border-radius: 10px
+      &::after
+        content: ''
+        position: absolute
+        right: 30px
+        top: 50%
+        transform: translateY(calc(-50% - 1px)) rotate(45deg)
+        width: 7px
+        height: 7px
+        border-right: 2px solid #fff
+        border-bottom: 2px solid #fff
     &--active
       .tabs__link
         border-radius: 10px 10px 0 0
+        &::after
+          transform: translateY(calc(-50% + 3px)) rotate(225deg)
       & + .tabs__list
         display: block
   &__list
