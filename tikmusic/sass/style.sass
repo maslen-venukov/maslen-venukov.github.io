@@ -9,12 +9,84 @@
   height: 175px
   display: flex
   align-items: center
+  @media screen and ( max-width: 767px )
+    height: 90px
   &--page
     justify-content: center
   &__inner
     display: flex
     justify-content: space-between
     align-items: center
+    @media screen and ( max-width: 767px )
+      flex-direction: row-reverse
+  &__burger
+    position: relative
+    z-index: 1001
+    display: none
+    width: 15px
+    height: 15px
+    border: 0
+    background: none
+    span,
+    span::before,
+    span::after
+      content: ''
+      position: absolute
+      display: block
+      width: 15px
+      height: 2px
+      background: #fff
+      transition: transform .2s
+    span
+      top: 50%
+      transform: translateY(-50%)
+      transition: background .2s
+      &::before
+        transition: bottom .2s
+        bottom: 5px
+      &::after
+        transition: top .2s
+        top: 5px
+    @media screen and ( max-width: 767px )
+      display: block
+    &--active
+      span
+        background: transparent
+        &::before
+          transform: rotate(45deg)
+          bottom: 0
+        &::after
+          transform: rotate(135deg)
+          top: 0
+  &__nav
+    .nav__list
+      @media screen and ( max-width: 767px )
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 1000
+        width: 100vw
+        height: 100vh
+        flex-direction: column
+        justify-content: center
+        background: #000000
+        transform: translateX(-100%)
+        transition: transform .2s
+        &::before
+          content: ''
+          position: fixed
+          top: 30px
+          left: 50%
+          transform: translateX(-50%)
+          width: 115px
+          height: 30px
+          background: url(../img/logo.svg) center / contain no-repeat
+        &--active
+          transform: translateX(0)
+        .nav__item
+          font-size: 18px
+          color: #fff
+          margin: 0 0 45px
 
 .nav
   &__list
@@ -40,36 +112,62 @@
     font-size: 80px
     line-height: 1
     margin-bottom: 5vh
+    @media screen and ( max-width: 767px )
+      font-size: 30px
+      margin-top: 15vh
   &__subtitle
     font-size: 18px
     color: $gray
     margin-bottom: 6vh
+    @media screen and ( max-width: 767px )
+      text-align: center
+      font-size: 14px
+      max-width: 220px
   &__scroll
     position: absolute
     bottom: 10vh
     left: 50%
     transform: translateX(-50%)
+    @media screen and ( max-height: 600px )
+      bottom: 7vh
 
 .functional
   margin-bottom: 100px
+  @media screen and ( max-width: 767px )
+    margin-bottom: 60px
   &__inner
     position: relative
   &__title
     text-align: center
     margin-bottom: 90px
+    @media screen and ( max-width: 767px )
+      margin-bottom: 45px
   &__list
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    @media screen and ( max-width: 767px )
+      flex-direction: column
   &__item
     flex-basis: 50%
+    @media screen and ( max-width: 767px )
+      margin-bottom: 45px
     &:not(:nth-last-child(-n+2))
       margin-bottom: 220px
+      @media screen and ( max-width: 767px )
+        margin-bottom: 45px
   &__img
     position: absolute
     top: 140px
     left: 50%
-    transform: translateX(calc(-50% + 25px))
+    transform: translateX(calc(-50% + 15px))
+    width: 200px
+    margin: 0 auto
+    @media screen and ( max-width: 767px )
+      position: static
+      transform: translateX(15px)
+      img
+        margin: 0 auto
     &::after
       content: ''
       position: absolute
@@ -85,20 +183,34 @@
 
 .functional-item
   position: relative
+  @media screen and ( max-width: 767px )
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
   &::after
     content: ''
     position: absolute
     width: 95px
     height: 60px
+    @media screen and ( max-width: 1150px )
+      display: none
   &__img
     width: 210px
     margin-bottom: 25px
+    @media screen and ( max-width: 767px )
+      img
+        margin: 0 auto
   &__text
-    width: 210px
+    max-width: 210px
+    @media screen and ( max-width: 767px )
+      max-width: 230px
   &:nth-child(2n)
     display: flex
     flex-direction: column
     align-items: flex-end
+    @media screen and ( max-width: 767px )
+      align-items: center
   &:nth-child(1)::after
     background: url(../img/top-left-pointer.svg) center no-repeat
   &:nth-child(2)::after
@@ -132,6 +244,8 @@
     display: flex
     justify-content: space-between
     align-items: center
+    @media screen and ( max-width: 767px )
+      padding: 45px 0
   &__nav,
   &__home,
   &__g-play,
@@ -159,6 +273,15 @@
     justify-content: space-between
     align-items: center
     font-size: 12px
+    @media screen and ( max-width: 767px )
+      display: flex
+      flex-direction: column
+      padding: 25px
+  &__text
+    margin-right: 20px
+    @media screen and ( max-width: 767px )
+      text-align: center
+      margin: 0 0 20px
   &__btn
     font-weight: 600
     color: #fff

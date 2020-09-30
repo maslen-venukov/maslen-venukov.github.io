@@ -14,10 +14,16 @@
       <div class="header__inner">
 
         <a href="/" class="header__logo">
-          <img src="img/logo.svg" alt="TikMusic">
+          <picture>
+            <source srcset="img/mobile-logo.svg" media="(max-width: 767px)">
+            <img src="img/logo.svg" alt="TikMusic">
+           </picture>
         </a>
 
         <nav class="header__nav nav">
+          <button class="header__burger">
+            <span></span>
+          </button>
           <ul class="nav__list">
             <li class="nav__item">
               <a href="https://play.google.com/store/apps/details?id=com.google.android.youtube" class="nav__link" target="_blank">Downoload</a>
@@ -77,9 +83,9 @@
         </defs>
         </svg>
     </a>
-    <div class="intro__scroll scroll">
+    <a href="#functional" class="intro__scroll scroll">
       <img src="img/scroll.svg" alt="Scroll down">
-    </div>
+    </a>
   </div>
 
   <section id="functional" class="functional">
