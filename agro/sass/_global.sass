@@ -1,0 +1,71 @@
+$primary: #e12025
+$secondary: #045038
+$shadow: 0 15px 50px rgba(#000, .25)
+
+html, body
+  font-family: 'Montserrat', sans-serif
+  font-size: 18px
+  line-height: 1.2
+  color: #000
+  overflow-x: hidden
+
+.lock
+  overflow: hidden
+
+.container
+  width: 100%
+  // max-width: 1460px
+  padding: 0 12%
+  margin: 0 auto
+  @media screen and ( max-width: 768px )
+    padding: 0 15px
+
+.button
+  display: inline-block
+  border-radius: 10px
+  padding: 20px 80px
+  color: #fff
+  font-weight: 700
+  &--primary
+    background: $primary
+  &--secondary
+    background: $secondary
+  &--white
+    color: $secondary
+    background: #fff
+    padding: 18px
+    border: 2px solid $secondary
+    border-radius: 10px
+
+.link
+  position: relative
+  font-size: 24px
+  color: #575757
+  &::after
+    content: ''
+    position: absolute
+    bottom: -4px
+    left: 0
+    width: 100%
+    height: 1px
+    background: #c4c4c4
+
+.title
+  font-size: 36px
+  font-weight: 500
+  color: #000
+  max-width: 600px
+  @media screen and ( max-width: 768px )
+    font-size: 32px
+  @media screen and ( max-width: 425px )
+    font-size: 28px
+  b
+    font-weight: 700
+    color: $primary
+
+.section
+  margin-bottom: 200px
+  @media screen and ( max-width: 768px )
+    margin-bottom: 150px
+  @media screen and ( max-width: 425px )
+    margin-bottom: 100px

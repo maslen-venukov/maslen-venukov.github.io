@@ -1,0 +1,1163 @@
+@import 'normalize'
+@import 'global'
+
+// Header
+
+.header
+  background: #fff
+  padding: 30px 0
+  .header__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .header__logo
+      flex-basis: 50%
+      position: relative
+      display: flex
+      align-items: center
+      @media screen and ( max-width: 1310px )
+        justify-content: flex-start
+      &::after
+        content: ''
+        position: absolute
+        right: 0
+        width: 1px
+        height: 100px
+        background: #c4c4c4
+        @media screen and ( max-width: 1230px )
+          display: none
+      img
+        margin-right: 50px
+        @media screen and ( max-width: 1600px )
+          margin-right: 25px
+      p
+        font-size: 20px
+        font-weight: 700
+        color: $secondary
+        text-transform: uppercase
+        max-width: 270px
+        padding-right: 15px
+        @media screen and ( max-width: 1440px )
+          font-size: 14px
+        @media screen and ( max-width: 1230px )
+          display: none
+    .nav
+      flex-basis: 50%
+      .nav__burger
+        display: none
+        position: relative
+        width: 30px
+        height: 30px
+        margin-left: auto
+        @media screen and ( max-width: 1230px )
+          display: block
+        span,
+        span::before,
+        span::after
+          content: ''
+          position: absolute
+          top: 50%
+          z-index: 11000
+          transform: translateY(-50%)
+          width: 100%
+          height: 3px
+          background: $secondary
+          transition: transform .4s
+        span::before
+          margin-top: -8px
+        span::after
+          margin-top: 9px
+        &_active
+          span
+            height: 0
+            &::before,
+            &::after
+              margin-top: 0
+              background: #fff
+            &::before
+              transform: rotate(135deg)
+            &::after
+              transform: rotate(45deg)
+      .nav__list
+        display: flex
+        justify-content: space-around
+        @media screen and ( max-width: 1230px )
+          flex-direction: column
+          position: fixed
+          justify-content: center
+          top: 0
+          right: 0
+          z-index: 10000
+          text-align: center
+          background: $primary
+          width: 30vw
+          min-width: 300px
+          transform: translateX(100%)
+          transition: transform .4s
+          @media screen and ( max-width: 425px )
+            min-width: 100vw
+          &_active
+            overflow: auto
+            transform: translateX(0)
+        .nav-list__item
+          position: relative
+          .nav-list__link
+            color: #000
+          @media screen and ( max-width: 1230px )
+            font-size: 36px
+            font-weight: 700
+            margin-bottom: 40px
+            &:last-child
+              margin-bottom: 0
+            .nav-list__link
+              color: #fff
+          &:hover::after
+            bottom: -8px
+            opacity: 1
+          &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translateX(-50%)
+            width: 65%
+            height: 3px
+            background: $primary
+            opacity: 0
+            transition: .2s
+
+// Intro
+
+.intro
+  position: relative
+  z-index: 1
+  background: url(../img/intro/bg.jpg) center no-repeat
+  background-size: cover
+  @media screen and ( max-width: 425px )
+    margin-bottom: 150px
+    padding-bottom: 35px
+    background-position: 0% 50%
+  .intro__title
+    font-size: 36px
+    color: #fff
+    font-weight: 500
+    max-width: 760px
+    padding-top: 50vh
+    margin-bottom: 5vh
+    @media screen and ( max-width: 425px )
+      font-size: 30px
+      margin-left: 0
+    @media screen and ( max-width: 320px )
+      font-size: 24px
+    @media screen and ( max-height: 900px ) and ( max-width: 425px )
+      padding-top: 30vh
+      margin-bottom: 3vh
+    @media screen and ( max-height: 770px ) and ( max-width: 425px )
+      padding-top: 40vh
+  .intro__subtitle
+    position: relative
+    margin-bottom: 320px
+    @media screen and ( max-width: 1440px )
+      margin-bottom: 230px
+    @media screen and ( max-width: 425px )
+      display: block
+      width: 250px
+      margin: 0 auto 150px
+    &::after
+      content: ''
+      position: absolute
+      z-index: -1
+      left: 100px
+      top: 0
+      width: 100%
+      height: 100%
+      border-radius: 10px
+      background: url(../img/intro/youtube.svg) center no-repeat
+      background-size: cover
+      @media screen and ( max-width: 425px )
+        display: none
+
+// Main
+
+.main
+  padding-bottom: 140px
+  margin-bottom: 200px
+  @media screen and ( max-width: 768px )
+    margin-bottom: 150px
+  @media screen and ( max-width: 425px )
+    padding-bottom: 0
+    margin-bottom: 0
+  .main__suptitle,
+  .main__subtitle
+    font-size: 36px
+    font-weight: 500
+    color: $secondary
+    @media screen and ( max-width: 540px )
+      font-size: 28px
+    @media screen and ( max-width: 375px )
+      font-size: 24px
+  .main__title
+    font-size: 288px
+    line-height: 1
+    color: $secondary
+    @media screen and ( max-width: 1240px )
+      font-size: 200px
+    @media screen and ( max-width: 850px )
+      font-size: 140px
+    @media screen and ( max-width: 540px )
+      font-size: 80px
+
+// Blog
+
+.blog
+  overflow: hidden
+  .blog__inner
+    .blog__title
+      margin-bottom: 70px
+    .blog__content
+      display: flex
+      justify-content: space-between
+      @media screen and ( max-width: 1100px )
+        flex-direction: column
+      .blog__col
+        position: relative
+        display: flex
+        flex-direction: column
+        @media screen and ( max-width: 1100px )
+          margin-bottom: 140px
+        .blog__list
+          flex-basis: 30%
+          margin-right: 10px
+          .blog-list__item
+            position: relative
+            font-size: 24px
+            font-weight: 500
+            max-width: 400px
+            padding-left: 80px
+            margin-bottom: 30px
+            @media screen and ( max-width: 1440px )
+              padding-left: 65px
+            &::before
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              width: 47px
+              height: 47px
+              background: url(../img/blog/gear.svg)
+        .blog__number-slide
+          position: absolute
+          bottom: 120px
+          font-size: 48px
+          font-weight: 500
+          @media screen and ( max-width: 1100px )
+            bottom: -80px
+        .blog__arrow-left,
+        .blog__arrow-right
+          position: absolute
+          bottom: 80px
+          z-index: 100
+          cursor: pointer
+          @media screen and ( max-width: 1100px )
+            bottom: -110px
+        .blog__arrow-left
+          left: 0
+        .blog__arrow-right
+          left: 50px
+        .blog__link
+          position: relative
+          z-index: 1
+          font-weight: 400
+          max-width: 270px
+          margin: auto 0 15px
+      .blog__slider
+        flex-basis: 70%
+        display: flex
+        justify-content: space-between
+        min-width: 0
+        @media screen and ( max-width: 1100px )
+          flex-basis: 55%
+        .blog-slider__item
+          display: flex
+          justify-content: space-between
+          flex-direction: column
+          min-width: 0
+          max-width: 1160px
+          @media screen and ( max-width: 1024px )
+            justify-content: center
+          .blog-slider__card
+            flex-basis: 50%
+            display: flex
+            flex-direction: column
+            max-width: 560px
+            background: $primary
+            min-height: 475px
+            margin-right: 20px
+            margin-bottom: 20px
+            @media screen and ( max-width: 1750px ) and ( min-width: 1440px)
+              width: 30vw
+            @media screen and ( max-width: 1440px ) and ( min-width: 1100px )
+              width: 27vw
+            @media screen and ( max-width: 1440px )
+              min-height: 400px
+              margin-right: 10px
+              margin-bottom: 10px
+            @media screen and ( max-width: 1100px )
+              min-height: 475px
+              margin-right: 20px
+            @media screen and ( max-width: 650px )
+              margin-right: 30px
+            @media screen and ( max-width: 590px )
+              width: 93.5vw
+              min-height: 395px
+            .blog-slider__img
+              width: 100%
+              img
+                width: 100%
+                object-fit: cover
+            .blog-slider__text
+              font-weight: 700
+              color: #fff
+              padding: 30px 30px 0
+              margin-bottom: 15px
+            .blog-slider__link
+              position: relative
+              display: inline-block
+              font-size: 14px
+              color: #fff
+              padding: 0 30px
+              margin-top: auto
+              margin-bottom: 30px
+              &::after
+                content: ''
+                position: absolute
+                left: 200px
+                top: 50%
+                transform: translateY(-50%)
+                width: 36px
+                height: 8px
+                background: url(../img/arrow.svg)
+        .slick-list
+          overflow: visible
+        .slick-slide
+          opacity: 0
+          visibility: hidden
+          transition: visibility .6s, opacity .6s
+        .slick-current.slick-active
+          opacity: 1
+          visibility: visible
+        .slick-current.slick-active + .slick-slide
+          opacity: 1
+          visibility: visible
+        .slick-arrow
+          position: absolute
+          opacity: 0
+          visibility: hidden
+
+// Technics
+
+.technics
+  background: url(../img/technics/bg.jpg) center no-repeat
+  background-size: cover
+  margin-bottom: 0
+  .technics__inner
+    padding: 90px 0 180px
+    @media screen and ( max-width: 768px )
+      padding: 90px 0
+    .technics__header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 90px
+      @media screen and ( max-width: 768px )
+        margin-bottom: 40px
+      @media screen and ( max-width: 640px )
+        flex-direction: column
+      .technics__title
+        @media screen and ( max-width: 640px )
+          margin-bottom: 20px
+    .technics__body
+      .technics__item
+        background: #fff
+        box-shadow: $shadow
+        display: flex
+        justify-content: space-between
+        min-height: 630px
+        padding: 70px 100px
+        margin-bottom: 40px
+        @media screen and ( max-width: 1440px )
+          padding: 70px
+        @media screen and ( max-width: 1300px )
+          flex-direction: column
+          padding: 70px
+        @media screen and ( max-width: 425px )
+          padding: 30px
+        @media screen and ( max-width: 320px )
+          padding: 10px
+        &:nth-of-type(even)
+          flex-direction: row-reverse
+          @media screen and ( max-width: 1300px )
+            flex-direction: column
+          @media screen and ( max-width: 425px )
+            padding: 30px
+          @media screen and ( max-width: 320px )
+            padding: 10px
+          .technics-item__img
+            margin-right: 0
+          .technics-item__content
+            margin-right: 20px
+        &:last-child
+          margin-bottom: 0
+        .technics-item__img
+          flex-basis: 50%
+          display: flex
+          justify-content: center
+          align-items: center
+          margin-right: 35px
+          @media screen and ( max-width: 1300px )
+            flex-basis: 100%
+            margin-right: 0
+            margin-bottom: 30px
+          img
+        .technics-item__content
+          flex-basis: 50%
+          display: flex
+          flex-direction: column
+          font-size: 14px
+          font-weight: 500
+          @media screen and ( max-width: 1300px )
+            flex-basis: 100%
+            text-align: center
+          .technics-item__title
+            font-size: 36px
+            margin-bottom: 50px
+            @media screen and ( max-width: 425px )
+              margin-bottom: 25px
+            p
+              color: $primary
+          .technics-item__text
+            max-width: 560px
+            margin-bottom: 40px
+            @media screen and ( max-width: 1370px )
+              margin: 0 auto 40px
+          .technics-item__list
+            margin-bottom: 80px
+            @media screen and ( max-width: 1300px )
+              margin-bottom: 40px
+            .technics-item-list__item
+              position: relative
+              padding-left: 40px
+              margin-bottom: 20px
+              text-align: left
+              @media screen and ( max-width: 1300px )
+                text-align: center
+                max-width: 560px
+                margin: 0 auto 20px
+              @media screen and ( max-width: 425px )
+                padding-left: 30px
+              &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 50%
+                transform: translateY(-50%)
+                width: 22px
+                height: 17px
+                background: url(../img/technics/mark.svg)
+              &:last-child
+                margin-bottom: 0
+          .technics-item__buttons
+            margin-top: auto
+            @media screen and ( max-width: 1024px )
+              display: flex
+              flex-direction: column
+              align-items: center
+            .technics-item__button
+              max-width: 215px
+              width: 100%
+              text-align: center
+              padding: 20px
+              margin-bottom: 20px
+              margin-right: 20px
+              @media screen and ( max-width: 1440px ) and ( min-width: 1301px )
+                max-width: 195px
+                padding: 20px 0
+                margin-right: 10px
+              @media screen and ( max-width: 1024px )
+                margin-right: 0
+                margin-bottom: 20px
+              &:last-child
+                margin-right: 0
+                margin-bottom: 0
+                @media screen and ( max-width: 1024px )
+                  margin-bottom: 0
+              &.button--white
+                padding: 18px
+
+// Consultation
+
+.consultation
+  background: url(../img/consultation/bg.jpg) center no-repeat
+  background-size: cover
+  .consultation__inner
+    padding: 120px 0 400px
+    display: flex
+    justify-content: space-between
+    @media screen and ( max-width: 970px )
+      flex-direction: column
+    @media screen and ( max-width: 768px )
+      padding: 90px 0
+    .consultation__title
+      flex-basis: 50%
+      @media screen and ( max-width: 970px )
+        text-align: center
+        margin: 0 auto 20px
+    .consultation__form
+      flex-basis: 50%
+      position: relative
+      z-index: 1
+      max-width: 560px
+      width: 100%
+      display: flex
+      flex-direction: column
+      background: #fff
+      box-shadow: $shadow
+      padding: 80px 80px 50px
+      margin: 0 auto
+      @media screen and ( max-width: 425px )
+        padding: 50px
+      &::before
+        content: ''
+        position: absolute
+        right: 25px
+        left: 25px
+        top: 25px
+        bottom: 25px
+        z-index: -1
+        border: 1px solid #c4c4c4
+        @media screen and ( max-width: 425px )
+          right: 20px
+          left: 20px
+          top: 20px
+          bottom: 20px
+      &::after
+        content: ''
+        position: absolute
+        right: 25px
+        left: 25px
+        bottom: -20px
+        height: 20px
+        z-index: -1
+        background: #ddd
+        box-shadow: $shadow
+      .consultation-form__title
+        font-size: 24px
+        margin-bottom: 30px
+      .consultation-form__subtitle
+        position: relative
+        font-size: 14px
+        font-weight: 500
+        color: #fff
+        max-width: 350px
+        margin-bottom: 50px
+        width: 100%
+        @media screen and ( max-width: 1260px )
+          color: #000
+        &::before
+          content: ''
+          position: absolute
+          left: -80px
+          top: 50%
+          transform: translateY(-50%)
+          z-index: -1
+          width: 480px
+          height: 60px
+          background: #979797
+          @media screen and ( max-width: 1260px )
+            display: none
+      .consultation-form__text
+        font-size: 14px
+        font-weight: 500
+        margin-bottom: 15px
+      .consultation-form__input-wrapper
+        position: relative
+        width: 100%
+        margin-bottom: 20px
+        &:last-of-type
+          margin-bottom: 35px
+        &::before
+          content: ''
+          position: absolute
+          left: 25px
+          top: 50%
+          transform: translateY(-50%)
+          width: 20px
+          height: 20px
+        &:nth-of-type(1)::before
+          background: url(../img/consultation/name.svg)
+        &:nth-of-type(2)::before
+          background: url(../img/consultation/tel.svg)
+        .consultation-form__input
+          width: 100%
+          padding: 20px 40px 20px 60px
+          border: 1px solid #c4c4c4
+      .consultation-form__button
+        margin-bottom: 20px
+        @media screen and ( max-width: 425px )
+          padding: 20px
+      .consultation-form__policy
+        font-size: 12px
+        color: #575757
+        text-align: center
+        max-width: 350px
+
+// Production
+
+.production
+  overflow: hidden
+  .production__inner
+    position: relative
+    display: flex
+    justify-content: space-between
+    @media screen and ( max-width: 1440px )
+      flex-direction: column
+    .production__content
+      position: relative
+      flex-basis: 35%
+      display: flex
+      flex-direction: column
+      @media screen and ( max-width: 1440px )
+        margin-bottom: 140px
+      .production__title
+        margin-bottom: 40px
+      .production__text
+        @media screen and ( max-width: 1440px )
+          margin-bottom: 20px
+      .production__number-slide
+        position: absolute
+        bottom: 120px
+        font-size: 48px
+        font-weight: 500
+        @media screen and ( max-width: 1440px )
+          bottom: -80px
+      .production__arrow-left,
+      .production__arrow-right
+        position: absolute
+        bottom: 80px
+        z-index: 100
+        cursor: pointer
+        @media screen and ( max-width: 1440px )
+          bottom: -100px
+      .production__arrow-left
+        left: 0
+      .production__arrow-right
+        left: 50px
+      .production__link
+        position: relative
+        z-index: 1
+        margin: auto auto 4px 0
+    .production-slider__arrow-left
+      position: absolute
+      right: -100px
+      top: 50%
+      z-index: 1
+      transform: translateY(-100%) rotate(45deg)
+      width: 40px
+      height: 40px
+      border-top: 4px solid #000
+      border-right: 4px solid #000
+      cursor: pointer
+      @media screen and ( max-width: 1440px )
+        display: none
+    .production__slider
+      flex-basis: 60%
+      min-width: 0
+      .production-slider__item
+        display: flex
+        flex-direction: column
+        max-width: 850px
+        width: 100%
+        min-height: 570px
+        background: $primary
+        margin-right: 20px
+        @media screen and ( max-width: 880px )
+          margin-right: 0
+          min-height: 0
+        @media screen and ( max-width: 425px )
+          min-height: 0
+          width: 100vw
+          max-width: 100vw
+        .production-slider__img
+          img
+        .production-slider__text
+          color: #fff
+          padding: 30px 30px 0
+          margin-bottom: 30px
+        .production-slider__link
+          position: relative
+          font-size: 12px
+          color: #fff
+          display: inline-block
+          max-width: 200px
+          padding: 0 30px 0
+          margin-top: auto
+          margin-bottom: 30px
+          &::after
+            content: ''
+            position: absolute
+            right: -20px
+            top: 50%
+            transform: translateY(-50%)
+            width: 36px
+            height: 8px
+            background: url(../img/arrow.svg)
+      .slick-list
+        overflow: visible
+        .slick-slide
+          opacity: 0
+          transition: opacity .6s
+        .slick-current.slick-active
+          opacity: 1
+          & ~ .slick-slide
+            opacity: 1
+            @media screen and ( max-width: 880px )
+              opacity: 0
+      .slick-arrow
+        position: absolute
+        opacity: 0
+        visibility: hidden
+
+// About
+
+.about
+  display: flex
+  justify-content: space-between
+  box-shadow: $shadow
+  @media screen and ( max-width: 600px )
+    flex-direction: column
+  .about__col
+    flex-basis: 36%
+    padding: 40px 0
+    background: url(../img/about/bg.jpg) center no-repeat
+    background-size: cover
+    padding-left: 12%
+    @media screen and ( max-width: 1440px )
+      background-position: right center
+    @media screen and ( max-width: 1024px )
+      flex-basis: 50%
+    @media screen and ( max-width: 600px )
+      background: none
+    @media screen and ( max-width: 425px )
+      padding-bottom: 0
+    .about__title
+      font-weight: 700
+      color: #fff
+      text-align: left
+      @media screen and ( max-width: 600px )
+        color: #000
+  .about__stats
+    flex-basis: 64%
+    padding-right: 5px
+    padding-bottom: 200px
+    @media screen and ( max-width: 1440px )
+      padding-bottom: 40px
+    @media screen and ( max-width: 1024px )
+      flex-basis: 50%
+    .about__row
+      display: flex
+      padding-left: 45px
+      @media screen and ( max-width: 1440px )
+        padding-left: 0
+      @media screen and ( max-width: 1024px )
+        flex-direction: column
+      .about__item
+        position: relative
+        max-width: 50%
+        padding-left: 100px
+        margin-top: 80px
+        @media screen and ( max-width: 1024px )
+          max-width: 100%
+        @media screen and ( max-width: 425px )
+          padding-left: 50px
+          margin-top: 50px
+        &::before
+          content: ''
+          position: absolute
+          top: -70px
+          left: 0
+          width: 190px
+          height: 190px
+          background: url(../img/about/circle.svg) center no-repeat
+          @media screen and ( max-width: 425px )
+            top: -45px
+            left: -5px
+            width: 100px
+            height: 100px
+            background-size: cover
+        .about-item__title
+          font-size: 96px
+          color: $primary
+          @media screen and ( max-width: 425px )
+            font-size: 40px
+          span
+            font-size: 36px
+            @media screen and ( max-width: 425px )
+              font-size: 25px
+        .about-item__text
+          @media screen and ( max-width: 425px )
+            font-size: 14px
+
+// Partners
+
+.partners
+  .partners__title
+    margin-bottom: 50px
+    @media screen and ( max-width: 425px )
+      margin-bottom: 25px
+  .partners__list
+    display: flex
+    justify-content: space-between
+    @media screen and ( max-width: 600px )
+      flex-direction: column
+    .partners-list__item
+      flex-basis: 33%
+      padding: 10px
+      border: 1px solid $secondary
+      margin-right: 40px
+      @media screen and ( max-width: 600px )
+        margin-right: 0
+        margin-bottom: 20px
+      &:last-child
+        margin-right: 0
+        @media screen and ( max-width: 600px )
+          margin-bottom: 0
+      img
+        width: 100%
+        max-height: 135px
+        height: 100%
+        object-fit: cover
+
+// Geo
+
+.geo
+  .geo__inner
+    display: flex
+    justify-content: space-between
+    @media screen and ( max-width: 1024px )
+      flex-direction: column
+    .geo__content
+      flex-basis: 50%
+      max-width: 640px
+      @media screen and ( max-width: 1024px )
+        flex-basis: 100%
+        max-width: 100%
+      .geo__title
+        margin-bottom: 80px
+        @media screen and ( max-width: 425px )
+          margin-bottom: 40px
+      .geo__list
+        .geo-list__item
+          display: flex
+          margin-bottom: 60px
+          @media screen and ( max-width: 425px )
+            margin-bottom: 30px
+          .geo-list__img
+            flex-basis: 70px
+            min-width: 70px
+            @media screen and ( max-width: 425px )
+              display: none
+            img
+              width: 37px
+              height: 42px
+          .geo-list__content
+            .geo-list__title
+              font-size: 36px
+              color: $secondary
+              margin-bottom: 5px
+              @media screen and ( max-width: 425px )
+                font-size: 28px
+            .geo-list__text
+    .geo__map
+      flex-basis: 50%
+      display: flex
+      flex-direction: column
+      align-items: center
+      @media screen and ( max-width: 1024px )
+        flex-basis: 100%
+      .geo__img
+        img
+      .geo__link
+        @media screen and ( max-width: 325px )
+          font-size: 20px
+
+// Cooperation
+
+.cooperation
+  background: url(../img/cooperation/bg.jpg) center no-repeat
+  background-size: cover
+  display: flex
+  justify-content: space-between
+  padding: 100px 15px 100px 0
+  @media screen and ( max-width: 1300px )
+    padding-right: 0
+  .cooperation__img
+    flex-basis: 40%
+    display: flex
+    align-items: center
+    @media screen and ( max-width: 1300px )
+      display: none
+    img
+  .cooperation__content
+    flex-basis: 57%
+    @media screen and ( max-width: 1300px )
+      flex-basis: 100%
+    @media screen and ( max-width: 500px )
+      padding: 0 15px
+    .cooperation__title
+      margin-bottom: 50px
+      @media screen and ( max-width: 1300px )
+        margin: 0 auto 50px
+        text-align: center
+    .cooperation__form
+      .cooperation-form__row
+        display: flex
+        align-items: center
+        margin-bottom: 50px
+        @media screen and ( max-width: 1300px )
+          justify-content: center
+          &:nth-of-type(2)
+            flex-direction: column
+            text-align: center
+        @media screen and ( max-width: 850px )
+          flex-direction: column
+        @media screen and ( max-width: 425px )
+          margin-bottom: 20px
+        &:last-child
+          margin-bottom: 0
+        .cooperation-form__col
+          margin-right: 20px
+          @media screen and ( max-width: 850px )
+            margin-right: 0
+            margin-bottom: 20px
+          @media screen and ( max-width: 425px )
+            width: 100%
+          &:nth-of-type(1)
+            .cooperation-form__input-wrapper::before
+              background: url(../img/consultation/name.svg)
+          &:nth-of-type(2)
+            .cooperation-form__input-wrapper::before
+              background: url(../img/consultation/tel.svg)
+          &:last-child
+            margin-right: 0
+          .cooperation-form__text
+            font-size: 14px
+            font-weight: 500
+            margin-bottom: 15px
+          .cooperation-form__input-wrapper
+            position: relative
+            &::before
+              content: ''
+              position: absolute
+              left: 25px
+              top: 50%
+              transform: translateY(-50%)
+              width: 20px
+              height: 20px
+            .cooperation-form__input
+              padding: 20px 40px 20px 60px
+              min-width: 370px
+              border: 0
+              @media screen and ( max-width: 425px )
+                min-width: 0
+                width: 100%
+        .cooperation-form__button
+          max-width: 370px
+          width: 100%
+          text-align: center
+          padding: 20px
+          margin-right: 40px
+          @media screen and ( max-width: 1300px )
+            margin-right: 0
+            margin-bottom: 20px
+          @media screen and ( max-width: 425px )
+            min-width: 0
+            width: 100%
+        .cooperation-form__policy
+          font-size: 12px
+          color: #575757
+          max-width: 315px
+
+// Contacts
+
+.contacts
+  .contacts__inner
+    .contacts__title
+      margin-bottom: 60px
+      @media screen and ( max-width: 425px )
+        margin-bottom: 30px
+    .contacts__row
+      display: flex
+      justify-content: space-between
+      @media screen and ( max-width: 720px )
+        flex-direction: column
+      .contacts__list
+        flex-basis: 33%
+        margin-right: 30px
+        @media screen and ( max-width: 720px )
+          margin-right: 0
+          margin-bottom: 30px
+        .contacts-list__item
+          margin-bottom: 30px
+          &:last-child
+            margin-bottom: 0
+          .contacts-list__title
+            font-size: 14px
+            color: $primary
+            margin-bottom: 10px
+          .contacts-list__text
+            font-weight: 500
+            .contacts-list__link
+              color: #000
+      .contacts__mail
+        flex-basis: 33%
+        .contacts-mail__row
+          display: flex
+          @media screen and ( max-width: 425px )
+            justify-content: center
+          .contacts__logo
+            margin-bottom: 50px
+            img
+          .contacts-mail__list
+            margin-right: 40px
+            .contacts-mail-list__item
+              position: relative
+              font-weight: 500
+              padding-left: 40px
+              margin-bottom: 20px
+              .contacts-mail-list__link
+                color: #000
+              &:last-child
+                margin-bottom: 0
+              &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: 50%
+                transform: translateY(-50%)
+                width: 22px
+                height: 22px
+                background: url(../img/contacts/mark.svg)
+
+// Footer
+
+.footer
+  position: relative
+  z-index: 1
+  background: url(../img/technics/bg.jpg) center no-repeat
+  background-size: cover
+  padding: 80px 0 50px
+  .footer__inner
+    .footer__row
+      display: flex
+      margin-bottom: 90px
+      @media screen and ( max-width: 1240px )
+        flex-direction: column
+        margin-bottom: 45px
+      .footer__content
+        display: flex
+        flex-direction: column
+        margin-right: 20px
+        @media screen and ( max-width: 1230px )
+          margin-right: 0
+          margin-bottom: 30px
+        .footer__title
+          margin-bottom: 60px
+          @media screen and ( max-width: 1740px )
+            font-size: 34px
+          @media screen and ( max-width: 1640px )
+            font-size: 32px
+          @media screen and ( max-width: 1440px )
+            font-size: 26px
+          @media screen and ( max-width: 1230px )
+            font-size: 32px
+            text-align: center
+            margin: 0 auto 60px
+          @media screen and ( max-width: 425px )
+            font-size: 28px
+        .footer__list
+          @media screen and ( max-width: 1230px )
+            margin: 0 auto
+          .footer-list__item
+            position: relative
+            font-weight: 500
+            max-width: 320px
+            padding-left: 80px
+            margin-bottom: 40px
+            &::before
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              width: 47px
+              height: 47px
+              background: url(../img/blog/gear.svg)
+        .footer__button
+          position: relative
+          max-width: 270px
+          width: 100%
+          text-align: center
+          margin-top: auto
+          @media screen and ( max-width: 1230px )
+            margin: 0 auto
+          &::after
+            content: ''
+            position: absolute
+            z-index: -1
+            left: 100px
+            top: 0
+            width: 100%
+            height: 100%
+            border-radius: 10px
+            background: url(../img/intro/youtube.svg) center no-repeat
+            background-size: cover
+            @media screen and ( max-width: 555px )
+              display: none
+      .footer__card
+        background: $primary
+        max-width: 850px
+        display: flex
+        flex-direction: column
+        @media screen and ( max-width: 1240px )
+          margin: 0 auto
+        .footer-card__img
+          width: 100%
+          img
+            width: 100%
+            object-fit: cover
+        .footer-card__title
+          color: #fff
+          padding: 30px 30px 0
+          margin-bottom: 30px
+        .footer-card__link
+          position: relative
+          display: inline-block
+          font-size: 12px
+          color: #fff
+          padding: 0 30px 0 30px
+          max-width: 200px
+          margin-top: auto
+          margin-bottom: 30px
+          &::after
+            content: ''
+            position: absolute
+            right: -20px
+            top: 50%
+            transform: translateY(-50%)
+            width: 36px
+            height: 8px
+            background: url(../img/arrow.svg)
+      .footer__text
+        font-weight: 14
+        font-weight: 500
