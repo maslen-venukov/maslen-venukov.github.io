@@ -353,7 +353,8 @@
         &::after
           transform: translateY(calc(-50% + 3px)) rotate(225deg)
       & + .tabs__list
-        display: block
+        max-height: 100%
+        border: 1px solid #212123
   &__list
     display: flex
     justify-content: center
@@ -362,18 +363,22 @@
     border-top: $border
     border-bottom: $border
     @media screen and ( max-width: 767px )
-      display: none
+      max-height: 0
+      overflow: hidden
       flex-direction: column
       padding: 0
-      border: 1px solid #212123
+      border: 0
+      border-left: 1px solid #212123
+      border-right: 1px solid #212123
       border-radius: 0 0 10px 10px
+      transition: max-height .2s
   &__item
     @media screen and ( max-width: 767px )
       width: 100%
     &:not(:last-child)
       margin-right: 80px
       @media screen and ( max-width: 767px )
-        margin-bottom: 0
+        margin: 0
     &--active
       .tabs__link
         color: #fff
