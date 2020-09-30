@@ -21,7 +21,7 @@ if(cookies) {
 const scrollToId = () => {
   const section = document.querySelector(navLinkFunctional.getAttribute('href'));
   window.scrollTo({
-    top: section.offsetTop,
+    top: section.offsetTop - 40,
     behavior: 'smooth'
   });
 };
