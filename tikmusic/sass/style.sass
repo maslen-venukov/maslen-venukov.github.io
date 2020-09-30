@@ -1,0 +1,194 @@
+@import 'normalize'
+@import 'global'
+
+.header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 175px
+  display: flex
+  align-items: center
+  &--page
+    justify-content: center
+  &__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.nav
+  &__list
+    display: flex
+    align-items: center
+    font-weight: 600
+  &__item
+    transition: color .2s
+    &:hover
+      color: #fff
+    &:not(:last-child)
+      margin-right: 45px
+
+.intro
+  background: url(../img/bg.jpg) center / cover no-repeat
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin-bottom: 80px
+  &__title
+    font-size: 80px
+    line-height: 1
+    margin-bottom: 5vh
+  &__subtitle
+    font-size: 18px
+    color: $gray
+    margin-bottom: 6vh
+  &__scroll
+    position: absolute
+    bottom: 10vh
+    left: 50%
+    transform: translateX(-50%)
+
+.functional
+  margin-bottom: 100px
+  &__inner
+    position: relative
+  &__title
+    text-align: center
+    margin-bottom: 90px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  &__item
+    flex-basis: 50%
+    &:not(:nth-last-child(-n+2))
+      margin-bottom: 220px
+  &__img
+    position: absolute
+    top: 140px
+    left: 50%
+    transform: translateX(calc(-50% + 25px))
+    &::after
+      content: ''
+      position: absolute
+      z-index: -1
+      top: 50%
+      left: 50%
+      transform: translate(calc(-50% - 25px), -50%)
+      width: 905px
+      height: 905px
+      background: #3b1228
+      opacity: 0.5
+      filter: blur(250px)
+
+.functional-item
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    width: 95px
+    height: 60px
+  &__img
+    width: 210px
+    margin-bottom: 25px
+  &__text
+    width: 210px
+  &:nth-child(2n)
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+  &:nth-child(1)::after
+    background: url(../img/top-left-pointer.svg) center no-repeat
+  &:nth-child(2)::after
+    background: url(../img/top-right-pointer.svg) center no-repeat
+  &:nth-child(3)::after
+    background: url(../img/bottom-left-pointer.svg) center no-repeat
+  &:nth-child(4)::after
+    background: url(../img/bottom-right-pointer.svg) center no-repeat
+  &:nth-child(1),
+  &:nth-child(2)
+    &::after
+      top: 80px
+  &:nth-child(1),
+  &:nth-child(3)
+    &::after
+      left: 310px
+  &:nth-child(2),
+  &:nth-child(4)
+    &::after
+      right: 310px
+  &:nth-child(3),
+  &:nth-child(4)
+    &::after
+      top: 10px
+
+.footer
+  &__inner
+    position: relative
+    padding: 75px 0
+    border-top: $border
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__nav,
+  &__home,
+  &__g-play,
+  &__copyright
+    flex-basis: calc(100% / 3)
+  &__g-play
+    text-align: center
+  &__copyright
+    text-align: right
+
+.cookies
+  position: fixed
+  bottom: 0
+  width: 100%
+  background: #1a1a1c
+  transform: translateY(100%)
+  transition: transform .2s
+  &--active
+    transform: translateY(0)
+  &__inner
+    max-width: 1105px
+    padding: 15px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 12px
+  &__btn
+    font-weight: 600
+    color: #fff
+    background: none
+    padding: 6px 14px
+    border: 1px solid rgba(166, 165, 176, .3)
+    border-radius: 10px
+
+.tabs
+  margin-top: 170px
+  margin-bottom: 60px
+  &__list
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 40px 0
+    border-top: $border
+    border-bottom: $border
+  &__item
+    &:not(:last-child)
+      margin-right: 80px
+    &--active
+      .tabs__link
+        color: #fff
+        background: #212123
+  &__link
+    padding: 15px 30px
+    font-weight: 600
+    border-radius: 10px
+    transition: color .2s, background .2s
+    &:hover
+      color: #fff
+      background: #212123

@@ -1,0 +1,98 @@
+$gray: #a6a5b0
+$border: 1px solid rgba($gray, .2)
+
+html, body
+  font-family: 'Montserrat', sans-serif
+  font-size: 14px
+  line-height: 1.85
+  background: #000
+  color: $gray
+  overflow-x: hidden
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  line-height: 1.5
+  font-weight: 600
+  color: #fff
+
+h2
+  font-size: 40px
+  margin-bottom: 40px
+
+h3
+  font-size: 30px
+  margin: 60px 0 40px
+
+h4
+  font-size: 20px
+  margin: 40px 0 30px
+
+.container
+  width: 100%
+  max-width: 1210px
+  padding: 0 15px
+  margin: 0 auto
+
+.g-play
+  width: 204px
+  height: 74px
+  &__bg
+    fill: #000
+    transition: fill .2s
+  &:hover
+    .g-play__bg
+      fill: #101011
+
+.scroll
+  width: 34px
+  height: 34px
+  cursor: pointer
+
+.page
+  margin-bottom: 100px
+  &__inner
+    padding-right: 220px
+
+.text
+  margin: 25px 0
+  a
+    font-weight: 600
+    color: #fff
+
+.list
+  li
+    position: relative
+    text-indent: 10px
+    &::before
+      content: ''
+      position: absolute
+      left: 2px
+      top: 12px
+      width: 3px
+      height: 1px
+      background: $gray
+    a
+      font-weight: 600
+      color: #fff
+    &:not(:last-child)
+      margin-bottom: 25px
+
+.home
+  font-weight: 600
+  color: #fff
+  &__link
+    position: relative
+    padding-left: 40px
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 18px
+      height: 18px
+      background: url(../img/arrow-left.svg) center no-repeat
