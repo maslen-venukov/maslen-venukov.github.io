@@ -108,6 +108,8 @@
   justify-content: center
   align-items: center
   margin-bottom: 80px
+  @media screen and ( max-width: 425px )
+    background-image: url(../img/mobile-bg.jpg)
   &__title
     font-size: 80px
     line-height: 1
@@ -138,6 +140,8 @@
   &__inner
     position: relative
   &__title
+    position: relative
+    z-index: 1
     text-align: center
     margin-bottom: 90px
     @media screen and ( max-width: 767px )
@@ -160,11 +164,11 @@
     position: absolute
     top: 140px
     left: 50%
-    transform: translateX(calc(-50% + 15px))
-    width: 200px
+    transform: translateX(calc(-50% + 25px))
     margin: 0 auto
     @media screen and ( max-width: 767px )
       position: static
+      width: 200px
       transform: translateX(15px)
       img
         margin: 0 auto
@@ -180,6 +184,8 @@
       background: #3b1228
       opacity: 0.5
       filter: blur(250px)
+      @media screen and ( max-width: 767px )
+        transform: translate(calc(-50% - 15px), -50%)
 
 .functional-item
   position: relative
@@ -192,7 +198,7 @@
     content: ''
     position: absolute
     width: 95px
-    height: 60px
+    height: 61px
     @media screen and ( max-width: 1150px )
       display: none
   &__img
@@ -235,6 +241,7 @@
   &:nth-child(4)
     &::after
       top: 10px
+      height: 62px
 
 .footer
   &__inner
@@ -245,7 +252,30 @@
     justify-content: space-between
     align-items: center
     @media screen and ( max-width: 767px )
+      display: grid
+      grid-template-columns: 100%
+      grid-template-areas: 'g-play' 'links' 'copyright'
       padding: 45px 0
+      .footer__nav,
+      .footer__home
+        grid-area: links
+      .footer__g-play
+        grid-area: g-play
+      .footer__copyright
+        grid-area: copyright
+  &__nav
+    @media screen and ( max-width: 767px )
+      margin-bottom: 20px
+    .nav__list
+      @media screen and ( max-width: 767px )
+        justify-content: space-between
+        padding: 0 15px
+    .nav__item
+      color: #fff
+  &__home
+    @media screen and ( max-width: 767px )
+      text-align: center
+      margin-bottom: 30px
   &__nav,
   &__home,
   &__g-play,
@@ -253,8 +283,12 @@
     flex-basis: calc(100% / 3)
   &__g-play
     text-align: center
+    @media screen and ( max-width: 767px )
+      margin: 0 auto 35px
   &__copyright
     text-align: right
+    @media screen and ( max-width: 767px )
+      text-align: center
 
 .cookies
   position: fixed
@@ -291,8 +325,20 @@
     border-radius: 10px
 
 .tabs
-  margin-top: 170px
-  margin-bottom: 60px
+  margin: 170px 0 60px
+  @media screen and ( max-width: 767px )
+    margin-top: 90px
+  &__header
+    display: none
+    @media screen and ( max-width: 767px )
+      display: block
+    .tabs__link
+      border-radius: 10px
+    &--active
+      .tabs__link
+        border-radius: 10px 10px 0 0
+      & + .tabs__list
+        display: block
   &__list
     display: flex
     justify-content: center
@@ -300,9 +346,19 @@
     padding: 40px 0
     border-top: $border
     border-bottom: $border
+    @media screen and ( max-width: 767px )
+      display: none
+      flex-direction: column
+      padding: 0
+      border: 1px solid #212123
+      border-radius: 0 0 10px 10px
   &__item
+    @media screen and ( max-width: 767px )
+      width: 100%
     &:not(:last-child)
       margin-right: 80px
+      @media screen and ( max-width: 767px )
+        margin-bottom: 0
     &--active
       .tabs__link
         color: #fff
@@ -312,6 +368,9 @@
     font-weight: 600
     border-radius: 10px
     transition: color .2s, background .2s
+    @media screen and ( max-width: 767px )
+      display: block
+      border-radius: 0
     &:hover
       color: #fff
       background: #212123

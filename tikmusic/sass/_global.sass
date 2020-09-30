@@ -62,9 +62,20 @@ h4
       fill: #101011
 
 .scroll
+  position: relative
+  z-index: 1
   width: 34px
   height: 34px
   cursor: pointer
+  animation: scrollJump 1.5s infinite
+
+  @keyframes scrollJump
+    0%
+      transform: translate(-50%, 0)
+    50%
+      transform: translate(-50%, 10px)
+    100%
+      transform: translate(-50%, 0)
 
 .page
   margin-bottom: 100px
