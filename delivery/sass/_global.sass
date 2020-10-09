@@ -1,0 +1,126 @@
+$primary: #1890ff
+$secondary: #262626
+$gray-5: #d9d9d9
+$gray-6: #bfbfbf
+$gray-7: #8c8c8c
+$gray-8: #595959
+
+html, body
+  font-family: 'Roboto', sans-serif
+  font-size: 18px
+  line-height: 1.2
+  overflow-x: hidden
+  @media screen and ( max-width: 425px )
+    font-size: 16px
+
+.lock
+  overflow: hidden
+
+.container
+  width: 100%
+  max-width: 1230px
+  padding: 0 15px
+  margin: 0 auto
+
+.section
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 45px
+    @media screen and ( max-width: 650px )
+      margin-bottom: 30px
+  &__title
+    font-size: 36px
+    @media screen and ( max-width: 650px )
+      font-size: 30px
+    @media screen and ( max-width: 425px )
+      font-size: 26px
+
+.logo
+  flex-shrink: 0
+
+.btn
+  position: relative
+  display: inline-block
+  font-family: 'SF Pro Display', sans-serif
+  font-size: 16px
+  color: #fff
+  height: 40px
+  background: $primary
+  border: 0
+  border-radius: 2px
+  padding: 0 15px
+  &::before
+    content: ''
+    position: absolute
+    left: 15px
+    top: 50%
+    transform: translateY(-50%)
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+  &--white
+    color: $gray-8
+    background: #fff
+    border: 1px solid $gray-5
+  &--blue-border
+    color: $primary
+    height: 32px
+    background: #fff
+    border: 1px solid $primary
+  &--login
+    padding-left: 35px
+    &::before
+      width: 16px
+      height: 16px
+      background-image: url(../img/icons/user.svg)
+  &--cart
+    padding-left: 35px
+    &::before
+      width: 16px
+      height: 16px
+      background-image: url(../img/icons/cart.svg)
+  &--to-cart
+    padding-right: 35px
+    &::before
+      left: auto
+      right: 15px
+      width: 16px
+      height: 16px
+      background-image: url(../img/icons/white-cart.svg)
+
+.input
+  position: relative
+  height: 40px
+  border: 1px solid $gray-5
+  border-radius: 2px
+  padding: 0 15px 0 35px
+  input
+    width: 100%
+    height: 100%
+    font-size: 16px
+    color: $gray-8
+    background: #fff
+    border: 0
+    &::placeholder
+      color: $gray-6
+  &::before
+    content: ''
+    position: absolute
+    left: 10px
+    top: 50%
+    transform: translateY(-50%)
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+  &--address
+    &::before
+      width: 18px
+      height: 18px
+      background-image: url(../img/icons/home.svg)
+  &--search
+    &::before
+      width: 18px
+      height: 18px
+      background-image: url(../img/icons/search.svg)
