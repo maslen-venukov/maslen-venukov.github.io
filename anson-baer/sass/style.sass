@@ -153,9 +153,27 @@
   &__img
     flex-basis: 50%
   &__text
-    font-style: italic
+    position: relative
     max-width: 450px
+    font-style: italic
     margin: 0 auto
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      width: 130px
+      height: 100px
+      background-position: center
+      background-size: cover
+      background-repeat: no-repeat
+    &::before
+      bottom: -120px
+      left: -130px
+      background-image: url(../img/icons/quotes-down.svg)
+    &::after
+      top: -120px
+      right: -130px
+      background-image: url(../img/icons/quotes-up.svg)
   &__info
     display: flex
     justify-content: space-between
