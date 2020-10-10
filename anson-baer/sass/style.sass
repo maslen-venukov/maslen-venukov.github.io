@@ -1,0 +1,225 @@
+@import 'normalize'
+@import 'global'
+@import 'fonts'
+
+.header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 80px
+  background: #fff
+  padding: 30px 0
+  &__inner
+    display: flex
+    justify-content: space-between
+
+.nav
+  &__list
+    display: flex
+  &__item
+    color: #3a352e
+    &--active
+      font-weight: 700
+    &:not(:last-child)
+      margin-right: 50px
+
+.intro
+  position: relative
+  min-height: calc(100vh - 80px)
+  background: #9ad3e9 url(../img/home-bg.jpg) center / cover no-repeat
+  margin-top: 80px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    background: rgba($green-blue, .2)
+  &__inner
+    position: relative
+    z-index: 2
+    height: calc(100vh - 80px)
+    display: flex
+    justify-content: center
+    align-items: center
+  &__circles
+    flex-basis: 50%
+  &__headers
+    flex-basis: 50%
+    padding-left: 8%
+
+.circles
+  position: relative
+  &__item
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 170px
+    height: 170px
+    line-height: 1.2
+    text-align: center
+    text-transform: uppercase
+    background: #fff
+    box-shadow: 0 2px 6px rgba(#000, .2)
+    border: 8px solid #fff
+    border-radius: 50%
+    cursor: pointer
+    &:hover
+      border-color: $green-blue
+    &:nth-child(1)
+      transform: translate(-50%, calc(-150% - 45px))
+    &:nth-child(2)
+      transform: translate(calc(-50% + 170px), calc(-50% - 150px))
+    &:nth-child(3)
+      transform: translate(calc(-50% + 210px), calc(-50% + 30px))
+    &:nth-child(4)
+      transform: translate(calc(-50% + 100px), calc(-50% + 190px))
+    &:nth-child(5)
+      transform: translate(calc(-50% + -100px), calc(-50% + 190px))
+    &:nth-child(6)
+      transform: translate(calc(-50% - 210px), calc(-50% + 30px))
+    &:nth-child(7)
+      transform: translate(calc(-50% - 170px), calc(-50% - 150px))
+    &--main
+      font-size: 18px
+      font-weight: 700
+      color: #fff
+      background: $green-blue
+      border: 8px solid $green-blue
+      &:hover
+        color: $green-blue
+        background: #fff
+      &:nth-child(1)
+        transform: translate(-50%, -50%)
+  &__link
+    max-width: 120px
+
+.headers
+  &__item
+    display: none
+    max-width: 500px
+    &--main
+      display: block
+      .headers__title
+        max-width: 400px
+        font-weight: 700
+      .headers__subtitle
+        font-size: 44px
+        line-height: 1.2
+        font-weight: 300
+
+.why
+  display: flex
+  flex-wrap: wrap
+  &__founder
+    flex-basis: 100%
+  &__item
+    flex-basis: 50%
+    padding: 145px 75px 75px
+    p
+      margin-bottom: 15px
+      &:last-of-type
+        margin-bottom: 40px
+  &__link
+    position: relative
+    color: #000
+    text-transform: uppercase
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: -20px
+      transform: translateY(-50%)
+      width: 16px
+      height: 16px
+      background: url(../img/icons/arrow-right.svg) center / cover no-repeat
+
+.founder
+  display: flex
+  align-items: center
+  color: #fff
+  text-align: center
+  background: $dark-green
+  &__text,
+  &__info,
+  &__about,
+  &__img
+    flex-basis: 50%
+  &__text
+    font-style: italic
+    max-width: 450px
+    margin: 0 auto
+  &__info
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__about
+    max-width: 325px
+    margin: 0 auto
+  &__name
+    margin-bottom: 10px
+  &__img
+    max-width: 360px
+    max-height: 360px
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+.footer
+  color: #fff
+  background: $dark-green
+  padding: 40px 0
+  &__inner
+    display: flex
+  &__list
+    flex-basis: 320px
+    margin-right: 30px
+  &__title
+    margin-bottom: 25px
+  &__item
+    &:not(:last-child)
+      margin-bottom: 5px
+  &__start
+    display: flex
+    align-items: center
+    height: 35px
+    font-weight: 600
+    text-transform: uppercase
+    padding: 0 25px
+    border: 2px solid #fff
+    margin: auto 0 0 auto
+
+.social
+  padding: 25px 0
+  &__inner
+    display: flex
+    align-items: center
+  &__text
+    margin-left: auto
+    margin-right: 50px
+  &__list
+    display: flex
+  &__item
+    &:not(:last-child)
+      margin-right: 50px
+  &__link
+    display: block
+    width: 40px
+    height: 40px
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    &--email
+      background-image: url(../img/icons/email.svg)
+    &--facebook
+      background-image: url(../img/icons/facebook.svg)
+    &--whatsapp
+      background-image: url(../img/icons/whatsapp.svg)
