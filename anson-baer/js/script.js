@@ -2,6 +2,7 @@ const circlesItems = document.querySelectorAll('.circles__item');
 const headersItems = document.querySelectorAll('.headers__item');
 const htmlBody = document.querySelector('html, body');
 const headerBurger = document.querySelector('.header__burger');
+const headerSearch = document.querySelector('.header__search');
 const headerSocial = document.querySelector('.header__social');
 const navList = document.querySelector('.nav__list');
 
@@ -19,5 +20,8 @@ circlesItems.forEach((el, index) => {
 headerBurger.addEventListener('click', () => {
   htmlBody.classList.toggle('lock');
   headerSocial.classList.toggle('header__social--active');
+  setTimeout(() => {
+    headerSearch.classList.toggle('header__search--active');
+  }, 300);
   navList.classList.toggle('nav__list--active');
 });
