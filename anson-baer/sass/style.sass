@@ -307,14 +307,18 @@
       background: url(../img/icons/arrow-right.svg) center / cover no-repeat
 
 .testimonial
-  display: flex
-  align-items: center
   color: #fff
   text-align: center
   background: $dark-green
   @media screen and ( max-width: 1200px )
-    flex-direction: column-reverse
     padding: 30px 15px
+  .container
+    padding: 0
+  &__inner
+    display: flex
+    align-items: center
+  @media screen and ( max-width: 1200px )
+    flex-direction: column-reverse
   &__text,
   &__info,
   &__about,
