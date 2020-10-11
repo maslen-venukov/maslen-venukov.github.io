@@ -1,6 +1,7 @@
 const circlesItems = document.querySelectorAll('.circles__item');
 const headersItems = document.querySelectorAll('.headers__item');
 const htmlBody = document.querySelector('html, body');
+const page = document.querySelector('.page');
 const headerBurger = document.querySelector('.header__burger');
 const headerSearch = document.querySelector('.header__search');
 const headerSocial = document.querySelector('.header__social');
@@ -10,6 +11,7 @@ const navList = document.querySelector('.nav__list');
 
 headerBurger.addEventListener('click', () => {
   htmlBody.classList.toggle('lock');
+  page.classList.toggle('page--transformed');
   headerBurger.classList.toggle('header__burger--active');
   headerSocial.classList.toggle('header__social--active');
   setTimeout(() => {
