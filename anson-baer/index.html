@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
   <title>Anson Baer</title>
 </head>
@@ -74,28 +75,30 @@
         <div class="circles__item circles__item--main">
           <a href="#!" class="circles__link">Start a&nbsp;company in Estonia</a>
         </div>
-        <ul class="circles__list">
-          <li class="circles__item">
-            <a href="#!" class="circles__link">Personal investment company</a>
-          </li>
-          <li class="circles__item">
-            <a href="#!" class="circles__link">Approved small investment fund</a>
-          </li>
-          <li class="circles__item">
-            <a href="#!" class="circles__link">Tourism company</a>
-          </li>
-          <li class="circles__item">
-            <a href="#!" class="circles__link">Employment center company</a>
-          </li>
-          <li class="circles__item">
-            <a href="#!" class="circles__link">Trading company</a>
-          </li>
-          <li class="circles__item">
-            <a href="#!" class="circles__link">Crypto-currency investment company</a>
-          </li>
-          <li class="circles__item">
-            <a href="#!" class="circles__link">Dropshipping</a>
-          </li>
+        <ul class="circles__list swiper-container">
+          <div class="swiper-wrapper">
+            <li class="circles__item">
+              <a href="#!" class="circles__link">Personal investment company</a>
+            </li>
+            <li class="circles__item">
+              <a href="#!" class="circles__link">Approved small investment fund</a>
+            </li>
+            <li class="circles__item">
+              <a href="#!" class="circles__link">Tourism company</a>
+            </li>
+            <li class="circles__item">
+              <a href="#!" class="circles__link">Employment center company</a>
+            </li>
+            <li class="circles__item">
+              <a href="#!" class="circles__link">Trading company</a>
+            </li>
+            <li class="circles__item">
+              <a href="#!" class="circles__link">Crypto-currency investment company</a>
+            </li>
+            <li class="circles__item">
+              <a href="#!" class="circles__link">Dropshipping</a>
+            </li>
+          </div>
         </ul>
       </nav>
 
@@ -141,15 +144,15 @@
 
   <section class="why section">
 
-    <div class="why__founder founder">
-      <p class="founder__text">I registered my company in Estonia thanks to Anson Baer. Because of their professional team and easy processes I was able to lower my company’s costs and noticeably increase our income.</p>
-      <div class="founder__info">
-        <div class="founder__about">
-          <p class="founder__name">Lars Larsson</p>
-          <p class="founder__post">CEO of Switzerland’s cryptocurrency investment company CCIC</p>
+    <div class="why__testimonial testimonial">
+      <p class="testimonial__text">I registered my company in Estonia thanks to Anson Baer. Because of their professional team and easy processes I was able to lower my company’s costs and noticeably increase our income.</p>
+      <div class="testimonial__info">
+        <div class="testimonial__about">
+          <p class="testimonial__name">Lars Larsson</p>
+          <p class="testimonial__post">CEO of Switzerland’s cryptocurrency investment company CCIC</p>
         </div>
-        <div class="founder__img">
-          <img src="img/founder.jpg" alt="Founder">
+        <div class="testimonial__img">
+          <img src="img/testimonial-author.jpg" alt="Author">
         </div>
       </div>
     </div>
@@ -267,6 +270,7 @@
     </div>
   </div>
 
+  <script src="libs/swiper/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
