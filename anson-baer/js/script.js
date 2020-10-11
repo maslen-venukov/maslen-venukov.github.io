@@ -96,5 +96,8 @@ const circlesSwiperPaginationBullets = document.querySelectorAll('.circles .swip
 const centerCirclesSwiperPaginationBullet = Math.round(circlesSwiperPaginationBullets.length / 2);
 
 if(window.innerWidth <= 1200) {
-  circlesSwiperPaginationBullets[centerCirclesSwiperPaginationBullet - 1].classList.add('swiper-pagination-bullet-active');
+  circlesSwiperPaginationBullets.forEach(el => {
+    el.classList.remove('swiper-pagination-bullet-active');
+  });
+  circlesSwiperPaginationBullets[centerCirclesSwiperPaginationBullet - 1].click();
 };
