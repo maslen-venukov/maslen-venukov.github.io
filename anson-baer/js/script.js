@@ -37,10 +37,14 @@ const checkWindowWidth = () => {
     circlesItems.forEach(el => {
       el.classList.add('swiper-slide');
     });
-    var swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       spaceBetween: 15,
       centeredSlides: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
     });
   } else {
     circlesItems.forEach(el => {
