@@ -10,6 +10,7 @@ const navList = document.querySelector('.nav__list');
 
 headerBurger.addEventListener('click', () => {
   htmlBody.classList.toggle('lock');
+  headerBurger.classList.toggle('header__burger--active');
   headerSocial.classList.toggle('header__social--active');
   setTimeout(() => {
     headerSearch.classList.toggle('header__search--active');
@@ -19,24 +20,30 @@ headerBurger.addEventListener('click', () => {
 
 // circles on the main screen
 
-circlesItems.forEach((el, index) => {
-  el.addEventListener('mouseover', e => {
-    headersItems.forEach(el => {
-      el.style.display = 'none';
-    });
-    headersItems[index].style.display = 'block';
+const checkCircleItems = () => {
+  circlesItems.forEach((el, index) => {
+    if(window.innerWidth >= 1200) {
+      el.addEventListener('mouseover', e => {
+        headersItems.forEach(el => {
+          el.style.display = 'none';
+        });
+        headersItems[index].style.display = 'block';
+      });
+      el.addEventListener('mouseout', e => {
+        headersItems.forEach(el => {
+          el.style.display = 'none';
+        });
+        headersItems[0].style.display = 'block';
+      });
+    };
   });
-  el.addEventListener('mouseout', e => {
-    headersItems.forEach(el => {
-      el.style.display = 'none';
-    });
-    headersItems[0].style.display = 'block';
-  });
-});
+};
+
+checkCircleItems();
 
 // circles slider on the main screen
 
-const checkWindowWidth = () => {
+const checkCirclesSlider = () => {
   if(window.innerWidth <= 1200) {
     circlesItems.forEach(el => {
       el.classList.add('swiper-slide');
@@ -57,8 +64,26 @@ const checkWindowWidth = () => {
   };
 };
 
-checkWindowWidth();
+checkCirclesSlider();
+
+// window resize
 
 window.addEventListener('resize', () => {
-  checkWindowWidth();
+  checkCirclesSlider();
+  checkCircleItems();
+});
+
+// fixed header
+
+const header = document.querySelector('.header');
+let scrollPrev = 0;
+
+window.addEventListener('scroll', () => {
+  let scrolled = window.scrollY;
+  if(scrolled >= 100 && scrolled > scrollPrev) {
+    header.style.top = -header.offsetHeight + 'px';
+  } else {
+    header.style.top = 0;
+  };
+  scrollPrev = scrolled;
 });

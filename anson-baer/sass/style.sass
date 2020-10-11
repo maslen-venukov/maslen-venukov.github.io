@@ -3,7 +3,7 @@
 @import 'fonts'
 
 .header
-  position: absolute
+  position: fixed
   top: 0
   left: 0
   z-index: 1000
@@ -12,8 +12,8 @@
   background: #fff
   padding: 30px 0
   border-bottom: 1px solid $green-blue
+  transition: top .2s
   @media screen and ( max-width: 1200px )
-    position: fixed
     height: 56px
     padding: 18px 0
   &__inner
@@ -33,11 +33,35 @@
       display: block
   &__burger
     display: none
+    position: relative
     width: 33px
     height: 22px
-    background: url(../img/icons/burger.svg) center / cover no-repeat
+    span,
+    span::before,
+    span::after
+      content: ''
+      position: absolute
+      right: 0
+      width: 33px
+      height: 3px
+      background: $dark-green
+      transition: width .2s
+    span::before
+      margin-top: -9px
+    span
+      top: 50%
+      transform: translateY(-50%)
+    span::after
+      margin-top: 9px
     @media screen and ( max-width: 1200px )
       display: block
+    &--active
+      span::before
+        width: 20px
+      span
+        width: 30px
+      span::after
+        width: 25px
   &__social
     display: none
     position: fixed
@@ -150,30 +174,29 @@
 
 .circles
   position: relative
-  &__list
-    &.swiper-container
-      height: 600px
-      width: 600px
-      @media screen and ( max-width: 1200px )
-        height: 220px
-        width: 100vw
-        padding: 0 15px
-    .swiper-pagination-bullets
-      bottom: 15px
-      display: flex
-      justify-content: center
-      align-items: center
-      .swiper-pagination-bullet
-        width: 10px
-        height: 10px
-        background: transparent
-        opacity: 1
-        border: 1px solid $green-blue
-        margin: 0 3px
-        &-active
-          width: 12px
-          height: 12px
-          background: $green-blue
+  .swiper-container
+    height: 600px
+    width: 600px
+    @media screen and ( max-width: 1200px )
+      height: 220px
+      width: 100vw
+      padding: 0 15px
+  .swiper-pagination-bullets
+    bottom: 15px
+    display: flex
+    justify-content: center
+    align-items: center
+    .swiper-pagination-bullet
+      width: 10px
+      height: 10px
+      background: transparent
+      opacity: 1
+      border: 1px solid $green-blue
+      margin: 0 3px
+      &-active
+        width: 12px
+        height: 12px
+        background: $green-blue
   &__item
     position: absolute
     top: 50%
