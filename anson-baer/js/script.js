@@ -2,6 +2,7 @@ const circlesItems = document.querySelectorAll('.circles__item');
 const headersItems = document.querySelectorAll('.headers__item');
 const htmlBody = document.querySelector('html, body');
 const page = document.querySelector('.page');
+const header = document.querySelector('.header');
 const headerBurger = document.querySelector('.header__burger');
 const headerSearch = document.querySelector('.header__search');
 const headerSocial = document.querySelector('.header__social');
@@ -77,7 +78,6 @@ window.addEventListener('resize', () => {
 
 // fixed header
 
-const header = document.querySelector('.header');
 let scrollPrev = 0;
 
 window.addEventListener('scroll', () => {
@@ -89,3 +89,12 @@ window.addEventListener('scroll', () => {
   };
   scrollPrev = scrolled;
 });
+
+// center pagination bullet
+
+const circlesSwiperPaginationBullets = document.querySelectorAll('.circles .swiper-pagination-bullet');
+const centerCirclesSwiperPaginationBullet = Math.round(circlesSwiperPaginationBullets.length / 2);
+
+if(window.innerWidth <= 1200) {
+  circlesSwiperPaginationBullets[centerCirclesSwiperPaginationBullet - 1].classList.add('swiper-pagination-bullet-active');
+};
