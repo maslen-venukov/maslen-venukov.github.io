@@ -258,61 +258,19 @@
   &__subtitle
     text-align: justify
 
-.why
+.home-wrapper
   display: flex
   flex-wrap: wrap
-  &__testimonial
-    flex-basis: 100%
-    @media screen and ( max-width: 1200px )
-      order: 2
-  &__item
-    flex-basis: 50%
-    padding: 145px 75px 75px
-    @media screen and ( max-width: 1200px )
-      flex-basis: 100%
-      padding: 75px
-    @media screen and ( max-width: 576px )
-      padding: 45px 15px 25px
-    p
-      text-align: justify
-      margin-bottom: 15px
-      &:last-of-type
-        margin-bottom: 40px
-        @media screen and ( max-width: 576px )
-          margin-bottom: 25px
-      &:not(:first-of-type)
-        @media screen and ( max-width: 576px )
-          padding-left: 25px
-    &--estonia
-      @media screen and ( min-width: 577px )
-        @include quarter()
-      @media screen and ( max-width: 1200px )
-        order: 1
-    &--us
-      @media screen and ( max-width: 1200px )
-        order: 3
-      @media screen and ( max-width: 576px )
-        @include quarter()
-  &__link
-    position: relative
-    color: #000
-    text-transform: uppercase
-    &::after
-      content: ''
-      position: absolute
-      top: 50%
-      right: -20px
-      transform: translateY(-50%)
-      width: 16px
-      height: 16px
-      background: url(../img/icons/arrow-right.svg) center / cover no-repeat
+  justify-content: center
 
 .testimonial
   color: #fff
   text-align: center
   background: $dark-green
+  flex-basis: 100%
   @media screen and ( max-width: 1200px )
     padding: 30px 15px
+    order: 2
   .container
     padding: 0
   &__inner
@@ -383,6 +341,50 @@
     img
       width: 100%
       height: 100%
+
+.why
+  flex-basis: 50%
+  max-width: 720px
+  padding: 145px 75px 75px
+  @media screen and ( max-width: 1200px )
+    flex-basis: 100%
+    max-width: 100%
+    padding: 75px
+  @media screen and ( max-width: 576px )
+    padding: 45px 15px 25px
+  p
+    text-align: justify
+    margin-bottom: 15px
+    &:last-of-type
+      margin-bottom: 40px
+      @media screen and ( max-width: 576px )
+        margin-bottom: 25px
+    &:not(:first-of-type)
+      @media screen and ( max-width: 576px )
+        padding-left: 25px
+  &--estonia
+    @media screen and ( min-width: 577px )
+      @include quarter()
+    @media screen and ( max-width: 1200px )
+      order: 1
+  &--us
+    @media screen and ( max-width: 1200px )
+      order: 3
+    @media screen and ( max-width: 576px )
+      @include quarter()
+  &__link
+    position: relative
+    color: #000
+    text-transform: uppercase
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: -20px
+      transform: translateY(-50%)
+      width: 16px
+      height: 16px
+      background: url(../img/icons/arrow-right.svg) center / cover no-repeat
 
 .footer
   color: #fff
