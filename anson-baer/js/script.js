@@ -21,12 +21,16 @@ headerBurger.addEventListener('click', () => {
 
 circlesItems.forEach((el, index) => {
   el.addEventListener('mouseover', e => {
-    if(e.target.classList.contains('circles__item')) {
-      headersItems.forEach(el => {
-        el.style.display = 'none';
-      });
-      headersItems[index].style.display = 'block';
-    };
+    headersItems.forEach(el => {
+      el.style.display = 'none';
+    });
+    headersItems[index].style.display = 'block';
+  });
+  el.addEventListener('mouseout', e => {
+    headersItems.forEach(el => {
+      el.style.display = 'none';
+    });
+    headersItems[0].style.display = 'block';
   });
 });
 
