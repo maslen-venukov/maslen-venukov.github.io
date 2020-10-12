@@ -112,7 +112,6 @@
     &--active
       transform: translateX(0)
   &__item
-    color: #3a352e
     @media screen and ( max-width: 1200px )
       font-size: 32px
       font-weight: 300
@@ -124,18 +123,23 @@
       margin-right: 50px
       @media screen and ( max-width: 1200px )
         margin: 0 0 15px
+  &__link
+    color: #3a352e
+
+.page
+  margin-top: 80px
+  @media screen and ( max-width: 1200px )
+    margin-top: 56px
 
 .intro
   position: relative
   // min-height: calc(100vh - 80px)
   min-height: 720px
   background: #9ad3e9 url(../img/home-bg.jpg) center / cover no-repeat
-  margin-top: 80px
   @media screen and ( max-width: 1200px )
     min-height: 0
     background-position: 100%
     padding-top: 50px
-    margin-top: 56px
   @media screen and ( max-width: 992px )
     background-position: 90%
   @media screen and ( max-width: 768px )
@@ -165,6 +169,9 @@
       height: auto
   &__circles
     flex-basis: 50%
+    max-width: 600px
+    @media screen and ( max-width: 1200px )
+      max-width: none
   &__headers
     flex-basis: 50%
     padding-left: 8%
@@ -174,31 +181,66 @@
 
 .circles
   position: relative
-  .swiper-container
+  .swiper-container-home
     height: 600px
     width: 600px
     @media screen and ( max-width: 1200px )
       height: 220px
       width: 100vw
       padding: 0 15px
-  .swiper-pagination-bullets
-    bottom: 15px
-    display: none
-    justify-content: center
-    align-items: center
-    @media screen and ( max-width: 1200px )
-      display: flex
-    .swiper-pagination-bullet
-      width: 10px
-      height: 10px
-      background: transparent
-      opacity: 1
-      border: 1px solid $green-blue
-      margin: 0 3px
-      &-active
-        width: 12px
-        height: 12px
+  &--seven
+    .circles__item
+      &:nth-child(1)
+        transform: translate(-50%, calc(-150% - 45px))
+      &:nth-child(2)
+        transform: translate(calc(-50% + 170px), calc(-50% - 150px))
+      &:nth-child(3)
+        transform: translate(calc(-50% + 210px), calc(-50% + 30px))
+      &:nth-child(4)
+        transform: translate(calc(-50% + 100px), calc(-50% + 190px))
+      &:nth-child(5)
+        transform: translate(calc(-50% + -100px), calc(-50% + 190px))
+      &:nth-child(6)
+        transform: translate(calc(-50% - 210px), calc(-50% + 30px))
+      &:nth-child(7)
+        transform: translate(calc(-50% - 170px), calc(-50% - 150px))
+  &--five
+    .circles__item
+      &:nth-child(1)
+        transform: translate(-50%, calc(-150% - 45px))
+      &:nth-child(2)
+        transform: translate(calc(-50% + 200px), calc(-50% - 60px))
+      &:nth-child(3)
+        transform: translate(calc(-50% + 120px), calc(-50% + 190px))
+      &:nth-child(4)
+        transform: translate(calc(-50% - 120px), calc(-50% + 190px))
+      &:nth-child(5)
+        transform: translate(calc(-50% - 200px), calc(-50% - 60px))
+  &--seven,
+  &--five
+    .circles__item
+      @media screen and ( max-width: 1200px )
+        &:nth-child(n)
+          margin: 0
+          transform: translate(0)
+      &--main
+        z-index: 2
+        font-size: 18px
+        font-weight: 700
+        color: #fff
         background: $green-blue
+        border: 8px solid $green-blue
+        .circles__link
+          color: #fff
+        &:hover
+          background: #fff
+          .circles__link
+            color: $green-blue
+        &:nth-child(1)
+          transform: translate(-50%, -50%)
+          @media screen and ( max-width: 1200px )
+            transform: translate(0)
+            margin: 0 auto 15px
   &__item
     position: absolute
     top: 50%
@@ -221,40 +263,28 @@
       position: static
     &:hover
       border-color: $green-blue
-    &:nth-child(1)
-      transform: translate(-50%, calc(-150% - 45px))
-    &:nth-child(2)
-      transform: translate(calc(-50% + 170px), calc(-50% - 150px))
-    &:nth-child(3)
-      transform: translate(calc(-50% + 210px), calc(-50% + 30px))
-    &:nth-child(4)
-      transform: translate(calc(-50% + 100px), calc(-50% + 190px))
-    &:nth-child(5)
-      transform: translate(calc(-50% + -100px), calc(-50% + 190px))
-    &:nth-child(6)
-      transform: translate(calc(-50% - 210px), calc(-50% + 30px))
-    &:nth-child(7)
-      transform: translate(calc(-50% - 170px), calc(-50% - 150px))
-    @media screen and ( max-width: 1200px )
-      &:nth-child(n)
-        margin: 0 auto 15px
-        transform: translate(0)
-    &--main
-      z-index: 2
-      font-size: 18px
-      font-weight: 700
-      color: #fff
-      background: $green-blue
-      border: 8px solid $green-blue
-      &:hover
-        color: $green-blue
-        background: #fff
-      &:nth-child(1)
-        transform: translate(-50%, -50%)
-        @media screen and ( max-width: 1200px )
-          transform: translate(0)
   &__link
     max-width: 120px
+    color: $dark-green
+
+.swiper-pagination-bullets
+  bottom: 15px
+  display: none
+  justify-content: center
+  align-items: center
+  @media screen and ( max-width: 1200px )
+    display: flex
+  .swiper-pagination-bullet
+    width: 10px
+    height: 10px
+    background: transparent
+    opacity: 1
+    border: 1px solid $green-blue
+    margin: 0 3px
+    &-active
+      width: 12px
+      height: 12px
+      background: $green-blue
 
 .headers
   &__item
@@ -287,6 +317,12 @@
   display: flex
   flex-wrap: wrap
   justify-content: center
+
+.why-wrapper
+  display: flex
+  justify-content: center
+  @media screen and ( max-width: 992px )
+    display: none
 
 .testimonial
   color: #fff
@@ -397,19 +433,20 @@
       order: 3
     @media screen and ( max-width: 576px )
       @include quarter()
-  &__link
-    position: relative
-    color: #000
-    text-transform: uppercase
-    &::after
-      content: ''
-      position: absolute
-      top: 50%
-      right: -20px
-      transform: translateY(-50%)
-      width: 16px
-      height: 16px
-      background: url(../img/icons/arrow-right.svg) center / cover no-repeat
+
+.read-more
+  position: relative
+  color: #000
+  text-transform: uppercase
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    right: -20px
+    transform: translateY(-50%)
+    width: 16px
+    height: 16px
+    background: url(../img/icons/arrow-right.svg) center / cover no-repeat
 
 .footer
   color: #fff
@@ -442,23 +479,34 @@
   &__item
     &:not(:last-child)
       margin-bottom: 5px
+  &__link
+    color: #fff
   &__start
     position: absolute
     bottom: -10px
     right: 0
-    display: flex
-    align-items: center
-    justify-content: center
-    height: 35px
-    font-weight: 600
-    text-transform: uppercase
-    padding: 0 25px
-    border: 2px solid #fff
     @media screen and ( max-width: 992px )
-      width: 100%
-      max-width: 340px
       left: 50%
       transform: translateX(-50%)
+
+.start-btn
+  display: flex
+  align-items: center
+  justify-content: center
+  max-width: 220px
+  height: 35px
+  font-weight: 600
+  text-transform: uppercase
+  padding: 0 25px
+  @media screen and ( max-width: 992px )
+    width: 100%
+    max-width: 340px
+  &--white
+    color: #fff
+    border: 2px solid #fff
+  &--green
+    color: $green-blue
+    border: 2px solid $green-blue
 
 .social
   padding: 25px 0
@@ -492,3 +540,291 @@
       background-image: url(../img/icons/facebook.svg)
     &--whatsapp
       background-image: url(../img/icons/whatsapp.svg)
+
+.to-home-link
+  position: absolute
+  top: 35px
+  left: 35px
+  width: 24px
+  height: 24px
+  background: url(../img/icons/arrow-left.svg) center / cover no-repeat
+  @media screen and ( max-width: 992px )
+    top: 15px
+    left: 15px
+
+.cards
+  &__item
+    display: flex
+    justify-content: center
+    &:nth-child(even)
+      flex-direction: row-reverse
+  &__content,
+  &__img
+    flex-basis: 50%
+    max-width: 720px
+  &__content
+    position: relative
+    padding: 145px 80px 0
+    @media screen and ( max-width: 1200px )
+      padding: 80px 60px 60px
+    @media screen and ( max-width: 992px )
+      flex-basis: 100%
+      max-width: 100%
+      padding: 45px 15px
+  &__img
+    position: relative
+    @media screen and ( max-width: 992px )
+      display: none
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: rgba($green-blue, .2)
+    img
+      width: 100%
+      height: 100%
+  &__text
+    margin-bottom: 40px
+    p
+      &:not(:last-child)
+        margin-bottom: 20px
+
+.company
+  &__item
+    &:nth-child(odd)
+      .company__content
+        @include quarter()
+        &::after
+          top: 100%
+          width: 100%
+          height: calc(100% + 50px)
+          @media screen and ( max-width: 1200px )
+            height: calc(100% + 41px)
+            @media screen and ( max-width: 992px )
+              display: none
+      .company__text
+        margin-bottom: 20px
+    &:not(:first-child)
+      @media screen and ( max-width: 992px )
+        display: none
+  &__title
+    max-width: 600px
+    @media screen and ( max-width: 992px )
+      margin-left: 15px
+  &__text
+    text-align: justify
+    margin-bottom: 40px
+  &__tap
+    display: none
+    @media screen and ( max-width: 992px )
+      display: block
+      margin-bottom: 100px
+  &__start
+    @media screen and ( max-width: 992px )
+      margin: 0 auto 55px
+  &__img
+
+.footer--company
+  @media screen and ( max-width: 992px )
+    display: none
+
+.start
+  &__inner
+    position: relative
+    display: flex
+    justify-content: center
+  &__title,
+  &__subtitle
+    display: none
+    @media screen and ( max-width: 1200px )
+      display: block
+  &__title
+    margin-top: 60px
+    margin-left: 30px
+  &__subtitle
+    text-align: justify
+    margin-bottom: 40px
+  .to-home-link
+    z-index: 2
+    @media screen and ( max-width: 1200px )
+      top: 15px
+      left: 0
+  &__circles,
+  &__content
+    flex-basis: 50%
+  &__circles
+    @media screen and ( max-width: 1200px )
+      flex-basis: 100%
+  &__content
+    @include quarter()
+    overflow: visible
+    &::after
+      top: 100%
+    @media screen and ( max-width: 1200px )
+      display: none
+
+
+.start-circles
+  &__item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 30px
+    @media screen and ( max-width: 1200px )
+      flex-direction: column
+      margin: 0
+    &:first-of-type
+      margin-top: 15px
+      @media screen and ( max-width: 1200px )
+        margin: 0
+    &:last-of-type
+      margin-bottom: 15px
+      @media screen and ( max-width: 1200px )
+        margin: 0
+  &__circle
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 170px
+    height: 170px
+    line-height: 1.2
+    font-weight: 700
+    color: #fff
+    text-align: center
+    text-transform: uppercase
+    background: $green-blue
+    box-shadow: 0 2px 6px rgba(#000, .2)
+    border: 8px solid $green-blue
+    border-radius: 50%
+    cursor: pointer
+    margin: 0 auto
+    @media screen and ( max-width: 1200px )
+      margin: 0 0 70px
+    span
+      max-width: 120px
+    &--active
+      color: $green-blue
+      background: #fff
+      border-color: $green-blue
+    &--best
+      position: relative
+      &::after
+        content: 'Best value'
+        position: absolute
+        top: 0
+        left: 0
+        transform: translate(-50%, -40px)
+        width: 100px
+        height: 100px
+        display: flex
+        justify-content: center
+        align-items: center
+        font-weight: 700
+        color: $dark-green
+        text-transform: uppercase
+        background: rgba(#f3f3f1, .95)
+        box-shadow: 2px 2px 8px rgba(#000, .25)
+        border-radius: 50%
+        @media screen and ( max-width: 1200px )
+          display: none
+  &__text
+    flex-basis: 50%
+    @media screen and ( max-width: 1200px )
+      display: none
+    p
+      &:not(:last-child)
+        margin-bottom: 5px
+    &--mobile
+      display: none
+      @media screen and ( max-width: 1200px )
+        // display: block
+  .swiper-container-start
+    position: relative
+    z-index: 1
+  .swiper-wrapper
+    flex-direction: column
+    @media screen and ( max-width: 1200px )
+      flex-direction: row
+  .swiper-pagination
+    top: 220px
+    bottom: auto
+
+.start-content
+  &__item
+    display: none
+    padding: 145px 80px 0
+    &--active
+      display: block
+  &__text
+    margin-bottom: 40px
+    p
+      &:not(:last-child)
+        margin-bottom: 10px
+
+.price-list
+  &__item
+    display: flex
+    justify-content: space-between
+    &:not(:last-child)
+      margin-bottom: 10px
+  &__service
+    max-width: 400px
+  &__price
+    width: 70px
+    text-align: right
+    white-space: nowrap
+    margin-left: 10px
+
+.additional
+  &__mobile-img
+    display: none
+    position: relative
+    width: 100%
+    height: 350px
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: rgba($green-blue, .2)
+    @media screen and ( max-width: 576px )
+      display: block
+    img
+      width: 100%
+      height: 100%
+  &__list
+    @media screen and ( max-width: 992px )
+      @include quarter()
+      &::after
+        right: 100%
+  &__item
+    &:nth-child(2n)
+      @include quarter()
+      &::after
+        top: 100%
+        right: 50%
+        @media screen and ( max-width: 992px )
+          display: none
+    @media screen and ( max-width: 992px )
+      &:not(:first-child)
+        .additional__content
+          padding-top: 0
+      &:not(:last-child)
+        .additional__content
+          padding-bottom: 10px
+      &:last-child
+        .additional__content
+          padding-bottom: 20px
+
+.services
+  &__item
+    &:nth-child(odd)
+      .services__content
+        @include quarter()
+        &::after
+          top: 100%

@@ -46,12 +46,26 @@ checkCircleItems();
 
 // circles slider on the main screen
 
+const startCirclesItems = document.querySelectorAll('.start-circles__item');
+
 const checkCirclesSlider = () => {
   if(window.innerWidth <= 1200) {
     circlesItems.forEach(el => {
       el.classList.add('swiper-slide');
     });
-    const swiper = new Swiper('.swiper-container', {
+    startCirclesItems.forEach(el => {
+      el.classList.add('swiper-slide');
+    });
+    const swiperHome = new Swiper('.swiper-container-home', {
+      slidesPerView: 'auto',
+      spaceBetween: 15,
+      centeredSlides: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+    const swiperStart = new Swiper('.swiper-container-start', {
       slidesPerView: 'auto',
       spaceBetween: 15,
       centeredSlides: true,
@@ -62,6 +76,9 @@ const checkCirclesSlider = () => {
     });
   } else {
     circlesItems.forEach(el => {
+      el.classList.remove('swiper-slide');
+    });
+    startCirclesItems.forEach(el => {
       el.classList.remove('swiper-slide');
     });
   };
@@ -94,10 +111,46 @@ window.addEventListener('scroll', () => {
 
 const circlesSwiperPaginationBullets = document.querySelectorAll('.circles .swiper-pagination-bullet');
 const centerCirclesSwiperPaginationBullet = Math.round(circlesSwiperPaginationBullets.length / 2);
+const swiperContainer = document.querySelector('.swiper-container');
 
-if(window.innerWidth <= 1200) {
-  circlesSwiperPaginationBullets.forEach(el => {
-    el.classList.remove('swiper-pagination-bullet-active');
+if(swiperContainer) {
+  if(window.innerWidth <= 1200) {
+    circlesSwiperPaginationBullets.forEach(el => {
+      el.classList.remove('swiper-pagination-bullet-active');
+    });
+    circlesSwiperPaginationBullets[centerCirclesSwiperPaginationBullet - 1].click();
+  };
+};
+
+// circles at start company page
+
+const startCircles = document.querySelectorAll('.start-circles__circle');
+const startContentItems = document.querySelectorAll('.start-content__item');
+
+startCircles.forEach((el, index) => {
+  el.addEventListener('click', () => {
+    startCircles.forEach(el => {
+      el.classList.remove('start-circles__circle--active');
+    });
+    startContentItems.forEach(el => {
+      el.classList.remove('start-content__item--active');
+    });
+    el.classList.add('start-circles__circle--active');
+    startContentItems[index].classList.add('start-content__item--active');
   });
-  circlesSwiperPaginationBullets[centerCirclesSwiperPaginationBullet - 1].click();
+});
+
+// change text on hover over services circle
+
+const changeTextOnHover = document.querySelector('[data-hover]');
+
+if(changeTextOnHover) {
+  changeTextOnHoverParent = changeTextOnHover.closest('.circles__item');
+  const textPrev = changeTextOnHover.innerText;
+  changeTextOnHoverParent.addEventListener('mouseover', e => {
+    changeTextOnHover.innerText = changeTextOnHover.dataset.hover;
+  });
+  changeTextOnHoverParent.addEventListener('mouseout', e => {
+    changeTextOnHover.innerText = textPrev;
+  });
 };
