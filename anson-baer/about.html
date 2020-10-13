@@ -23,7 +23,7 @@
             <span></span>
           </button>
           <ul class="nav__list">
-            <li class="nav__item nav__item">
+            <li class="nav__item">
               <a href="/" class="nav__link">Home</a>
             </li>
             <li class="nav__item">
@@ -41,7 +41,7 @@
             <li class="nav__item">
               <a href="become.html" class="nav__link">Become a Partner</a>
             </li>
-            <li class="nav__item">
+            <li class="nav__item nav__item--active">
               <a href="about.html" class="nav__link">About Us</a>
             </li>
           </ul>
@@ -72,37 +72,129 @@
 
   <div class="page">
 
-    <section class="company section">
+    <section class="about section">
 
-      <ul class="company__list cards">
-        <li class="company__item cards__item">
-          <div class="company__content cards__content">
+      <ul class="about__list cards">
+        <li class="about__item cards__item">
+          <div class="about__img cards__img">
             <a href="/" class="to-home-link"></a>
-            <h2 class="company__title section__title">Personal Investment Company</h2>
-            <p class="company__text">Perfect for most kinds of investments, including stock market investments and lifestyle investments that aim to retain and grow your family’s wealth plans.</p>
-            <p class="company__tap">Tap the button below to register a company in Estonia.</p>
-            <a href="start.html" class="company__start start-btn start-btn--green">Start a company</a>
+            <img src="img/about-1.jpg" alt="">
           </div>
-          <div class="company__img cards__img">
-            <img src="img/company-1.jpg" alt="">
-          </div>
-        </li>
-        <li class="company__item cards__item">
-          <div class="company__content cards__content">
-            <div class="cards__text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-          <div class="company__img cards__img">
-            <img src="img/company-2.jpg" alt="">
+          <div class="about__content cards__content">
+            <a href="/" class="to-home-link"></a>
+            <h1 class="about__title section__title">About us</h1>
+            <ul class="about-features__list">
+              <li class="about-features__item features-item">
+                <div class="features-item__img">
+                  <img src="img/icons/95-percent.svg" alt="">
+                </div>
+                <p class="features-item__text">95% customer satisfaction</p>
+              </li>
+              <li class="about-features__item features-item">
+                <div class="features-item__img">
+                  <img src="img/icons/12-years.svg" alt="">
+                </div>
+                <p class="features-item__text">12 years of experience</p>
+              </li>
+              <li class="about-features__item features-item">
+                <div class="features-item__img">
+                  <img src="img/icons/m.svg" alt="">
+                </div>
+                <p class="features-item__text">member of the McMillan Woods Global Network</p>
+              </li>
+              <li class="about-features__item features-item">
+                <div class="features-item__img">
+                  <img src="img/icons/a.svg" alt="">
+                </div>
+                <p class="features-item__text">Äripäev 2019 top 2 in accounting turnover growth</p>
+              </li>
+            </ul>
           </div>
         </li>
       </ul>
 
     </section>
 
-    <footer class="footer footer--company">
+    <div class="testimonial">
+      <div class="container">
+        <div class="testimonial__inner">
+          <p class="testimonial__text">I registered my company in Estonia thanks to Anson Baer. Because of their professional team and easy processes I was able to lower my company’s costs and noticeably increase our income.</p>
+          <div class="testimonial__info">
+            <div class="testimonial__about">
+              <p class="testimonial__name">Lars Larsson</p>
+              <p class="testimonial__post">CEO of Switzerland’s cryptocurrency investment company CCIC</p>
+            </div>
+            <div class="testimonial__img">
+              <img src="img/testimonial-author.jpg" alt="Author">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about__text-between-blocks">
+      <div class="container">
+
+        <p>We make handling complex financial problems fast, simple and secure by focusing on your goals and offering tailor-made solutions that deliver results. We have solved various complex tax related problems and have helped over 500 companies to increase their income and to become more sustainable in our constantly changing world. Our activity is based on the following principle – Every client and their wishes are unique.</p>
+
+      </div>
+    </div>
+
+    <div class="partners">
+
+      <ul class="partners__list">
+        <li class="partners__item partners-item">
+          <div class="partners-item__img">
+            <img src="img/partners-1.jpg" alt="">
+          </div>
+          <h3 class="partners-item__name">Hendrik Hindov</h3>
+          <p class="partners-item__post">partner</p>
+          <a href="mailto:hendrik@ansonbaer.com" class="partners-item__email">hendrik@ansonbaer.com</a>
+          <p class="partners-item__text">Expertise: Financial, tax, M&A and consultations on reorganisation matters</p>
+        </li>
+        <li class="partners__item partners-item">
+          <div class="partners-item__img">
+            <img src="img/partners-2.jpg" alt="">
+          </div>
+          <h3 class="partners-item__name">Siim Jalakas</h3>
+          <p class="partners-item__post">partner</p>
+          <a href="mailto:siim@ansonbaer.com" class="partners-item__email">siim@ansonbaer.com</a>
+          <p class="partners-item__text">Expertise: Financial, tax, real-estate and investment related consultations</p>
+        </li>
+      </ul>
+
+    </div>
+
+    <section class="contact contact--about section">
+
+      <ul class="contact__list cards">
+        <li class="contact__item cards__item">
+          <div class="contact__content cards__content">
+            <h2 class="contact__title section__title">Contact us</h2>
+            <div class="contact__numbers">
+              <p>AnsonBaer Nordic OÜ</p>
+              <p>reg no 11365489</p>
+              <p>VAT EE101640767</p>
+            </div>
+            <div class="contact__location">
+              <p>Our office is located at</p>
+              <p>Maakri 19/1, Tallinn 10145, Estonia</p>
+            </div>
+            <div class="contact__reach">
+              <p>You can reach us at</p>
+              <p>Phone: <a href="tel:+37253444518">+372 53 444 518</a></p>
+              <p>E-mail: <a href="mailto:info@ansonbaer.com">info@ansonbaer.com</a></p>
+            </div>
+          </div>
+          <div class="contact__img cards__img">
+            <iframe class="contact__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.9852765725384!2d24.75792601615781!3d59.43332010972228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a05fdb889f%3A0x47f9aa7d20b6410e!2zTWFha3JpIDE5LTEsIDEwMTQ1IFRhbGxpbm4sINCt0YHRgtC-0L3QuNGP!5e0!3m2!1sru!2sru!4v1602578398660!5m2!1sru!2sru" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+        </li>
+      </ul>
+
+    </section>
+
+    <footer class="footer">
       <div class="container">
         <div class="footer__inner">
   

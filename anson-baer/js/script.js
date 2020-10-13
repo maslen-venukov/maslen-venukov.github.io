@@ -111,7 +111,7 @@ window.addEventListener('scroll', () => {
 
 const circlesSwiperPaginationBullets = document.querySelectorAll('.circles .swiper-pagination-bullet');
 const centerCirclesSwiperPaginationBullet = Math.round(circlesSwiperPaginationBullets.length / 2);
-const swiperContainer = document.querySelector('.swiper-container');
+const swiperContainer = document.querySelector('.swiper-container-home');
 
 if(swiperContainer) {
   if(window.innerWidth <= 1200) {
@@ -154,3 +154,36 @@ if(changeTextOnHover) {
     changeTextOnHover.innerText = textPrev;
   });
 };
+
+// set map height
+
+const contactMap = document.querySelector('.contact__map');
+
+const setMapHeight = () => {
+  if(contactMap) {
+    contactMap.closest('.contact__img').style.height = contactMap.closest('.contact__img').offsetWidth * 0.93 + 'px';
+  };
+};
+
+setMapHeight();
+
+// news items height
+
+const newsItems = document.querySelectorAll('.news__item');
+
+const setNewsItemsHeight = () => {
+  if(newsItems) {
+    newsItems.forEach(el => {
+      if(el.querySelector('.news__img') === null) {
+        el.querySelector('.news__content').style.height = el.querySelector('.news__content').offsetWidth * 0.93 + 'px';
+      };
+    });
+  };
+};
+
+setNewsItemsHeight();
+
+window.addEventListener('resize', () => {
+  setMapHeight();
+  setNewsItemsHeight();
+});
