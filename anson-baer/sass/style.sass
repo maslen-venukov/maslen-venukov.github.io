@@ -426,6 +426,8 @@
   &--estonia
     @media screen and ( min-width: 577px )
       @include quarter()
+      &::after
+        height: 100%
     @media screen and ( max-width: 1200px )
       order: 1
   &--us
@@ -601,12 +603,8 @@
         @include quarter()
         &::after
           top: 100%
-          width: 100%
-          height: calc(100% + 50px)
-          @media screen and ( max-width: 1200px )
-            height: calc(100% + 41px)
-            @media screen and ( max-width: 992px )
-              display: none
+          @media screen and ( max-width: 992px )
+            display: none
       .company__text
         margin-bottom: 20px
     &:not(:first-child)
@@ -634,10 +632,15 @@
     display: none
 
 .start
+  @media screen and ( max-width: 1200px )
+    margin-bottom: 195px
   &__inner
     position: relative
     display: flex
     justify-content: center
+  &__header
+    max-width: 100vw
+    margin: 0 auto 40px
   &__title,
   &__subtitle
     display: none
@@ -648,7 +651,7 @@
     margin-left: 30px
   &__subtitle
     text-align: justify
-    margin-bottom: 40px
+    padding: 0 15px
   .to-home-link
     z-index: 2
     @media screen and ( max-width: 1200px )
@@ -665,18 +668,25 @@
     overflow: visible
     &::after
       top: 100%
+      height: 720px
     @media screen and ( max-width: 1200px )
       display: none
 
 
 .start-circles
+  &__list
+    flex-direction: column
+    @media screen and ( max-width: 1200px )
+      flex-direction: row
+      margin-bottom: 70px
   &__item
     display: flex
     justify-content: space-between
     align-items: center
     margin-bottom: 30px
     @media screen and ( max-width: 1200px )
-      flex-direction: column
+      width: 170px
+      height: 170px
       margin: 0
     &:first-of-type
       margin-top: 15px
@@ -686,6 +696,10 @@
       margin-bottom: 15px
       @media screen and ( max-width: 1200px )
         margin: 0
+    &.swiper-slide-active
+      .start-circles__circle
+        color: $green-blue
+        background: #fff
   &__circle
     display: flex
     justify-content: center
@@ -704,13 +718,16 @@
     cursor: pointer
     margin: 0 auto
     @media screen and ( max-width: 1200px )
-      margin: 0 0 70px
+      flex-shrink: 0
+      margin: 0
     span
       max-width: 120px
     &--active
       color: $green-blue
       background: #fff
-      border-color: $green-blue
+      @media screen and ( max-width: 1200px )
+        color: #fff
+        background: $green-blue
     &--best
       position: relative
       &::after
@@ -741,17 +758,26 @@
         margin-bottom: 5px
     &--mobile
       display: none
-      @media screen and ( max-width: 1200px )
-        // display: block
+    &--to-modal
+      display: none
+  .swiper-slide-active
+    flex-direction: column
+    .start-circles__text--mobile
+      display: block
+      width: 340px
+      margin-top: 60px
+      .start-btn
+        max-width: 100%
+        width: 100%
+        margin-top: 30px
   .swiper-container-start
     position: relative
     z-index: 1
-  .swiper-wrapper
-    flex-direction: column
     @media screen and ( max-width: 1200px )
-      flex-direction: row
+      width: 100vw
+      padding: 0 15px
   .swiper-pagination
-    top: 220px
+    top: 200px
     bottom: auto
 
 .start-content
@@ -804,12 +830,18 @@
       @include quarter()
       &::after
         right: 100%
+        @media screen and ( max-width: 576px )
+          width: 100%
   &__item
     &:nth-child(2n)
       @include quarter()
       &::after
         top: 100%
         right: 50%
+        width: 720px
+        height: calc(100% + 10px)
+        @media screen and ( max-width: 1439px )
+          width: 50%
         @media screen and ( max-width: 992px )
           display: none
     @media screen and ( max-width: 992px )
@@ -834,9 +866,6 @@
         @include quarter()
         &::after
           top: 100%
-          @media screen and ( max-width: 1200px )
-            width: 100%
-            height: calc(100% + 40px)
           @media screen and ( max-width: 992px )
             display: none
     @media screen and ( max-width: 992px )
@@ -877,8 +906,6 @@
     @media screen and ( max-width: 992px )
       padding-bottom: 15px
     &::after
-      @media screen and ( max-width: 1200px )
-        height: calc(100% + 40px)
       @media screen and ( max-width: 992px )
         display: none
   &__img
@@ -933,20 +960,25 @@
       margin-bottom: 45px
     @media screen and ( max-width: 576px )
       margin-left: 15px
+  &__text
+    display: none
+    margin-bottom: 25px
+    @media screen and ( max-width: 576px )
+      display: block
   &__content
     @include quarter()
     &::after
       right: 100%
       @media screen and ( max-width: 992px )
         display: none
-    .to-home-link
-      display: none
-      @media screen and ( max-width: 992px )
-        display: block
   &__text-between-blocks
     padding: 75px 15px
     @media screen and ( max-width: 576px )
       padding: 25px 0
+    .about__title
+      display: none
+      @media screen and ( max-width: 576px )
+        display: block
 
 .about-features
   &__list
@@ -1073,10 +1105,6 @@
         flex-direction: column-reverse
         .contact__img
           display: block
-  &__content
-    &::after
-      width: 100%
-      height: calc(100% + 50px)
   &__img--main
     @media screen and ( max-width: 992px )
       display: none
@@ -1093,7 +1121,6 @@
   &__textarea
     width: 100%
     height: 160px
-    resize: none
     @media screen and ( max-width: 576px )
       height: 120px
   &__btn
@@ -1181,20 +1208,15 @@
       margin: 100px 0 45px 30px
       &::before
         display: block
-  & > .to-home-link
-    display: none
+  .to-home-link
     @media screen and ( max-width: 576px )
-      display: block
-      top: 70px
+      top: -30px
   &__item
     & > div
       &:first-child
         @include quarter()
         &::after
           top: 100%
-          @media screen and ( max-width: 1200px )
-            width: 100%
-            height: calc(100% + 40px)
           @media screen and ( max-width: 992px )
             display: none
     @media screen and ( max-width: 992px )
@@ -1235,9 +1257,212 @@
     @media screen and ( max-width: 576px )
       display: block
   &__content-img
+    position: relative
     display: none
     margin-bottom: 20px
     width: calc(100% + 30px)
     transform: translateX(-15px)
     @media screen and ( max-width: 576px )
       display: block
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: rgba($green-blue, .2)
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 500
+  width: 100vw
+  height: 100vh
+  background: #fff
+  padding-top: 100px
+  transform: translateX(100vw)
+  transition: transform .2s
+  @media screen and ( max-width: 576px )
+    padding-top: 85px
+  &--active
+    transform: translateX(0)
+  &--package
+    display: none
+    @media screen and ( max-width: 1200px )
+      display: block
+  &__close
+    top: -35px
+    left: 15px
+
+.package
+  overflow-y: auto
+  &__title
+    margin-left: 30px
+    @media screen and ( max-width: 576px )
+      margin-left: 15px
+  &__text
+    p
+      &:not(:last-child)
+        margin-bottom: 10px
+    &--shifted
+      padding-left: 25px
+      margin: 25px 0
+  &__price
+    margin-bottom: 10px
+  &__total
+    margin-bottom: 50px
+  .start-btn
+    margin-bottom: 10px
+    @media screen and ( max-width: 576px )
+      max-width: 100%
+  .social__inner
+    flex-direction: column
+  .social__text
+    margin: 0 auto 10px
+
+.form-start
+  @media screen and ( max-width: 1200px )
+    display: none
+
+.start-form
+  &__pages
+  &__page
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    &--contact
+      .start-form__fields
+        padding-top: 40px
+  &__content,
+  &__fields
+    flex-basis: 50%
+    max-width: 720px
+  &__content
+    padding: 145px 80px 0
+  &__fields
+    padding-top: 200px
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: rgba($green-blue, .05)
+    @media screen and ( max-width: 1439px )
+      padding-top: 150px
+    &--small
+      padding-top: 45px
+      max-height: 435px
+      &:last-of-type
+        padding-top: 0
+      .start-form__textarea
+        height: 200px
+  &__label
+    position: relative
+    max-width: 450px
+    width: 100%
+    &-wrapper
+      max-width: 450px
+      width: 100%
+      display: flex
+      justify-content: space-between
+      &:not(:nth-child(3))
+        margin-bottom: 15px
+      .start-form__label:not(:last-of-type)
+        margin-bottom: 0
+      label
+        &:first-child
+          max-width: 57%
+        &:last-child
+          max-width: 39%
+    &--checkbox
+      margin-top: 60px
+      cursor: pointer
+    &:not(:last-of-type)
+      margin-bottom: 15px
+  &__input,
+  &__textarea
+    border-color: #c4c4c4
+  &__textarea
+    height: 300px
+  &__checkbox
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translateY(-50%)
+    height: 0
+    width: 0
+    border: 0
+    cursor: pointer
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+      width: 25px
+      height: 25px
+      background: #fff
+      border: 1px solid #c4c4c4
+      border-radius: 5px
+    &:checked
+      &::after
+        background: $green-blue
+  &__btns
+    max-width: 450px
+    width: 100%
+    display: flex
+    justify-content: space-between
+    margin-top: 60px
+    button
+      position: static
+      max-width: 185px
+      width: 100%
+      margin: 0
+      &::after
+        content: none
+      &.swiper-button-next
+        margin-left: auto
+  &__text
+    max-width: 560px
+    margin: 30px auto
+  .swiper-pagination
+    position: static
+    display: block
+    margin-top: 60px
+    &-bullet
+      width: 20px
+      height: 20px
+      background: #fff
+      box-shadow: 0 1px 2px rgba(#000, .25)
+      border: 0
+      &-active
+        background: #c4c4c4
+        border: 4px solid #fff
+
+.footer--start-form
+  @media screen and ( max-width: 1200px )
+    display: none
+
+.to-home-link--start-form
+  @media screen and ( max-width: 1200px )
+    top: -35px
+    left: 15px
+
+.form-mobile
+  display: none
+  @media screen and ( max-width: 1200px )
+    display: block
+  &__title
+    margin-top: 100px
+    margin-left: 15px
+  &__text
+    margin-bottom: 35px
+
+.mobile-form
+  &__label
+    margin-bottom: 15px
+    &:last-of-type
+      margin-bottom: 35px
+  .start-btn
+    @media screen and ( max-width: 576px )
+      max-width: 100%

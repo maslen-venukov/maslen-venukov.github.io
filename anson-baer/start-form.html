@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Anson Baer</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+
+        <a href="/" class="header__logo logo">
+          <img src="img/logo.svg" alt="Anson Baer">
+        </a>
+
+        <nav class="header__nav nav">
+          <button class="header__search" aria-label="Search"></button>
+          <button class="header__burger" aria-label="Menu">
+            <span></span>
+          </button>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="/" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item nav__item--active">
+              <a href="start.html" class="nav__link">Start a Company</a>
+            </li>
+            <li class="nav__item">
+              <a href="services.html" class="nav__link">Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="start.html" class="nav__link">Prices</a>
+            </li>
+            <li class="nav__item">
+              <a href="news.html" class="nav__link">News</a>
+            </li>
+            <li class="nav__item">
+              <a href="become.html" class="nav__link">Become a Partner</a>
+            </li>
+            <li class="nav__item">
+              <a href="about.html" class="nav__link">About Us</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__social social">
+          <div class="container">
+            <div class="social__inner">
+              <p class="social__text">Need consultancy? We are here to help!</p>
+              <ul class="social__list">
+                <li class="social__item">
+                  <a href="contact.html" class="social__link social__link--contact"></a>
+                </li>
+                <li class="social__item">
+                  <a href="#!" class="social__link social__link--facebook"></a>
+                </li>
+                <li class="social__item">
+                  <a href="#!" class="social__link social__link--whatsapp"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+
+    <div class="container">
+      <a href="start.html" class="to-home-link to-home-link--start-form"></a>
+    </div>
+
+    <section class="form-start section">
+
+      <form method="POST" class="start-form swiper-container-start-form">
+        <ul class="start-form__pages swiper-wrapper">
+
+          <li class="start-form__page swiper-slide">
+            <div class="start-form__content">
+              <h2 class="start-form__title section__title">What is the name of your new company?</h2>
+              <p class="start-form__text">Please give us initial details to start. Kindly propose two more company names (in order of preference) in case the first one is not available.</p>
+            </div>
+            <div class="start-form__fields">
+              <label class="start-form__label">
+                Preferred company name
+                <input type="text" name="company-name" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                Another name, if the first is taken
+                <input type="text" name="another-name" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                Third name, if the first two are taken
+                <input type="text" name="third-name" class="start-form__input">
+              </label>
+              <div class="start-form__btns">
+                <button class="start-btn start-btn--green swiper-button-next">Continue</button>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </li>
+
+          <li class="start-form__page swiper-slide">
+            <div class="start-form__content">
+              <h2 class="start-form__title section__title">Who are your company’s directors?</h2>
+              <p class="start-form__text">Kindly provide the name(s) of your new company's director(s). Please note you will later have to provide a Know Your Customer form for each name in this list.</p>
+            </div>
+            <div class="start-form__fields">
+              <label class="start-form__label">
+                Director’s full name
+                <input type="text" name="director-name" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                2nd director’s full name
+                <input type="text" name="second-director-name" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                3rd director’s full name
+                <input type="text" name="third-director-name" class="start-form__input">
+              </label>
+              <div class="start-form__btns">
+                <button class="start-btn start-btn--green swiper-button-prev">Previous</button>
+                <button class="start-btn start-btn--green swiper-button-next">Continue</button>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </li>
+
+          <li class="start-form__page swiper-slide">
+            <div class="start-form__content">
+              <h2 class="start-form__title section__title">Who are the shareholders?</h2>
+              <p class="start-form__text">Kindly provide the name(s) of your new company's shareholder(s) and make sure the percentages of shares add up to 100%. Please note you will later have to provide a Know Your Customer form for each name in this list.</p>
+            </div>
+            <div class="start-form__fields">
+              <div class="start-form__label-wrapper">
+                <label class="start-form__label">
+                  Shareholder’s name
+                  <input type="text" name="shareholder-name-1" class="start-form__input">
+                </label>
+                <label class="start-form__label">
+                  Percentage of shares
+                  <input type="text" name="shares-percentage-1" class="start-form__input">
+                </label>
+              </div>
+              <div class="start-form__label-wrapper">
+                <label class="start-form__label">
+                  Shareholder’s name
+                  <input type="text" name="shareholder-name-2" class="start-form__input">
+                </label>
+                <label class="start-form__label">
+                  Percentage of shares
+                  <input type="text" name="shares-percentage-2" class="start-form__input">
+                </label>
+              </div>
+              <div class="start-form__label-wrapper">
+                <label class="start-form__label">
+                  Shareholder’s name
+                  <input type="text" name="shareholder-name-3" class="start-form__input">
+                </label>
+                <label class="start-form__label">
+                  Percentage of shares
+                  <input type="text" name="shares-percentage-3" class="start-form__input">
+                </label>
+              </div>
+              <div class="start-form__btns">
+                <button class="start-btn start-btn--green swiper-button-prev">Previous</button>
+                <button class="start-btn start-btn--green swiper-button-next">Continue</button>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </li>
+
+          <li class="start-form__page swiper-slide">
+            <div class="start-form__content">
+              <h2 class="start-form__title section__title">Who are the beneficial owners?</h2>
+              <p class="start-form__text">Kindly provide the name(s) ofyour new company's beneficial owner(s). A beneficial owner is defined as a physical person who benefits to >25% of the company's shares. Beneficial owners have to be forwarded to the registry by law. Please note you will later have to provide a Know Your Customer form for each name in this list.</p>
+            </div>
+            <div class="start-form__fields">
+              <label class="start-form__label">
+                Beneficial owner’s name
+                <input type="text" name="beneficial-owner-name" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                2nd director’s full name
+                <input type="text" name="second-beneficial-owner-name" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                3rd director’s full name
+                <input type="text" name="third-beneficial-owner-name" class="start-form__input">
+              </label>
+              <div class="start-form__btns">
+                <button class="start-btn start-btn--green swiper-button-prev">Previous</button>
+                <button class="start-btn start-btn--green swiper-button-next">Continue</button>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </li>
+
+          <li class="start-form__page swiper-slide">
+            <div class="start-form__content">
+              <h2 class="start-form__title section__title">Your new company's activities</h2>
+              <p class="start-form__text">Please describe your business or business plan in as much detail as possible and list all of the services the company plans to provide and/or the goods the company will sell. The generall business area description does not qualify, the information must be specific to Your company.</p>
+            </div>
+            <div class="start-form__fields">
+              <label class="start-form__label">
+                What will the principal activities of the company be?
+                <textarea name="principal-activities" class="start-form__textarea"></textarea>
+              </label>
+            </div>
+            <div class="start-form__fields start-form__fields--small">
+              <label class="start-form__label">
+                Who will be your main business partners?
+                <textarea name="business-partners" class="start-form__textarea"></textarea>
+              </label>
+              <p class="start-form__text">
+                Please provide who are/will be your partners, to/from who you purchase/sell goods/services? Please provide company names, addresses, registration numbers, countries, websites and a description of the kind of co-operation you have.
+              </p>
+            </div>
+            <div class="start-form__fields start-form__fields--small">
+              <label class="start-form__label">
+                Where the company will have business activities?
+                <textarea name="where-business-activities" class="start-form__textarea"></textarea>
+              </label>
+              <p class="start-form__text">
+                Please specify the countries.
+              </p>
+            </div>
+            <div class="start-form__content">
+              <p class="start-form__text">Please identify the source of your company's funds e.g. income earned from business activities, personal savings, inheritance, etc.</p>
+            </div>
+            <div class="start-form__fields start-form__fields--small">
+              <label class="start-form__label">
+                The source of your company's funds
+                <textarea name="where-business-activities" class="start-form__textarea"></textarea>
+              </label>
+              <div class="start-form__btns">
+                <button class="start-btn start-btn--green swiper-button-prev">Previous</button>
+                <button class="start-btn start-btn--green swiper-button-next">Continue</button>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </li>
+
+          <li class="start-form__page start-form__page--contact swiper-slide">
+            <div class="start-form__content">
+              <h2 class="start-form__title section__title">How to contact you?</h2>
+              <p class="start-form__text">Please give us your contact information.</p>
+            </div>
+            <div class="start-form__fields">
+              <label class="start-form__label">
+                Name
+                <input type="text" name="name" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                Address
+                <input type="text" name="address" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                Phone number
+                <input type="text" name="phone" class="start-form__input">
+              </label>
+              <label class="start-form__label">
+                E-mail
+                <input type="text" name="email" class="start-form__input">
+              </label>
+              <label class="start-form__label start-form__label--checkbox">
+                I need additional services
+                <input type="checkbox" name="email" class="start-form__checkbox">
+              </label>
+              <input type="hidden" name="package" aria-hidden="true">
+              <div class="start-form__btns">
+                <button class="start-btn start-btn--green swiper-button-prev">Previous</button>
+                <button type="submit" class="start-btn start-btn--green">Submit</button>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </li>
+
+        </ul>
+      </form>
+
+    </section>
+
+    <section class="form-mobile section">
+      <div class="container">
+
+        <h2 class="form-mobile__title section__title">Submit initial details</h2>
+        <p class="form-mobile__text">You have chosen the <b class="form-mobile__package"><!-- generate automatically --></b> package. Please fill out this form to give us initial details.</p>
+
+        <form method="POST" class="mobile-form">
+          <label class="mobile-form__label">
+            Preferred company name
+            <input type="text" name="preferred-company-name" class="mobile-form__input">
+          </label>
+          <label class="mobile-form__label">
+            Another name, if the first is taken
+            <input type="text" name="another-company-name" class="mobile-form__input">
+          </label>
+          <label class="mobile-form__label">
+            Third name, if the first two are taken
+            <input type="text" name="third-company-name" class="mobile-form__input">
+          </label>
+          <label class="mobile-form__label">
+            Beneficiary
+            <input type="text" name="beneficiary" class="mobile-form__input">
+          </label>
+          <label class="mobile-form__label">
+            Home address
+            <input type="text" name="address" class="mobile-form__input">
+          </label>
+          <label class="mobile-form__label">
+            E-mail address
+            <input type="email" name="email" class="mobile-form__input">
+          </label>
+          <button class="start-btn start-btn--green">Submit</button>
+        </form>
+
+      </div>
+    </section>
+
+    <footer class="footer footer--start-form">
+      <div class="container">
+        <div class="footer__inner">
+  
+          <ul class="footer__list">
+            <li class="footer__item">
+              <h3 class="footer__title">General information</h3>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Why Estonia</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">How to start an Estonian company</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Estonian taxes</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Estonian e-Residency</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Starting company knowledge base</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Frequently asked questions</a>
+            </li>
+          </ul>
+  
+          <ul class="footer__list">
+            <li class="footer__item">
+              <h3 class="footer__title">Services</h3>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Company formation</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Financial management</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Cryptocurrency ICO Advisory</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Accounting</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">M&A</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Prices</a>
+            </li>
+          </ul>
+  
+          <ul class="footer__list">
+            <li class="footer__item">
+              <h3 class="footer__title">About</h3>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">Get in touch</a>
+            </li>
+            <li class="footer__item">
+              <a href="#!" class="footer__link">About us</a>
+            </li>
+          </ul>
+  
+          <a href="start.html" class="footer__start start-btn start-btn--white">Start a company</a>
+  
+        </div>
+      </div>
+    </footer>
+
+    <div class="social">
+      <div class="container">
+        <div class="social__inner">
+          <p class="social__text">Need consultancy? We are here to help!</p>
+          <ul class="social__list">
+            <li class="social__item">
+              <a href="contact.html" class="social__link social__link--contact"></a>
+            </li>
+            <li class="social__item">
+              <a href="#!" class="social__link social__link--facebook"></a>
+            </li>
+            <li class="social__item">
+              <a href="#!" class="social__link social__link--whatsapp"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="libs/swiper/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

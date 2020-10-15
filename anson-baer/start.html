@@ -72,21 +72,26 @@
 
   <div class="page">
 
+    <div class="container">
+      <a href="/" class="to-home-link"></a>
+    </div>
+
     <section class="start section">
       <div class="container">
         <div class="start__inner">
 
           <div class="start__circles start-circles">
 
-            <a href="/" class="to-home-link"></a>
-            <h2 class="start__title section__title">Choose a package</h2>
-            <p class="start__subtitle">We have crafted three service packages that make setting up your business as simple as possible and offer exceptional value on the market.</p>
+            <div class="start__header">
+              <h2 class="start__title section__title">Choose a package</h2>
+              <p class="start__subtitle">We have crafted three service packages that make setting up your business as simple as possible and offer exceptional value on the market.</p>
+            </div>
 
             <div class="swiper-container-start">
-              <div class="swiper-wrapper">
-                <div class="start-circles__item">
-                  <btn class="start-circles__circle" aria-label="Show essential tariff"><span>Essential 1390 €</span></btn>
-                  <div class="start-circles__text">
+              <ul class="start-circles__list swiper-wrapper">
+                <li class="start-circles__item">
+                  <btn class="start-circles__circle" aria-label="Show essential service package" data-package="essential"><span>Essential 1390 €</span></btn>
+                  <div class="start-circles__text start-circles__text--desktop">
                     <p>Registration of company with paid-in share capital</p>
                     <p>Company name of your choice</p>
                     <p>Legal address</p>
@@ -97,12 +102,17 @@
                   </div>
                   <div class="start-circles__text start-circles__text--mobile">
                     <p>Initial registration of your company where you have one shareholder and director.</p>
-                    <p>Total value separately 2470 €, you save 580 €.</p>
+                    <p>Total value separately 1700 €, <br> you save 690 €.</p>
+                    <button class="start-btn start-btn--green" data-package="essential">Read more</button>
                   </div>
-                </div>
-                <div class="start-circles__item">
-                  <btn class="start-circles__circle start-circles__circle--active start-circles__circle--best" aria-label="Show premium tariff"><span>Premium 1890 €</span></btn>
-                  <div class="start-circles__text">
+                  <div class="start-circles__text start-circles__text--to-modal">
+                    <p>Everything required for the initial registration of your company where you have a single shareholder and director.</p>
+                    <p>The package includes the following services.</p>
+                  </div>
+                </li>
+                <li class="start-circles__item">
+                  <btn class="start-circles__circle start-circles__circle--active start-circles__circle--best" aria-label="Show premium service package" data-package="premium"><span>Premium 1890 €</span></btn>
+                  <div class="start-circles__text start-circles__text--desktop">
                     <p>Essential package +</p>
                     <p>Fully remote process - no need to travel to Estonia</p>
                     <p>Tax residency certificate (in English)</p>
@@ -113,12 +123,17 @@
                   </div>
                   <div class="start-circles__text start-circles__text--mobile">
                     <p>Suitable for most types of businesses. The best offer on the market.</p>
-                    <p>Total value separately 2470 €, you save 580 €.</p>
+                    <p>Total value separately 2470 €, <br> you save 580 €.</p>
+                    <button class="start-btn start-btn--green" data-package="premium">Read more</button>
                   </div>
-                </div>
-                <div class="start-circles__item">
-                  <btn class="start-circles__circle" aria-label="Show inclusive tariff"><span>Inclusive 2790 €</span></btn>
-                  <div class="start-circles__text">
+                  <div class="start-circles__text start-circles__text--to-modal">
+                    <p>Suitable for medium sized businesses. Includes the initial consultation and all legally certified documents required for most financial institutions or crypto exchanges.</p>
+                    <p>The package includes everything in Essential package + additional services.</p>
+                  </div>
+                </li>
+                <li class="start-circles__item">
+                  <btn class="start-circles__circle" aria-label="Show inclusive service package" data-package="inclusive"><span>Inclusive 2790 €</span></btn>
+                  <div class="start-circles__text  start-circles__text--desktop">
                     <p>Premium package +</p>
                     <p>Share sales and purchase agreement (translated by sworn translator) + apostilled</p>
                     <p>Articles of Association (translated by sworn translator) + apostilled</p>
@@ -128,10 +143,15 @@
                   </div>
                   <div class="start-circles__text start-circles__text--mobile">
                     <p>Best for corporate customers or those with multiple shareholders.</p>
-                    <p>Total value separately 3720 €, you save 930 €.</p>
+                    <p>Total value separately 3720 €, <br> you save 930 €.</p>
+                    <button class="start-btn start-btn--green" data-package="inclusive">Read more</button>
                   </div>
-                </div>
-              </div>
+                  <div class="start-circles__text start-circles__text--to-modal">
+                    <p>For corporate customers or those with multiple shareholders. All Premium services along with founding documents certified and apostilled (translated to English) A perfect solution for overseas banking compliance and KYC.</p>
+                    <p>The package includes everything in Essential and Premium packages + additional services.</p>
+                  </div>
+                </li>
+              </ul>
               <div class="swiper-pagination"></div>
             </div>
 
@@ -144,7 +164,7 @@
                 <p>Everything required for the initial registration of your company where you have a single shareholder and director.</p>
                 <p>Total value separately 1700 €, you save 690 €.</p>
               </div>
-              <a href="start.html" class="start-circles start-btn start-btn--green">Start a company</a>
+              <a href="start-form.html" class="start-circles start-btn start-btn--green" data-set-package="Essential">Start a company</a>
             </li>
             <li class="start-content__item start-content__item--active">
               <h2 class="start-content__title section__title">Premium</h2>
@@ -153,7 +173,7 @@
                 <p>The package includes everything in Essential package + additional services.</p>
                 <p>Total value separately 2470 €, you save 580 €.</p>
               </div>
-              <a href="start.html" class="start-circles start-btn start-btn--green">Start a company</a>
+              <a href="start-form.html" class="start-circles start-btn start-btn--green" data-set-package="Premium">Start a company</a>
             </li>
             <li class="start-content__item">
               <h2 class="start-content__title section__title">Inclusive</h2>
@@ -162,7 +182,7 @@
                 <p>The package includes everything in Essential and Premium packages + additional services.</p>
                 <p>Total value separately 3270 €, you save 930 €.</p>
               </div>
-              <a href="start.html" class="start-circles start-btn start-btn--green">Start a company</a>
+              <a href="start-form.html" class="start-circles start-btn start-btn--green" data-set-package="Inclusive">Start a company</a>
             </li>
           </ul>
 
@@ -351,7 +371,7 @@
         </div>
       </div>
     </footer>
-    
+
     <div class="social">
       <div class="container">
         <div class="social__inner">
@@ -371,6 +391,36 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="modal modal--package package">
+    <div class="container">
+      <div class="modal__inner">
+        <button class="to-home-link modal__close" aria-label="Close modal"></button>
+          <h2 class="package__title section__title"><!-- generate automatically --></h2>
+          <div class="package__text"><!-- generate automatically --></div>
+          <div class="package__text package__text--shifted"><!-- generate automatically --></div>
+          <p class="package__price"><!-- generate automatically --></p>
+          <p class="package__total"><!-- generate automatically --></p>
+          <a href="start-form.html" class="start-btn start-btn--green">Choose package</a>
+          <div class="social">
+            <div class="social__inner">
+              <p class="social__text">Need consultancy? We are here to help!</p>
+              <ul class="social__list">
+                <li class="social__item">
+                  <a href="contact.html" class="social__link social__link--contact"></a>
+                </li>
+                <li class="social__item">
+                  <a href="#!" class="social__link social__link--facebook"></a>
+                </li>
+                <li class="social__item">
+                  <a href="#!" class="social__link social__link--whatsapp"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
 
   <script src="libs/swiper/swiper-bundle.min.js"></script>

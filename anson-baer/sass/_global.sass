@@ -14,10 +14,12 @@ $gray: #505248
     right: 0
     z-index: -1
     transform: translate(50%, -50%)
-    width: 720px
-    height: 720px
+    width: 100%
+    height: calc(100% + 50px)
     background: rgba($green-blue, .1)
     border-radius: 50%
+    @media screen and ( max-width: 1200px )
+      height: calc(100% + 40px)
     @media screen and ( max-width: 768px )
       width: 380px
       height: 380px
@@ -38,6 +40,7 @@ html, body
   overflow: hidden
 
 .container
+  position: relative
   width: 100%
   max-width: 1470px
   padding: 0 15px
@@ -56,6 +59,7 @@ html, body
     @media screen and ( max-width: 576px )
       font-size: 28px
       padding-left: 15px
+      margin-top: 15px
     &::before
       content: ''
       position: absolute
@@ -79,6 +83,7 @@ textarea
   border: 1px solid $dark-green
   border-radius: 5px
   padding: 10px
+  resize: none
 
 label
   display: flex
