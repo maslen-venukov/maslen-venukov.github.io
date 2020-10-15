@@ -122,21 +122,6 @@ window.addEventListener('scroll', () => {
   scrollPrev = scrolled;
 });
 
-// center pagination bullet
-
-// const circlesSwiperPaginationBullets = document.querySelectorAll('.circles .swiper-pagination-bullet');
-// const centerCirclesSwiperPaginationBullet = Math.round(circlesSwiperPaginationBullets.length / 2);
-// const swiperContainer = document.querySelector('.swiper-container-home');
-
-// if(swiperContainer) {
-//   if(window.innerWidth <= 1200) {
-//     circlesSwiperPaginationBullets.forEach(el => {
-//       el.classList.remove('swiper-pagination-bullet-active');
-//     });
-//     circlesSwiperPaginationBullets[centerCirclesSwiperPaginationBullet - 1].click();
-//   };
-// };
-
 // circles at start company page
 
 const startCircles = document.querySelectorAll('.start-circles__circle');
@@ -323,6 +308,21 @@ const swiperStartForm = new Swiper('.swiper-container-start-form', {
     el: '.swiper-pagination',
     clickable: true,
   },
+});
+
+// open thanks modal after form submit
+
+const forms = document.querySelectorAll('form');
+const thanksModal = document.querySelector('.modal--thanks');
+
+forms.forEach(el => {
+  el.addEventListener('submit', e => {
+    e.preventDefault();
+    thanksModal.classList.add('modal--active');
+    setTimeout(() => {
+      thanksModal.classList.remove('modal--active');
+    }, 3000);
+  });
 });
 
 // set start form fields height
