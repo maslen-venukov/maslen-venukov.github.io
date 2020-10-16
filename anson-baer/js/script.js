@@ -99,15 +99,6 @@ const checkCirclesSlider = () => {
 
 checkCirclesSlider();
 
-// window resize
-
-window.addEventListener('resize', () => {
-  checkCirclesSlider();
-  checkCircleItems();
-});
-
-
-
 // fixed header
 
 let scrollPrev = 0;
@@ -182,11 +173,6 @@ const setNewsItemsHeight = () => {
 };
 
 setNewsItemsHeight();
-
-window.addEventListener('resize', () => {
-  setMapHeight();
-  setNewsItemsHeight();
-});
 
 // close modal
 
@@ -264,10 +250,6 @@ const openPackageModal = () => {
 
 openPackageModal();
 
-window.addEventListener('resize', () => {
-  openPackageModal();
-});
-
 // set package value to local storage in desktop version
 
 const dataSetPackage = document.querySelectorAll('[data-set-package]');
@@ -341,6 +323,13 @@ const setFieldsHeight = () => {
 
 setFieldsHeight();
 
+// window resize
+
 window.addEventListener('resize', () => {
+  checkCirclesSlider();
+  checkCircleItems();
+  setMapHeight();
+  setNewsItemsHeight();
+  openPackageModal();
   setFieldsHeight();
 });
