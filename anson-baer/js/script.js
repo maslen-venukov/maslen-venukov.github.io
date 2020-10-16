@@ -161,7 +161,7 @@ const contactMap = document.querySelector('.contact__map');
 
 const setMapHeight = () => {
   if(contactMap) {
-    contactMap.closest('.contact__img').style.height = contactMap.closest('.contact__img').offsetWidth * 0.93 + 'px';
+    contactMap.style.height = contactMap.offsetWidth * 0.93 + 'px';
   };
 };
 

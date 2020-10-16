@@ -75,11 +75,10 @@
     <section class="news section">
 
       <div class="container">
-        <a href="/" class="to-home-link"></a>
+        <a href="/" class="to-home-link to-home-link--news"></a>
       </div>
 
       <h1 class="news__title section__title">News</h1>
-      
 
       <ul class="news__list cards">
         <li class="news__item cards__item">
@@ -92,7 +91,10 @@
             <a href="#!" class="read-more">Read more</a>
           </div>
           <div class="news__img cards__img">
-            <img src="img/news-1.jpg" alt="">
+            <picture>
+              <source srcset="img/mobile-news-1.jpg" media="(max-width: 576px)">
+              <img src="img/news-1.jpg" alt="">
+            </picture>
           </div>
         </li>
         <li class="news__item cards__item">

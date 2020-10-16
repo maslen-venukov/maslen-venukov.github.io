@@ -21,16 +21,20 @@
     justify-content: space-between
     align-items: center
   &__search
-    display: none
+    opacity: 0
+    visibility: hidden
     position: fixed
-    top: 17px
+    top: 15px
     right: 67px
     width: 28px
     height: 28px
     background: url(../img/icons/search.svg) center / cover no-repeat
-    transform: translateY(-2px)
+    transition: opacity .2s, visibility .2s
+    @media screen and ( max-width: 350px )
+      right: 48px
     &--active
-      display: block
+      opacity: 1
+      visibility: visible
   &__burger
     display: none
     position: relative
@@ -67,20 +71,39 @@
     position: fixed
     bottom: 0
     left: 0
+    z-index: 1
     width: 100%
     background: #fff
-    padding: 20px 0
-    transform: translateY(100%)
+    transform: translateY(calc(100% + 200px))
     transition: transform .1s
     @media screen and ( max-width: 1200px )
       display: block
       .social__inner
         flex-direction: column
+        padding: 20px 0
       .social__text
         margin: 0 auto 10px
+    &.social
+      padding: 0
+    .container
+      background: #fff
+    &::after
+      display: none
+      content: ''
+      position: fixed
+      bottom: -70px
+      right: 0
+      z-index: -1
+      transform: translateX(50%)
+      width: 380px
+      height: 380px
+      background: rgba($green-blue, .1)
+      border-radius: 50%
     &--active
       transform: translateY(0)
       transition-delay: .2s
+      &::after
+        display: block
 
 .nav
   &__list
@@ -93,29 +116,20 @@
       height: 100vh
       flex-direction: column
       background: #fff
-      padding: 15px 15px 180px
+      padding: 15px 15px 200px
       transform: translateX(100%)
       transition: transform .4s
       overflow-y: scroll
       overflow-x: hidden
-      &::after
-        content: ''
-        position: fixed
-        top: calc(100% - 165px)
-        right: 0
-        z-index: -1
-        transform: translate(50%, -50%)
-        width: 380px
-        height: 380px
-        background: rgba($green-blue, .1)
-        border-radius: 50%
     &--active
       transform: translateX(0)
   &__item
+    transition: font-weight .2s
     @media screen and ( max-width: 1200px )
       font-size: 32px
       font-weight: 300
-    &--active
+    &--active,
+    &:hover
       font-weight: 700
       @media screen and ( max-width: 1200px )
         font-weight: 300
@@ -441,6 +455,9 @@
   color: #000
   text-transform: uppercase
   padding-right: 20px
+  transition: padding .2s
+  &:hover
+    padding-right: 25px
   &::after
     content: ''
     position: absolute
@@ -480,6 +497,9 @@
   &__title
     margin-bottom: 25px
   &__item
+    transition: font-weight .2s
+    &:hover
+      font-weight: 700
     &:not(:last-child)
       margin-bottom: 5px
   &__link
@@ -501,15 +521,22 @@
   font-weight: 600
   text-transform: uppercase
   padding: 0 25px
+  transition: color .2s, background .2s
   @media screen and ( max-width: 992px )
     width: 100%
     max-width: 340px
   &--white
     color: #fff
     border: 2px solid #fff
+    &:hover
+      color: $dark-green
+      background: #fff
   &--green
     color: $green-blue
     border: 2px solid $green-blue
+    &:hover
+      color: #fff
+      background: $green-blue
 
 .social
   padding: 25px 0
@@ -942,7 +969,8 @@
     width: 76px
     height: 76px
     margin-bottom: 15px
-    img
+    img,
+    svg
       width: 100%
       height: 100%
       border-radius: 50%
@@ -1054,19 +1082,57 @@
       display: none
 
 .contact
-  &__item
+  // &__item
+  //   @media screen and ( max-width: 992px )
+  //     flex-direction: column
+  //   &:first-child
+  //     .contact__img
+  //       &::after
+  //         display: none
+  &__list
+    max-width: 1440px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin: 0 auto
     @media screen and ( max-width: 992px )
       flex-direction: column
-    &:first-child
-      .contact__img
+  &__item
+    flex-basis: 50%
+    max-width: 720px
+    @media screen and ( max-width: 992px )
+      max-width: 100%
+    &:not(:first-child)
+      .contact__content
+        @media screen and ( max-width: 1439px )
+          padding-top: 100px
+        @media screen and ( max-width: 1200px )
+          padding-top: 60px
         &::after
           display: none
+    @media screen and ( max-width: 992px )
+      &:nth-child(2)
+        order: 4
+        padding: 30px 15px
+      &:nth-child(4)
+        order: 2
+      &:nth-child(3)
+        display: none
+        @media screen and ( max-width: 768px )
+          display: block
+      &:nth-child(4)
+        .contact__content
+          padding-top: 45px
+  &__content
+    @media screen and ( max-width: 1200px )
+      padding-bottom: 0
   &__title
     @media screen and ( max-width: 992px )
       margin-left: 30px
     @media screen and ( max-width: 576px )
       margin-left: 15px
   &__content
+    height: 100%
     @include quarter()
     @media screen and ( max-width: 992px )
       padding: 45px 15px 20px
@@ -1074,7 +1140,12 @@
       top: 100%
       @media screen and ( max-width: 992px )
         display: none
+      @media screen and ( max-width: 768px )
+        display: block
+        width: 100%
+        height: 100vw
   &__img
+    height: 100%
     @media screen and ( max-width: 992px )
       display: block
       max-width: 100%
@@ -1114,8 +1185,8 @@
     margin-bottom: 15px
     &:last-of-type
       margin-bottom: 60px
-      @media screen and ( max-width: 576px )
-        margin-bottom: 35px
+      @media screen and ( max-width: 1200px )
+        margin-bottom: 30px
   &__input
     margin-top: 3px
   &__textarea
@@ -1145,8 +1216,10 @@
   &__content
     @include quarter()
     &::after
-      @media screen and ( max-width: 992px )
-        display: none
+      @media screen and ( max-width: 576px )
+        width: 100%
+        height: 100vw
+        top: 260px
   &__mobile-img
     display: none
     position: relative
@@ -1196,7 +1269,16 @@
     margin-top: 3px
 
 .news
+  @include quarter()
+  &::after
+    display: none
+    @media screen and ( max-width: 576px )
+      display: block
+      top: 160px
+      width: calc(100% - 50px)
+      height: calc(100vw - 50px)
   @media screen and ( max-width: 576px )
+    padding-top: 60px
     margin-bottom: 25px
   & > &__title
     display: none
@@ -1205,12 +1287,12 @@
       font-size: 28px
       font-weight: 300
       padding-left: 15px
-      margin: 100px 0 45px 30px
+      margin: 0 0 45px 30px
       &::before
         display: block
   .to-home-link
     @media screen and ( max-width: 576px )
-      top: -30px
+      top: -45px
   &__item
     & > div
       &:first-child
@@ -1482,6 +1564,11 @@
   transform: translate(-50%, -50%)
   transition: transform 0s
   &--mobile
+    @media screen and ( max-width: 1200px )
+      max-width: none
+      width: 100vw
+      max-height: none
+      height: 100vh
     .thanks__title,
     .thanks__text
       &--mobile
