@@ -1082,13 +1082,15 @@
       display: none
 
 .contact
-  // &__item
-  //   @media screen and ( max-width: 992px )
-  //     flex-direction: column
-  //   &:first-child
-  //     .contact__img
-  //       &::after
-  //         display: none
+  &--about
+    .contact__content
+      &::after
+        @media screen and ( max-width: 768px )
+          display: none
+    .contact__item
+      &:nth-child(2)
+        @media screen and ( max-width: 992px )
+          padding: 0 0 20px
   &__list
     max-width: 1440px
     display: flex
@@ -1176,9 +1178,6 @@
         flex-direction: column-reverse
         .contact__img
           display: block
-  &__img--main
-    @media screen and ( max-width: 992px )
-      display: none
 
 .contact-form
   &__label
