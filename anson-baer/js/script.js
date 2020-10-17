@@ -295,16 +295,18 @@ const swiperStartForm = new Swiper('.swiper-container-start-form', {
 
 // start form fade effect
 
+const startForm = document.querySelector('.start-form');
+
 const startFormFade = () => {
-  const slides = document.querySelectorAll('.start-form__page.swiper-slide');
+  if(startForm) {
+    const slides = document.querySelectorAll('.start-form__page.swiper-slide');
   slides.forEach(el => {
     el.style.opacity = '0';
   });
   const activeSlide = document.querySelector('.start-form__page.swiper-slide.swiper-slide-active');
   activeSlide.style.opacity = '1';
+  };
 };
-
-const startForm = document.querySelector('.start-form');
 
 if(startForm) {
   startForm.addEventListener('click', e => {
@@ -354,4 +356,5 @@ window.addEventListener('resize', () => {
   setNewsItemsHeight();
   openPackageModal();
   setFieldsHeight();
+  startFormFade();
 });
