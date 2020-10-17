@@ -14,15 +14,22 @@ $gray: #505248
     right: 0
     z-index: -1
     transform: translate(50%, -50%)
-    width: 100%
-    height: calc(100% + 50px)
+    // width: 100%
+    // height: calc(100% + 50px)
+    width: 50vw
+    max-width: 720px
+    height: 50vw
+    max-height: 720px
     background: rgba($green-blue, .1)
     border-radius: 50%
     @media screen and ( max-width: 1200px )
-      height: calc(100% + 40px)
+      // height: calc(100% + 40px)
     @media screen and ( max-width: 768px )
-      width: 380px
-      height: 380px
+      // width: 380px
+      // height: 380px
+    @media screen and ( max-width: 576px )
+      width: 100vw
+      height: 100vw
 
 html, body
   font-family: 'Montserrat', sans-serif

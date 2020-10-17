@@ -124,21 +124,24 @@
     &--active
       transform: translateX(0)
   &__item
-    transition: font-weight .2s
     @media screen and ( max-width: 1200px )
       font-size: 32px
       font-weight: 300
-    &--active,
-    &:hover
+    &--active
       font-weight: 700
       @media screen and ( max-width: 1200px )
         font-weight: 300
+      .nav__link
+        &:hover
+          border: 0
     &:not(:last-child)
       margin-right: 50px
       @media screen and ( max-width: 1200px )
         margin: 0 0 15px
   &__link
     color: #3a352e
+    &:hover
+      border-bottom: 1px solid #3a352e
 
 .page
   margin-top: 80px
@@ -147,7 +150,6 @@
 
 .intro
   position: relative
-  // min-height: calc(100vh - 80px)
   min-height: 720px
   background: #9ad3e9 url(../img/home-bg.jpg) center / cover no-repeat
   @media screen and ( max-width: 1200px )
@@ -173,7 +175,6 @@
   &__inner
     position: relative
     z-index: 2
-    // height: calc(100vh - 80px)
     height: 720px
     display: flex
     justify-content: center
@@ -440,8 +441,6 @@
   &--estonia
     @media screen and ( min-width: 577px )
       @include quarter()
-      &::after
-        height: 100%
     @media screen and ( max-width: 1200px )
       order: 1
   &--us
@@ -497,13 +496,13 @@
   &__title
     margin-bottom: 25px
   &__item
-    transition: font-weight .2s
-    &:hover
-      font-weight: 700
     &:not(:last-child)
       margin-bottom: 5px
   &__link
     color: #fff
+    transition: border .2s
+    &:hover
+      border-bottom: 1px solid #fff
   &__start
     position: absolute
     bottom: -10px
@@ -695,7 +694,6 @@
     overflow: visible
     &::after
       top: 100%
-      height: 720px
     @media screen and ( max-width: 1200px )
       display: none
 
@@ -857,18 +855,14 @@
       @include quarter()
       &::after
         right: 100%
-        @media screen and ( max-width: 576px )
-          width: 100%
+        width: 100vw
+        height: 100vw
   &__item
     &:nth-child(2n)
       @include quarter()
       &::after
         top: 100%
         right: 50%
-        width: 720px
-        height: calc(100% + 10px)
-        @media screen and ( max-width: 1439px )
-          width: 50%
         @media screen and ( max-width: 992px )
           display: none
     @media screen and ( max-width: 992px )
@@ -975,6 +969,9 @@
       height: 100%
       border-radius: 50%
       object-fit: cover
+      .animate__zoomIn
+        transform-origin: center
+        animation-duration: 1.2s
   &__title
     font-size: 18px
     font-weight: 700
@@ -997,6 +994,7 @@
     @include quarter()
     &::after
       right: 100%
+      height: calc(100% + 50px)
       @media screen and ( max-width: 992px )
         display: none
   &__text-between-blocks
@@ -1144,7 +1142,9 @@
         display: none
       @media screen and ( max-width: 768px )
         display: block
-        width: 100%
+        max-width: none
+        width: 100vw
+        max-height: none
         height: 100vw
   &__img
     height: 100%
@@ -1216,9 +1216,7 @@
     @include quarter()
     &::after
       @media screen and ( max-width: 576px )
-        width: 100%
-        height: 100vw
-        top: 260px
+        top: 280px
   &__mobile-img
     display: none
     position: relative
@@ -1409,11 +1407,14 @@
 
 .start-form
   overflow: hidden
-  &__pages
   &__page
     display: flex
     justify-content: center
     flex-wrap: wrap
+    opacity: 0
+    transition: opacity .2s
+    &.swiper-slide-active
+      opacity: 1
     &--contact
       .start-form__fields
         padding-top: 40px

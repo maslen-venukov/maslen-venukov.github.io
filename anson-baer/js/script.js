@@ -282,6 +282,7 @@ const swiperStartForm = new Swiper('.swiper-container-start-form', {
   slidesPerView: 1,
   autoHeight: true,
   allowTouchMove: false,
+  effect: 'fade',
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -291,6 +292,27 @@ const swiperStartForm = new Swiper('.swiper-container-start-form', {
     clickable: true,
   },
 });
+
+// start form fade effect
+
+const startFormFade = () => {
+  const slides = document.querySelectorAll('.start-form__page.swiper-slide');
+  slides.forEach(el => {
+    el.style.opacity = '0';
+  });
+  const activeSlide = document.querySelector('.start-form__page.swiper-slide.swiper-slide-active');
+  activeSlide.style.opacity = '1';
+};
+
+const startForm = document.querySelector('.start-form');
+
+if(startForm) {
+  startForm.addEventListener('click', e => {
+    if(e.target.classList.contains('swiper-button-next') || e.target.classList.contains('swiper-button-prev') || e.target.classList.contains('swiper-pagination-bullet')) {
+      startFormFade();
+    };
+  });
+};
 
 // open thanks modal after form submit
 
