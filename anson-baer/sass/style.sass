@@ -605,6 +605,7 @@
       padding: 45px 15px
   &__img
     position: relative
+    @include quarter()
     @media screen and ( max-width: 992px )
       display: none
     &::after
@@ -696,6 +697,7 @@
     overflow: visible
     &::after
       top: 100%
+      right: -15px
     @media screen and ( max-width: 1200px )
       display: none
 
