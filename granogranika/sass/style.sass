@@ -1,0 +1,414 @@
+@import 'normalize'
+@import 'global'
+@import 'fonts'
+
+.unique
+  background: #f6f6f6 url(../img/unique-bg.jpg) center / cover no-repeat
+  padding: 8rem 0 16rem
+  @media screen and ( max-width: 1200px )
+    padding-bottom: 8rem
+  @media screen and ( max-width: 768px )
+    padding: 6rem 0
+  @media screen and ( max-width: 576px )
+    padding: 4rem 0
+  &__title
+    max-width: 110rem
+    text-align: center
+    margin: 0 auto 5rem
+    @media screen and ( max-width: 1200px )
+      max-width: 100rem
+    @media screen and ( max-width: 768px )
+      margin-bottom: 3rem
+  &__item
+    display: flex
+    &:nth-child(even)
+      flex-direction: row-reverse
+
+.unique-item
+  position: relative
+  @media screen and ( max-width: 1200px )
+    display: flex
+    justify-content: space-between
+    align-items: center
+  @media screen and ( max-width: 768px )
+    flex-direction: column-reverse
+  &:not(:last-child)
+    margin-bottom: 9rem
+    @media screen and ( max-width: 1200px )
+      margin-bottom: 6rem
+    @media screen and ( max-width: 768px )
+      margin-bottom: 3rem
+  &__content
+    width: 50%
+    padding: 3rem 5rem
+    @media screen and ( max-width: 1200px )
+      width: 49%
+      padding: 0
+    @media screen and ( max-width: 768px )
+      width: 100%
+  &__img
+    position: absolute
+    top: 0
+    right: 0
+    width: 65%
+    @media screen and ( max-width: 1200px )
+      position: static
+      width: 49%
+    @media screen and ( max-width: 768px )
+      width: 100%
+      margin-bottom: 3rem
+  &__text
+    font-weight: 300
+    margin-bottom: 2.5rem
+  &__item
+    position: relative
+    font-size: 2rem
+    font-weight: 600
+    padding-left: 3rem
+    @media screen and ( max-width: 576px )
+      font-size: 1.8rem
+    @media screen and ( max-width: 320px )
+      font-size: 1.6rem
+    &::before
+      content: ''
+      position: absolute
+      top: 2px
+      left: 0
+      width: 2rem
+      height: 1.5rem
+      background: url(../img/icons/check.svg) center / contain no-repeat
+    &--title
+      padding-left: 0
+      &::before
+        content: none
+    &:not(:last-child)
+      margin-bottom: 1rem
+  &:nth-child(odd)
+    .unique-item__content
+      background: url(../img/unique-content-bg-1.png) center / cover no-repeat
+      padding-right: 20rem
+      margin-top: 7rem
+      @media screen and ( max-width: 1200px )
+        background: none
+        padding-right: 0
+        margin-top: 0
+  &:nth-child(even)
+    .unique-item__content
+      background: url(../img/unique-content-bg-2.png) center / cover no-repeat
+      padding-left: 25rem
+      padding-right: 0
+      @media screen and ( max-width: 1200px )
+        background: none
+        padding-left: 0
+    .unique-item__img
+      left: 0
+      top: 5rem
+    @media screen and ( max-width: 768px )
+      flex-direction: column-reverse
+
+.features
+  margin-bottom: 10rem
+  @media screen and ( max-width: 992px )
+    margin-bottom: 5rem
+  &__inner
+    position: relative
+  &__title
+    position: relative
+    color: #fff
+    background: url(../img/features-title-bg.jpg) top left / cover no-repeat
+    padding: 4.7rem 0 4.2rem
+    margin-bottom: 7rem
+    @media screen and ( max-width: 992px )
+      background: $orange
+      padding: 3.7rem 0 3.2rem
+      margin-bottom: 5rem
+    @media screen and ( max-width: 576px )
+      padding: 2rem 0
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      height: 100%
+      background: $orange
+    &::before
+      right: calc(100% - 1px)
+      width: 100vw
+    &::after
+      display: none
+      @media screen and ( max-width: 992px )
+        display: block
+        left: calc(100% - 1px)
+        width: 20px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    @media screen and ( max-width: 1200px )
+      flex-direction: column
+  &__item
+    position: relative
+    flex-basis: 50%
+    display: flex
+    align-items: center
+    padding-bottom: 1.5rem
+    @media screen and ( max-width: 1200px )
+      padding-bottom: 0
+    &:not(:nth-last-child(-n + 2))
+      margin-bottom: 5rem
+    @media screen and ( max-width: 1200px )
+      &:not(:last-child)
+        margin-bottom: 3rem
+        @media screen and ( max-width: 320px )
+          margin-bottom: 2rem
+    svg
+      position: absolute
+      top: 100%
+      max-width: 75%
+      stroke: #eaeaea
+      fill: none
+      stroke-linecap: round
+      stroke-width: 2px
+      fill-rule: evenodd
+      transition: stroke .2s
+      @media screen and ( max-width: 1200px )
+        display: none
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      width: 3rem
+      height: 3rem
+      background: url(../img/icons/check-circle.svg) center / contain no-repeat
+      transition: width .2s, height .2s, transform .2s
+    &:hover
+      &::before
+        width: 4rem
+        height: 4rem
+      svg
+        stroke: $green
+    &:nth-child(odd)
+      padding-left: 5rem
+      @media screen and ( max-width: 576px )
+        padding-left: 4rem
+      svg
+        left: 0
+      &::before
+        left: 0
+      &:hover
+        &::before
+          transform: translate(-5px, -50%)
+    &:nth-child(even)
+      text-align: right
+      display: flex
+      justify-content: flex-end
+      padding-right: 5rem
+      @media screen and ( max-width: 576px )
+        padding-right: 4rem
+      svg
+        right: 0
+      &::before
+        right: 0
+      &:hover
+        &::before
+          transform: translate(5px, -50%)
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10)
+      svg
+        bottom: 0
+        top: auto
+  &__text
+    max-width: 40rem
+  &__img
+    position: absolute
+    top: 50%
+    left: 50%
+    z-index: 1
+    width: 53rem
+    height: 53rem
+    transform: translate(-50%, calc(-50% + 10rem))
+    @media screen and ( max-width: 1200px )
+      position: relative
+      left: 0
+      transform: translate(0)
+      max-width: calc(100vw - 6rem)
+      max-height: calc(100vw - 6rem)
+      margin: 0 auto 5rem
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      z-index: -1
+      width: calc(100% + 6rem)
+      height: calc(100% + 6rem)
+      border: 2px solid $green
+      border-radius: 50%
+      transform: translate(-50%, -50%)
+      background: #fff
+      @media screen and ( max-width: 992px )
+        width: calc(100% + 3rem)
+        height: calc(100% + 3rem)
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: 50%
+
+.efficiency
+  background: url(../img/efficiency-bg.jpg) top right / cover no-repeat
+  padding: 5rem 0 4rem
+  margin-bottom: 9rem
+  @media screen and ( max-width: 1500px )
+    background: $green
+  @media screen and ( max-width: 992px )
+    padding: 3rem 0
+    margin-bottom: 5rem
+  &__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @media screen and ( max-width: 992px )
+      flex-direction: column
+      text-align: center
+  &__content
+    flex-basis: 70%
+    color: #fff
+    margin-left: 12rem
+    @media screen and ( max-width: 1500px )
+      margin-left: 0
+    @media screen and ( max-width: 992px )
+      margin-bottom: 2rem
+  &__title
+    font-size: 2.8rem
+    margin-bottom: 1rem
+    @media screen and ( max-width: 1200px )
+      font-size: 2.2rem
+    @media screen and ( max-width: 576px )
+      font-size: 2rem
+    @media screen and ( max-width: 320px )
+      font-size: 1.8rem
+  &__subtitle
+    font-weight: 300
+
+.use
+  margin-bottom: 5rem
+  &__title
+    text-align: center
+    margin: 0 auto 1rem
+  &__subtitle
+    text-align: center
+    margin: 0 auto 5rem
+    @media screen and ( max-width: 768px )
+      margin-bottom: 3rem
+  &__list
+    display: flex
+    flex-wrap: wrap
+  &__item
+    flex-basis: 25%
+    @media screen and ( max-width: 576px )
+      flex-basis: 50%
+    @media screen and ( max-width: 320px )
+      flex-basis: 100%
+    &:not(:nth-last-child(-n +2))
+      @media screen and ( max-width: 576px )
+        margin-bottom: 2rem
+    &:not(:last-child)
+      @media screen and ( max-width: 320px )
+        margin-bottom: 2rem
+
+.use-item
+  display: flex
+  align-items: center
+  @media screen and ( max-width: 1200px )
+    flex-direction: column
+    text-align: center
+  &__img
+    position: relative
+    flex-shrink: 0
+    width: 13rem
+    height: 13rem
+    margin-right: 2.5rem
+    @media screen and ( max-width: 1200px )
+      margin-right: 0
+      margin-bottom: 1.5rem
+    @media screen and ( max-width: 576px )
+      margin-bottom: 1rem
+    &:hover
+      &::after
+        transform: scale(1.2)
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 5rem
+      height: 5rem
+      background: url(../img/icons/check-circle-green.svg) center / contain no-repeat
+      transition: transform .2s
+    img
+      width: 100%
+      height: 100%
+      border-radius: 50%
+      object-fit: cover
+  &__name
+    max-width: 20rem
+    font-weight: 600
+
+.guide
+  &__list
+    display: flex
+    flex-wrap: wrap
+    border: 1.5rem solid #f6f6f6
+    padding: 3rem
+  &__item
+    flex-basis: 24%
+    @media screen and ( max-width: 1200px )
+      flex-basis: 49%
+    @media screen and ( max-width: 576px )
+      flex-basis: 100%
+
+.guide-item
+  text-align: center
+  &:not(:nth-child(4n))
+    margin-right: 1%
+    @media screen and ( max-width: 1200px )
+      margin-right: 0
+  &:not(:nth-child(2n))
+    @media screen and ( max-width: 1200px )
+      margin-right: 2%
+    @media screen and ( max-width: 576px )
+      margin-right: 0
+  &:not(:nth-last-child(-n + 2))
+    @media screen and ( max-width: 1200px )
+      margin-bottom: 3rem
+  &:not(:last-child)
+    @media screen and ( max-width: 576px )
+      margin-bottom: 3rem
+    @media screen and ( max-width: 320px )
+      margin-bottom: 1.5rem
+  &__img
+    display: flex
+    align-items: flex-end
+    width: 7.4rem
+    height: 7.4rem
+    margin: 0 auto 4rem
+    @media screen and ( max-width: 1200px )
+      margin-bottom: 2rem
+    img
+      width: 100%
+  &__title
+    font-size: 2.2rem
+    margin-bottom: 2rem
+    @media screen and ( max-width: 1200px )
+      font-size: 1.8rem
+      margin-bottom: 1rem
+    @media screen and ( max-width: 320px )
+      font-size: 1.6rem
+  &__text
+    @media screen and ( max-width: 1200px )
+      font-size: 1.6rem
+    @media screen and ( max-width: 320px )
+      font-size: 1.4rem
