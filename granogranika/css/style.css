@@ -983,8 +983,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 992px) {
   .guide__item {
-    -ms-flex-preferred-size: 49%;
-        flex-basis: 49%;
+    -ms-flex-preferred-size: 47%;
+        flex-basis: 47%;
   }
 }
 
@@ -1011,7 +1011,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 992px) {
   .guide-item:not(:nth-child(2n)) {
-    margin-right: 2%;
+    margin-right: 6%;
   }
 }
 
