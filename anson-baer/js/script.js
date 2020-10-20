@@ -123,10 +123,6 @@ const checkCirclesSlider = () => {
     if(swiperWrapper) {
       swiperWrapper.setAttribute('transform', 'translate(0);');
     };
-    // document.querySelector('.swiper-container-home').classList.remove('swiper-container-home');
-    // document.querySelector('.swiper-container-home').classList.remove('swiper-container-initialized');
-    // document.querySelector('.circles__list').classList.remove('swiper-wrapper');
-    // document.querySelector('.swiper-container-start').classList.remove('swiper-container-initialized');
   };
 };
 
