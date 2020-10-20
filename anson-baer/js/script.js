@@ -111,6 +111,7 @@ const checkCirclesSlider = () => {
       el.classList.remove('swiper-slide');
       el.classList.remove('swiper-slide-active');
     });
+    document.querySelector('.swiper-wrapper').setAttribute('transform', 'translate(0)');
   };
 };
 
