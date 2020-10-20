@@ -357,22 +357,6 @@ const setMapHeight = () => {
 
 setMapHeight();
 
-// news items height
-
-const newsItems = document.querySelectorAll('.news__item');
-
-const setNewsItemsHeight = () => {
-  if(newsItems) {
-    newsItems.forEach(el => {
-      if(el.querySelector('.news__img') === null) {
-        el.querySelector('.news__content').style.height = el.querySelector('.news__content').offsetWidth * 0.93 + 'px';
-      };
-    });
-  };
-};
-
-setNewsItemsHeight();
-
 // close modal
 
 const modalClose = document.querySelectorAll('.modal__close');
@@ -511,6 +495,7 @@ if(startForm) {
   startForm.addEventListener('click', e => {
     if(e.target.classList.contains('swiper-button-next') || e.target.classList.contains('swiper-button-prev') || e.target.classList.contains('swiper-pagination-bullet')) {
       startFormFade();
+      setStartFormPagesHeight();
     };
   });
 };
@@ -546,13 +531,20 @@ const setFieldsHeight = () => {
 
 setFieldsHeight();
 
+// start form height after window resize
+
+const setStartFormPagesHeight = () => {
+  const startFormPagesHeight = startFormPages.style.height;
+  startFormPages.style.minHeight = startFormPagesHeight;
+};
+
 // window resize
 
 window.addEventListener('resize', () => {
+  setStartFormPagesHeight();
   checkCirclesSlider();
   checkCircleItems();
   setMapHeight();
-  setNewsItemsHeight();
   openPackageModal();
   setFieldsHeight();
   startFormFade();
