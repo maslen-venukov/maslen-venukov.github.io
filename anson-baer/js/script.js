@@ -38,22 +38,24 @@ const closeOpenMenuAfterWindowResize = () => {
 const circlesItems = document.querySelectorAll('.circles__item');
 
 const checkCircleItems = () => {
-  circlesItems.forEach((el, index) => {
-    if(window.innerWidth >= 1200) {
-      el.addEventListener('mouseover', e => {
-        headersItems.forEach(el => {
-          el.style.display = 'none';
+    circlesItems.forEach((el, index) => {
+        el.addEventListener('mouseover', e => {
+          if(window.innerWidth > 1200) {
+            headersItems.forEach(el => {
+              el.style.display = 'none';
+            });
+            headersItems[index].style.display = 'block';
+          };
         });
-        headersItems[index].style.display = 'block';
-      });
-      el.addEventListener('mouseout', e => {
-        headersItems.forEach(el => {
-          el.style.display = 'none';
+        el.addEventListener('mouseout', e => {
+          if(window.innerWidth > 1200) {
+            headersItems.forEach(el => {
+              el.style.display = 'none';
+            });
+            headersItems[0].style.display = 'block';
+          };
         });
-        headersItems[0].style.display = 'block';
-      });
-    };
-  });
+    });
 };
 
 checkCircleItems();
