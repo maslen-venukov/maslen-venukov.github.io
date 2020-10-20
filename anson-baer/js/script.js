@@ -534,8 +534,10 @@ setFieldsHeight();
 // start form height after window resize
 
 const setStartFormPagesHeight = () => {
-  const startFormPagesHeight = startFormPages.style.height;
-  startFormPages.style.minHeight = startFormPagesHeight;
+  if(startForm) {
+    const startFormPagesHeight = startFormPages.style.height;
+    startFormPages.style.minHeight = startFormPagesHeight;
+  };
 };
 
 // window resize
