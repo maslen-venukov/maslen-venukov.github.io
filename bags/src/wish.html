@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Сумки</title>
+</head>
+<body>
+
+  @include('html/header.html')
+
+  <main class="main">
+
+    <div class="hero hero--wish">
+      <div class="container">
+        <div class="hero__inner">
+
+          <ul class="hero__breadcrumbs breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a href="/" class="breadcrumbs__link">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="wish.html" class="breadcrumbs__link">Список желаний</a>
+            </li>
+          </ul>
+
+          <h1 class="hero__title">Список желаний</h1>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="wish">
+      <div class="container">
+        <div class="wish__inner">
+
+          <ul class="wish__list">
+            <li class="wish__item product">
+              <a href="card.html" class="product__img">
+                <img src="img/basket-1.jpg" alt="Сумка женская">
+              </a>
+              <div class="product__info">
+                <a href="card.html" class="product__name">Сумка женская</a>
+                <p class="product__time">Срок доставки: <time>10 июля</time></p>
+              </div>
+              <button class="product__trash" aria-label="Удалить"></button>
+              <button class="product__basket" aria-label="В список желаний"></button>
+              <p class="product__total-price">2.000 руб</p>
+            </li>
+  
+            <li class="wish__item product">
+              <a href="card.html" class="product__img">
+                <img src="img/basket-1.jpg" alt="Сумка женская">
+              </a>
+              <div class="product__info">
+                <a href="card.html" class="product__name">Сумка женская</a>
+                <p class="product__time">Срок доставки: <time>10 июля</time></p>
+              </div>
+              <button class="product__trash" aria-label="Удалить"></button>
+              <button class="product__basket" aria-label="В список желаний"></button>
+              <p class="product__total-price">2.000 руб</p>
+            </li>
+  
+            <li class="wish__item product">
+              <a href="card.html" class="product__img">
+                <img src="img/basket-1.jpg" alt="Сумка женская">
+              </a>
+              <div class="product__info">
+                <a href="card.html" class="product__name">Сумка женская</a>
+                <p class="product__time">Срок доставки: <time>10 июля</time></p>
+              </div>
+              <button class="product__trash" aria-label="Удалить"></button>
+              <button class="product__basket" aria-label="В список желаний"></button>
+              <p class="product__total-price">2.000 руб</p>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  @include('html/footer.html')
+
+  <script src="js/script.min.js"></script>
+
+</body>
+</html>

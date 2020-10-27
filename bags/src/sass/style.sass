@@ -1,0 +1,925 @@
+@import 'normalize'
+@import 'libs'
+@import 'fonts'
+@import 'global'
+
+.header
+  &__inner
+    display: flex
+    align-items: center
+  &__top
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 50
+    width: 100vw
+    background: #fff
+    padding: 50px 0 25px
+    border-bottom: 1px solid rgba(#000, .2)
+    transition: padding .2s
+  &__logo,
+  &__menu,
+  &__search,
+    margin-left: auto
+  &__bottom
+    padding: 25px 0
+
+.phones
+  position: relative
+  color: #1e1e1e
+  padding-left: 40px
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    width: 27px
+    height: 26px
+    background: url(../img/icons/phone.svg) center / cover no-repeat
+
+.menu
+  &__list
+    display: flex
+    align-items: center
+  &__item
+    &:not(:last-child)
+      margin-right: 45px
+  &__link
+    position: relative
+    transition: color .2s
+    &::before,
+    svg
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      transition: fill .2s
+    &--like
+      color: #626262
+      padding-left: 40px
+      &::before
+        width: 27px
+        height: 24px
+        background: url(../img/icons/heart.svg) center / cover no-repeat
+    &--basket
+      color: $accent
+      padding-left: 50px
+      svg
+        fill: $accent
+        width: 33px
+        height: 31px
+    &--empty
+      color: #626262
+      svg
+        fill: #626262
+      .menu__counter
+        opacity: 0
+        transform: translate(-50%, calc(-50% - 25px))
+  &__counter
+    position: absolute
+    top: -4px
+    left: 32px
+    transform: translate(-50%, -50%)
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 25px
+    height: 25px
+    background: $accent
+    line-height: 1
+    font-weight: 500
+    color: #fff
+    border-radius: 50%
+    transition: opacity .2s, transform .2s
+
+.nav
+  color: #000
+  &__list
+    display: flex
+  &__item
+    &:not(:last-child)
+      margin-right: 30px
+  &__link
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      bottom: -5px
+      left: 50%
+      transform: translateX(-50%)
+      width: 0
+      height: 2px
+      background: $accent
+      transition: width .2s
+    &--active,
+    &:hover
+      &::after
+        width: calc(100% + 4px)
+
+.search
+  position: relative
+  display: flex
+  max-width: 445px
+  width: 100%
+  height: 45px
+  &__input
+    font-size: 16px
+    font-weight: 300
+    width: 100%
+    height: 100%
+    padding: 0 50px 0 30px
+    border: 1px solid rgba(60, 68, 76, .25)
+    border-radius: 7px
+    &::placeholder
+      color: rgba(#3c444c, .5)
+  &__btn
+    position: absolute
+    top: 0
+    right: 0
+    width: 50px
+    height: 100%
+    background: url(../img/icons/search.svg) center / 21px 21px no-repeat
+
+.footer
+  background: #4d4d4d
+  padding: 60px 0
+  &__inner
+    display: flex
+    align-items: center
+  &__nav
+    color: #fff
+    margin-left: auto
+  &__social
+    margin-left: auto
+
+.social
+  &__list
+    display: flex
+  &__item
+    &:not(:last-child)
+      margin-right: 20px
+  &__link
+    position: relative
+    display: block
+    width: 40px
+    height: 40px
+    background: #696969
+    border-radius: 50%
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+    &--instagram
+      &::after
+        width: 19px
+        height: 19px
+        background: url(../img/icons/instagram.svg) center / cover no-repeat
+    &--vk
+      &::after
+        width: 21px
+        height: 12px
+        background: url(../img/icons/vk.svg) center / cover no-repeat
+    &--telegram
+      &::after
+        width: 20px
+        height: 18px
+        background: url(../img/icons/telegram.svg) center / cover no-repeat
+
+.types
+  margin-bottom: 60px
+  &__inner
+    display: flex
+    justify-content: space-between
+  &__categories
+    flex-basis: 23%
+  &__content
+    flex-basis: 74%
+  &__list
+    display: flex
+    flex-wrap: wrap
+  &__item
+    flex-basis: 49%
+    &:not(:nth-child(2n))
+      margin-right: 2%
+    &:not(:nth-last-child(-n + 2))
+      margin-bottom: 18px
+
+.types-item
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 10px
+  border: 1px solid #c4c4c4
+  &__img
+    flex-shrink: 0
+    width: 140px
+    height: 140px
+    margin-right: 20px
+    img
+      width: 100%
+      height: 100%
+  &__name
+    font-size: 24px
+    font-weight: 500
+    margin-bottom: 15px
+  &__text
+    font-size: 16px
+    font-weight: 300
+
+.categories
+  display: flex
+  flex-direction: column
+  &__btn
+    font-size: 16px
+    text-align: left
+    padding: 12px 30px
+    border: 1px solid $text
+    &:not(:last-child)
+      margin-bottom: 8px
+
+.recommended
+  &__title
+    margin-bottom: 60px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 30px
+  &__item
+    flex-basis: 23.5%
+    &:not(:nth-child(4n))
+      margin-right: 2%
+  &__imgs
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin-bottom: 50px
+  &__img
+    width: 49%
+    margin-bottom: 20px
+    &:not(:nth-child(2n))
+      margin-right: 2%
+    img
+      width: 100%
+
+.card
+  position: relative
+  display: flex
+  flex-direction: column
+  background: #fff
+  box-shadow: 0 0 4px rgba(#000, .25)
+  padding: 20px
+  margin-bottom: 20px
+  &__rating
+    position: absolute
+    top: 20px
+    left: 20px
+  &__like
+    position: absolute
+    top: 20px
+    right: 20px
+    svg
+      fill: #d7d7d7
+  &__img
+    height: 200px
+    margin: 20px 0 30px
+    img
+      width: 100%
+      height: 100%
+  &__price
+    font-weight: 700
+    color: $accent
+    margin-bottom: 10px
+  &__name
+    font-size: 12px
+    font-weight: 700
+    color: #000
+    text-transform: uppercase
+    margin-bottom: 30px
+  &__btns
+    display: flex
+    justify-content: space-between
+    margin-top: auto
+  &__cart
+    flex-basis: 50%
+    font-size: 14px
+    font-weight: 500
+    color: #fff
+    background: $accent
+    padding: 11px 0
+    margin-right: 8px
+  &__more
+    flex-basis: 50%
+    font-size: 14px
+    color: $accent
+    border: 1px solid $accent
+
+.rating
+  display: flex
+  flex-direction: row-reverse
+  svg
+    width: 11px
+    height: 11px
+    fill: none
+    stroke: #ffc700
+    stroke-width: 1px
+    &:not(:last-child)
+      margin-left: 3px
+    // &:hover
+    //   fill: #ffc700
+    //   & ~ svg
+    //     fill: #ffc700
+
+.new
+  margin-bottom: 55px
+  &__title
+    margin-bottom: 60px
+  &__list
+    display: flex
+    flex-wrap: wrap
+  &__item
+    flex-basis: 23.5%
+    &:not(:nth-child(4n))
+      margin-right: 2%
+
+.features
+  margin-bottom: 30px
+  &__title
+    margin-bottom: 50px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+  &__item
+    flex-basis: 25%
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    text-align: center
+    margin-bottom: 60px
+    &:not(:first-child)
+      .features__img
+        svg
+          height: 100px
+  &__img
+    margin-bottom: 30px
+  &__text
+    font-size: 18px
+    font-weight: 400
+    color: #626262
+
+.basket
+  margin-bottom: 100px
+  &-icon
+    path
+      fill: $accent
+  &__list
+    margin-bottom: 55px
+  &__footer
+    display: flex
+    align-items: center
+  &__pay
+    font-weight: 500
+    color: $accent
+    border: 1px solid $accent
+    border-radius: 5px
+    padding: 15px 45px
+    margin-right: auto
+  &__total
+    font-size: 20px
+    font-weight: 700
+    text-transform: uppercase
+  &__price
+    color: $accent
+    text-transform: lowercase
+    margin-left: 65px
+
+
+.product
+  display: flex
+  align-items: center
+  font-size: 16px
+  padding: 30px 0
+  &:not(:last-child)
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      width: 100vw
+      height: 1px
+      background: rgba(#424b5a, .3)
+  &:first-child
+    padding-top: 0
+  &:last-child
+    padding-bottom: 0
+  &__img
+    flex-shrink: 0
+    display: block
+    width: 150px
+    height: 120px
+    box-shadow: 0 0 4px rgba(#000, .25)
+    margin-right: 3%
+    img
+      width: 100%
+      height: 100%
+  &__info
+    max-width: 240px
+    width: 100%
+    margin-right: 4%
+  &__name
+    display: inline-block
+    font-size: 20px
+    font-weight: 700
+    text-transform: uppercase
+    margin-bottom: 20px
+    transition: color .2s
+    &:hover
+      color: $accent
+  &__time
+    text-transform: uppercase
+  &__trash
+    flex-shrink: 0
+    width: 24px
+    height: 25px
+    background: url(../img/icons/trash.svg) center / cover no-repeat
+    margin-right: 2%
+  &__like
+    flex-shrink: 0
+    width: 27px
+    height: 24px
+    // background: url(../img/icons/heart-dark.svg) center / cover no-repeat
+    margin-right: 10%
+    svg
+      fill: $text
+  &__basket
+    flex-shrink: 0
+    width: 33px
+    height: 29px
+    background: url(../img/icons/basket-dark.svg) center / cover no-repeat
+  &__counter
+    display: flex
+    align-items: center
+    margin-right: 5%
+  &__minus,
+  &__plus
+    line-height: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 18px
+    height: 18px
+    border: 1px solid $text
+    border-radius: 50%
+  &__quantity
+    font-weight: 500
+    color: $text
+    text-align: center
+    width: 32px
+    height: 32px
+    border: 1px solid $text
+    margin: 0 10px
+  &__current-price
+    max-width: 230px
+    width: 100%
+    position: relative
+    text-align: center
+    font-weight: 500
+    margin-right: 2%
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      background-position: center
+      background-size: cover
+      background-repeat: no-repeat
+    &::before
+      left: 0
+      width: 10px
+      height: 9px
+      background-image: url(../img/icons/multiply.svg)
+    &::after
+      right: 0
+      width: 16px
+      height: 8px
+      background-image: url(../img/icons/equally.svg)
+  &__total-price
+    color: $accent
+    font-size: 20px
+    font-weight: 700
+    margin-left: auto
+
+.like
+  svg
+    display: block
+    width: 29px
+    height: 25px
+    transition: fill .2s
+  &--liked
+    svg
+      fill: $accent
+
+.wish
+  margin-bottom: 120px
+  &__item
+    max-width: 950px
+    width: 100%
+    &:not(:last-child)
+      &::after
+        left: auto
+        right: 0
+        transform: translateX(0)
+
+.modal
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 100
+  width: 100vw
+  height: 100vh
+  &--active
+    display: block
+  &__overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background: rgba(#000, .5)
+    overflow: scroll
+  &__inner
+    position: relative
+    width: 100%
+    max-width: 760px
+    background: #fff
+    border-radius: 5px
+    padding: 75px
+    margin: 15px
+  &__close
+    position: absolute
+    top: 42px
+    right: 36px
+    width: 39px
+    height: 41px
+    background: url(../img/icons/close.svg) center / cover no-repeat
+  &__title
+    font-size: 24px
+    font-weight: 400
+    color: #333
+    text-align: center
+    margin-bottom: 60px
+  &__form
+    display: flex
+    flex-wrap: wrap
+  &__input,
+  &__select
+    font-weight: 300
+    border: 1px solid #c4c4c4
+    border-radius: 8px
+    margin-bottom: 25px
+    overflow: hidden
+    &::placeholder
+      color: rgba(#333, .5)
+  &__input
+    flex-basis: 100%
+    padding: 25px
+    &:last-of-type
+      margin-bottom: 70px
+  &__select
+    position: relative
+    flex-basis: 49%
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 25px
+      transform: translateY(-50%)
+      width: 16px
+      height: 7px
+      background: url(../img/icons/angle-down.svg) center / cover no-repeat
+    &:not(:nth-of-type(2n))
+      margin-right: 2%
+    select
+      width: 100%
+      background: #fff
+      padding: 25px
+  &__btn
+    flex-basis: 100%
+    color: #fff
+    background: $accent
+    padding: 25px
+    border-radius: 8px
+
+.catalog
+  margin-bottom: 100px
+  &__inner
+    display: flex
+    justify-content: space-between
+  &__filters
+    flex-basis: 23.5%
+    margin-right: 2%
+  &__grid
+    width: 74.5%
+
+.filters
+  font-size: 14px
+  &__header
+    position: relative
+    width: 100%
+    height: 50px
+    display: flex
+    align-items: center
+    font-weight: 700
+    color: #fff
+    text-align: left
+    text-transform: uppercase
+    background: #2b2a29
+    padding: 2px 0 0 60px
+  &__burger,
+  &__burger::before,
+  &__burger::after
+    content: ''
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 20px
+    height: 2px
+    background: #fff
+  &__burger
+    left: 25px
+    &::before
+      left: 0
+      margin-top: -6px
+    &::after
+      left: 0
+      margin-top: 6px
+  &__sublist
+    // display: none
+    opacity: 0
+    max-height: 0
+    padding: 0
+    transition: opacity .2s, max-height .2s, padding .2s
+
+.filters-list
+  background: #fbfbfb
+  &__item
+    min-height: 50px
+    &:last-child
+      .filters-list__name,
+      .filters__sublist,
+        border: 0
+      &.filters-list__item--active
+        .filters-list__name
+          border-bottom: 1px solid #d5e5f1
+    &--active
+      .filters-list__toggle
+        &::before
+          opacity: 0
+          transform: translate(-50%, -50%) rotate(90deg)
+        &::after
+          transform: translate(-50%, -50%) rotate(180deg)
+      .filters__sublist
+        // display: block
+        opacity: 1
+        // max-height: 100px
+        padding: 20px 0 20px 60px
+  &__toggle
+    position: absolute
+    top: 50%
+    left: 25px
+    transform: translateY(-50%)
+    width: 18px
+    height: 18px
+    background: $accent
+    border-radius: 50%
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 10px
+      height: 2px
+      background: #fff
+      transition: transform .2s, opacity .2s
+    &::before
+      transform: translate(-50%, -50%)
+    &::after
+      transform: translate(-50%, -50%) rotate(90deg)
+  &__name
+    position: relative
+    width: 100%
+    height: 50px
+    display: flex
+    align-items: center
+    padding-left: 60px
+    border-bottom: 1px solid #d5e5f1
+    cursor: pointer
+
+.filters-sublist
+  // padding: 20px 0 20px 60px
+  padding-left: 60px
+  border-bottom: 1px solid #d5e5f1
+  &__item
+    position: relative
+    padding-left: 30px
+    cursor: pointer
+    transition: color .2s
+    &--active,
+    &:hover
+      color: $accent
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      width: 7px
+      height: 7px
+      background: $accent
+    &:not(:last-child)
+      margin-bottom: 20px
+
+.grid
+  &__title
+    font-size: 30px
+    line-height: 1
+    font-weight: 700
+    margin: 15px 0 10px
+  &__quantity
+    font-size: 16px
+    margin-bottom: 24px
+  &__choices
+    margin-bottom: 50px
+  &__list
+    display: flex
+    flex-wrap: wrap
+  &__item
+    flex-basis: 31.5%
+    &:not(:nth-child(3n))
+      margin-right: 2%
+
+.choices
+  position: relative
+  display: flex
+  align-items: center
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    left: -30px
+    width: 100vw
+    height: 1px
+    background: #efefef
+  &::before
+    top: 0
+  &::after
+    bottom: 0
+  &__fieldset
+    position: relative
+    &:not(:last-child)
+      margin-right: 30px
+  &__legend
+    position: relative
+    padding: 14px
+    cursor: pointer
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(calc(-50% - 2px)) rotate(45deg)
+      width: 7px
+      height: 7px
+      border-right: 1px solid $text
+      border-bottom: 1px solid $text
+      transition: transform .2s
+    &--active
+      &::after
+        transform: translateY(calc(-50% + 2px)) rotate(225deg)
+      & ~ .choices__dropdown
+        opacity: 1
+        visibility: visible
+        transform: translateY(0)
+  &__dropdown
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 1
+    min-width: 190px
+    display: flex
+    flex-direction: column
+    background: #fff
+    padding: 15px
+    box-shadow: 0 0 4px rgba(#000, .25)
+    transform: translateY(-50px)
+    transition: opacity .2s, visibility .2s, transform .2s
+  &__label
+    position: relative
+    font-size: 14px
+    color: rgba(#232323, .8)
+    padding-left: 30px
+    cursor: pointer
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+    &::before
+      left: 0
+      width: 15px
+      height: 15px
+      box-shadow: inset 0 0 2px rgba(#000, .25)
+    &::after
+      opacity: 0
+      left: 3px
+      width: 9px
+      height: 9px
+      background: url(../img/icons/mark.svg) center / cover no-repeat
+      transition: opacity .2s
+    &--active
+      &::after
+        opacity: 1
+    &:not(:last-child)
+      margin-bottom: 10px
+  &__input
+    position: absolute
+    width: 0
+    height: 0
+    opacity: 0
+
+input[type=range]
+  width: 100%
+  -webkit-appearance: none
+
+input[type=range]::-ms-track
+  width: 100%
+  background: transparent
+  border-color: transparent
+  color: transparent
+  cursor: pointer
+
+@mixin range-thumb()
+  position: relative
+  z-index: 1
+  width: 12px
+  height: 12px
+  border: 0
+  border-radius: 50%
+  background: $accent
+  margin-top: -4px
+  cursor: pointer
+
+input[type=range]::-webkit-slider-thumb
+  -webkit-appearance: none
+  @include range-thumb()
+
+input[type=range]::-moz-range-thumb
+  @include range-thumb()
+
+input[type=range]::-ms-thumb
+  @include range-thumb()
+
+@mixin range-track()
+  width: 100%
+  height: 6px
+  box-shadow: inset 0 0 2px rgba(#000, .25)
+  border-radius: 4px
+  cursor: pointer
+
+input[type=range]::-webkit-slider-runnable-track
+  @include range-track()
+
+input[type=range]::-moz-range-track
+  @include range-track()
+
+input[type=range]::-ms-track
+  @include range-track()
+
+.range-slider
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  &__min,
+  &__max
+    font-size: 14px
+    color: rgba(#232323, .8)
+    margin-bottom: 10px
+  &__input
+    display: block
+    &:nth-of-type(2)
+      margin-top: -8px

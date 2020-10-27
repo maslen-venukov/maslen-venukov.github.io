@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Сумки</title>
+</head>
+<body>
+
+  @include('html/header.html')
+
+  <main class="main">
+
+    <div class="hero hero--basket">
+      <div class="container">
+        <div class="hero__inner">
+
+          <ul class="hero__breadcrumbs breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a href="/" class="breadcrumbs__link">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="basket.html" class="breadcrumbs__link">Корзина</a>
+            </li>
+          </ul>
+
+          <h1 class="hero__title">Корзина</h1>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="basket">
+      <div class="container">
+        <div class="basket__inner">
+
+          <ul class="basket__list">
+            <!-- <li class="basket__item product">
+              <a href="card.html" class="product__img">
+                <img src="img/basket-1.jpg" alt="Сумка женская">
+              </a>
+              <div class="product__info">
+                <a href="card.html" class="product__name">Сумка женская</a>
+                <p class="product__time">Срок доставки: <time>10 июля</time></p>
+              </div>
+              <button class="product__trash" aria-label="Удалить"></button>
+              <button class="product__likelike" aria-label="В список желаний">
+                <svg xmlns="http://www.w3.org/2000/svg"><path d="M27.745 5.14a8.379 8.379 0 00-1.834-2.669A8.55 8.55 0 0019.904.028 8.607 8.607 0 0014.5 1.933 8.607 8.607 0 009.096.028a8.55 8.55 0 00-6.007 2.443 8.329 8.329 0 00-2.51 5.952c0 1.073.218 2.192.653 3.33.364.95.887 1.936 1.554 2.932 1.057 1.576 2.51 3.22 4.315 4.885 2.99 2.762 5.952 4.67 6.078 4.747l.764.49c.338.216.773.216 1.111 0l.764-.49c.126-.08 3.084-1.985 6.078-4.747 1.805-1.666 3.258-3.31 4.315-4.885.667-.996 1.193-1.982 1.554-2.933.434-1.137.654-2.256.654-3.329a8.205 8.205 0 00-.674-3.284zM14.5 22.257S3.027 14.908 3.027 8.423c0-3.284 2.717-5.945 6.069-5.945A6.085 6.085 0 0114.5 5.713a6.085 6.085 0 015.404-3.235c3.352 0 6.069 2.661 6.069 5.945 0 6.484-11.473 13.835-11.473 13.835z"/></svg>
+              </button>
+              <div class="product__counter">
+                <button class="product__minus" aria-label="Минус">−</button>
+                <input type="number" class="product__quantity" value="1">
+                <button class="product__plus" aria-label="Плюс">+</button>
+              </div>
+              <p class="product__current-price">2.000 руб</p>
+              <p class="product__total-price">2.000 руб</p>
+            </li>
+  
+            <li class="basket__item product">
+              <a href="card.html" class="product__img">
+                <img src="img/basket-1.jpg" alt="Сумка женская">
+              </a>
+              <div class="product__info">
+                <a href="card.html" class="product__name">Сумка женская</a>
+                <p class="product__time">Срок доставки: <time>10 июля</time></p>
+              </div>
+              <button class="product__trash" aria-label="Удалить"></button>
+              <button class="product__likelike" aria-label="В список желаний">
+                <svg xmlns="http://www.w3.org/2000/svg"><path d="M27.745 5.14a8.379 8.379 0 00-1.834-2.669A8.55 8.55 0 0019.904.028 8.607 8.607 0 0014.5 1.933 8.607 8.607 0 009.096.028a8.55 8.55 0 00-6.007 2.443 8.329 8.329 0 00-2.51 5.952c0 1.073.218 2.192.653 3.33.364.95.887 1.936 1.554 2.932 1.057 1.576 2.51 3.22 4.315 4.885 2.99 2.762 5.952 4.67 6.078 4.747l.764.49c.338.216.773.216 1.111 0l.764-.49c.126-.08 3.084-1.985 6.078-4.747 1.805-1.666 3.258-3.31 4.315-4.885.667-.996 1.193-1.982 1.554-2.933.434-1.137.654-2.256.654-3.329a8.205 8.205 0 00-.674-3.284zM14.5 22.257S3.027 14.908 3.027 8.423c0-3.284 2.717-5.945 6.069-5.945A6.085 6.085 0 0114.5 5.713a6.085 6.085 0 015.404-3.235c3.352 0 6.069 2.661 6.069 5.945 0 6.484-11.473 13.835-11.473 13.835z"/></svg>
+              </button>
+              <div class="product__counter">
+                <button class="product__minus" aria-label="Минус">−</button>
+                <input type="number" class="product__quantity" value="1">
+                <button class="product__plus" aria-label="Плюс">+</button>
+              </div>
+              <p class="product__current-price">2.000 руб</p>
+              <p class="product__total-price">2.000 руб</p>
+            </li>
+  
+            <li class="basket__item product">
+              <a href="card.html" class="product__img">
+                <img src="img/basket-1.jpg" alt="Сумка женская">
+              </a>
+              <div class="product__info">
+                <a href="card.html" class="product__name">Сумка женская</a>
+                <p class="product__time">Срок доставки: <time>10 июля</time></p>
+              </div>
+              <button class="product__trash" aria-label="Удалить"></button>
+              <button class="product__likelike" aria-label="В список желаний">
+                <svg xmlns="http://www.w3.org/2000/svg"><path d="M27.745 5.14a8.379 8.379 0 00-1.834-2.669A8.55 8.55 0 0019.904.028 8.607 8.607 0 0014.5 1.933 8.607 8.607 0 009.096.028a8.55 8.55 0 00-6.007 2.443 8.329 8.329 0 00-2.51 5.952c0 1.073.218 2.192.653 3.33.364.95.887 1.936 1.554 2.932 1.057 1.576 2.51 3.22 4.315 4.885 2.99 2.762 5.952 4.67 6.078 4.747l.764.49c.338.216.773.216 1.111 0l.764-.49c.126-.08 3.084-1.985 6.078-4.747 1.805-1.666 3.258-3.31 4.315-4.885.667-.996 1.193-1.982 1.554-2.933.434-1.137.654-2.256.654-3.329a8.205 8.205 0 00-.674-3.284zM14.5 22.257S3.027 14.908 3.027 8.423c0-3.284 2.717-5.945 6.069-5.945A6.085 6.085 0 0114.5 5.713a6.085 6.085 0 015.404-3.235c3.352 0 6.069 2.661 6.069 5.945 0 6.484-11.473 13.835-11.473 13.835z"/></svg>
+              </button>
+              <div class="product__counter">
+                <button class="product__minus" aria-label="Минус">−</button>
+                <input type="number" class="product__quantity" value="1">
+                <button class="product__plus" aria-label="Плюс">+</button>
+              </div>
+              <p class="product__current-price">2.000 руб</p>
+              <p class="product__total-price">2.000 руб</p>
+            </li> -->
+          </ul>
+
+          <footer class="basket__footer">
+            <button class="basket__pay" data-modal>Оплатить</button>
+            <p class="basket__total">Итого <span class="basket__price">6.000 руб</span></p>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal__overlay">
+        <div class="modal__inner">
+          <button class="modal__close" aria-label="Закрыть"></button>
+          <h2 class="modal__title">Для заказа заполните данные</h2>
+          <form method="POST" class="modal__form pay">
+            <input type="text" name="name" placeholder="Ваше имя*" required class="modal__input">
+            <input type="text" name="tel" placeholder="Номер телефона*" required class="modal__input">
+            <div class="modal__select">
+              <select name="delivery[]">
+                <option selected disabled>Способ доставки</option>
+                <option value="courier">Доставка курьером</option>
+                <option value="transport">Транспортная компания</option>
+                <option value="post">Доставка почтой России</option>
+              </select>
+            </div>
+            <div class="modal__select">
+              <select name="pay[]">
+                <option selected disabled>Способ оплаты</option>
+                <option value="cash">Наличные</option>
+                <option value="card">Карта</option>
+              </select>
+            </div>
+            <input type="text" name="address" placeholder="Ваш адрес" required class="modal__input">
+            <button class="modal__btn">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  @include('html/footer.html')
+
+  <script src="js/script.min.js"></script>
+
+</body>
+</html>
